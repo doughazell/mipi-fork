@@ -1,0 +1,78 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+atm:
+    code: ATM
+    definition: Automated Teller (Cash) Machine
+
+bac:
+    code: BAC
+    definition: Automated Credit
+
+bgc:
+    code: BGC
+    definition: Bank Giro Credit
+
+chg:
+    code: CHG
+    definition: Charge
+
+d/d:
+    code: D/D
+    definition: Direct Debit
+
+div:
+    code: DIV
+    definition: Dividend
+
+dr:
+    code: DR
+    definition: Account Overdrawn or Debit Item
+
+ibp:
+    code: IBP
+    definition: Inter Branch Payment
+
+int:
+    code: INT
+    definition: Interest
+
+itl:
+    code: ITL
+    definition: International
+
+ndc:
+    code: NDC
+    definition: No Dividend Counterfoil
+
+otr:
+    code: OTR
+    definition: Online Banking
+
+po:
+    code: PO
+    definition: Post Office
+
+pos:
+    code: POS
+    definition: Point of Sale
+
+s/o:
+    code: S/O
+    definition: Standing Order
+
+sbt:
+    code: SBT
+    definition: Funds Transfer
+
+tlr:
+    code: TLR
+    definition: Teller Transaction
+
+tms:
+    code: TMS
+    definition: Travel Money Service
+
+tsu:
+    code: TSU
+    definition: Telephone Banking
+

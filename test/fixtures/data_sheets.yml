@@ -1,0 +1,257 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+###=========================================================
+### GLOBES
+###=========================================================
+
+# Globe: pablito
+# Profile: HSBC
+datasheet1:
+  name: Banking Overview
+  class_style: MyClass
+  style_sheets: '/stylesheets/custom_styles/sample_bank'
+  profile: pablito_hsbc
+  creator: paul123
+  updater: paul123
+  file_location: '/data_sheets/pages/pablito/hsbc_bank_statements.html.erb'
+
+# Globe: pablito
+# Profile: HSBC
+datasheet2:
+  name: Loan Details
+  class_style: MyClass
+  style_sheets: '/stylesheets/custom_styles/sample_bank.css'
+  profile: pablito_hsbc
+  creator: paul123
+  updater: paul123
+  file_location: '/data_sheets/pages/hsbc_loan.html.erb'
+
+# Globe: pablito
+# Profile: RFU
+rfu_membership:
+  name: RFU Membership
+  class_style: MyClass
+  style_sheets: '/stylesheets/custom_styles/rfu'
+  profile: pablito_rfu
+  creator: paul123
+  updater: paul123
+  file_location: '/data_sheets/pages/rfu/rfu_membership.html.erb'
+
+# Globe: pablito
+# Profile: RFU
+rfu_purchases:
+  name: RFU Purchases
+  class_style: MyClass
+  style_sheets: '/stylesheets/custom_styles/rfu'
+  profile: pablito_rfu
+  creator: paul123
+  updater: paul123
+  file_location: '/data_sheets/pages/pablito/rfu_purchases.html.erb'
+
+# Globe: pablito
+# Profile: RFU
+barclays_account:
+  name: Current Account
+  class_style: MyClass
+  style_sheets: '/stylesheets/custom_styles/barclays_account.css'
+  profile: pablito_barclays_account
+  creator: paul123
+  updater: paul123
+  file_location: '/data_sheets/pages/pablito/barclay_current_account.html.erb'
+
+# Globe: pablito
+# Profile: Council Tax
+council_tax:
+  name: Council Tax
+  style_sheets: '/stylesheets/custom_styles/stalbanscity_council.css'
+  profile: pablito_council
+  creator: paul123
+  updater: paul123
+  file_location: '/data_sheets/pages/pablito/stalbanscity_council_tax.html.erb'
+  
+# Globe: pablito
+# Profile: Main
+pablito_main_page:
+  name: Basic Data
+  style_sheets: '/stylesheets/custom_styles/mainpage.css'
+  profile: pablito_main
+  creator: paul123
+  updater: paul123
+  file_location: '/data_sheets/pages/pablito/pablito_main.html.erb'
+
+# Globe: pablito
+# Profile: Main:Messages
+pablito_messages:
+  name: Message Page
+  style_sheets: '/stylesheets/custom_styles/messages.css'
+  profile: pablito_main
+  creator: paul123
+  updater: paul123
+  file_location: '/data_sheets/pages/messages.html.erb'
+
+#---------------
+
+# Globe: terryreed
+# Profile: Main
+terry_main_page:
+  name: Basic Data
+  style_sheets: '/stylesheets/custom_styles/mainpage.css'
+  profile: terry_main
+  creator: paul123
+  updater: paul123
+  file_location: '/data_sheets/pages/terry/terry_main.html.erb'
+
+# Globe: terryreed
+# Profile: RFU
+rfu_membership2:
+  name: RFU Membership
+  class_style: MyClass
+  style_sheets: '/stylesheets/custom_styles/rfu'
+  profile: terry_rfu
+  creator: paul123
+  updater: paul123
+  file_location: '/data_sheets/pages/rfu/rfu_membership.html.erb'
+
+
+###=========================================================
+### SHADOW GLOBES
+###=========================================================
+# Globe: rfu
+# Shadow Globe: pablito
+# Profile: RFU
+rfu_membership_v01:
+  name: RFU Membership
+  class_style: MyClass
+  style_sheets: '/stylesheets/custom_styles/rfu'
+  profile: rfu_pablito_profile
+  creator: paul123
+  updater: paul123
+  file_location: '/data_sheets/pages/rfu/rfu_membership.html.erb'
+
+# Globe: rfu
+# Shadow Globe: pablito
+# Profile: RFU
+rfu_email_subscription_v01:
+  name: RFU Email Subscription
+  class_style: MyClass
+  style_sheets: '/stylesheets/custom_styles/rfu'
+  profile: rfu_pablito_profile
+  creator: paul123
+  updater: paul123
+  file_location: '/data_sheets/pages/rfu/rfu_email_subscription.html.erb'
+
+# Globe: rfu
+# Shadow Globe: pablito
+# Profile: RFU Messages
+rfu_pablito_messages:
+  name: Message Page
+  style_sheets: '/stylesheets/custom_styles/messages123.css'
+  profile: rfu_pablito_profile
+  creator: paul123
+  updater: paul123
+  file_location: '/data_sheets/pages/messages.html.erb'
+
+
+# Globe: rfu
+# Shadow Globe: terryreed
+# Profile: RFU
+rfu_membership_terryreed_v01:
+  name: RFU Membership
+  class_style: MyClass
+  style_sheets: '/stylesheets/custom_styles/rfu'
+  profile: rfu_terryreed_profile
+  creator: paul123
+  updater: paul123
+  file_location: '/data_sheets/pages/rfu/rfu_membership.html.erb'
+
+rfu_main_profile_data_sheet:
+  name: Rugby Football Union
+  class_style: MyClass
+  style_sheets: '/stylesheets/custom_styles/rfu'
+  profile: rfu_main_profile
+  creator: paul123
+  updater: paul123
+  file_location: '/data_sheets/pages/rfu/rfu_main_profile.html.erb'
+
+rfu_supporters_club_profile_data_sheet:
+  name: Rugby Football Union
+  class_style: MyClass
+  style_sheets: '/stylesheets/custom_styles/rfu'
+  profile: rfu_supporters_club_profile
+  creator: paul123
+  updater: paul123
+  file_location: '/data_sheets/pages/rfu/rfu_supporters_club_profile.html.erb'
+
+rfu_shareholders_profile_data_sheet:
+  name: Rugby Football Union
+  class_style: MyClass
+  style_sheets: '/stylesheets/custom_styles/rfu'
+  profile: rfu_shareholders_profile
+  creator: paul123
+  updater: paul123
+  file_location: '/data_sheets/pages/rfu/rfu_shareholders_profile.html.erb'
+
+# Globe: pablito
+# Profile: Main:Messages
+rfu_messages:
+  name: Message Page
+  style_sheets: '/stylesheets/custom_styles/messages.css'
+  profile: rfu_main_profile
+  creator: paul123
+  updater: paul123
+  file_location: '/data_sheets/pages/messages.html.erb'
+
+# Globe: pablito
+# Shadow Globe: pablito_terryreed_globe
+# Profile: Home Details
+pablito_terryreed_datasheet:
+  name: Details
+  style_sheets: '/stylesheets/custom_styles/ab123456789.css'
+  profile: pablito_terryreed_profile
+  creator: paul123
+  updater: paul123
+  file_location: '/data_sheets/pages/terry/ab123456789.html.erb'
+
+# Globe: rfu
+# Shadow Globe: pablito
+# Profile: Messages
+pablito_terryreed_messages:
+  name: Message Page
+  style_sheets: '/stylesheets/custom_styles/messages.css'
+  profile: pablito_terryreed_profile
+  creator: paul123
+  updater: paul123
+  file_location: '/data_sheets/pages/messages.html.erb'
+
+ecb_club_contact_details:
+  name: Contact Details
+  style_sheets: '/stylesheets/custom_styles/ecb.css'
+  profile: ecb_barntgreen_profile
+  creator: paul123
+  updater: paul123
+  file_location: '/data_sheets/pages/ecb/ecb_cricket_club.html.erb'
+  
+ecb_club_contact_details_2:
+  name: Contact Details
+  style_sheets: '/stylesheets/custom_styles/ecb.css'
+  profile: ecb_himley_profile
+  creator: paul123
+  updater: paul123
+  file_location: '/data_sheets/pages/ecb_cricket_club.html.erb'
+  
+ecb_club_contact_details_3:
+  name: Contact Details
+  style_sheets: '/stylesheets/custom_styles/ecb.css'
+  profile: ecb_kenilworthwardens_profile
+  creator: paul123
+  updater: paul123
+  file_location: '/data_sheets/pages/ecb_cricket_club.html.erb'
+  
+ecb_club_contact_details_4:
+  name: Contact Details
+  style_sheets: '/stylesheets/custom_styles/ecb.css'
+  profile: ecb_kidderminstervictoria_profile
+  creator: paul123
+  updater: paul123
+  file_location: '/data_sheets/pages/ecb_cricket_club.html.erb'
+  

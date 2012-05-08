@@ -1,0 +1,30 @@
+<%= form_for([@globe, @data_element], :url => url_path) do |f| %>
+  <% if @data_element.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@data_element.errors.count, "error") %> prohibited this Data Element from being saved:</h2>
+
+      <ul>
+      <% @data_element.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<table>
+  <th>Column</th>
+  <th>Value</th>
+  <% columns = @data_element_type.constantize.column_names - (DataElement.column_names - ['name'])
+     columns.each { |column|
+       entry_field = determine_entry_field_style(@data_element_type, column)
+       %>
+  <tr>
+    <td><%= tailored_output f, entry_field, column, "label" %></td>
+    <td><%= tailored_output f, entry_field, column, "entry" %></td>
+  </tr>
+  <% } %>
+  <tr>
+    <%= hidden_field_tag 'data_element_type', @data_element_type %>
+    <td colspan="2"><%= f.submit submit_message, :id => nil %></td>
+  </tr>
+</table>
+<% end %>

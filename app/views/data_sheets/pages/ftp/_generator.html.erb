@@ -1,0 +1,23 @@
+<table>
+  <tr>
+    <td>Generator Unit Code</td><td><%= @unit.name %></td>
+  </tr>
+  <tr>
+    <td>Primary Fuel Type</td><td><%= @unit.fuel_type %></td>
+  </tr>
+  <tr>
+    <td>Installed Capacity</td><td><%= Label_TextBox_Switch("unit", @unit, "installed_capacity") %></td>
+  </tr>
+  <tr>
+    <td>Fixed Heat Constant</td><td><%= @unit.fixed_heat_constant %></td>
+  </tr>
+  <tr>
+    <td>Hot Starts</td><td>0 to <%= @unit.start_hours_hot %></td>
+  </tr>
+  <tr>
+    <td>Warm Starts</td><td><%= Label_TextBox_Switch("unit", @unit, "start_hours_hot") %> to <%= Label_TextBox_Switch("unit", @unit, "start_hours_cold") %></td>
+  </tr>
+  <tr>
+    <td>Cold Starts</td><td><%= @unit.start_hours_cold %> and above</td>
+  </tr>
+</table>

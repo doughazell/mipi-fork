@@ -1,0 +1,5 @@
+<%
+data_element_id = data_element.id.to_i
+combined_id = "#{data_element.type}_#{database_column}_#{data_element_id}".downcase
+%>
+<label id="<%= combined_id %>"><%= eval("data_element.#{database_column}") %></label>

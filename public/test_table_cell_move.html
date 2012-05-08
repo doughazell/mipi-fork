@@ -1,0 +1,33 @@
+<html>
+<head>
+
+<SCRIPT type="text/javascript"> 
+function moveRowUp(tableid, n) 
+{ 
+ var tablebody = document.getElementById(tableid); 
+ if(tablebody.nodeName!= "TBODY") return false; 
+ tablerows = document.getElementsByTagName("TR"); 
+ if(n > 0 && n < tablerows.length) { 
+ var tmp = tablerows[n-1].cloneNode(true); 
+ tablebody.removeChild(tablerows[n-1]); 
+ tablebody.insertBefore(tmp, tablerows[n]); 
+ } 
+} 
+</SCRIPT>
+</head>
+<body>
+<TABLE> 
+<TBODY id="data"> 
+<TR bgcolor="red"><TD>1</TD><TD>red</TD></TR> 
+<TR bgcolor="orange"><TD>2</TD><TD>orange</TD></TR> 
+<TR bgcolor="yellow"><TD>3</TD><TD>yellow</td></TR> 
+<TR bgcolor="green"><TD>4</TD><TD>green</td></TR> 
+<TR bgcolor="blue"><TD>5</TD><TD>blue</td></TR> 
+</TBODY> 
+</TABLE>
+
+<FORM action="#"> 
+Row # (1 - 4) <INPUT type="text" size="2" name="row"> 
+<INPUT type="button" value="move row up" onClick="moveRowUp('data', row.value);"> 
+</FORM>
+</body>

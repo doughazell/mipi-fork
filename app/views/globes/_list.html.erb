@@ -1,0 +1,17 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Security</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @globes.each do |globe| %>
+  <tr>
+    <td><%= link_to globe.name, root_url(:subdomain => globe.globe_reference) %></td>
+    <td><%= globe.security %></td>
+    <td><%= link_to 'Edit', edit_globe_path(globe) %></td>
+    <td><%= link_to 'Destroy', globe, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>

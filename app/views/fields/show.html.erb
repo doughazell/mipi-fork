@@ -1,0 +1,12 @@
+<h2>General</h2>
+<p>Object Type: <%= @data_element.type %></p>
+<p>Field: <%= @field %></p>
+<p>Field Type: <%= if @meta_data.present? then @meta_data.field_type end %> </p>
+<p>Definition: <%= if @meta_data.present? then @meta_data.definition end %>
+<p>Value: <%= @data_value %></p>
+<h2>Subscriptions</h2>
+Total: <%= @count_of_subs %>
+<h2>Actions</h2>
+<a href="#" onClick="ajaxwin=dhtmlwindow.open('ajaxbox', 'ajax', '<%= link_globe_data_element_field_url(@globe, @data_element, @field) %>', 'Link Data Elements', 'width=650px,height=400px,left=300px,top=100px,resize=0,scrolling=1'); return false">
+Create Subscription
+</a>

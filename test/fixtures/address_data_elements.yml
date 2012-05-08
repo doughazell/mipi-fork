@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+10CavendishRoad:
+  address_line_1: 10 Cavendish Road
+  city: St Albans
+  post_code: AL1 5EE
+  country: UK
+
+59LarkinsClose:
+  address_line_1: 59 Larkins Close
+  city: St Albans
+  post_code: SG7 5DG
+  country: UK
+
+LittleThatch:
+  address_line_1: 18 Pearl Close
+  address_line_2: Perch
+  city: Calworth
+  post_code: CL3 4RT
+  country: UK
+
+LittleThatch_pablito:
+  address_line_1: 81 Peal Close
+  address_line_2: Perching
+  city: Caulworth
+  post_code: CL3 4RT
+  country: United Kingdom

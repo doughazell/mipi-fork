@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  description: MyString
+  value: 1.5
+  contents_insurance_data_element_id: 1
+
+two:
+  description: MyString
+  value: 1.5
+  contents_insurance_data_element_id: 1

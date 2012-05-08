@@ -1,0 +1,18 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+low:
+  name: Low
+  level: 1
+  definition: Low level message
+
+moderate:
+  name: Moderate
+  level: 2
+  definition: Moderate level message
+  
+high:
+  name: High
+  level: 3
+  definition: High level message
+  
+

@@ -1,0 +1,109 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  data_sheet: datasheet1
+  data_element_collection: data_element_collection_1
+  created_at: 2011-03-25 11:54:14
+
+two:
+  data_sheet: datasheet1
+  data_element_collection: data_element_collection_2
+  created_at: 2011-03-25 11:54:14
+
+three:
+  data_sheet: rfu_membership
+  data_element_collection: data_element_collection_3
+  created_at: 2011-03-25 11:54:14
+  
+four:
+  data_sheet: rfu_membership2
+  data_element_collection: data_element_collection_3
+  created_at: 2011-03-25 11:54:14
+  
+five:
+  data_sheet: barclays_account
+  data_element_collection: data_element_collection_4
+  created_at: 2011-04-04 09:44:14
+
+six:
+  data_sheet: council_tax
+  data_element_collection: data_element_collection_5
+  created_at: 2011-04-04 10:28:14
+  
+seven:
+  data_sheet: pablito_main_page
+  data_element_collection: data_element_collection_7
+
+eight:
+  data_sheet: pablito_main_page
+  data_element_collection: data_element_collection_9
+
+nine:
+  data_sheet: terry_main_page
+  data_element_collection: data_element_collection_7
+  
+ten:
+  data_sheet: pablito_main_page
+  data_element_collection: data_element_collection_10
+
+eleven:
+  data_sheet: pablito_main_page
+  data_element_collection: data_element_collection_11
+
+twelve:
+  data_sheet: pablito_main_page
+  data_element_collection: data_element_collection_8
+
+thirteen:
+  data_sheet: pablito_messages
+  data_element_collection: data_element_collection_12
+
+fourteen:
+  data_sheet: pablito_main_page
+  data_element_collection: data_element_collection_13
+
+fifteen:
+  data_sheet: rfu_membership_v01
+  data_element_collection: data_element_collection_3
+
+sixteen:
+  data_sheet: rfu_membership_terryreed_v01
+  data_element_collection: data_element_collection_3
+  
+seventeen:
+  data_sheet: rfu_messages
+  data_element_collection: data_element_collection_12
+
+eighteen:
+  data_sheet: rfu_pablito_messages
+  data_element_collection: data_element_collection_12
+  
+nineteen:
+  data_sheet: pablito_terryreed_datasheet
+  data_element_collection: data_element_collection_14
+  
+twenty:
+  data_sheet: terry_main_page
+  data_element_collection: data_element_collection_15
+  
+twentyone:
+  data_sheet: pablito_terryreed_messages
+  data_element_collection: data_element_collection_12
+  
+twentytwo_1:
+  data_sheet: ecb_club_contact_details
+  data_element_collection: data_element_collection_16
+  
+twentytwo_2:
+  data_sheet: ecb_club_contact_details_2
+  data_element_collection: data_element_collection_16
+  
+twentytwo_3:
+  data_sheet: ecb_club_contact_details_3
+  data_element_collection: data_element_collection_16
+  
+twentytwo_4:
+  data_sheet: ecb_club_contact_details_4
+  data_element_collection: data_element_collection_16
+  
+

@@ -1,0 +1,33 @@
+<%= form_for(@globe) do |f| %>
+  <% if @globe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@globe.errors.count, "error") %> prohibited this globe from being saved:</h2>
+
+      <ul>
+      <% @globe.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :security %><br />
+    <%= f.text_field :security %>
+  </div>
+  <div class="field">
+    <%= f.label :globe_reference %><br />
+    <%= f.text_field :globe_reference %>
+  </div>
+  <% f.fields_for :profiles do |builder| %>
+    <%= render "profile_fields", :f => builder %>
+  <% end %>
+  <p><%= link_to_add_fields "Add Profile", f, :profiles %></p>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,17 @@
+<%
+data_element_id = data_element.id.to_i
+combined_id = "#{data_element.type}_#{database_column}_#{data_element_id}".downcase
+subscription_violations = SubscriptionMessageDataElement.find_active_violations(subscriptions)
+%>
+<% if subscription_violations then %>
+<% else %>
+<span>
+<% end %>
+<label id="<%= combined_id %>">
+<%= eval("data_element.#{database_column}") %>
+<% if subscription_violations.count > 0 then %>
+<span class="subscription_violations">
+[<%= subscription_violations.count.to_s %>]
+</span>
+<% end %>
+</label>

@@ -1,0 +1,22 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+pablito_phone1:
+  phone_type: Mobile
+  phone_number: "07905 271 115"
+
+pablito_phone2:
+  phone_type: Mobile
+  phone_number: "07 366 267 390"
+
+pablito_phone3:
+  phone_type: Home
+  phone_number: "01727 811 386"
+  
+terry_phone1:
+  phone_type: Home
+  phone_number: "01582 635 883"
+  
+
+  
+
+

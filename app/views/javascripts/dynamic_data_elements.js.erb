@@ -1,0 +1,28 @@
+// AllFields is an array of [data_collection_id, field_name]
+var AllFields = new Array();
+<% @data_element_collections.each do |c| %>
+    <% @fields = eval("#{c.data_element_type}.user_column_data") %>
+    <% @fields.each do |f| %>
+    AllFields.push(new Array(<%= c.id %>, '<%= f %>', '<%= f %>')
+    <% end %>
+<% end %>
+
+
+
+function DataElementCollectionSelected() {
+    data_element_collection_id = $('data_element_collection_id').getValue();
+    options = $('field_id').options;
+    options.length = 1;
+    AllFields.each(function(field) {
+        if(field[0] == data_element_collection_id) {
+            options[options.length] = new Option(field[0],field[1]);
+        }
+    });
+}
+
+document.observe('dom:loaded', function() {
+    $('data_element_collection_id').observe('change', DataElementCollectionSelected)
+    alert('Working...');
+});
+
+alert('Definitely Working...');

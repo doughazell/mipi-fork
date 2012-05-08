@@ -1,0 +1,72 @@
+<!--
+We know this is a historical view on the data, therefore an array of data elements
+will be passed through to the .html.erb file.
+
+This will be known as @trans
+
+-->
+<% if !@overview.blank? then %>
+<table>
+  <tr>
+    <td>
+      <table>
+        <tr>
+          <td>Account Name</td>
+          <td><%= @overview.account_name %></td>
+        </tr>
+        <tr>
+          <td>Account Number</td>
+          <td><%= @overview.sort_code %> <%= @overview.account_number %></td>
+        </tr>
+        <tr>
+          <td>Name</td>
+          <td><%= @overview.first_name %> <%= @overview.last_name %></td>
+        </tr>
+        <tr>
+          <td>Bank Name</td>
+          <td><%= @overview.bank_name %></td>
+        </tr>
+        <tr>
+          <td>Account Type</td>
+          <td><%= @overview.account_type %></td>
+        </tr>
+      </table>
+    </td>
+    <td align="right" valign="top" style="border:0px">
+      <%= image_tag 'HSBC.png' %>
+    </td>
+  </tr>
+</table>
+<% else %>
+<h2>No account data found.</h2>
+<% end %>
+
+<h1>Transactions</h1>
+<% if !@trans.blank? then %>
+<% @total = 0 %>
+<table>
+  <th>Transaction Type</th>
+  <th>Transaction Date</th>
+  <th>Description</th>
+  <th>Value</th>
+  <th>Balance</th>
+  <% @trans.each do |o| %>
+  <tr>
+    <td><%= o.transaction_type %></td>
+    <td><%= o.transfer_date.to_s(:long) %></td>
+    <td><%= o.description %></td>
+    <td nowrap align="right"><%= number_with_precision(o.value, :precision => 2) %></td>
+    <td nowrap align="right"><%= number_with_precision(o.balance, :precision => 2) %></td>
+  </tr>
+  <% @total += o.value %>
+  <% end %>
+  <tr>
+    <td colspan="5" align="right"><strong><%= number_with_precision(@total, :precision => 2) %></strong></td>
+  </tr>
+</table>
+<div class="user_nav">
+  <%= will_paginate @trans %>
+</div>
+<% else %>
+<h2>No transactional data found.</h2>
+<% end %>

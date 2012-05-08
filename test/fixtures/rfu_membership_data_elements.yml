@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+rfu_member_paullong:
+  rfu_team_supported: Munster
+
+rfu_member_terryreed:
+  rfu_team_supported: Leinster
+
+rfuinternal_member_paullong:
+  rfu_team_supported: London Irish
+
+rfuinternal_member_terryreed:
+  rfu_team_supported: Bath

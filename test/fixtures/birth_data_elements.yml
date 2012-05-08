@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+terrydob:
+  date_of_birth: 1971-07-22
+  town_of_birth: Bournmouth
+  country_of_birth: UK
+
+pauldob:
+  date_of_birth: 1973-11-20
+  town_of_birth: York
+  country_of_birth: United Kingdom

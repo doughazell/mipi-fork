@@ -1,0 +1,7 @@
+<% if !@masterglobe.nil? && @masterglobe.id != @globe.id %>
+<div class="masterglobe">
+<span class="masterglobe_heading"><%= link_to @masterglobe.name, preview_globe_path(@masterglobe) %></span>
+<% else %>
+<div class="masterglobe_self">
+<% end %>
+<span><%= link_to image_tag("/images/PI-Guard-logo-1.1.gif", :size => "105x30", :align => "right"), "http://www.piguard.com/" %></span>

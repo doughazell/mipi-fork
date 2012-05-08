@@ -1,0 +1,619 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Module: DataSheetsHelper</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (D)</a> &raquo; 
+    
+    
+    <span class="title">DataSheetsHelper</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Class List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Module: DataSheetsHelper
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+    <dt class="r1">Included in:</dt>
+    <dd class="r1"><span class='object_link'><a href="DataSheetsController.html" title="DataSheetsController (class)">DataSheetsController</a></span></dd>
+    
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">app/helpers/data_sheets_helper.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#Expand_Data_Element-instance_method" title="#Expand_Data_Element (instance method)">- (Object) <strong>Expand_Data_Element</strong>(collection_name, data_element) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+This method has been set up to provide further details information
+regarding the element that has been rendered.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public deprecated">
+  <span class="summary_signature">
+    
+      <a href="#Label2TextBox2-instance_method" title="#Label2TextBox2 (instance method)">- (Object) <strong>Label2TextBox2</strong>(data_element, database_column, options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  <span class="deprecated note title">Deprecated</span>
+  
+
+  
+    <span class="summary_desc"><strong>Deprecated.</strong> <div class='inline'><p>
+Replaced by a combination of Helper method and partial.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#Label_TextBox_Switch-instance_method" title="#Label_TextBox_Switch (instance method)">- (Object) <strong>Label_TextBox_Switch</strong>(collection_name, data_element, database_column, options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Render a Label containing the database value that will be replaced by a
+text box upon a mouse click that will allow the underlying data model to be
+updated through Ajax.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#Subscription_Data_Element-instance_method" title="#Subscription_Data_Element (instance method)">- (Object) <strong>Subscription_Data_Element</strong>(data_element, database_column, options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="Expand_Data_Element-instance_method">
+  
+    - (<tt>Object</tt>) <strong>Expand_Data_Element</strong>(collection_name, data_element) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+This method has been set up to provide further details information
+regarding the element that has been rendered. Currently not fully
+implemented.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+        <span class='name'>collection_name</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The name of the variable used to access the data within the partial being
+handled.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+        <span class='name'>data_element</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The specific reference to the base DataElement(-derived) instance that
+contains the data needed to be displayed.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+39
+40
+41
+42
+43
+44</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/data_sheets_helper.rb', line 39</span>
+
+<span class='kw'>def</span> <span class='const'>Expand_Data_Element</span><span class='lparen'>(</span><span class='id collection_name'>collection_name</span><span class='comma'>,</span> <span class='id data_element'>data_element</span><span class='rparen'>)</span>
+  <span class='id render'>render</span> <span class='symbol'>:partial</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>expansion_tag</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+          <span class='symbol'>:locals</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+                <span class='symbol'>:collection_name</span> <span class='op'>=&gt;</span> <span class='id collection_name'>collection_name</span><span class='comma'>,</span>
+                <span class='symbol'>:data_element</span> <span class='op'>=&gt;</span> <span class='id data_element'>data_element</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="Label2TextBox2-instance_method">
+  
+    - (<tt>Object</tt>) <strong>Label2TextBox2</strong>(data_element, database_column, options = {}) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <div class="note deprecated"><strong>Deprecated.</strong> <div class='inline'><p>
+Replaced by a combination of Helper method and partial.
+</p>
+</div></div>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/data_sheets_helper.rb', line 47</span>
+
+<span class='kw'>def</span> <span class='const'>Label2TextBox2</span><span class='lparen'>(</span><span class='id data_element'>data_element</span><span class='comma'>,</span> <span class='id database_column'>database_column</span><span class='comma'>,</span> <span class='id options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id data_element_id'>data_element_id</span> <span class='op'>=</span> <span class='id data_element'>data_element</span><span class='period'>.</span><span class='id id'>id</span><span class='period'>.</span><span class='id to_i'>to_i</span>
+<span class='comment'>#    hidden_data_element = &quot;#{data_element.type}_#{database_column}_id&quot;
+</span>  <span class='id combined_id'>combined_id</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id data_element'>data_element</span><span class='period'>.</span><span class='id type'>type</span><span class='rbrace'>}</span><span class='tstring_content'>_</span><span class='embexpr_beg'>#{</span><span class='id database_column'>database_column</span><span class='rbrace'>}</span><span class='tstring_content'>_</span><span class='embexpr_beg'>#{</span><span class='id data_element_id'>data_element_id</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id downcase'>downcase</span>
+<span class='comment'>#    combined_id = &quot;#{data_element.type}_#{database_column}&quot;.downcase
+</span>  <span class='id combined_id_region'>combined_id_region</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id combined_id'>combined_id</span><span class='rbrace'>}</span><span class='tstring_content'>_region</span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id downcase'>downcase</span>
+  <span class='id combined_id_edit'>combined_id_edit</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id combined_id'>combined_id</span><span class='rbrace'>}</span><span class='tstring_content'>_edit</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id combined_id_edit_region'>combined_id_edit_region</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id combined_id'>combined_id</span><span class='rbrace'>}</span><span class='tstring_content'>_edit_region</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id combined_id_busy'>combined_id_busy</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id combined_id'>combined_id</span><span class='rbrace'>}</span><span class='tstring_content'>_busy</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id tick'>tick</span> <span class='op'>=</span> <span class='id raw'>raw</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&amp;#10004;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id hidden_data_element'>hidden_data_element</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id combined_id'>combined_id</span><span class='rbrace'>}</span><span class='tstring_content'>_id</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='kw'>if</span> <span class='op'>!</span><span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:size</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id presence'>presence</span> <span class='kw'>then</span>
+    <span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:size</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id eval'>eval</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>data_element.</span><span class='embexpr_beg'>#{</span><span class='id database_column'>database_column</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id length'>length</span>
+  <span class='kw'>end</span>
+  <span class='id html'>html</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&lt;span&gt;\n</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id fields_for'>fields_for</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>data_elements[]</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id data_element'>data_element</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id field'>field</span><span class='op'>|</span>
+  <span class='id html'>html</span> <span class='op'>+=</span> <span class='id hidden_field_tag'>hidden_field_tag</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id data_element'>data_element</span><span class='period'>.</span><span class='id type'>type</span><span class='rbrace'>}</span><span class='tstring_content'>[</span><span class='embexpr_beg'>#{</span><span class='id data_element'>data_element</span><span class='period'>.</span><span class='id id'>id</span><span class='rbrace'>}</span><span class='tstring_content'>][id]</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id data_element'>data_element</span><span class='period'>.</span><span class='id id'>id</span>
+  <span class='id html'>html</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id html'>html</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&lt;span class='editable_region' id='</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id html'>html</span> <span class='op'>+=</span> <span class='id combined_id_region'>combined_id_region</span>
+  <span class='id html'>html</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>' onclick=\&quot;javascript:switch_edits('</span><span class='embexpr_beg'>#{</span><span class='id combined_id'>combined_id</span><span class='rbrace'>}</span><span class='tstring_content'>', '</span><span class='embexpr_beg'>#{</span><span class='id combined_id_edit'>combined_id_edit</span><span class='rbrace'>}</span><span class='tstring_content'>');\&quot;&gt;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id html'>html</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id html'>html</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&lt;label id=\&quot;</span><span class='embexpr_beg'>#{</span><span class='id combined_id'>combined_id</span><span class='rbrace'>}</span><span class='tstring_content'>\&quot;&gt;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id html'>html</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id html'>html</span> <span class='op'>+=</span> <span class='id eval'>eval</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>data_element.</span><span class='embexpr_beg'>#{</span><span class='id database_column'>database_column</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id html'>html</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id html'>html</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&lt;/label&gt;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id html'>html</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id html'>html</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&lt;/span&gt;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id html'>html</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+  
+  <span class='id html'>html</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&lt;span style=\&quot;display:none;\&quot; class=\&quot;editing_region\&quot; id=\&quot;</span><span class='embexpr_beg'>#{</span><span class='id combined_id_edit_region'>combined_id_edit_region</span><span class='rbrace'>}</span><span class='tstring_content'>\&quot; &gt;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id html'>html</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id html'>html</span> <span class='op'>+=</span> <span class='id text_field'>text_field</span> <span class='id data_element'>data_element</span><span class='period'>.</span><span class='id type'>type</span><span class='comma'>,</span> <span class='id database_column'>database_column</span><span class='comma'>,</span> <span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='id combined_id_edit'>combined_id_edit</span><span class='comma'>,</span> <span class='symbol'>:value</span> <span class='op'>=&gt;</span> <span class='id eval'>eval</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>data_element.</span><span class='embexpr_beg'>#{</span><span class='id database_column'>database_column</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span> <span class='symbol'>:onBlur</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>javascript:write_edit('</span><span class='embexpr_beg'>#{</span><span class='id combined_id'>combined_id</span><span class='rbrace'>}</span><span class='tstring_content'>', '</span><span class='embexpr_beg'>#{</span><span class='id combined_id_edit'>combined_id_edit</span><span class='rbrace'>}</span><span class='tstring_content'>', '</span><span class='embexpr_beg'>#{</span><span class='id data_element_id'>data_element_id</span><span class='rbrace'>}</span><span class='tstring_content'>');</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:onKeyPress</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>javascript:handle_enter('</span><span class='embexpr_beg'>#{</span><span class='id combined_id'>combined_id</span><span class='rbrace'>}</span><span class='tstring_content'>', '</span><span class='embexpr_beg'>#{</span><span class='id combined_id_edit'>combined_id_edit</span><span class='rbrace'>}</span><span class='tstring_content'>', event, '</span><span class='embexpr_beg'>#{</span><span class='id data_element_id'>data_element_id</span><span class='rbrace'>}</span><span class='tstring_content'>');</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id html'>html</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id html'>html</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&lt;span id=\&quot;</span><span class='embexpr_beg'>#{</span><span class='id combined_id_busy'>combined_id_busy</span><span class='rbrace'>}</span><span class='tstring_content'>\&quot; style=\&quot;display:none\&quot;&gt;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id html'>html</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id html'>html</span> <span class='op'>+=</span> <span class='id image_tag'>image_tag</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ajax-loader.gif</span><span class='tstring_end'>'</span></span>
+  <span class='id html'>html</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id html'>html</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&lt;/span&gt;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id html'>html</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id html'>html</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&lt;/span&gt;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id html'>html</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id html'>html</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&lt;span id=\&quot;error_message_</span><span class='embexpr_beg'>#{</span><span class='id combined_id'>combined_id</span><span class='rbrace'>}</span><span class='tstring_content'>\&quot;&gt;&lt;/span&gt;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id html'>html</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span>
+  <span class='id html'>html</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&lt;/span&gt;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id html'>html</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id raw'>raw</span><span class='lparen'>(</span><span class='id html'>html</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="Label_TextBox_Switch-instance_method">
+  
+    - (<tt>Object</tt>) <strong>Label_TextBox_Switch</strong>(collection_name, data_element, database_column, options = {}) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Render a Label containing the database value that will be replaced by a
+text box upon a mouse click that will allow the underlying data model to be
+updated through Ajax.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+        <span class='name'>collection_name</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The name of the variable used to access the data within the partial being
+handled.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+        <span class='name'>data_element</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The specific reference to the base DataElement(-derived) instance that
+contains the data needed to be displayed.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+        <span class='name'>database_column</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The string representing the database column we are trying to access within
+the data model.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+        <span class='name'>options</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>
+Currently not implemented. This will be used to set more specific options
+around the construction of the HTML text box.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+<h3>Author:</h3>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'><p>
+Paul Long
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10
+11
+12
+13
+14
+15
+16
+17</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/data_sheets_helper.rb', line 10</span>
+
+<span class='kw'>def</span> <span class='const'>Label_TextBox_Switch</span><span class='lparen'>(</span><span class='id collection_name'>collection_name</span><span class='comma'>,</span> <span class='id data_element'>data_element</span><span class='comma'>,</span> <span class='id database_column'>database_column</span><span class='comma'>,</span> <span class='id options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='comment'>#    options = options.merge{ :collection_name =&gt; collection_name }
+</span>  <span class='id render'>render</span> <span class='symbol'>:partial</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>editable</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+          <span class='symbol'>:locals</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+                <span class='symbol'>:collection_name</span> <span class='op'>=&gt;</span> <span class='id collection_name'>collection_name</span><span class='comma'>,</span>
+                <span class='symbol'>:data_element</span> <span class='op'>=&gt;</span> <span class='id data_element'>data_element</span><span class='comma'>,</span>
+                <span class='symbol'>:database_column</span> <span class='op'>=&gt;</span> <span class='id database_column'>database_column</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="Subscription_Data_Element-instance_method">
+  
+    - (<tt>Object</tt>) <strong>Subscription_Data_Element</strong>(data_element, database_column, options = {}) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/data_sheets_helper.rb', line 19</span>
+
+<span class='kw'>def</span> <span class='const'>Subscription_Data_Element</span><span class='lparen'>(</span><span class='id data_element'>data_element</span><span class='comma'>,</span> <span class='id database_column'>database_column</span><span class='comma'>,</span> <span class='id options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id subscriptions'>subscriptions</span> <span class='op'>=</span> <span class='const'>Subscription</span><span class='period'>.</span><span class='id find_all_references'>find_all_references</span><span class='lparen'>(</span><span class='id data_element'>data_element</span><span class='comma'>,</span> <span class='id database_column'>database_column</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='lparen'>(</span><span class='id subscriptions'>subscriptions</span><span class='period'>.</span><span class='id nil?'>nil?</span><span class='rparen'>)</span>
+    <span class='id render'>render</span> <span class='symbol'>:partial</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>label</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+           <span class='symbol'>:locals</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+                <span class='symbol'>:data_element</span> <span class='op'>=&gt;</span> <span class='id data_element'>data_element</span><span class='comma'>,</span>
+                <span class='symbol'>:database_column</span> <span class='op'>=&gt;</span> <span class='id database_column'>database_column</span><span class='rbrace'>}</span>
+  <span class='kw'>else</span>
+    <span class='id render'>render</span> <span class='symbol'>:partial</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>subscription_label</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+           <span class='symbol'>:locals</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+                <span class='symbol'>:data_element</span> <span class='op'>=&gt;</span> <span class='id data_element'>data_element</span><span class='comma'>,</span>
+                <span class='symbol'>:database_column</span> <span class='op'>=&gt;</span> <span class='id database_column'>database_column</span><span class='comma'>,</span>
+                <span class='symbol'>:subscriptions</span> <span class='op'>=&gt;</span> <span class='id subscriptions'>subscriptions</span><span class='rbrace'>}</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Mon Apr 18 14:49:43 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.6.8 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>

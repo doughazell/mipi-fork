@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  address_data_element_id: 1
+  year_built: 1
+
+two:
+  address_data_element_id: 1
+  year_built: 1

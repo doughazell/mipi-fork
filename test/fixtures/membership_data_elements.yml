@@ -1,0 +1,46 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+rfu_member_paullong:
+  full_name: Paul Long
+  date_of_birth: 1973-10-03
+  email_address: paul_a_long@hotmail.com
+  gender: Female
+  date_of_registration: 2011-03-25
+  membership_level: Gold
+  direct_mail_opt_in: false
+  direct_email_opt_in: false
+  third_party_promotion_opt_in: true
+
+rfu_member_terrysmith:
+  full_name: Terri Reid
+  date_of_birth: 1971-02-28
+  email_address: terryreed@hotmail.com
+  gender: Male
+  date_of_registration: 2011-03-25
+  membership_level: Platinum
+  direct_mail_opt_in: true
+  direct_email_opt_in: false
+  third_party_promotion_opt_in: false
+
+rfuinternal_member_paullong:
+  full_name: Paul Long
+  date_of_birth: 1973-10-04
+  email_address: paul_a_long@hotmail.com
+  gender: Female
+  date_of_registration: 2011-03-25
+  membership_level: Gold
+  direct_mail_opt_in: true
+  direct_email_opt_in: true
+  third_party_promotion_opt_in: true
+
+rfuinternal_member_terryreed:
+  full_name: Damien Smith
+  date_of_birth: 1975-6-2
+  email_address: terryreid@hotmail.com
+  gender: Male
+  date_of_registration: 2011-03-25
+  membership_level: Gold
+  direct_mail_opt_in: true
+  direct_email_opt_in: true
+  third_party_promotion_opt_in: true
+

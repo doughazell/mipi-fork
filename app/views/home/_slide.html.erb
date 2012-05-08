@@ -1,0 +1,41 @@
+<center>
+<table class="maintable" border=0 cellpadding=10 cellspacing=0 summary="">
+<tr>
+<td valign="bottom" align="center">
+<%= render :partial => 'home/block' %>
+</td>
+<td align="center">
+<table border=1 cellpadding=10 cellspacing=0 bgcolor=#FFF1DD bordercolor=#000000 summary="">
+	<tr>
+		<td align=center class="pig_title"><div class="pig_title"><%= render :text => slide_title %></div></td>
+	</tr>
+	<tr>
+		<td align=center>
+			<center>
+				<%=
+				if defined? slide_image_over
+					image_tag slide_image, :width => slide_width, :height => slide_height, :mouseover => image_path(slide_image_over)
+				else
+					image_tag slide_image, :width => slide_width, :height => slide_height
+				end
+				%>
+			</center>
+		</td>
+	</tr>
+	<tr>
+		<td align=center class="pig_subtitle"><div id="subtitle" onmouseover="dim();" class="pig_subtitle"><%= render :text => slide_subtitle %></div></td>
+	</tr>
+</table>
+</td>
+<td valign="top" align="center">
+<%= render :partial => 'home/block' %>
+</td>
+</tr>
+<tr> 
+<td colspan="3" align="center">
+<%= render :partial => 'home/navigation',
+	:locals => { :next_text => next_text, :next_controller => next_controller, :next_action => next_action } %>
+</td>
+</tr>
+</table>
+</center>

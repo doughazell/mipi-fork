@@ -1,0 +1,70 @@
+<table width="100%" border="0">
+  <tr>
+    <td class="council_title" width="50%"> 
+      St Albans City &amp; District Council
+    </td>
+    <td align="right">
+      <img alt="St Albans Council" src="/images/st-albans-city-district-council-brand-identity-logo-design3.gif" height="80"/>
+    </td>
+  </tr>
+</table>
+<% if !@counciltax.blank? then %>
+<table width="100%">
+  <tr>
+    <td colspan="2" align="center">
+      <div class="shiftcontainer">
+      <div class="shadowcontainer">
+      <div class="innerdiv" style="text-align:left">
+      <b>Your Details</b> <br />
+      Name: <%= Label_TextBox_Switch('counciltax', @counciltax, 'full_name') %><br />
+      Account Name: <%= Label_TextBox_Switch('counciltax', @counciltax, 'account_number') %><br />
+      Date of Issue: <%= @counciltax.date_of_issue.to_s(:long) %>
+      </div>
+      </div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="shiftcontainer">
+      <div class="shadowcontainer">
+      <div class="innerdiv">
+      <b>Property Address</b> <br/>
+      Address Line 1: <%= Label_TextBox_Switch('counciltax', @counciltax, 'property_address_line_1') %><br />
+      City: <%= Label_TextBox_Switch('counciltax', @counciltax, 'property_city') %><br />
+      County: <%= Label_TextBox_Switch('counciltax', @counciltax, 'property_county') %><br />
+      Post Code: <%= Label_TextBox_Switch('counciltax', @counciltax, 'property_postcode') %><br />
+      </div>
+      </div>
+      </div>
+    </td>
+    <td>
+      <div class="shiftcontainer">
+      <div class="shadowcontainer">
+      <div class="innerdiv">
+      <b>Contact Address</b> <br/>
+      Address Line 1: <%= Label_TextBox_Switch('counciltax', @counciltax, 'contact_address_line_1') %><br />
+      City: <%= Label_TextBox_Switch('counciltax', @counciltax, 'contact_city') %><br />
+      County: <%= Label_TextBox_Switch('counciltax', @counciltax, 'contact_county') %><br />
+      Post Code: <%= Label_TextBox_Switch('counciltax', @counciltax, 'contact_postcode') %><br />
+      </div>
+      </div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <div class="shiftcontainer">
+      <div class="shadowcontainer">
+      <div class="innerdiv">
+        Your Council Tax Band is: <b><%= @counciltax.band %></b>
+      </div>
+      </div>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<% else %>
+<h2>No account data found.</h2>
+<% end %>

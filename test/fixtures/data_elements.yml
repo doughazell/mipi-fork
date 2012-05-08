@@ -1,0 +1,1326 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+cc1_overview:
+  name: cc1_overview
+  type: FinancialAccountDataElement
+  data_element_collection: data_element_collection_2
+  user: paul123
+  ready_to_archive: 0
+  label: Bank Account Overview
+  mandatory: false
+  globe: pablito
+
+string_test:
+  type: StringDataElement
+  name: string_test
+  data_element_collection_id: 1
+  user: paul123
+  ready_to_archive: 0
+  label: String Test
+  mandatory: false
+
+cc1_state_101:
+  name: cc1_state_101
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_102:
+  name: cc1_state_102
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_103:
+  name: cc1_state_103
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_104:
+  name: cc1_state_104
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_105:
+  name: cc1_state_105
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_106:
+  name: cc1_state_106
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_107:
+  name: cc1_state_107
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_108:
+  name: cc1_state_108
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_109:
+  name: cc1_state_109
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_110:
+  name: cc1_state_110
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_111:
+  name: cc1_state_111
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_112:
+  name: cc1_state_112
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_113:
+  name: cc1_state_113
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_114:
+  name: cc1_state_114
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_115:
+  name: cc1_state_115
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_116:
+  name: cc1_state_116
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_117:
+  name: cc1_state_117
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_118:
+  name: cc1_state_118
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_119:
+  name: cc1_state_119
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_120:
+  name: cc1_state_120
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_121:
+  name: cc1_state_121
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_122:
+  name: cc1_state_122
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_123:
+  name: cc1_state_123
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_124:
+  name: cc1_state_124
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_125:
+  name: cc1_state_125
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_126:
+  name: cc1_state_126
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_127:
+  name: cc1_state_127
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_128:
+  name: cc1_state_128
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_129:
+  name: cc1_state_129
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_130:
+  name: cc1_state_130
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_131:
+  name: cc1_state_131
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_132:
+  name: cc1_state_132
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_133:
+  name: cc1_state_133
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_134:
+  name: cc1_state_134
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_135:
+  name: cc1_state_135
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_136:
+  name: cc1_state_136
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_137:
+  name: cc1_state_137
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_138:
+  name: cc1_state_138
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_139:
+  name: cc1_state_139
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_140:
+  name: cc1_state_140
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_141:
+  name: cc1_state_141
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_142:
+  name: cc1_state_142
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_143:
+  name: cc1_state_143
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_144:
+  name: cc1_state_144
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_145:
+  name: cc1_state_145
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_146:
+  name: cc1_state_146
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_147:
+  name: cc1_state_147
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_148:
+  name: cc1_state_148
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_149:
+  name: cc1_state_149
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_150:
+  name: cc1_state_150
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_151:
+  name: cc1_state_151
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_152:
+  name: cc1_state_152
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_153:
+  name: cc1_state_153
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_154:
+  name: cc1_state_154
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_155:
+  name: cc1_state_155
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_156:
+  name: cc1_state_156
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_157:
+  name: cc1_state_157
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_158:
+  name: cc1_state_158
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_159:
+  name: cc1_state_159
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_160:
+  name: cc1_state_160
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_161:
+  name: cc1_state_161
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_162:
+  name: cc1_state_162
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_163:
+  name: cc1_state_163
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_164:
+  name: cc1_state_164
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_165:
+  name: cc1_state_165
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_166:
+  name: cc1_state_166
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_167:
+  name: cc1_state_167
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_168:
+  name: cc1_state_168
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_169:
+  name: cc1_state_169
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_170:
+  name: cc1_state_170
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_171:
+  name: cc1_state_171
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_172:
+  name: cc1_state_172
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_173:
+  name: cc1_state_173
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_174:
+  name: cc1_state_174
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_175:
+  name: cc1_state_175
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_176:
+  name: cc1_state_176
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_177:
+  name: cc1_state_177
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_178:
+  name: cc1_state_178
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_179:
+  name: cc1_state_179
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_180:
+  name: cc1_state_180
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_181:
+  name: cc1_state_181
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_182:
+  name: cc1_state_182
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_183:
+  name: cc1_state_183
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_184:
+  name: cc1_state_184
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_185:
+  name: cc1_state_185
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_186:
+  name: cc1_state_186
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_187:
+  name: cc1_state_187
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_188:
+  name: cc1_state_188
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_189:
+  name: cc1_state_189
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_190:
+  name: cc1_state_190
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_191:
+  name: cc1_state_191
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_192:
+  name: cc1_state_192
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_193:
+  name: cc1_state_193
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_194:
+  name: cc1_state_194
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_195:
+  name: cc1_state_195
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_196:
+  name: cc1_state_196
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_197:
+  name: cc1_state_197
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_198:
+  name: cc1_state_198
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_199:
+  name: cc1_state_199
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_200:
+  name: cc1_state_200
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_201:
+  name: cc1_state_201
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_202:
+  name: cc1_state_202
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_203:
+  name: cc1_state_203
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_204:
+  name: cc1_state_204
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_205:
+  name: cc1_state_205
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_206:
+  name: cc1_state_206
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_207:
+  name: cc1_state_207
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_208:
+  name: cc1_state_208
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_209:
+  name: cc1_state_209
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+cc1_state_210:
+  name: cc1_state_210
+  type: TransactionDataElement
+  data_element_collection: data_element_collection_1
+  user: paul123
+  ready_to_archive: 0
+  label: Transaction
+  mandatory: false
+  globe: pablito
+
+
+
+rfu_member_paullong:
+  name: rfu_member_paullong
+  type: RfuMembershipDataElement
+  data_element_collection: data_element_collection_3
+  user: paul123
+  ready_to_archive: 0
+  label: No Label
+  mandatory: false
+  globe: pablito
+
+rfuinternal_member_paullong:
+  name: rfuinternal_member_paullong
+  type: RfuMembershipDataElement
+  data_element_collection: data_element_collection_3
+  user: paul123
+  ready_to_archive: 0
+  label: No Label
+  mandatory: false
+  globe: irfu_pablito
+
+rfuinternal_member_terryreed:
+  name: rfuinternal_member_terryreed
+  type: RfuMembershipDataElement
+  data_element_collection: data_element_collection_3
+  user: paul123
+  ready_to_archive: 0
+  label: No Label
+  mandatory: false
+  globe: irfu_terryreed
+
+
+rfu_member_terryreed:
+  name: rfu_member_terryreed
+  type: RfuMembershipDataElement
+  data_element_collection: data_element_collection_3
+  user: paul123
+  ready_to_archive: 0
+  label: No Label
+  mandatory: false
+  globe: terryreed
+  
+paullong_barclays_00542151:
+  name: paullong_barclays_00542151
+  type: FinancialAccountDataElement
+  data_element_collection: data_element_collection_4
+  user: paul123
+  ready_to_archive: 0
+  label: No Label
+  mandatory: false
+  globe: pablito
+
+council_tax_61217476:
+  name: council_tax_61217476
+  type: CouncilTaxDataElement
+  data_element_collection: data_element_collection_5
+  user: paul123
+  ready_to_archive: 0
+  label: No Label
+  mandatory: false
+  globe: pablito
+
+10CavendishRoad:
+  name: 10CavendishRoad
+  type: AddressDataElement
+  data_element_collection: data_element_collection_10
+  user: paul123
+  globe: pablito
+
+59LarkinsClose:
+  name: 59LarkinsClose
+  type: AddressDataElement
+  data_element_collection: data_element_collection_11
+  user: paul123
+  globe: pablito
+
+LittleThatch_pablito:
+  name: LittleThatch
+  type: AddressDataElement
+  data_element_collection: data_element_collection_14
+  user: paul123
+  globe: pablito_terryreed_globe
+  
+LittleThatch:
+  name: LittleThatch
+  type: AddressDataElement
+  data_element_collection: data_element_collection_15
+  user: paul123
+  globe: terryreed
+  
+pauldob:
+  name: pauldob
+  type: BirthDataElement
+  data_element_collection: data_element_collection_8
+  user: paul123
+  globe: pablito
+  
+terrydob:
+  name: terrdob
+  type: BirthDataElement
+  data_element_collection: data_element_collection_8
+  user: paul123
+  globe: terryreed
+  
+pablitoname:
+  name: pablitoname
+  type: NameDataElement
+  data_element_collection: data_element_collection_7
+  user: paul123
+  globe: pablito
+  
+terryname:
+  name: terryname
+  type: NameDataElement
+  data_element_collection: data_element_collection_7
+  user: paul123
+  globe: terryreed
+  
+pablito_phone1:
+  name: pablito_phone1
+  type: PhoneNumberDataElement
+  data_element_collection: data_element_collection_9
+  user: paul123
+  globe: pablito
+
+pablito_phone2:
+  name: pablito_phone2
+  type: PhoneNumberDataElement
+  data_element_collection: data_element_collection_13
+  user: paul123
+  globe: pablito
+
+pablito_phone3:
+  name: pablito_phone3
+  type: PhoneNumberDataElement
+  data_element_collection: data_element_collection_9
+  user: paul123
+  globe: pablito
+  
+terry_phone1:
+  name: terry_phone1
+  type: PhoneNumberDataElement
+  data_element_collection: data_element_collection_9
+  user: paul123
+  globe: terryreed
+  
+barntgreen:
+  name: barnetgreen
+  type: EcbCricketClub
+  data_element_collection: data_element_collection_16
+  user: paul123
+  globe: ecb
+
+himley:
+  name: himley
+  type: EcbCricketClub
+  data_element_collection: data_element_collection_16
+  user: paul123
+  globe: ecb
+
+kenilworthwardens:
+  name: kenilworthwardens
+  type: EcbCricketClub
+  data_element_collection: data_element_collection_16
+  user: paul123
+  globe: ecb
+
+
+kidderminstervictoria:
+  name: kidderminstervictoria
+  type: EcbCricketClub
+  data_element_collection: data_element_collection_16
+  user: paul123
+  globe: ecb
+
+ecb_barntgreen:
+  name: Barnet Green
+  type: EcbCricketClub
+  data_element_collection: data_element_collection_16
+  user: paul123
+  globe: ecb_barntgreen_globe
+
+ecb_himley:
+  name: himley
+  type: EcbCricketClub
+  data_element_collection: data_element_collection_16
+  user: paul123
+  globe: ecb_himley_globe
+
+ecb_kenilworthwardens:
+  name: kenilworthwardens
+  type: EcbCricketClub
+  data_element_collection: data_element_collection_16
+  user: paul123
+  globe: ecb_kenilworthwardens_globe
+
+
+ecb_kidderminstervictoria:
+  name: kidderminstervictoria
+  type: EcbCricketClub
+  data_element_collection: data_element_collection_16
+  user: paul123
+  globe: ecb_kidderminstervictoria_globe
+

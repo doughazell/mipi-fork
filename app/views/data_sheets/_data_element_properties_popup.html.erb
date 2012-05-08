@@ -1,0 +1,11 @@
+<%
+if !options[:label].nil? then
+  label = options[:label]
+else
+  label = data_element[database_column]
+end
+%>
+
+<a href="#" onClick="ajaxwin=dhtmlwindow.open('ajaxbox', 'ajax', '<%= globe_data_element_field_url(@globe, data_element, database_column) %>', 'Inspect Data Element', 'width=650px,height=400px,left=300px,top=100px,resize=0,scrolling=1'); return false">
+  <%= label %>
+</a>

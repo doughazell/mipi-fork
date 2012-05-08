@@ -1,0 +1,93 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+HSBCStatement:
+  name: HSBCStatement
+  security: HBSC123
+  archive_criteria: None
+  data_element_type: TransactionDataElement
+  page_limit: 7
+  historic: true
+  variable_name: @trans
+
+HSBCAccountOverview:
+  name: HSBCAccountOverview
+  security: HSBC123
+  archive_criteria: No Criteria
+  data_element_type: FinancialAccountDataElement
+  historic: false
+  page_limit: 1
+  variable_name: @overview
+
+RFUMembership:
+  name: RFUMembership
+  security: RFU
+  archive_criteria: No Criteria
+  data_element_type: RfuMembershipDataElement
+  historic: false
+  page_limit: 1
+  variable_name: @membership
+
+BarclaysCurrentAccount:
+  name: BarclaysCurrentAccount
+  security: BARC123
+  archive_criteria: None
+  data_element_type: FinancialAccountDataElement
+  historic: false
+  page_limit: 1
+  variable_name: @overview
+
+StAlbansCouncilTax:
+  name: StAlbansCouncilTax
+  data_element_type: CouncilTaxDataElement
+  historic: false
+  page_limit: 1
+  variable_name: @counciltax
+
+Address:
+  name: Address
+  data_element_type: AddressDataElement
+  historic: false
+  page_limit: 1
+  variable_name: @address
+  
+Name:
+  name: Name
+  data_element_type: NameDataElement
+  historic: false
+  page_limit: 1
+  variable_name: @name
+
+Birth:
+  name: Birth
+  data_element_type: BirthDataElement
+  historic: false
+  page_limit: 1
+  variable_name: @birth
+
+Phone:
+  name: Phone
+  data_element_type: PhoneNumberDataElement
+  historic: false
+  page_limit: 1
+  variable_name: @phone
+
+HomeAddress:
+  name: HomeAddress
+  data_element_type: AddressDataElement
+  historic: false
+  page_limit: 1
+  variable_name: @address
+
+HomeAddress2:
+  name: HomeAddress2
+  data_element_type: AddressDataElement
+  historic: false
+  page_limit: 1
+  variable_name: @address
+
+Messages:
+  name: Messages
+  data_element_type: SubscriptionMessageDataElement
+  historic: true
+  page_limit: 50
+  variable_name: @messages

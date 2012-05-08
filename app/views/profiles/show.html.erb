@@ -1,0 +1,17 @@
+<h1>Profile Details</h1>
+<table>
+  <th>Attribute</th>
+  <th>Value</th>
+  <tr>
+    <td>Globe Name:</td>
+    <td><%= link_to @globe.name, @globe %></td>
+  </tr>
+  <tr>
+    <td>Profile Name:</td>
+    <td><%= @profile.name %></td>
+  </tr>
+</p>
+
+<%= render :partial => 'profiles/list_nav', :locals => { :show_edit => true, :show_back => true }%>
+
+<%= render :partial => 'data_sheets/detailed_list' %>

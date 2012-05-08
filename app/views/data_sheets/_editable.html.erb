@@ -1,0 +1,52 @@
+<%
+# Must pass:
+#     collection_name as local variable.
+#
+data_element_id = data_element.id.to_i
+combined_id = "#{data_element.type}_#{database_column}_#{data_element_id}".downcase
+combined_id_region = "#{data_element.type}_#{database_column}_#{data_element_id}_region".downcase
+combined_id_edit = "#{combined_id}_edit"
+combined_id_edit_region = "#{combined_id}_edit_region"
+combined_id_busy = "#{combined_id}_busy"
+hidden_data_element = "#{collection_name}_#{data_element_id}_id"
+tick = raw("&#10004;")
+#collection_name = "data_elements"
+
+data_value = eval("data_element.#{database_column}").to_s
+puts data_value
+if data_value.empty? then
+  data_value = ''
+end
+
+if !defined? click_mechanism then
+  click_mechanism = 'lost_focus'
+end
+
+if !defined? size then
+#  size = [eval("data_element.#{database_column}").length + 4, 10].max
+  size = [data_element[database_column].to_s.length + 4, 10].max
+end
+
+puts collection_name
+#button_to_function tick, "javascript:write_edit('#{combined_id}', '#{combined_id_edit}', '#{data_element_id}');"
+%>
+
+<%= fields_for "#{collection_name}[]" do |f| %>
+<span>
+  <%= hidden_field_tag "#{collection_name}[#{data_element_id}][id]", data_element_id %>
+  <span class='editable_region' id='<%= combined_id_region %>' onclick="javascript:switch_edits('<%= combined_id %>', '<%= combined_id_edit %>');">
+    <label id="<%= combined_id %>"><%= data_value %></label>
+  </span>
+  <span style="display:none;" class="editing_region" id="<%= combined_id_edit_region %>" >
+  <% if click_mechanism == 'lost_focus' %>
+    <%= f.text_field "#{database_column}", { :id => combined_id_edit, :value => data_value, :size => size, :onBlur => "javascript:write_edit('#{combined_id}', '#{combined_id_edit}', '#{data_element_id}');", :onKeyPress => "javascript:handle_enter('#{combined_id}', '#{combined_id_edit}', event, '#{data_element_id}');" } %>
+  <% else %>
+    <%= button_to_function tick, "javascript:write_edit('#{combined_id}', '#{combined_id_edit}', '#{data_element_id}');" %>
+  <% end %>
+  </span>
+  <span id="<%= combined_id_busy %>" style="display:none"><%= image_tag 'ajax-loader.gif' %></span>
+  <span id="error_message_<%= combined_id %>">
+  </span>
+</span>
+
+<% end %>

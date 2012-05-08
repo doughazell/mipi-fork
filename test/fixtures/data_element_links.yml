@@ -1,0 +1,98 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+name_link_1_source:
+  data_element_id: 885626850
+  attribute_name: "first_name other_names last_name"
+
+name_link_1_destination:
+  data_element_id: 808406579
+  attribute_name: full_name 
+
+pablito_globe_rfu_globe_rfu_membership:
+  data_element: rfu_member_paullong
+  attribute_name: full_name
+  
+rfu_globe_pablito_globe_rfu_membership:
+  data_element: rfuinternal_member_paullong
+  attribute_name: full_name
+  
+pablito_globe_terry_globe_home_address_line_1:
+  data_element: LittleThatch
+  attribute_name: address_line_1
+  
+pablito_globe_terry_globe_home_address_line_2:
+  data_element: LittleThatch
+  attribute_name: address_line_2
+  
+pablito_globe_terry_globe_home_address_line_3:
+  data_element: LittleThatch
+  attribute_name: address_line_3
+  
+pablito_globe_terry_globe_home_city:
+  data_element: LittleThatch
+  attribute_name: city
+  
+pablito_globe_terry_globe_home_post_code:
+  data_element: LittleThatch
+  attribute_name: post_code
+  
+pablito_globe_terry_globe_home_country:
+  data_element: LittleThatch
+  attribute_name: country
+  
+terry_globe_pablito_globe_home_country:
+  data_element: LittleThatch_pablito
+  attribute_name: country
+  
+pablito_globe_terry_globe_home_post_code:
+  data_element: LittleThatch
+  attribute_name: post_code
+  
+terry_globe_pablito_globe_home_post_code:
+  data_element: LittleThatch_pablito
+  attribute_name: post_code
+  
+pablito_globe_terry_globe_home_city:
+  data_element: LittleThatch
+  attribute_name: city
+  
+terry_globe_pablito_globe_home_city:
+  data_element: LittleThatch_pablito
+  attribute_name: city
+  
+pablito_globe_terry_globe_home_address_line_3:
+  data_element: LittleThatch
+  attribute_name: address_line_3
+  
+terry_globe_pablito_globe_home_address_line_3:
+  data_element: LittleThatch_pablito
+  attribute_name: address_line_3
+  
+pablito_globe_terry_globe_home_address_line_2:
+  data_element: LittleThatch
+  attribute_name: address_line_2
+  
+terry_globe_pablito_globe_home_address_line_2:
+  data_element: LittleThatch_pablito
+  attribute_name: address_line_2
+  
+pablito_globe_terry_globe_home_address_line_1:
+  data_element: LittleThatch
+  attribute_name: address_line_1
+  
+terry_globe_pablito_globe_home_address_line_1:
+  data_element: LittleThatch_pablito
+  attribute_name: address_line_1
+  
+
+
+
+
+#pablito_globe_terry_globe_home_all:
+#  data_element: LittleThatch
+#  attribute_name: [ALL]
+#  
+#terry_globe_pablito_globe_home_all:
+#  data_element: LittleThatch_pablito
+#  attribute_name: [ALL]
+#  

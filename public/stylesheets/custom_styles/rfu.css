@@ -1,0 +1,46 @@
+
+body {
+}
+
+.config_area {
+	width: 550px;
+	border: solid 1pt;
+}
+
+data_sheet_render {
+	border-right: 1px solid #C1DAD7;
+	border-bottom: 1px solid #C1DAD7;
+	background: #fff;
+	padding: 6px 6px 6px 12px;
+	/*color: #6D929B;*/
+        color: #000;
+}
+
+.rfu_data {
+	background: #fff;
+}
+
+.rfumainarea {
+    background: #ffffff;
+}
+.rfutitle {
+    font-size: x-large;
+}
+
+.rfutable
+{
+    background: #ffffff;
+}
+
+.rfucell {
+    border-right: 0px solid #C1DAD7;
+    border-bottom: 0px solid #C1DAD7;
+    padding: 10pt;
+    margin: 15pt;
+    background: #fff;
+}
+
+.rfu_paragraph {
+	margin: 10px;
+	font-family: 14px Arial sans-serif;
+}

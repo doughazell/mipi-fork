@@ -1,0 +1,21 @@
+<div class="profiles_details">
+<span class="profiles_details_title">Profile Details</span>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Globe Owner</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @profiles.each do |profile| %>
+  <tr>
+    <td><%= link_to profile.name, [profile.globe, profile] %></td>
+    <td><%= link_to profile.globe.name, :controller => "globes", :action => "show", :id => profile.globe_id %></td>
+    <td><%= link_to 'Edit', edit_globe_profile_path(profile.globe, profile) %></td>
+    <td><%= link_to 'Destroy', [profile.globe, profile], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<%= render :partial => 'profiles/list_nav', :locals => { :show_new => true }%>
+</div>

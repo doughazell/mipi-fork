@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+pablitoname:
+  first_name: Paul
+  other_names: Adam
+  last_name: Long
+
+terryname:
+  first_name: Terry
+  other_names: Ryan
+  last_name: Reed

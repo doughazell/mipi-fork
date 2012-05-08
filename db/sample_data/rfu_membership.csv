@@ -1,0 +1,114 @@
+member_id,title,name,email_address,contact_address_line_1,contact_address_line_2,contact_address_line_3,contact_town,contact_county,contact_post_code,contact_country,membership_start_date,domestic_club,loyalty_points,date_of_birth,gender,membership_level,direct_mail_opt_in,direct_email_opt_in,third_party_promotion_opt_in
+1,Mr,Tom,test1@example.com,2 This Road,,,This Town,This County,AB1 2CD,England,2003/06/01,Wasps,200,1970/06/01,Male,1,1,1,1
+2,Mr,Terry,test2@example.com,5 This Road,,,This Town,This County,AB1 2CD,England,2003/06/02,Northampton Saints,300,1970/07/01,Male,2,1,1,1
+3,Mr,Paul,test3@example.com,8 This Road,,,This Town,This County,AB1 2CD,England,2003/06/03,Saints,400,1970/08/01,Male,3,1,1,1
+4,Mr,Gary,test4@example.com,11 This Road,,,This Town,This County,AB1 2CD,England,2003/06/04,The Saints,500,1970/09/01,Male,4,1,1,1
+5,Mr,Steve,test5@example.com,14 This Road,,,This Town,This County,AB1 2CD,England,2003/06/05,London Wasps,600,1970/10/01,Male,1,1,1,1
+6,Mr,Ed,test6@example.com,17 This Road,,,This Town,This County,AB1 2CD,England,2003/06/06,Worcester,700,1970/11/01,Male,2,1,1,1
+7,Mr,Ted,test7@example.com,20 This Road,,,This Town,This County,AB1 2CD,England,2003/06/07,Bath,800,1970/12/01,Male,3,1,1,1
+8,Mr,Barry,test8@example.com,23 This Road,,,This Town,This County,AB1 2CD,England,2004/05/01,Bristol,900,1971/01/01,Male,4,1,1,0
+9,Mr,Sandy Wells,test9@example.com,26 This Road,,,This Town,This County,AB1 2CD,England,2004/06/01,Wasps,1000,1971/02/01,Male,1,1,1,1
+10,Mr,Bobby Knowles,test10@example.com,29 This Road,,,This Town,This County,AB1 2CD,England,2004/07/01,Northampton Saints,1100,1971/03/01,Male,2,1,1,1
+11,Mr,Tom Tee,test11@example.com,32 This Road,,,This Town,This County,AB1 2CD,England,2004/08/01,Saints,1200,1971/04/01,Male,3,1,1,1
+12,Mr,Terry Wills,test12@example.com,35 This Road,,,This Town,This County,AB1 2CD,England,2004/09/01,The Saints,1300,1971/05/01,Male,4,1,1,1
+13,Mr,Paul Tooke,test13@example.com,38 This Road,,,This Town,This County,AB1 2CD,England,2004/10/01,London Wasps,1400,1971/06/01,Male,5,1,1,1
+14,Mr,Gary Lone,test14@example.com,41 This Road,,,This Town,This County,AB1 2CD,England,2004/11/01,Worcester,1200,1971/07/01,Male,6,1,1,1
+15,Mr,Steve Brain,test15@example.com,44 This Road,,,This Town,This County,AB1 2CD,England,2004/12/01,Bath,1300,1971/08/01,Male,7,1,1,1
+16,Mr,Ed Offel,test16@example.com,47 This Road,,,This Town,This County,AB1 2CD,England,2005/01/01,Bristol,1400,1971/09/01,Male,8,1,1,1
+17,Mr,Ted Singer,test17@example.com,50 This Road,,,This Town,This County,AB1 2CD,England,2005/02/01,London Irish,500,1971/10/01,Male,9,1,1,1
+18,Mr,Barry Tuff,test18@example.com,53 This Road,,,This Town,This County,AB1 2CD,England,2005/03/01,London Scottish,600,1971/11/01,Male,10,1,1,1
+19,Mr,Sandy Wells,test19@example.com,56 This Road,,,This Town,This County,AB1 2CD,England,2005/04/01,Harlequins,700,1971/12/01,Male,11,1,1,1
+20,Mr,Bobby Knowles,test20@example.com,59 This Road,,,This Town,This County,AB1 2CD,England,2005/05/01,Wasps,800,1972/01/01,Male,12,0,1,1
+21,Mr,Tough Ton,test21@example.com,62 This Road,,,This Town,This County,AB1 2CD,England,2005/06/01,Northampton Saints,900,1972/02/01,Male,13,1,1,1
+22,Mr,Tom,test22@example.com,65 This Road,,,This Town,This County,AB1 2CD,England,2005/07/01,Saints,1000,1972/03/01,Male,14,1,1,1
+23,Mr,Terry,test23@example.com,68 This Road,,,This Town,This County,AB1 2CD,England,2005/08/01,The Saints,1100,1972/04/01,Male,1,1,1,1
+24,Mr,Paul,test24@example.com,71 This Road,,,This Town,This County,AB1 2CD,England,2005/09/01,London Wasps,1200,1972/05/01,Male,2,1,1,1
+25,Mr,Gary,test25@example.com,74 This Road,,,This Town,This County,AB1 2CD,England,2005/10/01,Worcester,1300,1972/06/01,Male,3,1,1,1
+26,Mr,Steve,test26@example.com,77 This Road,,,This Town,This County,AB1 2CD,England,2005/11/01,Bath,900,1972/07/01,Male,4,1,1,1
+27,Mr,Ed,test27@example.com,80 This Road,,,This Town,This County,AB1 2CD,England,2005/12/01,Bristol,1000,1972/08/01,Male,19,1,1,1
+28,Mr,Ted,test28@example.com,83 This Road,,,This Town,This County,AB1 2CD,England,2006/01/01,Wasps,1100,1972/09/01,Male,20,0,1,1
+29,Mr,Barry,test29@example.com,86 This Road,,,This Town,This County,AB1 2CD,England,2006/02/01,Northampton Saints,1200,1972/10/01,Male,21,1,1,1
+30,Mr,Sandy Wells,test30@example.com,89 This Road,,,This Town,This County,AB1 2CD,England,1999/01/12,Saints,1300,1972/11/01,Male,22,1,1,1
+31,Mr,Bobby Knowles,test31@example.com,92 This Road,,,This Town,This County,AB1 2CD,England,1998/01/18,The Saints,1400,1972/12/01,Male,23,1,1,1
+32,Mr,Tom Tee,test32@example.com,95 This Road,,,This Town,This County,AB1 2CD,England,1998/02/18,London Wasps,1200,1973/01/01,Male,24,1,1,1
+33,Mr,Terry Wills,test33@example.com,98 This Road,,,This Town,This County,AB1 2CD,England,1998/03/18,Worcester,1300,1973/02/01,Male,25,1,1,1
+34,Mr,Paul Tooke,test34@example.com,101 This Road,,,This Town,This County,AB1 2CD,England,1998/04/18,Bath,1400,1973/03/01,Male,26,1,1,1
+35,Mr,Gary Lone,test35@example.com,104 This Road,,,This Town,This County,AB1 2CD,England,1998/05/18,Bristol,500,1973/04/01,Male,27,1,1,1
+36,Mr,Steve Brain,test36@example.com,107 This Road,,,This Town,This County,AB1 2CD,England,1998/06/18,London Irish,600,1973/05/01,Male,28,1,1,1
+37,Mr,Ed Offel,test37@example.com,110 This Road,,,This Town,This County,AB1 2CD,England,1998/07/18,London Scottish,1400,1973/06/01,Male,29,1,1,1
+38,Mr,Ted Singer,test38@example.com,113 This Road,,,This Town,This County,AB1 2CD,England,1998/08/18,Harlequins,1200,1973/07/01,Male,30,1,1,1
+39,Mr,Barry Tuff,test39@example.com,116 This Road,,,This Town,This County,AB1 2CD,England,1998/09/18,Wasps,1300,1973/08/01,Male,31,1,1,1
+40,Mr,Sandy Wells,test40@example.com,119 This Road,,,This Town,This County,AB1 2CD,England,1998/10/18,Northampton Saints,1400,1973/09/01,Male,32,1,1,1
+41,Mr,Bobby Knowles,test41@example.com,122 This Road,,,This Town,This County,AB1 2CD,England,1998/11/18,Saints,500,1973/10/01,Male,33,1,1,1
+42,Mr,Tough Ton,test42@example.com,125 This Road,,,This Town,This County,AB1 2CD,England,1998/12/18,The Saints,600,1973/11/01,Male,1,1,1,1
+43,Mr,Tom,test43@example.com,128 This Road,,,This Town,This County,AB1 2CD,England,1999/01/18,London Wasps,700,1973/12/01,Male,2,1,1,1
+44,Mr,Terry,test44@example.com,131 This Road,,,This Town,This County,AB1 2CD,England,1999/02/18,Worcester,800,1974/01/01,Male,3,1,1,1
+45,Mr,Paul,test45@example.com,134 This Road,,,This Town,This County,AB1 2CD,England,1999/03/18,Bath,900,1974/02/01,Male,4,1,1,1
+46,Mr,Gary,test46@example.com,137 This Road,,,This Town,This County,AB1 2CD,England,1999/04/18,Bristol,1000,1974/03/01,Male,5,1,1,1
+47,Mr,Steve,test47@example.com,140 This Road,,,This Town,This County,AB1 2CD,England,1999/05/18,Wasps,1100,1974/04/01,Male,6,1,1,1
+48,Mr,Ed,test48@example.com,143 This Road,,,This Town,This County,AB1 2CD,England,1999/06/18,Northampton Saints,1200,1974/05/01,Male,7,1,1,1
+49,Mr,Ted,test49@example.com,146 This Road,,,This Town,This County,AB1 2CD,England,1999/07/18,Saints,1300,1974/06/01,Male,8,1,1,1
+50,Mr,Barry,test50@example.com,149 This Road,,,This Town,This County,AB1 2CD,England,1999/08/18,The Saints,1400,1974/07/01,Male,9,1,1,1
+51,Mr,Sandy Wells,test51@example.com,152 This Road,,,This Town,This County,AB1 2CD,England,1999/09/18,London Wasps,1200,1974/08/01,Male,10,1,1,1
+52,Mr,Bobby Knowles,test52@example.com,155 This Road,,,This Town,This County,AB1 2CD,England,1999/10/18,Worcester,1300,1974/09/01,Male,11,1,1,1
+53,Mr,Tom Tee,test53@example.com,158 This Road,,,This Town,This County,AB1 2CD,England,1999/11/18,Bath,1400,1974/10/01,Male,12,1,1,1
+54,Mr,Terry Wills,test54@example.com,161 This Road,,,This Town,This County,AB1 2CD,England,1999/12/18,Bristol,500,1974/11/01,Male,13,1,1,1
+55,Mr,Paul Tooke,test55@example.com,164 This Road,,,This Town,This County,AB1 2CD,England,2000/01/18,London Irish,600,1974/12/01,Male,2,1,1,1
+56,Mr,Gary Lone,test56@example.com,167 This Road,,,This Town,This County,AB1 2CD,England,2000/02/18,London Scottish,1400,1975/01/01,Male,3,1,1,1
+57,Mr,Steve Brain,test57@example.com,170 This Road,,,This Town,This County,AB1 2CD,England,2000/03/18,Harlequins,1200,1975/02/01,Male,3,1,0,1
+58,Mr,Ed Offel,test58@example.com,173 This Road,,,This Town,This County,AB1 2CD,England,2000/04/18,The Saints,1300,1975/03/01,Male,3,1,1,1
+59,Mr,Ted Singer,test59@example.com,176 This Road,,,This Town,This County,AB1 2CD,England,2000/05/18,London Wasps,1400,1975/04/01,Male,3,1,1,1
+60,Mr,Barry Tuff,test60@example.com,179 This Road,,,This Town,This County,AB1 2CD,England,2000/06/18,Worcester,500,1975/05/01,Male,3,0,0,1
+61,Mr,Sandy Wells,test61@example.com,182 This Road,,,This Town,This County,AB1 2CD,England,2000/07/18,Bath,600,1975/06/01,Male,3,1,0,1
+62,Mr,Bobby Knowles,test62@example.com,185 This Road,,,This Town,This County,AB1 2CD,England,2000/08/18,Bristol,700,1975/07/01,Male,3,1,0,1
+63,Mr,Tough Ton,test63@example.com,188 This Road,,,This Town,This County,AB1 2CD,England,2000/09/18,London Irish,800,1975/08/01,Male,3,1,1,1
+64,Mr,Tom,test64@example.com,191 This Road,,,This Town,This County,AB1 2CD,England,2000/10/18,London Scottish,900,1975/09/01,Male,3,1,1,1
+65,Mr,Terry,test65@example.com,194 This Road,,,This Town,This County,AB1 2CD,England,2000/11/18,Harlequins,1200,1975/10/01,Male,3,1,1,1
+66,Mr,Paul,test66@example.com,197 This Road,,,This Town,This County,AB1 2CD,England,2000/12/18,Wasps,1300,1975/11/01,Male,3,1,1,1
+67,Mr,Gary,test67@example.com,200 This Road,,,This Town,This County,AB1 2CD,England,2001/01/18,Northampton Saints,1400,1975/12/01,Male,3,1,1,1
+68,Mr,Steve,test68@example.com,203 This Road,,,This Town,This County,AB1 2CD,England,2001/02/18,Saints,500,1976/01/01,Male,3,1,1,1
+69,Mr,Ed,test69@example.com,206 This Road,,,This Town,This County,AB1 2CD,England,2001/03/18,The Saints,600,1976/02/01,Male,3,1,1,0
+70,Mr,Ted,test70@example.com,209 This Road,,,This Town,This County,AB1 2CD,England,2001/04/18,London Wasps,700,1976/03/01,Male,3,1,1,1
+71,Mr,Barry,test71@example.com,212 This Road,,,This Town,This County,AB1 2CD,England,2001/05/18,Worcester,800,1976/04/01,Male,3,1,1,1
+72,Mr,Sandy Wells,test72@example.com,215 This Road,,,This Town,This County,AB1 2CD,England,2001/06/18,Bath,900,1976/05/01,Male,3,1,1,1
+73,Mr,Bobby Knowles,test73@example.com,218 This Road,,,This Town,This County,AB1 2CD,England,2001/07/18,Bristol,1000,1976/06/01,Male,3,1,1,1
+74,Mr,Tom Tee,test74@example.com,221 This Road,,,This Town,This County,AB1 2CD,England,2001/08/18,Wasps,1100,1976/07/01,Male,3,1,1,1
+75,Mr,Terry Wills,test75@example.com,224 This Road,,,This Town,This County,AB1 2CD,England,2001/09/18,Northampton Saints,1200,1976/08/01,Male,3,1,1,1
+76,Mr,Paul Tooke,test76@example.com,227 This Road,,,This Town,This County,AB1 2CD,England,2001/10/18,Saints,1300,1976/09/01,Male,3,1,1,1
+77,Mr,Gary Lone,test77@example.com,230 This Road,,,This Town,This County,AB1 2CD,England,2001/11/18,The Saints,1400,1976/10/01,Male,3,1,1,1
+78,Mr,Steve Brain,test78@example.com,233 This Road,,,This Town,This County,AB1 2CD,England,2001/12/18,London Wasps,1200,1976/11/01,Male,3,1,1,1
+79,Mr,Ed Offel,test79@example.com,236 This Road,,,This Town,This County,AB1 2CD,England,2002/01/18,Worcester,1300,1976/12/01,Male,3,1,1,1
+80,Mr,Ted Singer,test80@example.com,239 This Road,,,This Town,This County,AB1 2CD,England,2002/02/18,Bath,1400,1977/01/01,Male,3,1,1,1
+81,Mr,Barry Tuff,test81@example.com,242 This Road,,,This Town,This County,AB1 2CD,England,2002/03/18,Bristol,500,1977/02/01,Male,3,1,1,1
+82,Mr,Sandy Wells,test82@example.com,245 This Road,,,This Town,This County,AB1 2CD,England,2002/04/18,London Irish,600,1977/03/01,Male,3,1,1,1
+83,Mr,Bobby Knowles,test83@example.com,248 This Road,,,This Town,This County,AB1 2CD,England,2002/05/18,London Scottish,1400,1977/04/01,Male,3,1,1,1
+84,Mr,Tough Ton,test84@example.com,251 This Road,,,This Town,This County,AB1 2CD,England,2002/06/18,Harlequins,1200,1977/05/01,Male,3,1,1,1
+85,Mr,Tom,test85@example.com,254 This Road,,,This Town,This County,AB1 2CD,England,2002/07/18,The Saints,1300,1977/06/01,Male,77,1,1,1
+86,Mr,Terry,test86@example.com,257 This Road,,,This Town,This County,AB1 2CD,England,2002/08/18,London Wasps,1400,1977/07/01,Male,78,1,1,1
+87,Mr,Paul,test87@example.com,260 This Road,,,This Town,This County,AB1 2CD,England,2002/09/18,Worcester,1200,1977/08/01,Male,79,1,1,1
+88,Mrs,Jenny Tapper,test88@example.com,263 This Road,,,This Town,This County,AB1 2CD,England,2002/10/18,Bath,1300,1977/09/01,Female,80,1,1,1
+89,Mr,Steve,test89@example.com,266 This Road,,,This Town,This County,AB1 2CD,England,2002/11/18,Bristol,1400,1977/10/01,Male,81,1,1,1
+90,Mr,Ed,test90@example.com,269 This Road,,,This Town,This County,AB1 2CD,England,2002/12/18,London Irish,500,1977/11/01,Male,82,1,1,1
+91,Mr,Ted,test91@example.com,272 This Road,,,This Town,This County,AB1 2CD,England,2003/01/18,London Scottish,600,1977/12/01,Male,83,0,1,1
+92,Mr,Barry,test92@example.com,275 This Road,,,This Town,This County,AB1 2CD,England,2003/02/18,Harlequins,1400,1978/01/01,Male,84,1,1,1
+93,Miss,Alice Cruel,test93@example.com,278 This Road,,,This Town,This County,AB1 2CD,England,2003/03/18,Wasps,1200,1978/02/01,Female,85,1,1,1
+94,Mr,Bobby Knowles,test94@example.com,281 This Road,,,This Town,This County,AB1 2CD,England,2003/04/18,Northampton Saints,1400,1978/03/01,Male,86,1,0,1
+95,Mr,Tom,test95@example.com,284 This Road,,,This Town,This County,AB1 2CD,England,2003/05/18,Saints,500,1978/04/01,Male,87,1,1,1
+96,Mr,Terry,test96@example.com,287 This Road,,,This Town,This County,AB1 2CD,England,2003/06/18,The Saints,600,1978/05/01,Male,88,1,1,1
+97,Mr,Paul,test97@example.com,290 This Road,,,This Town,This County,AB1 2CD,England,2003/07/18,London Wasps,700,1978/06/01,Male,89,0,1,1
+98,Mr,Gary,test98@example.com,293 This Road,,,This Town,This County,AB1 2CD,England,2003/08/18,Worcester,800,1978/07/01,Male,90,1,0,1
+99,Mr,Steve,test99@example.com,296 This Road,,,This Town,This County,AB1 2CD,England,2003/09/18,Bath,900,1978/08/01,Male,91,1,1,1
+100,Mr,Ed,test100@example.com,299 This Road,,,This Town,This County,AB1 2CD,England,2003/10/18,Bristol,1200,1978/09/01,Male,92,1,0,0
+101,Mr,Ted,test101@example.com,302 This Road,,,This Town,This County,AB1 2CD,England,2003/11/18,Wasps,1300,1978/10/01,Male,93,1,1,1
+102,Mr,Barry,test102@example.com,305 This Road,,,This Town,This County,AB1 2CD,England,2003/12/18,Northampton Saints,1400,1978/11/01,Male,94,1,1,1
+103,Mr,Sandy Wells,test103@example.com,308 This Road,,,This Town,This County,AB1 2CD,England,2004/01/18,Saints,500,1978/12/01,Male,95,1,1,1
+104,Mr,Bobby Knowles,test104@example.com,311 This Road,,,This Town,This County,AB1 2CD,England,2004/02/18,The Saints,600,1979/01/01,Male,96,1,1,1
+105,Mr,Tom Tee,test105@example.com,314 This Road,,,This Town,This County,AB1 2CD,England,2004/03/18,London Wasps,700,1979/02/01,Male,97,1,1,1
+106,Mr,Terry Wills,test106@example.com,317 This Road,,,This Town,This County,AB1 2CD,England,2004/04/18,Worcester,800,1979/03/01,Male,98,1,1,1
+107,Mr,Paul Tooke,test107@example.com,320 This Road,,,This Town,This County,AB1 2CD,England,2004/05/18,Bath,900,1979/04/01,Male,99,1,1,1
+108,Mr,Gary Lone,test108@example.com,323 This Road,,,This Town,This County,AB1 2CD,England,2004/06/18,Bristol,1000,1979/05/01,Male,100,1,1,1
+109,Mr,Steve Brain,test109@example.com,326 This Road,,,This Town,This County,AB1 2CD,England,2004/07/18,London Irish,1100,1979/06/01,Male,101,1,1,1
+110,Mr,Ed Offel,test110@example.com,329 This Road,,,This Town,This County,AB1 2CD,England,2004/08/18,London Scottish,1200,1979/07/01,Male,102,1,1,1
+111,Mr,Ted Singer,test111@example.com,332 This Road,,,This Town,This County,AB1 2CD,England,2004/09/18,Harlequins,1300,1979/08/01,Male,103,1,1,1
+112,Mr,Barry Tuff,test112@example.com,335 This Road,,,This Town,This County,AB1 2CD,England,2004/10/18,Wasps,1400,1979/09/01,Male,104,1,1,1
+113,Mr,Sandy Wells,test113@example.com,338 This Road,,,This Town,This County,AB1 2CD,England,2004/11/18,Northampton Saints,1200,1979/10/01,Male,105,1,1,1

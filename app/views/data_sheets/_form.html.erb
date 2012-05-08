@@ -1,0 +1,42 @@
+<%= form_for [@globe, @profile, @data_sheet] do |f| %>
+  <% if @data_sheet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@data_sheet.errors.count, "error") %> prohibited this data_sheet from being saved:</h2>
+
+      <ul>
+      <% @data_sheet.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :class_style %><br />
+    <%= f.text_field :class_style %>
+  </div>
+  <div class="field">
+    <%= f.label :style_sheets %><br />
+    <%= f.text_field :style_sheets %>
+  </div>
+  <div class="field">
+    <%= f.label :profile %> : <%= @profile.name %>
+  </div>
+  <div class="field">
+    <%= f.label :creator %> : <%= current_user.username %>
+  </div>
+  <div class="field">
+    <%= f.label :updater %> : <%= current_user.username %>
+  </div>
+  <div class="field">
+    <%= f.label :file_location %><br />
+    <%= f.text_field :file_location %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

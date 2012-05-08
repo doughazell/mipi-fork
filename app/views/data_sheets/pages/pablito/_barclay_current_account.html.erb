@@ -1,0 +1,27 @@
+<h1>Account Overview</h1>
+<% if !@overview.blank? then %>
+<table>
+  <tr>
+    <td>Account Name</td>
+    <td><%= @overview.account_name %></td>
+  </tr>
+  <tr>
+    <td>Account Number</td>
+    <td><%= @overview.sort_code %> <%= @overview.account_number %></td>
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td><%= @overview.first_name %> <%= @overview.last_name %></td>
+  </tr>
+  <tr>
+    <td>Bank Name</td>
+    <td><%= @overview.bank_name %></td>
+  </tr>
+  <tr>
+    <td>Account Type</td>
+    <td><%= @overview.account_type %></td>
+  </tr>
+</table>
+<% else %>
+<h2>No account data found.</h2>
+<% end %>

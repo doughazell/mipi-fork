@@ -1,0 +1,16 @@
+<% form_for [@globe, @active_profile] do |f| %>
+<%= render :partial => '/globes/masterglobe_frame_top' %>
+<table width="100%">
+  <%= render :partial => '/globes/preview_globes' %>
+  <%= render :partial => '/profiles/preview_profiles' %>
+  <%= render :partial => '/data_sheets/preview_data_sheets' %>
+  <% if @active_data_sheet %>
+  <tr>
+    <td>
+      <%= render :partial => @active_data_sheet.file_location %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+<%= render :partial => '/globes/masterglobe_frame_bottom' %>
+<% end %>

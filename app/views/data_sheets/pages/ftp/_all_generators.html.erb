@@ -1,0 +1,33 @@
+<h1>All Generator List</h1>
+<table>
+  <thead>
+    <td>Unit</td><td>Installed Capacity</td>
+  </thead>
+  <% @unit_array.each do |unit|
+  %>
+  <tr>
+    <td><%
+    presentations = Presentation.find_other_data_sheets(unit.data_element_collection_id, @active_data_sheet)
+
+    puts "Presenting... #{unit.data_element_collection_id}, #{@active_data_sheet.id}"
+    if presentations.count == 0 %>
+<%=   unit.name %>
+<%  elsif presentations.count == 1 %>
+<%=   link_to(unit.name, preview_globe_profile_data_sheet_url(@globe, presentations[0].data_sheet.profile, presentations[0].data_sheet))
+    else
+      presentations.each do |presentation|%>
+<%=   link_to(unit.name + ": [" + presentation.data_sheet.name + "]", preview_globe_profile_data_sheet_url(@globe, presentation.data_sheet.profile, presentation.data_sheet)) %>
+      <%end
+    end
+    %>
+    </td>
+    <td><%= unit.installed_capacity %></td>
+  </tr>
+  <% end %>
+</table>
+<table width="100%">
+  <tr>
+    <%= hidden_field_tag "new_data_element", "GeneratorUnitDataElement" %>
+    <td><%= link_to("New Generator Unit", new_globe_data_element_url(@globe), :params => { :new_data_element => "GeneratorUnitDataElement"}) %></td>
+  </tr>
+</table>

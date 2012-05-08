@@ -1,0 +1,65 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  globe: pablito
+  user: paul123
+
+two:
+  globe: terryreed
+  user: terry123
+
+three:
+  globe: jennyhall
+  user: jenny123
+
+four:
+  globe: jennyhall
+  user: paul123
+  
+five:
+  globe: terryreed
+  user: paul123
+  
+six:
+  globe: irfu
+  user: paul123
+  
+seven:
+  globe: irfu_pablito
+  user: paul123
+  
+eight:
+  globe: irfu_terryreed
+  user: paul123
+
+nine:
+  globe: pablito_terryreed_globe
+  user: paul123
+  
+<% for i in 1..10 %>
+irfu_member_registration_<%= i %>:
+    globe: irfu_member_<%= i %>
+    user: paul123
+<% end %>
+
+ten:
+  globe: ecb
+  user: paul123
+  
+eleven:
+  globe: ecb_barntgreen_globe
+  user: paul123
+
+twelve:
+  globe: ecb_himley_globe
+  user: paul123
+  
+thirteen:
+  globe: ecb_kenilworthwardens_globe
+  user: paul123
+  
+fourteen:
+  globe: ecb_kidderminstervictoria_globe
+  user: paul123
+  
+  

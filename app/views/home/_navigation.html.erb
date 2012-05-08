@@ -1,0 +1,20 @@
+<table border=0 cellpadding=7 cellspacing=20 bordercolor=#000000 summary="">
+	<tr>
+		<td width="150" align=center class="button_progress">
+			<div onMouseover="this.parentNode.className='button_progress_over';" onMouseout="this.parentNode.className='button_progress';">
+				<%= link_to next_text, :controller => next_controller, :action => next_action %>
+			</div>
+		</td>
+		<td width="150" align=center class="button_progress">
+			<div onMouseover="this.parentNode.className='button_progress_over';" onMouseout="this.parentNode.className='button_progress';">
+				<%=
+				if !defined? other_text then other_text = 'About Us' end
+				if !defined? other_controller then other_controller = 'home' end
+				if !defined? other_action then other_action = 'aboutus' end
+				link_to other_text, :controller => other_controller, :action => other_action
+				%>
+			</div>
+		</td>
+	</tr>
+</table>
+	

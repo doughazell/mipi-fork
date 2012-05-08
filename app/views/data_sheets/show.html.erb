@@ -1,0 +1,37 @@
+<p>
+  <b>Name:</b>
+  <%= @data_sheet.name %>
+</p>
+
+<p>
+  <b>Class style:</b>
+  <%= @data_sheet.class_style %>
+</p>
+
+<p>
+  <b>Style sheets:</b>
+  <%= @data_sheet.style_sheets %>
+</p>
+
+<p>
+  <b>Profile:</b>
+  <%= @data_sheet.profile.name %>
+</p>
+
+<p>
+  <b>Created by:</b>
+  <%= @data_sheet.creator.username %>
+</p>
+
+<p>
+  <b>Updated by:</b>
+  <%= @data_sheet.updater.username %>
+</p>
+
+<p>
+  <b>File location:</b>
+  <%= @data_sheet.file_location %>
+</p>
+
+<%= render :partial => 'data_sheets/list_nav', :locals => { :show_edit => true, :show_back => true }%>
+

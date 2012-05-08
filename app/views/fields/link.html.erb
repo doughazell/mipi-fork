@@ -1,0 +1,35 @@
+<% javascript 'dynamic_data_elements', @globe.id %>
+
+<%
+globe_list = raw("<option value='#{@globe.id}'>#{@globe.name}</option>") + options_from_collection_for_select(@shadowglobes.find(:all, :order => 'name'), "id", "name")
+data_element_collection_list = []
+if !@all_data_element_collections.nil?
+  data_element_collection_list = options_from_collection_for_select(@all_data_element_collections, "id", "name")
+end
+%>
+
+
+<h1><%= @globe.name %>-><%= @data_element_collection.name %>-><%= @data_element.name %>:<%= @field %></h1>
+<h2>Link Data to...</h2>
+<p>Globe:
+<%= select_tag "target_globe[id]", globe_list %>
+<a href="javascript:void()" onclick="javascript:update_target_globe()">
+  View
+</a>
+</p>
+<div id="subscription_data_element_collection">
+<p>Data Element Collection:
+<%= content_tag(:span, 
+    select_tag("data_element_collection[id]",
+                data_element_collection_list),
+                :id => "subscription_data_element_collection_select") 
+%>
+</p>
+<p>Data Fields:
+<%= content_tag(:span, 
+    select_tag("field[id]",
+                @field_list),
+                :id => "field_select" )
+%>
+</p>
+</div>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  insured_value: 1.5
+  excess: 1.5
+  house_data_element_id: 1
+
+two:
+  insured_value: 1.5
+  excess: 1.5
+  house_data_element_id: 1

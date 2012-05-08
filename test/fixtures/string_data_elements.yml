@@ -1,0 +1,10 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+#one:
+#  value: MyString
+#
+#two:
+#  value: MyString
+
+string_test:
+  value: MyString

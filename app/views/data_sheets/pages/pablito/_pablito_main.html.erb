@@ -1,0 +1,33 @@
+<table>
+  <tr>
+    <td>Name:</td>
+    <td>
+      <span>
+        <%= # [@name.first_name, @name.other_names, @name.last_name].join(' ')
+        %>
+        <%= if (!@name.first_name.empty?) then Label_TextBox_Switch("name", @name, "first_name") end %>
+      </span>
+      <span>
+        <%= if (!@name.other_names.empty?) then Label_TextBox_Switch("name", @name, "other_names") end %>
+      </span>
+      <span>
+        <%= if (!@name.last_name.empty?) then Data_Element_Properties_Popup("name", @name, "last_name") end %>
+      </span>
+    </td>
+  </tr>
+  <tr>
+    <td>Phone Number:</td>
+    <td>(<%= Label_TextBox_Switch("phone", @phone, 'phone_type') %>) <%= Label_TextBox_Switch("phone", @phone, 'phone_number') %></td>
+  </tr>
+  <tr>
+    <td><%= @mobilephone.phone_type %> Number:</td>
+    <td>(<%= Label_TextBox_Switch("mobilephone", @mobilephone, 'phone_type') %>) <%= Data_Element_Properties_Popup("mobilephone", @mobilephone, 'phone_number') %></td>
+  </tr>
+  <tr>
+    <td>Date of Birth:</td>
+    <td><%= Data_Element_Properties_Popup("birth", @birth, "date_of_birth", {:label => @birth.date_of_birth.to_s(:long)}) %></td>
+  </tr>
+  <tr>
+    <td colspan="2"><%= Data_Element_Properties_Popup("name", @name, "first_name") %><%= "was born on the #{@birth.date_of_birth.to_s(:long)} in #{@birth.town_of_birth}, #{@birth.country_of_birth}" %></td>
+  </tr>
+</table>

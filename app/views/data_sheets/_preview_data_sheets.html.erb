@@ -1,0 +1,13 @@
+<% if @data_sheets.count > 1 %>
+  <tr>
+    <td>
+      <table width="100%">
+        <tr>
+          <% @data_sheets.each do |data_sheet| %>
+          <td class="<%= if (@active_data_sheet && (data_sheet.id == @active_data_sheet.id)) then render :text => "active_data_sheet" end %>" width="<%= 100 / @data_sheets.count %>%"><%= link_to data_sheet.name, preview_globe_profile_data_sheet_url(@globe, @active_profile, data_sheet) %></td>
+          <% end %>
+        </tr>
+      </table>
+    </td>
+  </tr>
+<% end %>

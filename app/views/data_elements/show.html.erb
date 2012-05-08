@@ -1,0 +1,17 @@
+
+
+<% columns = @data_element.attributes.keys - (DataElement.column_names) %>
+<table>
+  <th>Column</th><th>Value</th>
+  <tr>
+    <td>Name</td><td><%= @data_element['name'] %></td>
+  </tr>
+  <% columns.each { |column| %>
+  <tr>
+    <td><%= column.titleize %></td>
+    <td><%= @data_element[column] %></td>
+  </tr>
+  <% } %>
+</table>
+<%= link_to "[All Data]", globe_data_elements_path(@globe) %>
+<p><%= url_for(:only_path => false, :overwrite_params=> { }).to_s.sub('?','') + ".xml" %></p>

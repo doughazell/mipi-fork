@@ -1,0 +1,5 @@
+<%=
+render :update do |page|
+    page.replace_html 'subscription_data_element_collection_select', :partial => 'link_data_element_collection', :object => @data_element
+end
+%>

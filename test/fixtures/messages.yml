@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+default_message:
+  name: Default
+  definition: "{{message}}"
+  message_severity: low
+
+subscription_error:
+  name: Subscription Error
+  definition: "There is a discrepency between {{source_value}} and {{destination_value}}."
+  message_severity: high
+
+subscription_error_change:
+  name: Data Element Change
+  definition: "The old value: {{destination_value}} has been updated to: {{source_value}}."
+  message_severity: high
+

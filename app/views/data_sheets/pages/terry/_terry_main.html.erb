@@ -1,0 +1,52 @@
+<table>
+  <tr>
+    <td>Name:</td>
+    <td><%= [@name.first_name, @name.other_names, @name.last_name].join(' ') %></td>
+  </tr>
+</table>
+<table width="250">
+  <th>Address:</th>
+  <% if @address.address_line_1.presence %>
+  <tr>
+    <td>
+      <%= Label_TextBox_Switch("address", @address, "address_line_1") %>
+    </td>
+  </tr>
+  <% end %>
+  <% if @address.address_line_2.presence %>
+  <tr>
+    <td>
+      <%= Label_TextBox_Switch("address", @address, "address_line_2") %>
+    </td>
+  </tr>
+  <% end %>
+  <% if @address.address_line_3.presence %>
+  <tr>
+    <td>
+      <%= Label_TextBox_Switch("address", @address, "address_line_3") %>
+    </td>
+  </tr>
+  <% end %>
+  <% if @address.city.presence %>
+  <tr>
+    <td>
+      <%= Label_TextBox_Switch("address", @address, "city") %>
+    </td>
+  </tr>
+  <% end %>
+  <% if @address.post_code.presence %>
+  <tr>
+    <td>
+      <%= Label_TextBox_Switch("address", @address, "post_code") %>
+    </td>
+  </tr>
+  </div>
+  <% end %>
+  <% if @address.country.presence %>
+  <tr>
+    <td>
+      <%= Label_TextBox_Switch("address", @address, "country") %>
+    </td>
+  </tr>
+  <% end %>
+</table>

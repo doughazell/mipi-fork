@@ -1,0 +1,17 @@
+<%
+hidden_tag_id = collection_name + "_hidden"
+hidden_tag_link_id = hidden_tag_id + "_link"
+if !defined? default_value then
+  default_value = 0
+end
+
+if default_value == 1
+  expansion_text = "<<"
+else
+  expansion_text = ">>"
+end
+%>
+<span class="expansion_tag">
+<%= hidden_field hidden_tag_id, { :value => default_value } %>
+<%= link_to_function expansion_text, "toggleExpansion(#{hidden_tag_id}, default_value);", { :id => hidden_tag_link_id, :class => "expansion_link" } %>
+</span>

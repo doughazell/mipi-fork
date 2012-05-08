@@ -1,0 +1,119 @@
+Proces of Generating New Globe
+------------------------------
+
+- Identify new globe identifier. This is a string that
+  will be used throughout in order to uniquely identify
+  the globe when you are creating other types of object.
+  
+  
+-  g = Globe.new :name => "New Globe", :globe_reference => "newglobe"
+   g.save
+   
+   p = Profile.new :name => "New Profile", :globe => g
+   p.save
+   
+   u = User.find_by_username('paul123')
+   
+   dec = DataElementCollection.new :name => "Name", :data_element_type => "NameDataElement", :variable_name => "@name", :page_limit => 1, :historic => 0
+   dec.save
+   
+   nde = NameDataElement.new :name => "name", :globe => g, :first_name => "Bugs", :last_name => "Bunny", :data_element_collection => dec, :creator => u, :updater => u, :user => u
+   nde.save
+   
+   ds = DataSheet.new :name => "Main Page", :style_sheets => "/stylesheets/custom_styles/rfu", :profile => p, :file_location => "/data_sheets/pages/newfile.html.erb", :creator => u, :updater => u
+   ds.save
+   
+   pre = Presentation.new :data_sheet => ds, :data_element_collection => dec
+   pre.save
+   
+   reg = Registration.new :globe => g, :user => u
+   reg.save
+   
+   
+- Prompted
+ require "highline/import"
+ 
+#  password = ask("Password?") { |q| q.echo = false }
+
+  username = ask("Username?")
+  u = User.find_by_username(username)
+  
+  parent_globe = nil
+  globe_name = ask("Enter new name for Globe:")
+  profile_name = globe_name + " Profile"
+  globe_reference = ask("What is you Globe's account name? No spaces").downcase
+  if agree("Is this a shadow-globe?", true)
+    puts "It's a SHADOW GLOBE! Find Parent"
+    parent_globe_reference = ask("What is the reference of the Parent Globe associated with this globe?")
+    parent_globe = Globe.find_by_globe_reference(parent_globe_reference)
+  end
+  
+#  puts "Your password is #{password}!"
+  
+  g = Globe.new :name => globe_name, :globe_reference => globe_reference, :parent_id => parent_globe
+   g.save
+   
+   reg = Registration.new :globe => g, :user => u
+   reg.save
+   
+   p = Profile.new :name => profile_name, :globe => g
+   p.save
+   
+   path_extension = globe_reference + "/"
+   if (!parent_globe.nil?)
+    path_extension = parent_globe.globe_reference + "/" + path_extension + "/"
+   end
+   
+   new_css_folder = "c:/development/ruby/v20/public/stylesheets/custom_styles/" + path_extension
+   css_file_db = "/stylesheets/custom_styles/" + path_extension + "main"
+   css_file = "c:/development/ruby/v20/public/stylesheets/custom_styles/" + path_extension + "main.css"
+
+   new_page_folder = "c:/development/ruby/v20/app/views/data_sheets/pages/" + path_extension
+   page_file_db = "/data_sheets/pages/" + path_extension + "main.html.erb"
+   page_file = "c:/development/ruby/v20/app/views/data_sheets/pages/" + path_extension + "_main.html.erb"
+   
+   FileUtils.mkdir(new_page_folder)
+   FileUtils.mkdir(new_css_folder)
+
+   FileUtils.cp('c:/development/ruby/v20/app/views/data_sheets/pages/_place_holder.html.erb', page_file)
+   FileUtils.cp('c:/development/ruby/v20/public/stylesheets/custom_styles/_default_style.css', css_file)
+   
+   ds = DataSheet.new :name => "Main Page", :style_sheets => css_file_db, :profile => p, :file_location => page_file_db, :creator => u, :updater => u
+   ds.save
+
+      puts col.name
+eval("obj." + col.name)
+        ret = ask("What value for column: '" + col.name + "'?")
+        obj.instance_variable_set("@#{col.name}", ask("What value for column: '" + col.name + "'?"))
+
+   begin
+    data_element_class = ask("Which instance of a data element class would you like to add?")
+    obj = eval(data_element_class).new :globe => g, :data_element_collection => dec, user => u
+    eval(data_element_class).columns.each do |col|
+      if !(col.name[-3, 3] == "_id" || col.name[-3, 3] == "_at" || col.name[-2, 2] == "id" || col.name == "type" || col.name == "ready_to_archive" || col.name == "mandatory" || col.name == "label")
+        puts "@#{col.name}"
+        obj.set(col.name, ask("What value for column: '" + col.name + "'?"))
+      end
+    end
+    obj.save
+   end
+   
+   loop  
+   
+   dec = DataElementCollection.new :name => "Name", :data_element_type => "NameDataElement", :variable_name => "@name", :page_limit => 1, :historic => 0
+   dec.save
+   
+   nde = NameDataElement.new :name => "name", :globe => g, :first_name => "Bugs", :last_name => "Bunny", :data_element_collection => dec, :creator => u, :updater => u, :user => u
+   nde.save
+   
+   pre = Presentation.new :data_sheet => ds, :data_element_collection => dec
+   pre.save
+   
+   
+   
+   
+   
+   
+   
+   
+   

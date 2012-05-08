@@ -1,0 +1,14 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+read:
+  name: Read
+  definition: Read data from another data element to this one.
+
+write:
+  name: Write
+  definition: Write data to another data element from this one.
+  
+sync:
+  name: Synchronise
+  definition: Synchronise between two data elements.
+

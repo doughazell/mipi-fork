@@ -1,0 +1,17 @@
+<% if defined? @shadowglobes %>
+<% if @shadowglobes.count > 0 %>
+<span class="globe_overview_title">Shadow Globes</span>
+<table>
+  <% @shadowglobes.each do |globe| %>
+  <tr>
+    <td>
+      <%= link_to globe.name, globe %>
+    </td>
+    <td>
+      <%= link_to "Preview!", preview_globe_path(globe) %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+<% end %>
+<% end %>

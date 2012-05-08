@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+cc1_overview:
+  first_name: Paul
+  last_name: Long
+  date_of_birth: 2011-03-23
+  bank_name: HSBC
+  account_name: P A LONG
+  account_type: Current Account
+  sort_code: 12-23-12
+  account_number: 2321342323
+  open_date: 2001-03-23
+  overdraft_limit: 1500
+  
+paullong_barclays_00542151:
+  first_name: Paul
+  last_name: Long
+  date_of_birth: 1973-10-19
+  bank_name: Barclays
+  account_name: MR PAUL ADAM LONG
+  account_type: Current Account
+  sort_code: 20-41-12
+  account_number: "00542151"
+  open_date: 2004-07-06
+  overdraft_limit: 0
+  
+

@@ -1,0 +1,43 @@
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+barntgreen:
+  location: Barnt Green
+  county: Worcestershire
+
+
+himley:
+  location: Himley
+  county: Worcestershire
+
+
+kenilworthwardens:
+  location: Kenilworth
+  county: Worcestershire
+
+
+kidderminstervictoria:
+  location: Kidderminster
+  county: Worcestershire
+
+
+ecb_barntgreen:
+  location: Barnt Green
+  county: Worcestershire
+
+
+ecb_himley:
+  location: Himley
+  county: Worcestershire
+
+
+ecb_kenilworthwardens:
+  location: Kenilworth
+  county: Worcestershire
+
+
+ecb_kidderminstervictoria:
+  location: Kidderminster
+  county: Worcestershire
+
+

@@ -1,0 +1,3 @@
+<p>Globe:
+<%=  select_tag "globe[id]", raw("<option value='#{@globe.id}'>#{@globe.name}</option>") + options_from_collection_for_select(@shadowglobes.find(:all, :order => 'name'), "id", "name"), :onChange => "javascript:navigate_to_shadow_globe(document.getElementById('globe_id').value)" %>
+</p>

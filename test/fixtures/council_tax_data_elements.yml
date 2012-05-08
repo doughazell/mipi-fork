@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+council_tax_61217476:
+  full_name: Mr Paula Long
+  account_number: 61217476
+  contact_address_line_1: 10 Cavendish Road
+  contact_city: St Albans
+  contact_county: Herts
+  contact_postcode: AL1 5EE
+  property_address_line_1: 10 Cavendish Road
+  property_city: St Albans
+  property_county: Herts
+  property_postcode: AL1 5EE
+  property_reference: 1100118101001A
+  band: Band D
+  date_of_issue: 2011-03-11
+

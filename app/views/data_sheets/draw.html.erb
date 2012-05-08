@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+<h1>Rendered Just Fine</h1>
+
+<p>
+  <b>Name:</b>
+  <%= @data_sheet.name %>
+</p>
+
+<p>
+  <b>Class style:</b>
+  <%= @data_sheet.class_style %>
+</p>
+
+<p>
+  <b>Style sheets:</b>
+  <%= @data_sheet.style_sheets %>
+</p>
+
+<p>
+  <b>Profile:</b>
+  <%= @data_sheet.profile_id %>
+</p>
+
+<p>
+  <b>Created by:</b>
+  <%= @data_sheet.created_by %>
+</p>
+
+<p>
+  <b>Updated by:</b>
+  <%= @data_sheet.updated_by %>
+</p>
+
+<p>
+  <b>File location:</b>
+  <%= @data_sheet.file_location %>
+</p>
+
+
+<%= link_to 'Edit', edit_data_sheet_path(@data_sheet) %> |
+<%= link_to 'Back', data_sheets_path %>

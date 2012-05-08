@@ -1,0 +1,38 @@
+<div class="rfumainarea">
+<table class="rfutable" border="1" width="500">
+  <tr>
+    <td class="rfucell" width="60">
+      <img alt="RFU Logo" src="/images/irfu.jpg" width="50" />
+    </td>
+    <td class="rfucell">
+      <span class="rfutitle">Irish Rugby Football Union</span>
+    </td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <td class="rfu_data" align="right">Full Name:</td>
+    <td class="rfu_data"><%= Label_TextBox_Switch('membership', @membership, "full_name") %></td>
+  </tr>
+  <tr>
+    <td class="rfu_data" align="right">Date of Birth</td>
+    <td class="rfu_data"><%= Data_Element_Properties_Popup('membership', @membership, "date_of_birth", {:label => @membership.date_of_birth.to_s(:long)}) %></td>
+  </tr>
+  <tr>
+    <td class="rfu_data" align="right">Team Supported:</td>
+    <td class="rfu_data"><%= Label_TextBox_Switch('membership', @membership, "rfu_team_supported") %></td>
+  </tr>
+  <tr>
+    <td class="rfu_data" align="right">Mail Shot Opt-In:</td>
+    <td class="rfu_data" align="center"><%= check_box_tag 'directmail', @membership.direct_mail_opt_in, @membership.direct_mail_opt_in %></td>
+  </tr>
+  <tr>
+    <td class="rfu_data" align="right">Email Shot Opt-In:</td>
+    <td class="rfu_data" align="center"><%= check_box_tag 'directmail', @membership.direct_email_opt_in, @membership.direct_email_opt_in %></td>
+  </tr>
+  <tr>
+    <td class="rfu_data" align="right">Third-Party Opt-In:</td>
+    <td class="rfu_data" align="center"><%= check_box_tag 'directmail', @membership.third_party_promotion_opt_in, @membership.third_party_promotion_opt_in %></td>
+  </tr>
+</table>
+</div>

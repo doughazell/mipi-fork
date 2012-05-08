@@ -1,0 +1,48 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+#name_link_1:
+#  source_link: name_link_1_source
+#  destination_link: name_link_1_destination
+#  subscription_type: sync
+
+rfu_pablito_link:
+  source_link: pablito_globe_rfu_globe_rfu_membership
+  destination_link: rfu_globe_pablito_globe_rfu_membership
+  subscription_type: sync
+  
+terry_home_address_link_country:
+  source_link: pablito_globe_terry_globe_home_country
+  destination_link: terry_globe_pablito_globe_home_country
+  subscription_type: read
+
+terry_home_address_link_post_code:
+  source_link: pablito_globe_terry_globe_home_post_code
+  destination_link: terry_globe_pablito_globe_home_post_code
+  subscription_type: read
+
+terry_home_address_link_city:
+  source_link: pablito_globe_terry_globe_home_city
+  destination_link: terry_globe_pablito_globe_home_city
+  subscription_type: read
+
+terry_home_address_link_address_line_3:
+  source_link: pablito_globe_terry_globe_home_address_line_3
+  destination_link: terry_globe_pablito_globe_home_address_line_3
+  subscription_type: read
+
+terry_home_address_link_address_line_2:
+  source_link: pablito_globe_terry_globe_home_address_line_2
+  destination_link: terry_globe_pablito_globe_home_address_line_2
+  subscription_type: read
+
+terry_home_address_link_address_line_1:
+  source_link: pablito_globe_terry_globe_home_address_line_1
+  destination_link: terry_globe_pablito_globe_home_address_line_1
+  subscription_type: read
+
+
+#terry_home_address_link_all:
+#  source_link: pablito_globe_terry_globe_home_all
+#  destination_link: terry_globe_pablito_globe_home_all
+#  subscription_type: read
+#

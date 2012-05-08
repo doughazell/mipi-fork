@@ -1,0 +1,9 @@
+<div class="profile">
+  <p>
+  <%= f.label :name, "Profile Name" %><br />
+  <%= f.text_field :name %>
+  </p>
+  <%= f.fields_for :data_sheets do |builder| %>
+    <%= render 'data_sheet_fields', :f => builder %>
+  <% end %>
+</div>

@@ -1,0 +1,116 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+###=========================================================
+### GLOBES
+###=========================================================
+
+############################################################
+# Profiles for Paul Long's Globe
+pablito_main:
+  name: Main
+  globe: pablito
+  
+pablito_hsbc:
+  name: "HSBC"
+  globe: pablito
+
+pablito_rfu:
+  name: "RFU"
+  globe: pablito
+
+pablito_council:
+  name: "Council Tax"
+  globe: pablito
+
+pablito_barclays_account:
+  name: Barclays Current Account
+  globe: pablito
+  
+############################################################
+# Profiles for terry's Globe
+terry_main:
+  name: Main
+  globe: terryreed
+  
+terry_rfu:
+  name: "RFU"
+  globe: terryreed
+
+############################################################
+# Profiles for RFU's Globe
+rfu_main_profile:
+  name: Main
+  globe: rfu
+  
+rfu_supporters_club_profile:
+  name: Supporters Club Profile
+  globe: rfu
+  
+rfu_shareholders_profile:
+  name: Shareholders Portal
+  globe: rfu
+
+############################################################
+# Profiles for RFU's Globe
+ecb_main_profile:
+  name: Main
+  globe: ecb
+  
+ecb_supporters_club_profile:
+  name: Supporters Club Profile
+  globe: ecb
+  
+ecb_shareholders_profile:
+  name: Shareholders Portal
+  globe: ecb
+
+############################################################
+# Profiles for FTP's Globe
+ftp_main_profile:
+  name: Main
+  globe: ftp
+  
+###=========================================================
+### SHADOW GLOBES
+###=========================================================
+
+############################################################
+# Profiles for RFU's shadow-globe 'rfu_pablito'
+rfu_pablito_profile:
+  name: "RFU Profile"
+  globe: rfu_pablito
+
+rfu_terryreed_profile:
+  name: "RFU Profile"
+  globe: rfu_terryreed
+
+<% for i in 1..10 %>
+rfu_member_profile_<%= i %>:
+    name: "Profile"
+    globe: rfu_member_<%= i %>
+<% end %>
+
+
+# Profiles for pablito's shadow-globe 'pablito_terryreed_globe'
+pablito_terryreed_profile:
+  name: "terry"
+  globe: pablito_terryreed_globe
+
+############################################################
+# Profiles for ECB's shadow-globe 'ecb_barntgreen_globe'
+ecb_barntgreen_profile:
+  name: "Contact Details"
+  globe: ecb_barntgreen_globe
+
+ecb_himley_profile:
+  name: "Contact Details"
+  globe: ecb_himley_globe
+
+ecb_kenilworthwardens_profile:
+  name: "Contact Details"
+  globe: ecb_kenilworthwardens_globe
+
+ecb_kidderminstervictoria_profile:
+  name: "Contact Details"
+  globe: ecb_kidderminstervictoria_globe
+

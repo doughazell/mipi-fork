@@ -1,0 +1,54 @@
+==========
+To-Do List
+==========
+
+Security
+--------
+
+- Security is not implemented when directly accessing the DataElement such as 
+  when viewing the XML code for an entity.
+-
+
+DataElement
+-----------
+
+- Need to provide a means by which someone can easily tell what the path to the
+  XML version of the DataElement is when displayed within a Data Sheet.
+- The "[All Data]" view is horrid. Requires considerable styling.
+- Add new type through interface.
+- [BUG] Update Data Element doesn't work
+
+
+Globe
+-----
+
+- Derived Globe Types: Person, Company, House, Household, etc.
+-
+
+Profiles
+--------
+
+- Ability to dynamically add profiles to the globe through the main interface.
+
+Components
+----------
+
+- Time Slider. Take earliest and current dates, place on a slide and allow
+  users to be able to view data in the past.
+  (a) Global Time Slider
+  (b) Local Time Slider
+  
+Subscription
+------------
+- Restful Subscriptions
+  
+Sample Data
+-----------
+
+Rename "Damian Smith"
+Rename "Alison Smith"
+ - Destroyed
+Rename "RFU"
+ - Change Logo
+Rename "ECB"
+ - Destroyed

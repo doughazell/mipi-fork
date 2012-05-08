@@ -1,0 +1,29 @@
+<table width="100%">
+  <th>Type</th>
+  <th>Message</th>
+  <th>Created</th>
+  <th>Severity</th>
+  <th>Action</th>
+<%
+@messages.each do |message_data_element|
+%>
+<% if !message_data_element.hidden? %>
+<%= fields_for "messages[]", message_data_element do |field| %>
+  <tr>
+    <td><%= message_data_element.message.name %></td>
+    <td><%= message_data_element.message_text %></td>
+    <td><%= message_data_element.created_at.to_s(:long) %></td>
+    <%= hidden_field_tag "messages[#{message_data_element.id}][hidden]", nil, { :value => (message_data_element.hidden ? 1 : 0) } %>
+    <td class="message_severity_<%= message_data_element.message.message_severity.name.downcase %>"><%= field.label message_data_element.message.message_severity.name %></td>
+    <td><%= link_to_function "Ignore", "document.getElementById('messages_#{message_data_element.id}_hidden').value = 1; document.forms[0].submit();", :method => "put" %></td>
+  </tr>
+<% end %>
+<% end %>
+<% end %>
+  <tr>
+    <td colspan="5">
+    <%= will_paginate @messages %>
+    </td>
+  </tr>
+</div>
+</table>

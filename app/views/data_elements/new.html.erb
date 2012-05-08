@@ -1,0 +1,20 @@
+<h1><%= @globe.name %></h1>
+<%= form_tag new_globe_data_element_path, :method => :get, :remote => true do %>
+<table>
+  <tr>
+    <td>
+      Create New Data Element:
+    </td>
+    <td>
+      <%= select_tag "new_data_element", raw("<option value='0'>[Choose Data Element]</option>") + options_from_collection_for_select(@derived_classes, "data_element_type", "data_element_type") %>
+    </td>
+    <td>
+      <%= submit_tag "Create", :name => nil %>
+    </td>
+  </tr>
+</table>
+<% end %>
+
+<div id="new_element">
+  <%= @new_data_element %>
+</div>

@@ -1,0 +1,14 @@
+  <tr>
+    <td>
+        <div id="preview_profiles" class="preview_profiles">
+          <% for profile in @profiles %>
+            <%= content_tag_for :span, profile, :class => "preview_profile" do %>
+              <span class="handle">X</span>
+              <%= link_to profile.name, preview_globe_profile_url(@globe, profile) %>
+            <% end %>
+          <% end %>
+          <span class="add_profile"><%= link_to "[Add]", new_globe_profile_url(@globe) %></span>
+        </div>
+        <%= sortable_element("preview_profiles", :url => sort_globe_profiles_path(@globe), :tag => "span", :handle => "handle", :overlap => :vertical) %>
+    </td>
+  </tr>

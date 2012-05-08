@@ -1,0 +1,47 @@
+<h1>Personal Contact Details</h1>
+<table width="250">
+  <th>Home Address</th>
+  <% if @address.address_line_1.presence %>
+  <tr>
+    <td>
+      <%= @address.address_line_1 %>
+    </td>
+  </tr>
+  <% end %>
+  <% if @address.address_line_2.presence %>
+  <tr>
+    <td>
+      <%= @address.address_line_2 %>
+    </td>
+  </tr>
+  <% end %>
+  <% if @address.address_line_3.presence %>
+  <tr>
+    <td>
+      <%= @address.address_line_3 %>
+    </td>
+  </tr>
+  <% end %>
+  <% if @address.city.presence %>
+  <tr>
+    <td>
+      <%= @address.city %>
+    </td>
+  </tr>
+  <% end %>
+  <% if @address.post_code.presence %>
+  <tr>
+    <td>
+      <%= @address.post_code %>
+    </td>
+  </tr>
+  </div>
+  <% end %>
+  <% if @address.country.presence %>
+  <tr>
+    <td>
+      <%= @address.country %>
+    </td>
+  </tr>
+  <% end %>
+</table>

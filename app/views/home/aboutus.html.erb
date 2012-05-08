@@ -1,0 +1,50 @@
+<center>
+<table class="maintable" border=0 cellpadding=10 cellspacing=0 summary="">
+<tr>
+<td valign="bottom" align="center">
+<%= render :partial => 'home/block' %>
+</td>
+<td align="center">
+<table border=1 cellpadding=10 cellspacing=0 bgcolor=#FFF1DD bordercolor=#000000 summary="">
+	<tr>
+		<td align=center class="pig_title"><div class="pig_title">About Us</div></td>
+	</tr>
+	<tr>
+		<td>
+			<div class="pig_text">
+			PIGuard itself is borne out of the experience of the founders of PIGuard and
+			driven by our aim to enable empowerment, fairness and transparency especially
+			where personal information is concerned.  It is our aim to make a significant,
+			measurable, beneficial difference to the lives everyone by returning control
+			of their own personal information to them.
+			</div>
+			<div class="pig_text">
+			The empowerment, fairness and transparency extend to our employees and everyone
+			involved with making PIGuard a success, since we believe that we must practice,
+			nurture and encourage the same values we outwardly demonstrate.
+			</div>
+			<div class="pig_text">
+			Finally, we will demonstrate empowerment, fairness and transparency in all of
+			our dealings with our customers to enable us to forge long term relationships
+			to build an organisation that people love.
+			This will become known as the &quot;PIGuard way&quot;.
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td align=center class="pig_subtitle"><div id="subtitle" onmouseover="dim();" class="pig_subtitle">Bringing you the future of Personal Information</div></td>
+	</tr>
+</table>
+</td>
+<td valign="top" align="center">
+<%= render :partial => 'home/block' %>
+</td>
+</tr>
+<tr> 
+<td colspan="3" align="center">
+<%= render :partial => 'home/navigation',
+	:locals => { :next_text => 'Home', :next_controller => 'home', :next_action => 'index' } %>
+</td>
+</tr>
+</table>
+</center>

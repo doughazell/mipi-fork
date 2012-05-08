@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  property_type: MyString
+  ownership_type: MyString
+  bedrooms: 1
+  bathrooms: 1
+  reception_rooms: 1
+  garden: false
+  roof_material: MyString
+  external_construction: MyString
+  flood_plain: 1
+
+two:
+  property_type: MyString
+  ownership_type: MyString
+  bedrooms: 1
+  bathrooms: 1
+  reception_rooms: 1
+  garden: false
+  roof_material: MyString
+  external_construction: MyString
+  flood_plain: 1

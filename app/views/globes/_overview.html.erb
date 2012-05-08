@@ -1,0 +1,16 @@
+<div class="globe_overview">
+<span class="globe_overview_title">Globe Overview</span>
+<table border="1" cellspacing="0" width="100%">
+  <tr>
+    <td>Name:</td>
+    <td><%= @globe.name %></td>
+  </tr>
+  <tr>
+    <td>Security:</td>
+    <td><%= @globe.security %></td>
+  </tr>
+  <tr>
+    <td colspan="2"><%= link_to "Preview!", preview_globe_path(@globe) %></td>
+  </tr>
+</table>
+</div>

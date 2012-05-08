@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  policy_reference: MyString
+  expires: 2011-06-16
+  commences: 2011-06-16
+
+two:
+  policy_reference: MyString
+  expires: 2011-06-16
+  commences: 2011-06-16
