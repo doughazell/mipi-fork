@@ -1,16 +1,16 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  code: MyString
-  fuel_type: MyString
+  code: MP1
+  fuel_type: Coal
   installed_capacity: 1.5
   fixed_heat_constant: 1.5
   start_hours_hot: 1.5
   start_hours_cold: 1.5
 
 two:
-  code: MyString
-  fuel_type: MyString
+  code: MP2
+  fuel_type: Coal
   installed_capacity: 1.5
   fixed_heat_constant: 1.5
   start_hours_hot: 1.5
