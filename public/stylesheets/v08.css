@@ -226,3 +226,18 @@ span .handle {
 .add_profile {
 	float: right;
 }
+
+.bottom_navigation {
+	background: #F7ECB7;		/* #eee */
+	border: 1px;
+	color: white;
+	padding: 3px;
+	border: solid 2px black;
+}
+
+.bottom_navigation_left {
+}
+
+.bottom_navigation_right {
+	float: right;
+}

@@ -106,4 +106,19 @@ twentytwo_4:
   data_sheet: ecb_club_contact_details_4
   data_element_collection: data_element_collection_16
   
+twentythree_all_1:
+  data_sheet: ftp_main_data_sheet
+  data_element_collection: data_element_collection_18
+  
+twentythree_all_2:
+  data_sheet: ftp_main_data_sheet
+  data_element_collection: data_element_collection_19
+  
+twentythree_1:
+  data_sheet: ftp_generator_mp1_data_sheet
+  data_element_collection: data_element_collection_18
+  
+twentythree_2:
+  data_sheet: ftp_generator_mp2_data_sheet
+  data_element_collection: data_element_collection_19
 

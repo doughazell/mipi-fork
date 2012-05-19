@@ -28,6 +28,6 @@
 <table width="100%">
   <tr>
     <%= hidden_field_tag "new_data_element", "GeneratorUnitDataElement" %>
-    <td><%= link_to("New Generator Unit", new_globe_data_element_url(@globe), :params => { :new_data_element => "GeneratorUnitDataElement"}) %></td>
+    <td><%= link_to("New Generator Unit", new_globe_data_element_url(@globe), :data_element_type => "GeneratorUnitDataElement") %></td>
   </tr>
 </table>

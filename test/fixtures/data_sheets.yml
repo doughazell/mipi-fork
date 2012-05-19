@@ -255,3 +255,27 @@ ecb_club_contact_details_4:
   updater: paul123
   file_location: '/data_sheets/pages/ecb_cricket_club.html.erb'
   
+ftp_main_data_sheet:
+  name: Generator Units
+  style_sheets: '/stylesheets/custom_styles/ftp/ftp.css'
+  profile: ftp_main_profile
+  creator: paul123
+  updater: paul123
+  file_location: '/data_sheets/pages/ftp/all_generators.html.erb'
+  
+ftp_generator_mp1_data_sheet:
+  name: MP1
+  style_sheets: '/stylesheets/custom_styles/ftp/ftp.css'
+  profile: ftp_main_profile
+  creator: paul123
+  updater: paul123
+  file_location: '/data_sheets/pages/ftp/generator.html.erb'
+
+ftp_generator_mp2_data_sheet:
+  name: MP2
+  style_sheets: '/stylesheets/custom_styles/ftp/ftp.css'
+  profile: ftp_main_profile
+  creator: paul123
+  updater: paul123
+  file_location: '/data_sheets/pages/ftp/generator.html.erb'
+

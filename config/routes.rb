@@ -8,6 +8,7 @@ V01::Application.routes.draw do
   resources :globes do
 
     resources :data_elements do
+      post 'new(/:action)'
       resources :fields do
         member do 
           get 'link'
@@ -22,7 +23,7 @@ V01::Application.routes.draw do
       end
     end    
 
-    resources :name_data_elements
+#    resources :name_data_elements
     
     member do
       get 'preview'
@@ -79,6 +80,8 @@ V01::Application.routes.draw do
   match 'home/indsignup' => 'registers#new'
   match 'home/orgsignup' => 'registers#new'
   match 'home/aboutus' => 'home#aboutus'
+
+  match 'read/*data_element_type/*data_element_name' => 'data_elements#retrieve', defaults: {format: 'xml'}
 
 #  match '/' => 'globes#show', :constraints => { :subdomain => /.+/ }
   # The priority is based upon order of creation:

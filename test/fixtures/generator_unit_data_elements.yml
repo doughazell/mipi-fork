@@ -1,17 +1,17 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
+gu_mp1:
   code: MP1
   fuel_type: Coal
-  installed_capacity: 1.5
-  fixed_heat_constant: 1.5
-  start_hours_hot: 1.5
-  start_hours_cold: 1.5
+  installed_capacity: 320
+  fixed_heat_constant: 56
+  start_hours_hot: 7.1
+  start_hours_cold: 13
 
-two:
+gu_mp2:
   code: MP2
   fuel_type: Coal
-  installed_capacity: 1.5
-  fixed_heat_constant: 1.5
-  start_hours_hot: 1.5
-  start_hours_cold: 1.5
+  installed_capacity: 330
+  fixed_heat_constant: 92
+  start_hours_hot: 7.2
+  start_hours_cold: 14

@@ -15,7 +15,8 @@ class DataElementsController < ApplicationController
   def new
     @globe = Globe.find(params[:globe_id])
     @data_element_type = params["new_data_element"]
-
+    puts @data_element_type
+    puts "-"
     if (@data_element_type) then   # Javascript will be activated.
       @data_element = @data_element_type.constantize.new
     else
@@ -83,7 +84,7 @@ class DataElementsController < ApplicationController
       if @data_element.save
         @base_data_element = DataElement.find(@data_element.id)
 #        format.html { redirect_to(@globe, :url => globe_data_elements_path, :notice => 'Globe was successfully created.') }
-        format.html { redirect_to globe_data_element_path(@globe, @data_element, :notice => 'Data Element was successfully updated.') }
+        format.html { redirect_to globe_data_element_path(@globe, @data_element, :notice => 'Data Element was successfully created.') }
         format.xml  { render :xml => @data_element, :status => :created, :location => @base_data_element }
       else
         format.html { render :action => "new" }
@@ -122,6 +123,21 @@ class DataElementsController < ApplicationController
         format.html { render :action => "edit" }
         format.xml  { render :xml => @data_element.errors, :status => :unprocessable_entity }
       end
+    end
+  end
+  
+  def retrieve
+    @data_element_type = params[:data_element_type]
+    @data_element_name = params[:data_element_name]
+    
+    if @data_element_type["DataElement".length * -1, @data_element_type.length] != "DataElement" then
+      @data_element_type += "DataElement"
+    end 
+    puts "#{@data_element_type}"
+    @data_element = eval("#{@data_element_type}").find_by_name(@data_element_name)
+
+    respond_to do |format|
+      format.xml { render :xml => @data_element }
     end
   end
 end

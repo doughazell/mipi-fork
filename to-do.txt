@@ -13,11 +13,12 @@ DataElement
 -----------
 
 - Need to provide a means by which someone can easily tell what the path to the
-  XML version of the DataElement is when displayed within a Data Sheet.
+  XML version of the DataElement is when displayed within a Data Sheet. [DONE - new routing]
 - The "[All Data]" view is horrid. Requires considerable styling.
 - Add new type through interface.
 - [BUG] Update Data Element doesn't work
-
+- Allow a "New [Data Element]" to be created through the 'Preview' interface, a chosen
+  data sheet.
 
 Globe
 -----
