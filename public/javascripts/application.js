@@ -134,3 +134,16 @@ function add_fields(link, association, content) {
     before: content.replace(regexp, new_id)
   });
 }
+
+function fillPopupBody(popup, partial) {
+  var req = new XMLHttpRequest();
+  req.open("GET", "/something/_" + partial + ".html.erb", false); // Synchronic request!
+  req.send(null);
+  if( req.status == 200 ) {
+    popup.innerHTML = req.responseText;
+    return true;
+  } else {
+    popup.innerHTML = "<p class='error'>"+req.status+" ("+req.statusText+")</p>";
+    return false;
+  }
+}

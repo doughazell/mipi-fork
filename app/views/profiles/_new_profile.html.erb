@@ -1,0 +1,19 @@
+<%= form_tag globe_profiles_path(@globe, @profile), :method => :post, :id => "create_new_profile" do |f| %>
+  <% if @profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+      <% @profile.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= text_field_tag :name, "", :size => 4 %>
+  <%= button_tag(:type => 'button') do 
+    content_tag(:strong, raw("&#10004;"))
+  end  %>
+  
+<% end %>

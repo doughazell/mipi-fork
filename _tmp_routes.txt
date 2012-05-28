@@ -13,7 +13,14 @@
                     data_element_collection GET    /data_element_collections/:id(.:format)                                                           {:action=>"show", :controller=>"data_element_collections"}
                                             PUT    /data_element_collections/:id(.:format)                                                           {:action=>"update", :controller=>"data_element_collections"}
                                             DELETE /data_element_collections/:id(.:format)                                                           {:action=>"destroy", :controller=>"data_element_collections"}
-                           data_element_new POST   /globes/:globe_id/data_elements/:data_element_id/new(.:format)                                    {:action=>"new", :controller=>"data_elements"}
+                        globe_presentations GET    /globes/:globe_id/presentations(.:format)                                                         {:action=>"index", :controller=>"presentations"}
+                                            POST   /globes/:globe_id/presentations(.:format)                                                         {:action=>"create", :controller=>"presentations"}
+                     new_globe_presentation GET    /globes/:globe_id/presentations/new(.:format)                                                     {:action=>"new", :controller=>"presentations"}
+                    edit_globe_presentation GET    /globes/:globe_id/presentations/:id/edit(.:format)                                                {:action=>"edit", :controller=>"presentations"}
+                         globe_presentation GET    /globes/:globe_id/presentations/:id(.:format)                                                     {:action=>"show", :controller=>"presentations"}
+                                            PUT    /globes/:globe_id/presentations/:id(.:format)                                                     {:action=>"update", :controller=>"presentations"}
+                                            DELETE /globes/:globe_id/presentations/:id(.:format)                                                     {:action=>"destroy", :controller=>"presentations"}
+                               data_element POST   /globes/:globe_id/data_elements/:data_element_id/new(/:action)(.:format)                          {:controller=>"data_elements"}
               link_globe_data_element_field GET    /globes/:globe_id/data_elements/:data_element_id/fields/:id/link(.:format)                        {:action=>"link", :controller=>"fields"}
          subscribe_globe_data_element_field PUT    /globes/:globe_id/data_elements/:data_element_id/fields/:id/subscribe(.:format)                   {:action=>"subscribe", :controller=>"fields"}
  link_globe_data_element_field_target_globe GET    /globes/:globe_id/data_elements/:data_element_id/fields/:field_id/target_globe/:id/link(.:format) {:action=>"link", :controller=>"target_globe"}

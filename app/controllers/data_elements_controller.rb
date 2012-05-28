@@ -48,9 +48,10 @@ class DataElementsController < ApplicationController
   def update
     @globe = Globe.find(params[:globe_id])
     @data_element = DataElement.find(params[:id])
-
+    @data_element_type = params[:data_element_type]
+    
     respond_to do |format|
-      if @data_element.update_attributes(params[:data_element])
+      if @data_element.update_attributes(params[@data_element_type.underscore])
 #        format.html { redirect_to([@globe, @data_element], :controller => "data_element", :url => globe_data_element_url, :notice => 'Data Element was successfully updated.') }
         format.html { redirect_to globe_data_element_path(@globe, @data_element, :notice => 'Data Element was successfully updated.') }
         format.xml  { head :ok }
@@ -134,7 +135,7 @@ class DataElementsController < ApplicationController
       @data_element_type += "DataElement"
     end 
     puts "#{@data_element_type}"
-    @data_element = eval("#{@data_element_type}").find_by_name(@data_element_name)
+    @data_element = eval("#{@data_element_type}").find_last_by_name(@data_element_name, :order => 'updated_at')
 
     respond_to do |format|
       format.xml { render :xml => @data_element }

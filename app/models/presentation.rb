@@ -2,6 +2,7 @@
 class Presentation < ActiveRecord::Base
   belongs_to :data_sheet
   belongs_to :data_element_collection
+  validates_uniqueness_of :data_sheet_id, :scope => :data_element_collection_id
   
   def self.find_other_data_sheets(data_element_collection_id, sheet)
     all = Presentation.find_all_by_data_element_collection_id(data_element_collection_id)

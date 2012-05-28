@@ -7,7 +7,8 @@
               <%= link_to profile.name, preview_globe_profile_url(@globe, profile) %>
             <% end %>
           <% end %>
-          <span class="add_profile"><%= link_to "[Add]", new_globe_profile_url(@globe) %></span>
+          <span id="new_profile"></span>
+          <span class="add_profile"><%= link_to "[Add]", new_globe_profile_url(@globe), :remote => true %></span>
         </div>
         <%= sortable_element("preview_profiles", :url => sort_globe_profiles_path(@globe), :tag => "span", :handle => "handle", :overlap => :vertical) %>
     </td>

@@ -1,0 +1,48 @@
+
+<h1>Presentations</h1>
+<table>
+  <th>Data</th><th>Value</th>
+  <tr>
+    <td>
+      Globe:
+    </td>
+    <td>
+      <%= @presentation.data_sheet.profile.globe.name %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Data Sheet Profile:
+    </td>
+    <td>
+      <%= @presentation.data_sheet.profile.name %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Data Sheet Name:
+    </td>
+    <td>
+      <%= @presentation.data_sheet.name %>
+    </td>
+  </tr>
+  <th colspan="2">...associated with...</th>
+  <tr>
+    <td>
+      Data Element Type:
+    </td>
+    <td>
+      <%= @presentation.data_element_collection.data_element_type %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Data Element:
+    </td>
+    <td>
+      <%= @presentation.data_element_collection.name %>
+    </td>
+  </tr>
+</table>
+<%= link_to "View All", globe_presentations_path %>
+<%= link_to "Edit", edit_globe_presentation_path(@globe, @presentation) %>

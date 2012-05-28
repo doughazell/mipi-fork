@@ -1,0 +1,36 @@
+<%= form_for([@globe, @presentation]) do |f| %>
+  <% if @presentation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@presentation.errors.count, "error") %> prohibited this presentation from being saved:</h2>
+
+      <ul>
+      <% @presentation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<table>
+  <th>Data</th>
+  <th>Value</th>
+  <tr>
+    <td>Choose Data Sheet</td>
+    <td><%= f.select :data_sheet_id, @data_sheets.collect {|data_sheet| [data_sheet.name, data_sheet.id] } %></td>
+  </tr>
+  <tr>
+    <td>Choose Data Element Collection</td>
+    <td><%= select_tag "data_element_type", options_for_select(@data_element_types) %></td>
+  </tr>
+  <tr>
+    <td>Choose Data Element Collection Instance</td>
+    <td><%= f.select :data_element_collection_id, @data_element_collections.collect {|data_element_collection| [data_element_collection.name, data_element_collection.id] } %></td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <%= f.submit %>
+    </td>
+  </tr>
+</table>
+
+<% end %>

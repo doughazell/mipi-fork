@@ -38,6 +38,7 @@ class ProfilesController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @profile }
+      format.js
     end
   end
 

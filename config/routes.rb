@@ -7,6 +7,8 @@ V01::Application.routes.draw do
 
   resources :globes do
 
+    resources :presentations
+    
     resources :data_elements do
       post 'new(/:action)'
       resources :fields do
