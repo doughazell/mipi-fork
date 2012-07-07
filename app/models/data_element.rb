@@ -96,8 +96,16 @@ class DataElement < ActiveRecord::Base
     puts return_attributes
     return_attributes
   end
+  
+  def to_csv(options = {})
+    CSV.generate(options) do |csv|
+      csv << eval(type).column_names
+      csv << attributes.values_at(*eval(type).column_names)
+    end
+  end
+
+  def self.default_display_columns
+    column_names - (DataElement.column_names)
+  end
 end
 
-def default_display_columns
-  column_names - (DataElement.column_names)
-end

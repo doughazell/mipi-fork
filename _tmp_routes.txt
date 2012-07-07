@@ -50,7 +50,7 @@ globe_data_element_field_target_globe_index GET    /globes/:globe_id/data_elemen
                       preview_globe_profile GET    /globes/:globe_id/profiles/:id/preview(.:format)                                                  {:action=>"preview", :controller=>"profiles"}
               draw_globe_profile_data_sheet GET    /globes/:globe_id/profiles/:profile_id/data_sheets/:id/draw(.:format)                             {:action=>"draw", :controller=>"data_sheets"}
            preview_globe_profile_data_sheet GET    /globes/:globe_id/profiles/:profile_id/data_sheets/:id/preview(.:format)                          {:action=>"preview", :controller=>"data_sheets"}
-            change_globe_profile_data_sheet PUT    /globes/:globe_id/profiles/:profile_id/data_sheets/:id/change(.:format)                           {:action=>"change", :controller=>"data_sheets"}
+            change_globe_profile_data_sheet POST   /globes/:globe_id/profiles/:profile_id/data_sheets/:id/change(.:format)                           {:action=>"change", :controller=>"data_sheets"}
                   globe_profile_data_sheets GET    /globes/:globe_id/profiles/:profile_id/data_sheets(.:format)                                      {:action=>"index", :controller=>"data_sheets"}
                                             POST   /globes/:globe_id/profiles/:profile_id/data_sheets(.:format)                                      {:action=>"create", :controller=>"data_sheets"}
                new_globe_profile_data_sheet GET    /globes/:globe_id/profiles/:profile_id/data_sheets/new(.:format)                                  {:action=>"new", :controller=>"data_sheets"}

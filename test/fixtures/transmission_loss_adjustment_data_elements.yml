@@ -1,11 +1,2 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  month: 2012-04-20 21:29:25
-  unit: MyString
-  adjustment: 1.5
-
-two:
-  month: 2012-04-20 21:29:25
-  unit: MyString
-  adjustment: 1.5

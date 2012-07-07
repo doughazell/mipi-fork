@@ -7,6 +7,7 @@ class CreateGeneratorUnitDataElements < ActiveRecord::Migration
       t.float :fixed_heat_constant
       t.float :start_hours_hot
       t.float :start_hours_cold
+      t.integer :power_station_data_element_id
     end
     CreateTheViewForCITIEs(GeneratorUnitDataElement)
   end

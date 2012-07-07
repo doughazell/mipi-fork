@@ -7,6 +7,7 @@ class Globe < ActiveRecord::Base
   has_many :data_elements, :dependent => :destroy
   has_many :registrations, :dependent => :destroy
   has_many :users, :through => :registrations
+  has_many :data_element_collections
   
   scope :top_level, where(:parent_id => nil)
 

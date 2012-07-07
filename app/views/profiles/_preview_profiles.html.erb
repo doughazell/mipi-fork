@@ -1,15 +1,19 @@
-  <tr>
-    <td>
+<% @profile = Profile.new %>
+<%= form_for [@globe, @profile], :method => :post, :id => "profile_form", :remote => true  do |p| %>
         <div id="preview_profiles" class="preview_profiles">
           <% for profile in @profiles %>
             <%= content_tag_for :span, profile, :class => "preview_profile" do %>
-              <span class="handle">X</span>
+              <span class="handle">&#9632;</span>
               <%= link_to profile.name, preview_globe_profile_url(@globe, profile) %>
             <% end %>
           <% end %>
-          <span id="new_profile"></span>
+
+<span id="new_profile">
+<%= p.text_field :name, :value=> "", :size => 4 %>
+<%= p.submit raw("&#10004;"), :remote => true  %>
+</span>
+
           <span class="add_profile"><%= link_to "[Add]", new_globe_profile_url(@globe), :remote => true %></span>
         </div>
         <%= sortable_element("preview_profiles", :url => sort_globe_profiles_path(@globe), :tag => "span", :handle => "handle", :overlap => :vertical) %>
-    </td>
-  </tr>
+<% end %>

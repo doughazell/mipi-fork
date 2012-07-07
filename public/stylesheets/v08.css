@@ -66,6 +66,48 @@ th.specalt {
 	color: #B4AA9D;
 }
 
+.raised_area {
+	border-right: 1px solid #000000; /*#C1DAD7;*/
+	border-bottom: 1px solid #000000; /*#C1DAD7;*/
+	background: #F7ECB7;		/* #eee */
+	background: #efeee9;
+	background-color: #CD5C5C;
+	/*background: #FFFFFF;*/
+	padding: 10px 10px 6px 12px;
+	/*color: #6D929B;*/
+        color: #000;
+}
+
+.raised_box {
+	border-right: 1px solid #000000; /*#C1DAD7;*/
+	border-bottom: 1px solid #000000; /*#C1DAD7;*/
+	background: #F7ECB7;		/* #eee */
+	background: #efeee9;
+	/*background: #FFFFFF;*/
+	padding: 10px 10px 6px 12px;
+	/*color: #6D929B;*/
+        color: #000;
+	width: 33%;
+}
+
+.preview_profiles {
+	padding: 5px;
+	border: solid;
+	background-color: #efeee9;
+}
+
+.preview_data_sheets {
+	padding: 15px;
+	border: solid;
+	background-color: #efeee9;
+}
+
+.data_sheet {
+	padding: 5px;
+	border: solid;
+	background-color: #efeee9;
+}
+
 td {
 	border-right: 1px solid #000000; /*#C1DAD7;*/
 	border-bottom: 1px solid #000000; /*#C1DAD7;*/
@@ -204,7 +246,8 @@ td.alt {
 }
 
 .globe_name {
-	font: bold large "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	font: bold x-large "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	padding: 10px;
 }
 
 .preview_profile {

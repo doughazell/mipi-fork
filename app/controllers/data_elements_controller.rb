@@ -8,7 +8,7 @@ class DataElementsController < ApplicationController
     @data_elements = DataElement.seek_collections_by_globe(@globe.id)
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @data_element_collections }
+      format.xml # index.xml.erb
     end
   end
   
@@ -67,7 +67,7 @@ class DataElementsController < ApplicationController
     @data_element_type = params[:data_element_type]
     name = params[@data_element_type.underscore]['name']
     
-    dec = DataElementCollection.new(:name => name, :data_element_type => @data_element_type)
+    dec = DataElementCollection.new(:name => name, :data_element_type => @data_element_type, :globe => @globe)
     dec.save
     
     @data_element = @data_element_type.constantize.new(:name => name, :user => current_user, :globe => @globe, :data_element_collection => dec)
@@ -105,6 +105,7 @@ class DataElementsController < ApplicationController
     respond_to do |format|
       format.html
       format.xml  { render :xml => @data_element }
+      format.csv  { send_data @data_element.to_csv, :filename => @data_element.name + ".csv" }
     end
   end
   
@@ -126,19 +127,53 @@ class DataElementsController < ApplicationController
       end
     end
   end
-  
+
+  # TODO: We want to be dynamic regarding the querying here so if a parameter is
+  #       specified that exists as a column in the table we need to filter upon it.
+  # TODO: We also need to be able to request all 'latest' data elements for a 
+  #       particular type. e.g. all 'addresses', all 'phone numbers', all 'power
+  #       stations'.
+  # TODO: TACKLE THIS DIFFERENTLY. '/read/' for 'data_elememts'.
+  #                                '/read_all/' for 'data_element_collections'
   def retrieve
-    @data_element_type = params[:data_element_type]
-    @data_element_name = params[:data_element_name]
+    data_element_type = params[:data_element_type]
+    data_element_name = params[:data_element_name]
+    date = params[:date]
     
-    if @data_element_type["DataElement".length * -1, @data_element_type.length] != "DataElement" then
-      @data_element_type += "DataElement"
+    if data_element_type["DataElement".length * -1, data_element_type.length] != "DataElement" then
+      data_element_type += "DataElement"
     end 
-    puts "#{@data_element_type}"
-    @data_element = eval("#{@data_element_type}").find_last_by_name(@data_element_name, :order => 'updated_at')
+    puts "#{data_element_type}"
+    puts date
+    if (date) then #.where("created_at >= :date", :date => @date) .where(:name => @data_element_name)
+      @data_element = eval("#{data_element_type}").where("name = ? AND created_at >= ?", data_element_name, date).order(:updated_at).first
+    else
+      @data_element = eval("#{data_element_type}").find_last_by_name(data_element_name, :order => 'updated_at')
+    end
+    
+    # TODO
+    # Loop through all the keys and change the value of anything ending in 'data-element-id'
+    # since these will be foreign keys and need to be resolved/realised.
 
     respond_to do |format|
       format.xml { render :xml => @data_element }
     end
   end
+
+  def retrieve_all
+    globe = Globe.find_by_globe_reference!(request.subdomain)
+    data_element_type = params[:data_element_type]
+    des = Array.new
+    
+    data_element_collections = globe.data_element_collections
+    data_element_collections.each do |dec|
+      des.push(dec.current_data_element)
+    end
+    
+    respond_to do |format|
+      format.xml { render :xml => data_element_collections }
+    end
+  end
+  
 end
+

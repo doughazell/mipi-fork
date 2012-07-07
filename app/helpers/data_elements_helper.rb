@@ -10,6 +10,10 @@ module DataElementsHelper
   def determine_entry_field_style(new_data_element, column)
     meta_data = DataElementMetaData.find_by_data_element_type_and_name(new_data_element, column)
     if (meta_data.nil?)
+      if (column["data_element".length * -1, "data_element".length] == "data_element") then
+        # We have a foreign key requirement.
+        entry_field = "text_field"
+      end
       entry_field = "text_field"
     else
       entry_field = meta_data.default_html_modifier

@@ -1,19 +1,15 @@
-<%= form_tag change_globe_profile_data_sheet_path(@globe, @active_profile, @active_data_sheet), :method => :put, :remote => true, :id => "data_sheet_form" do |f| %>
 <%= render :partial => '/globes/masterglobe_frame_top' %>
-<table width="100%">
-  <%= hidden_field_tag "data_element_collections", nil, { :id => "data_element_collections", :value => @list_of_collections.uniq.join(',') } %>
+<div class="raised_area">
   <%= render :partial => '/globes/preview_globes' %>
   <%= render :partial => '/profiles/preview_profiles' %>
   <%= render :partial => '/data_sheets/preview_data_sheets' %>
   <% if @active_data_sheet %>
-  <tr>
-    <td>
-      <div id="data_sheet_render">
+<%= form_tag change_globe_profile_data_sheet_path(@globe, @active_profile, @active_data_sheet), :method => :post, :remote => true, :id => "data_sheet_form" do |f| %>
+<%= hidden_field_tag "data_element_collections", nil, { :id => "data_element_collections", :value => @list_of_collections.uniq.join(',') } %>
+      <div id="data_sheet_render" class="data_sheet">
         <%= render :partial => @active_data_sheet.file_location, :locals => { :f => f }  %>
       </div>
-    </td>
-  </tr>
-  <% end %>
-</table>
-<%= render :partial => '/globes/masterglobe_frame_bottom' %>
 <% end %>
+  <% end %>
+</div>
+<%= render :partial => '/globes/masterglobe_frame_bottom' %>

@@ -7,6 +7,9 @@
      @data_elements.sort{|x,y| x.type <=> y.type}.each { |data_element| %>
     <% derived_obj = eval(data_element.type).find_by_id(data_element.id)
        attributes = data_element.type.constantize.column_names - DataElement.column_names %>
+    <% if derived_obj.nil? then %>
+      <%= puts data_element.inspect %>
+    <% end %>
     <% if current_type != data_element.type && current_type != "" %>
     </table>
     <% end %>
@@ -14,7 +17,7 @@
           current_type = data_element.type %>
     <table width="100%">
       <thead>
-        <th colspan="<%= attributes.count + 2 %>">
+        <th colspan="<%= attributes.count + 4 %>">
           <%= data_element.type %>
         </th>
       </thead>
@@ -25,6 +28,8 @@
         <td><%= derived_obj[attribute] %></td>
         <% } %>
         <td><%= link_to "Edit", edit_globe_data_element_path(@globe, data_element) %></td>
+        <td><%= link_to "XML", globe_data_element_path(@globe, data_element, format: "xml") %></td>
+        <td><%= link_to "CSV", globe_data_element_path(@globe, data_element, format: "csv") %></td>
       </tr>
   <% } %>
     </table>

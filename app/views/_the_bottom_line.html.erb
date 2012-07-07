@@ -1,8 +1,13 @@
+<% if current_user %>
 <div class="bottom_navigation">
   <span class="bottom_navigation_left">
-    <%= link_to "[All Globes]", globes_url %>|<%= link_to "[All Presentations]", globe_presentations_url(@globe) %>|<%= link_to "[All Profiles]", globe_profiles_url(@globe) %>|<%= link_to "[All Data]", globe_data_elements_url(@globe) %>
+    <%= link_to "[All Globes]", globes_url %>|<%= if !@globe.blank? then link_to "[All Presentations]", globe_presentations_url(@globe) end %>|<%= if !@globe.blank? then link_to "[All Profiles]", globe_profiles_url(@globe) end %>|<%= if !@globe.blank? then link_to "[All Data]", globe_data_elements_url(@globe) end %>
   </span>
+  
+  <% if !@globe.blank? then %>
   <span class="bottom_navigation_right">
     <%= link_to "[Home]", preview_globe_path(@globe) %>
   </span>
+  <% end %>
 </div>
+<% end %>

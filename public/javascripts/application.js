@@ -61,7 +61,6 @@ function write_edit(element_id, element_2_id, data_element_id) {
 //        alert(e1.id + '_id');
 //        data_element_id = document.getElementById(data_element_id)
 //        data_element_id.value = document.getElementById(e1.id + '_id').value
-        
         $("data_sheet_form").request({
             onSuccess: function(response) {eval(response)}
         });

@@ -63,6 +63,7 @@ class ProfilesController < ApplicationController
       if @profile.save
         format.html { redirect_to([@globe, @profile], :notice => 'Profile was successfully created.') }
         format.xml  { render :xml => @profile, :status => :created, :location => @profile }
+        format.js
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @profile.errors, :status => :unprocessable_entity }
@@ -123,6 +124,7 @@ class ProfilesController < ApplicationController
 #      DataSheetsController.calculate_data_sheet_elements(@active_data_sheet)
       end
     end
+    
   end
   
   def sort

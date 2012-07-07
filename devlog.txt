@@ -202,5 +202,12 @@ C:\> rake route
 
 -- TLAFs
 
-C:\> rails g model TransmissionLossAdjustmentDataElement month:datetime unit:string adjustment:float
+C:\> rails g model TransmissionLossAdjustmentDataElement month:datetime power_station_data_element_id:integer adjustment:float daytime_indicator:integer
 C:\> rake db:migrate
+
+-- Stations
+C:\> rails g model PowerStationDataElement code:string primary_fuel_type:string secondary_fuel_type:string location:string capacity:integer commissioned:date
+C:\> rake db:migrate
+
+C:\> rails g migration AddPowerStationDataElementToGeneratorUnitDataElement
+

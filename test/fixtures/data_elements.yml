@@ -1337,3 +1337,17 @@ gu_mp2:
   data_element_collection: data_element_collection_19
   user: paul123
   globe: ftp
+
+Ardnacrusha:
+  name: Ardnacrusha
+  type: PowerStationDataElement
+  data_element_collection: data_element_collection_20
+  user: paul123
+  globe: ftp
+  
+Moneypoint:
+  name: Moneypoint
+  type: PowerStationDataElement
+  data_element_collection: data_element_collection_21
+  user: paul123
+  globe: ftp

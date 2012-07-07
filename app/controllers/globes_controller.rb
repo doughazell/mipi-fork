@@ -156,6 +156,7 @@ class GlobesController < ApplicationController
     
     if @active_profile then
       @data_sheets = @active_profile.data_sheets
+      @data_sheets.sort! {|a,b| a.name <=> b.name}
       if (params[:data_sheet_id]) then
         @active_data_sheet = @data_sheets.find(params[:data_sheet_id])
       else

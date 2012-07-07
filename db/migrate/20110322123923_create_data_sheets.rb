@@ -6,6 +6,7 @@ class CreateDataSheets < ActiveRecord::Migration
       t.string :style_sheets
       t.integer :profile_id
       t.string :file_location
+      t.integer :position
 
       t.userstamps
       t.timestamps

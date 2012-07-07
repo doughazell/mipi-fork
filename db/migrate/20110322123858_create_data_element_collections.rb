@@ -6,11 +6,11 @@ class CreateDataElementCollections < ActiveRecord::Migration
       t.string :archive_criteria
 #      t.integer :data_sheet_id
       t.string :data_element_type
-      t.integer :globe_id
       t.integer :page_limit
       t.boolean :historic
       t.string :variable_name
       t.string :order_by_column, :default => "created_at DESC"
+      t.integer :globe_id
 
       t.timestamps
     end

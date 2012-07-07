@@ -67,7 +67,15 @@ ecb_shareholders_profile:
 ############################################################
 # Profiles for FTP's Globe
 ftp_main_profile:
-  name: Main
+  name: Units
+  globe: ftp
+  
+ftp_station_profile:
+  name: Stations
+  globe: ftp
+
+ftp_tlaf_profile:
+  name: TLAFs
   globe: ftp
   
 ###=========================================================

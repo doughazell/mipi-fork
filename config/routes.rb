@@ -46,7 +46,7 @@ V01::Application.routes.draw do
         member do
           get 'draw'
           get 'preview'
-          put 'change'
+          post 'change'
        end
         
         collection do
@@ -84,6 +84,7 @@ V01::Application.routes.draw do
   match 'home/aboutus' => 'home#aboutus'
 
   match 'read/*data_element_type/*data_element_name' => 'data_elements#retrieve', defaults: {format: 'xml'}
+  match 'read_all/*data_element_type' => 'data_elements#retrieve_all', defaults: {format: 'xml'}
 
 #  match '/' => 'globes#show', :constraints => { :subdomain => /.+/ }
   # The priority is based upon order of creation:

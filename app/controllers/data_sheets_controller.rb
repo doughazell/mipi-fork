@@ -115,10 +115,15 @@ class DataSheetsController < ApplicationController
     @profiles = @globe.profiles.sort! { |a,b| a.position <=> b.position }
     @active_profile = Profile.find(params[:profile_id])
     @data_sheets = @active_profile.data_sheets
+    @data_sheets.sort! {|a,b| a.name <=> b.name}
     @active_data_sheet = DataSheet.find(params[:id])
     
     # Retrieve all the database data required.
     calculate_data_sheet_elements(@active_data_sheet)
+    
+    # Create a new instance to facilitate...
+#    @profile = Profile.new
+    
   end
 
   # Within this method we must pull the database information back the collection
@@ -179,6 +184,8 @@ class DataSheetsController < ApplicationController
       
       @outputs.each do |sheet_part|
         @part = DataElementCollection.find(sheet_part.data_element_collection_id)
+        puts @part.inspect
+        puts "-----"
         if hash_of_variables.has_key? @part.variable_name then
           hash_of_variables[@part.variable_name] = hash_of_variables[@part.variable_name] + 1
         else

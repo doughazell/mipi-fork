@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120420202925) do
+ActiveRecord::Schema.define(:version => 20120620185408) do
 
   create_table "address_data_elements", :force => true do |t|
     t.string "address_line_1"
@@ -70,11 +70,11 @@ ActiveRecord::Schema.define(:version => 20120420202925) do
     t.string   "security"
     t.string   "archive_criteria"
     t.string   "data_element_type"
-    t.integer  "globe_id"
     t.integer  "page_limit"
     t.boolean  "historic"
     t.string   "variable_name"
     t.string   "order_by_column",   :default => "created_at DESC"
+    t.integer  "globe_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -120,6 +120,7 @@ ActiveRecord::Schema.define(:version => 20120420202925) do
     t.string   "style_sheets"
     t.integer  "profile_id"
     t.string   "file_location"
+    t.integer  "position"
     t.integer  "creator_id"
     t.integer  "updater_id"
     t.datetime "created_at"
@@ -154,12 +155,13 @@ ActiveRecord::Schema.define(:version => 20120420202925) do
   end
 
   create_table "generator_unit_data_elements", :force => true do |t|
-    t.string "code"
-    t.string "fuel_type"
-    t.float  "installed_capacity"
-    t.float  "fixed_heat_constant"
-    t.float  "start_hours_hot"
-    t.float  "start_hours_cold"
+    t.string  "code"
+    t.string  "fuel_type"
+    t.float   "installed_capacity"
+    t.float   "fixed_heat_constant"
+    t.float   "start_hours_hot"
+    t.float   "start_hours_cold"
+    t.integer "power_station_data_element_id"
   end
 
   create_table "globes", :force => true do |t|
@@ -232,6 +234,15 @@ ActiveRecord::Schema.define(:version => 20120420202925) do
   create_table "phone_number_data_elements", :force => true do |t|
     t.string "phone_type"
     t.string "phone_number"
+  end
+
+  create_table "power_station_data_elements", :force => true do |t|
+    t.string  "code"
+    t.string  "primary_fuel_type"
+    t.string  "secondary_fuel_type"
+    t.string  "location"
+    t.integer "capacity"
+    t.date    "commissioned"
   end
 
   create_table "presentations", :force => true do |t|
@@ -317,10 +328,9 @@ ActiveRecord::Schema.define(:version => 20120420202925) do
 
   create_table "transmission_loss_adjustment_data_elements", :force => true do |t|
     t.datetime "month"
-    t.string   "unit"
+    t.integer  "power_station_data_element_id"
     t.float    "adjustment"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer  "daytime_indicator"
   end
 
   create_table "users", :force => true do |t|
@@ -554,7 +564,7 @@ ActiveRecord::Schema.define(:version => 20120420202925) do
   end
 
   create_table "view_generator_unit_data_elements", :id => false, :force => true do |t|
-    t.integer  "id",                         :default => 0, :null => false
+    t.integer  "id",                            :default => 0, :null => false
     t.string   "type"
     t.string   "name"
     t.integer  "data_element_collection_id"
@@ -573,6 +583,7 @@ ActiveRecord::Schema.define(:version => 20120420202925) do
     t.float    "fixed_heat_constant"
     t.float    "start_hours_hot"
     t.float    "start_hours_cold"
+    t.integer  "power_station_data_element_id"
   end
 
   create_table "view_house_data_elements", :id => false, :force => true do |t|
@@ -702,6 +713,28 @@ ActiveRecord::Schema.define(:version => 20120420202925) do
     t.string   "phone_number"
   end
 
+  create_table "view_power_station_data_elements", :id => false, :force => true do |t|
+    t.integer  "id",                         :default => 0, :null => false
+    t.string   "type"
+    t.string   "name"
+    t.integer  "data_element_collection_id"
+    t.integer  "user_id"
+    t.integer  "ready_to_archive"
+    t.string   "label"
+    t.boolean  "mandatory"
+    t.integer  "globe_id"
+    t.integer  "creator_id"
+    t.integer  "updater_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "code"
+    t.string   "primary_fuel_type"
+    t.string   "secondary_fuel_type"
+    t.string   "location"
+    t.integer  "capacity"
+    t.date     "commissioned"
+  end
+
   create_table "view_property_data_elements", :id => false, :force => true do |t|
     t.integer  "id",                         :default => 0, :null => false
     t.string   "type"
@@ -821,6 +854,26 @@ ActiveRecord::Schema.define(:version => 20120420202925) do
     t.string   "description"
     t.float    "value"
     t.float    "balance"
+  end
+
+  create_table "view_transmission_loss_adjustment_data_elements", :id => false, :force => true do |t|
+    t.integer  "id",                            :default => 0, :null => false
+    t.string   "type"
+    t.string   "name"
+    t.integer  "data_element_collection_id"
+    t.integer  "user_id"
+    t.integer  "ready_to_archive"
+    t.string   "label"
+    t.boolean  "mandatory"
+    t.integer  "globe_id"
+    t.integer  "creator_id"
+    t.integer  "updater_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "month"
+    t.integer  "power_station_data_element_id"
+    t.float    "adjustment"
+    t.integer  "daytime_indicator"
   end
 
 end

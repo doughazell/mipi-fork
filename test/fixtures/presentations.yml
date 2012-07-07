@@ -122,3 +122,19 @@ twentythree_2:
   data_sheet: ftp_generator_mp2_data_sheet
   data_element_collection: data_element_collection_19
 
+twentyfour_moneypoint:
+  data_sheet: ftp_station_moneypoint_data_sheet
+  data_element_collection: data_element_collection_21
+
+twentyfour_ardnacrusha:
+  data_sheet: ftp_station_ardnacrusha_data_sheet
+  data_element_collection: data_element_collection_20
+
+twentyfour_all_1:
+  data_sheet: ftp_station_data_sheet
+  data_element_collection: data_element_collection_20
+
+twentyfour_all_2:
+  data_sheet: ftp_station_data_sheet
+  data_element_collection: data_element_collection_21
+

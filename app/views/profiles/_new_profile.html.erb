@@ -11,9 +11,12 @@
     </div>
   <% end %>
 
-  <%= text_field_tag :name, "", :size => 4 %>
-  <%= button_tag(:type => 'button') do 
-    content_tag(:strong, raw("&#10004;"))
-  end  %>
-  
 <% end %>
+
+<%= fields_for :profiles, :url => { :action => :create, :controller => :profiles }, :method => :post, :remote => true do |f| %>
+  <%= text_field_tag :name, "", :size => 4 %>
+  <%= content_tag :button, :type => :submit do
+    raw("&#10004;")
+  end %>
+<% end %>
+  
