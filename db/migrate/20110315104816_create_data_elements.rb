@@ -9,6 +9,7 @@ class CreateDataElements < ActiveRecord::Migration
       t.string :label
       t.boolean :mandatory
       t.integer :globe_id
+      t.integer :version, :default => 1
 
       t.userstamps
       t.timestamps

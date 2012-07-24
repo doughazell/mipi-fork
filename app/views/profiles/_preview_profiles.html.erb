@@ -7,13 +7,7 @@
               <%= link_to profile.name, preview_globe_profile_url(@globe, profile) %>
             <% end %>
           <% end %>
-
-<span id="new_profile">
-<%= p.text_field :name, :value=> "", :size => 4 %>
-<%= p.submit raw("&#10004;"), :remote => true  %>
-</span>
-
-          <span class="add_profile"><%= link_to "[Add]", new_globe_profile_url(@globe), :remote => true %></span>
+          <%= render :partial => "profiles/add_profile_button", :locals => {:p => p } %>
         </div>
         <%= sortable_element("preview_profiles", :url => sort_globe_profiles_path(@globe), :tag => "span", :handle => "handle", :overlap => :vertical) %>
 <% end %>

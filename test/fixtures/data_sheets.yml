@@ -255,8 +255,19 @@ ecb_club_contact_details_4:
   updater: paul123
   file_location: '/data_sheets/pages/ecb_cricket_club.html.erb'
   
+ftp_generator_GU_DEFAULT_data_sheet:
+  name: GU_DEFAULT
+  display_name: 'Generator Unit'
+  style_sheets: '/stylesheets/custom_styles/ftp/ftp.css'
+  profile_id: 0
+  creator: paul123
+  updater: paul123
+  file_location: '/data_sheets/pages/ftp/generator.html.erb'
+  position: 2
+
 ftp_main_data_sheet:
-  name: Generator Units
+  name: All Units
+  display_name: 'All Generator Units'
   style_sheets: '/stylesheets/custom_styles/ftp/ftp.css'
   profile: ftp_main_profile
   creator: paul123
@@ -264,49 +275,24 @@ ftp_main_data_sheet:
   file_location: '/data_sheets/pages/ftp/all_generators.html.erb'
   position: 1
   
-ftp_generator_mp1_data_sheet:
-  name: MP1
+ftp_station_ST_DEFAULT_data_sheet:
+  name: ST_DEFAULT
+  display_name: 'Power Station'
   style_sheets: '/stylesheets/custom_styles/ftp/ftp.css'
-  profile: ftp_main_profile
+  profile_id: 0
   creator: paul123
   updater: paul123
-  file_location: '/data_sheets/pages/ftp/generator.html.erb'
-  position: 2
-
-ftp_generator_mp2_data_sheet:
-  name: MP2
-  style_sheets: '/stylesheets/custom_styles/ftp/ftp.css'
-  profile: ftp_main_profile
-  creator: paul123
-  updater: paul123
-  file_location: '/data_sheets/pages/ftp/generator.html.erb'
-  position: 3
-
-ftp_station_data_sheet:
-  name: All
+  file_location: '/data_sheets/pages/ftp/station.html.erb'
+  position: 1
+  
+ftp_station_ALL_data_sheet:
+  name: All Stations
+  display_name: 'All Power Stations'
   style_sheets: '/stylesheets/custom_styles/ftp/ftp.css'
   profile: ftp_station_profile
   creator: paul123
   updater: paul123
   file_location: '/data_sheets/pages/ftp/all_stations.html.erb'
-  position: 1
-  
-ftp_station_moneypoint_data_sheet:
-  name: Moneypoint
-  style_sheets: '/stylesheets/custom_styles/ftp/ftp.css'
-  profile: ftp_station_profile
-  creator: paul123
-  updater: paul123
-  file_location: '/data_sheets/pages/ftp/station.html.erb'
-  position: 1
-  
-ftp_station_ardnacrusha_data_sheet:
-  name: Ardnacrusha
-  style_sheets: '/stylesheets/custom_styles/ftp/ftp.css'
-  profile: ftp_station_profile
-  creator: paul123
-  updater: paul123
-  file_location: '/data_sheets/pages/ftp/station.html.erb'
   position: 1
   
 ftp_tlaf_overview:

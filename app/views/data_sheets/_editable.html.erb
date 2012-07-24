@@ -34,8 +34,8 @@ puts collection_name
 <%= fields_for "#{collection_name}[]" do |f| %>
 <span>
   <%= hidden_field_tag "#{collection_name}[#{data_element_id}][id]", data_element_id %>
-  <span class='editable_region' id='<%= combined_id_region %>' onclick="javascript:switch_edits('<%= combined_id %>', '<%= combined_id_edit %>');">
-    <label id="<%= combined_id %>"><%= data_value %></label>
+  <span class='editable_region' id='<%= combined_id_region %>' onclick="javascript:switch_edits('<%= combined_id %>', '<%= combined_id_edit %>', <%= data_value.blank? ? true : false %>);">
+    <label id="<%= combined_id %>"><%= data_value.blank? ? '<blank>' : data_value %></label>
   </span>
   <span style="display:none;" class="editing_region" id="<%= combined_id_edit_region %>" >
   <% if click_mechanism == 'lost_focus' %>

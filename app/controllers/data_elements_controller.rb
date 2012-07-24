@@ -5,7 +5,7 @@ class DataElementsController < ApplicationController
   def index
     @globe = Globe.find(params[:globe_id])
     @shadowglobes = @globe.children
-    @data_elements = DataElement.seek_collections_by_globe(@globe.id)
+    @data_collections = DataElement.seek_collections_by_globe(@globe.id)
     respond_to do |format|
       format.html # index.html.erb
       format.xml # index.xml.erb
@@ -20,6 +20,7 @@ class DataElementsController < ApplicationController
     if (@data_element_type) then   # Javascript will be activated.
       @data_element = @data_element_type.constantize.new
     else
+      # SHOULD BE A BETTER WAY THAN THIS TO FIND ALL DATA_ELEMENT MODELS!!
       @derived_classes = DataElementCollection.all.uniq {|x| x.data_element_type }
     end
 
@@ -95,7 +96,19 @@ class DataElementsController < ApplicationController
   end
   
   def destroy
-    
+    @globe = Globe.find(params[:globe_id])
+    @data_element = @globe.data_elements.find(params[:id])
+    @dec = @data_element.data_element_collection
+    if @dec.data_elements.count == 1 then
+      @dec.destroy
+    end
+    @data_element.destroy
+
+    respond_to do |format|
+      format.html { redirect_to(globe_data_elements_url) }
+      format.xml  { head :ok }
+    end
+
   end
   
   def show
@@ -146,16 +159,18 @@ class DataElementsController < ApplicationController
     puts "#{data_element_type}"
     puts date
     if (date) then #.where("created_at >= :date", :date => @date) .where(:name => @data_element_name)
-      @data_element = eval("#{data_element_type}").where("name = ? AND created_at >= ?", data_element_name, date).order(:updated_at).first
+      @data_element = eval("#{data_element_type}").where("name = ? AND updated_at >= ?", data_element_name, date).order(:version).first
     else
-      @data_element = eval("#{data_element_type}").find_last_by_name(data_element_name, :order => 'updated_at')
+      @data_element = eval("#{data_element_type}").find_last_by_name(data_element_name, :order => 'version')
     end
     
+    puts @data_element.inspect
     # TODO
     # Loop through all the keys and change the value of anything ending in 'data-element-id'
     # since these will be foreign keys and need to be resolved/realised.
 
     respond_to do |format|
+#      format.xml
       format.xml { render :xml => @data_element }
     end
   end

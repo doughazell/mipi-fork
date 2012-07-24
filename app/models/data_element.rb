@@ -30,20 +30,22 @@ class DataElement < ActiveRecord::Base
       comp1.eql?(comp2)
   end
 
-  def update_elements(new_data_element, values)
+  def update_elements(retain_data_element, values)
 
     if (@@historical_retention)
-      if !compare_element(new_data_element) then
+      if !compare_element(retain_data_element) then
         puts "SAVING..."
-        new_data_element.created_at = Time.now
-        new_data_element.updated_at = new_data_element.created_at
-        new_data_element.save
+#        created_at = Time.now
+#        version = retain_data_element.version + 1
+
+        save
+        retain_data_element.save
         
-        puts "~Number of Links that need to be updated..."
-        puts data_element_links.count.to_s
-        data_element_links.each do |link|
-          link.update_links new_data_element.id
-        end
+#        puts "~Number of Links that need to be updated..."
+#        puts data_element_links.count.to_s
+#        data_element_links.each do |link|
+#          link.update_links new_data_element.id
+#        end
       else
         puts "NOT SAVING..."
       end
@@ -70,30 +72,15 @@ class DataElement < ActiveRecord::Base
   end
   
   def return_non_base_attributes
-#    if (!derived_object) then
     derived_object = eval(type).find_by_id(id)
     base_object = DataElement.find_by_id(id)
-#    end
     
-    #puts "SELF"
-    #puts self
-    #puts self.attributes
-    #
-    #puts "DERIVED"
-    #puts derived_object
-    #puts derived_object.attributes
-    #
     return_attributes = Hash.new
     derived_object.attributes.each { |attribute|
-#      puts "#{attribute[0]}, #{attribute[1]}"
       if (!base_object.attributes.include?(attribute[0])) then
-        puts "Condition Met"
-        puts "#{attribute[0]}, #{attribute[1]}"
         return_attributes[attribute[0]] = attribute[1]
       end
     }
-    puts "TEST"
-    puts return_attributes
     return_attributes
   end
   
@@ -106,6 +93,35 @@ class DataElement < ActiveRecord::Base
 
   def self.default_display_columns
     column_names - (DataElement.column_names)
+  end
+  
+#  def to_xml(options = {})
+##    to_csv
+#    output = ""
+#    eval(type).column_names.each do |column|
+#      puts "#{type}.#{column}"
+#      if (column == "id") then
+#        output = output + "<id value='#{id}' />"
+#      else
+#        output = output + eval("#{column}.to_xml")
+#        if (column[-3,3] == '_id')
+#          foreign_key = column[0..column.length - 4]
+#          output = output + eval("#{foreign_key}.to_xml")
+#        end
+#      end
+#    end
+#    puts output
+#    output
+#  end
+  
+  def self.find_or_initialize_master_by_name(name_criteria)
+    puts name_criteria
+#    obj = find(:all, :conditions => ["name = ?", name_criteria], :order => 'updated_at DESC').first
+    obj = find(:all, :conditions => ["name = ?", name_criteria], :order => 'version DESC').first
+    if (obj.nil?)
+      obj = new
+    end
+    obj
   end
 end
 

@@ -1,9 +1,9 @@
 <table>
   <tr>
-    <td>Generator Unit Code</td><td><%= @unit.name %></td>
+    <td>Generator Unit Code</td><td><%= @unit.code %></td>
   </tr>
   <tr>
-    <td>Primary Fuel Type</td><td><%= @unit.fuel_type %></td>
+    <td>Station</td><td><%= ForeignKey_PickList("unit", @unit, "power_station_data_element_id", "name") %></td>
   </tr>
   <tr>
     <td>Installed Capacity</td><td><%= Label_TextBox_Switch("unit", @unit, "installed_capacity") %></td>
@@ -20,4 +20,4 @@
   <tr>
     <td>Cold Starts</td><td><%= @unit.start_hours_cold %> and above</td>
   </tr>
-</table>
+  </table>

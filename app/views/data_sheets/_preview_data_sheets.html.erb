@@ -1,7 +1,15 @@
 <% if @data_sheets.count > 1 %>
 <div class="preview_data_sheets">
-<% @data_sheets.each do |data_sheet| %>
-<span class="<%= if (@active_data_sheet && (data_sheet.id == @active_data_sheet.id)) then render :text => "raised_box active_data_sheet" else render :text => "raised_box" end %>" width="<%= 100 / @data_sheets.count %>%"><%= link_to data_sheet.name, preview_globe_profile_data_sheet_url(@globe, @active_profile, data_sheet) %></span>
-<% end %>
-</div>
+<% if @data_sheets.count > 9 then
+  tag_id = "id"
+  tag_name = "name" %>
+Data Sheet:&nbsp;
+<%=  select_tag "data_sheet_selector", options_from_collection_for_select(@data_sheets, "id", "display_name", @active_data_sheet.id), :class => "data_sheet_selector", :onchange => ("javascript:navigate_to_data_sheet(#{@globe.id}, #{@active_profile.id}, 'data_sheet_selector');") %>
+<% else %>
+  <% @data_sheets.each do |data_sheet| %>
+  <% display_name = data_sheet.display_name.blank? ? data_sheet.name : data_sheet.display_name%>
+  <span class="<%= if (@active_data_sheet && (data_sheet.id == @active_data_sheet.id)) then render :text => "raised_box active_data_sheet" else render :text => "raised_box" end %>" width="<%= 100 / @data_sheets.count %>%"><%= link_to display_name, preview_globe_profile_data_sheet_url(@globe, @active_profile, data_sheet) %></span>
+    <% end %>
+  <% end %>
+  </div>
 <% end %>

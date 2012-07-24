@@ -19,7 +19,7 @@ function edit_element(element_id) {
     document.forms[0].submit();
 }
 
-function switch_edits(element_id_1, element_id_2) {
+function switch_edits(element_id_1, element_id_2, bBlank) {
     debug = 0;
     e1 = document.getElementById(element_id_1);
     e1_region = document.getElementById(element_id_1 + '_region');
@@ -40,7 +40,12 @@ function switch_edits(element_id_1, element_id_2) {
             err.innerHTML = "<STRONG>e1</STRONG><br/>ID: " + e1.id + '<br/>Value: ' + e1.value + '<br/>innerHTML: ' + e1.innerHTML + '<br/>'
             err.innerHTML += "<STRONG>e2</STRONG><br/>ID: " + e2.id + '<br/>Value: ' + e2.value + '<br/>innerHTML: ' + e2.innerHTML
         }
-        e2.value = e1.innerHTML;
+        if (bBlank == false) {
+            e2.value = e1.innerHTML;
+        }
+        else {
+            e2.value = '';
+        }
         e2.focus();
         e2.select();
     }
@@ -112,6 +117,13 @@ function navigate_to_shadow_globe(globe_id)
         if (answer)
             window.location = document.location.protocol + '//' + document.location.host + '/globes/' + globe_id + '/preview'
     }
+}
+
+function navigate_to_data_sheet(globe_id, profile_id, selector_id)
+{
+    selector = document.getElementById(selector_id);
+    id = selector.options[selector.selectedIndex].value;
+    window.location = document.location.protocol + '//' + document.location.host + '/globes/' + globe_id + '/profiles/' + profile_id + '/data_sheets/' + id + '/preview';
 }
 
 function subscription_link_profiles_refresh(globe_id)

@@ -4,32 +4,34 @@
 </p>
 <p>
   <% current_type = ""
-     @data_elements.sort{|x,y| x.type <=> y.type}.each { |data_element| %>
-    <% derived_obj = eval(data_element.type).find_by_id(data_element.id)
-       attributes = data_element.type.constantize.column_names - DataElement.column_names %>
-    <% if derived_obj.nil? then %>
-      <%= puts data_element.inspect %>
+    @data_collections.sort{|x,y| x.type <=> y.type}.each { |dec|
+       
+       data_element = eval(dec.type).find_by_id(dec.id)
+       attributes = dec.type.constantize.column_names - DataElement.column_names %>
+    <% if data_element.nil? then %>
+      <%= puts dec.inspect %>
     <% end %>
-    <% if current_type != data_element.type && current_type != "" %>
+    <% if current_type != dec.type && current_type != "" %>
     </table>
     <% end %>
-    <% if current_type == "" || current_type != data_element.type then
-          current_type = data_element.type %>
+    <% if current_type == "" || current_type != dec.type then
+          current_type = dec.type %>
     <table width="100%">
       <thead>
-        <th colspan="<%= attributes.count + 4 %>">
-          <%= data_element.type %>
+        <th colspan="<%= attributes.count + 5 %>">
+          <%= dec.type %>
         </th>
       </thead>
     <% end %>
       <tr>
-        <td><%= data_element.name.to_s %></td>
+        <td><%= dec.name.to_s %></td>
         <%  attributes.each {|attribute| %>
-        <td><%= derived_obj[attribute] %></td>
+        <td><%= data_element[attribute] %></td>
         <% } %>
         <td><%= link_to "Edit", edit_globe_data_element_path(@globe, data_element) %></td>
         <td><%= link_to "XML", globe_data_element_path(@globe, data_element, format: "xml") %></td>
         <td><%= link_to "CSV", globe_data_element_path(@globe, data_element, format: "csv") %></td>
+        <td><%= link_to "Destroy", globe_data_element_path(@globe, data_element), :method => :delete %></td>
       </tr>
   <% } %>
     </table>

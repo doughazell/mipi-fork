@@ -1324,30 +1324,4 @@ ecb_kidderminstervictoria:
   user: paul123
   globe: ecb_kidderminstervictoria_globe
 
-gu_mp1:
-  name: MP1
-  type: GeneratorUnitDataElement
-  data_element_collection: data_element_collection_18
-  user: paul123
-  globe: ftp
-
-gu_mp2:
-  name: MP2
-  type: GeneratorUnitDataElement
-  data_element_collection: data_element_collection_19
-  user: paul123
-  globe: ftp
-
-Ardnacrusha:
-  name: Ardnacrusha
-  type: PowerStationDataElement
-  data_element_collection: data_element_collection_20
-  user: paul123
-  globe: ftp
   
-Moneypoint:
-  name: Moneypoint
-  type: PowerStationDataElement
-  data_element_collection: data_element_collection_21
-  user: paul123
-  globe: ftp

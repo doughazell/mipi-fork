@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120620185408) do
+ActiveRecord::Schema.define(:version => 20120710192943) do
 
   create_table "address_data_elements", :force => true do |t|
     t.string "address_line_1"
@@ -108,6 +108,7 @@ ActiveRecord::Schema.define(:version => 20120620185408) do
     t.string   "label"
     t.boolean  "mandatory"
     t.integer  "globe_id"
+    t.integer  "version",                    :default => 1
     t.integer  "creator_id"
     t.integer  "updater_id"
     t.datetime "created_at"
@@ -116,6 +117,7 @@ ActiveRecord::Schema.define(:version => 20120620185408) do
 
   create_table "data_sheets", :force => true do |t|
     t.string   "name"
+    t.string   "display_name"
     t.string   "class_style"
     t.string   "style_sheets"
     t.integer  "profile_id"
@@ -156,7 +158,6 @@ ActiveRecord::Schema.define(:version => 20120620185408) do
 
   create_table "generator_unit_data_elements", :force => true do |t|
     t.string  "code"
-    t.string  "fuel_type"
     t.float   "installed_capacity"
     t.float   "fixed_heat_constant"
     t.float   "start_hours_hot"
@@ -231,12 +232,17 @@ ActiveRecord::Schema.define(:version => 20120620185408) do
     t.string "last_name"
   end
 
+  create_table "notification_data_elements", :force => true do |t|
+    t.string "email"
+  end
+
   create_table "phone_number_data_elements", :force => true do |t|
     t.string "phone_type"
     t.string "phone_number"
   end
 
   create_table "power_station_data_elements", :force => true do |t|
+    t.string  "full_name"
     t.string  "code"
     t.string  "primary_fuel_type"
     t.string  "secondary_fuel_type"
@@ -355,6 +361,30 @@ ActiveRecord::Schema.define(:version => 20120620185408) do
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
   add_index "users", ["username"], :name => "index_users_on_username", :unique => true
 
+  create_table "vehicle_data_elements", :force => true do |t|
+    t.string "registration"
+    t.string "make"
+    t.string "model"
+    t.string "colour"
+  end
+
+  create_table "vehicle_reminder_data_elements", :force => true do |t|
+    t.date    "reminder_date"
+    t.integer "notification_data_element_id"
+    t.integer "reminder_type_data_element_id"
+  end
+
+  create_table "vehicle_reminder_type_data_elements", :force => true do |t|
+    t.string "description"
+  end
+
+  create_table "vehicle_service_data_elements", :force => true do |t|
+    t.date    "service_date"
+    t.string  "details"
+    t.string  "signator"
+    t.integer "vehicle_data_element_id"
+  end
+
   create_table "view_address_data_elements", :id => false, :force => true do |t|
     t.integer  "id",                         :default => 0, :null => false
     t.string   "type"
@@ -365,6 +395,7 @@ ActiveRecord::Schema.define(:version => 20120620185408) do
     t.string   "label"
     t.boolean  "mandatory"
     t.integer  "globe_id"
+    t.integer  "version",                    :default => 1
     t.integer  "creator_id"
     t.integer  "updater_id"
     t.datetime "created_at"
@@ -387,6 +418,7 @@ ActiveRecord::Schema.define(:version => 20120620185408) do
     t.string   "label"
     t.boolean  "mandatory"
     t.integer  "globe_id"
+    t.integer  "version",                    :default => 1
     t.integer  "creator_id"
     t.integer  "updater_id"
     t.datetime "created_at"
@@ -406,6 +438,7 @@ ActiveRecord::Schema.define(:version => 20120620185408) do
     t.string   "label"
     t.boolean  "mandatory"
     t.integer  "globe_id"
+    t.integer  "version",                    :default => 1
     t.integer  "creator_id"
     t.integer  "updater_id"
     t.datetime "created_at"
@@ -427,6 +460,7 @@ ActiveRecord::Schema.define(:version => 20120620185408) do
     t.string   "label"
     t.boolean  "mandatory"
     t.integer  "globe_id"
+    t.integer  "version",                    :default => 1
     t.integer  "creator_id"
     t.integer  "updater_id"
     t.datetime "created_at"
@@ -447,6 +481,7 @@ ActiveRecord::Schema.define(:version => 20120620185408) do
     t.string   "label"
     t.boolean  "mandatory"
     t.integer  "globe_id"
+    t.integer  "version",                    :default => 1
     t.integer  "creator_id"
     t.integer  "updater_id"
     t.datetime "created_at"
@@ -469,6 +504,7 @@ ActiveRecord::Schema.define(:version => 20120620185408) do
     t.string   "label"
     t.boolean  "mandatory"
     t.integer  "globe_id"
+    t.integer  "version",                    :default => 1
     t.integer  "creator_id"
     t.integer  "updater_id"
     t.datetime "created_at"
@@ -502,6 +538,7 @@ ActiveRecord::Schema.define(:version => 20120620185408) do
     t.string   "label"
     t.boolean  "mandatory"
     t.integer  "globe_id"
+    t.integer  "version",                    :default => 1
     t.integer  "creator_id"
     t.integer  "updater_id"
     t.datetime "created_at"
@@ -523,6 +560,7 @@ ActiveRecord::Schema.define(:version => 20120620185408) do
     t.string   "label"
     t.boolean  "mandatory"
     t.integer  "globe_id"
+    t.integer  "version",                    :default => 1
     t.integer  "creator_id"
     t.integer  "updater_id"
     t.datetime "created_at"
@@ -545,6 +583,7 @@ ActiveRecord::Schema.define(:version => 20120620185408) do
     t.string   "label"
     t.boolean  "mandatory"
     t.integer  "globe_id"
+    t.integer  "version",                    :default => 1
     t.integer  "creator_id"
     t.integer  "updater_id"
     t.datetime "created_at"
@@ -573,12 +612,12 @@ ActiveRecord::Schema.define(:version => 20120620185408) do
     t.string   "label"
     t.boolean  "mandatory"
     t.integer  "globe_id"
+    t.integer  "version",                       :default => 1
     t.integer  "creator_id"
     t.integer  "updater_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "code"
-    t.string   "fuel_type"
     t.float    "installed_capacity"
     t.float    "fixed_heat_constant"
     t.float    "start_hours_hot"
@@ -596,6 +635,7 @@ ActiveRecord::Schema.define(:version => 20120620185408) do
     t.string   "label"
     t.boolean  "mandatory"
     t.integer  "globe_id"
+    t.integer  "version",                    :default => 1
     t.integer  "creator_id"
     t.integer  "updater_id"
     t.datetime "created_at"
@@ -623,6 +663,7 @@ ActiveRecord::Schema.define(:version => 20120620185408) do
     t.string   "label"
     t.boolean  "mandatory"
     t.integer  "globe_id"
+    t.integer  "version",                    :default => 1
     t.integer  "creator_id"
     t.integer  "updater_id"
     t.datetime "created_at"
@@ -642,6 +683,7 @@ ActiveRecord::Schema.define(:version => 20120620185408) do
     t.string   "label"
     t.boolean  "mandatory"
     t.integer  "globe_id"
+    t.integer  "version",                      :default => 1
     t.integer  "creator_id"
     t.integer  "updater_id"
     t.datetime "created_at"
@@ -667,6 +709,7 @@ ActiveRecord::Schema.define(:version => 20120620185408) do
     t.string   "label"
     t.boolean  "mandatory"
     t.integer  "globe_id"
+    t.integer  "version",                    :default => 1
     t.integer  "creator_id"
     t.integer  "updater_id"
     t.datetime "created_at"
@@ -686,6 +729,7 @@ ActiveRecord::Schema.define(:version => 20120620185408) do
     t.string   "label"
     t.boolean  "mandatory"
     t.integer  "globe_id"
+    t.integer  "version",                    :default => 1
     t.integer  "creator_id"
     t.integer  "updater_id"
     t.datetime "created_at"
@@ -693,6 +737,24 @@ ActiveRecord::Schema.define(:version => 20120620185408) do
     t.string   "first_name"
     t.string   "other_names"
     t.string   "last_name"
+  end
+
+  create_table "view_notification_data_elements", :id => false, :force => true do |t|
+    t.integer  "id",                         :default => 0, :null => false
+    t.string   "type"
+    t.string   "name"
+    t.integer  "data_element_collection_id"
+    t.integer  "user_id"
+    t.integer  "ready_to_archive"
+    t.string   "label"
+    t.boolean  "mandatory"
+    t.integer  "globe_id"
+    t.integer  "version",                    :default => 1
+    t.integer  "creator_id"
+    t.integer  "updater_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "email"
   end
 
   create_table "view_phone_number_data_elements", :id => false, :force => true do |t|
@@ -705,6 +767,7 @@ ActiveRecord::Schema.define(:version => 20120620185408) do
     t.string   "label"
     t.boolean  "mandatory"
     t.integer  "globe_id"
+    t.integer  "version",                    :default => 1
     t.integer  "creator_id"
     t.integer  "updater_id"
     t.datetime "created_at"
@@ -723,10 +786,12 @@ ActiveRecord::Schema.define(:version => 20120620185408) do
     t.string   "label"
     t.boolean  "mandatory"
     t.integer  "globe_id"
+    t.integer  "version",                    :default => 1
     t.integer  "creator_id"
     t.integer  "updater_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "full_name"
     t.string   "code"
     t.string   "primary_fuel_type"
     t.string   "secondary_fuel_type"
@@ -745,6 +810,7 @@ ActiveRecord::Schema.define(:version => 20120620185408) do
     t.string   "label"
     t.boolean  "mandatory"
     t.integer  "globe_id"
+    t.integer  "version",                    :default => 1
     t.integer  "creator_id"
     t.integer  "updater_id"
     t.datetime "created_at"
@@ -763,6 +829,7 @@ ActiveRecord::Schema.define(:version => 20120620185408) do
     t.string   "label"
     t.boolean  "mandatory"
     t.integer  "globe_id"
+    t.integer  "version",                      :default => 1
     t.integer  "creator_id"
     t.integer  "updater_id"
     t.datetime "created_at"
@@ -789,6 +856,7 @@ ActiveRecord::Schema.define(:version => 20120620185408) do
     t.string   "label"
     t.boolean  "mandatory"
     t.integer  "globe_id"
+    t.integer  "version",                            :default => 1
     t.integer  "creator_id"
     t.integer  "updater_id"
     t.datetime "created_at"
@@ -808,6 +876,7 @@ ActiveRecord::Schema.define(:version => 20120620185408) do
     t.string   "label"
     t.boolean  "mandatory"
     t.integer  "globe_id"
+    t.integer  "version",                    :default => 1
     t.integer  "creator_id"
     t.integer  "updater_id"
     t.datetime "created_at"
@@ -825,6 +894,7 @@ ActiveRecord::Schema.define(:version => 20120620185408) do
     t.string   "label"
     t.boolean  "mandatory"
     t.integer  "globe_id"
+    t.integer  "version",                    :default => 1
     t.integer  "creator_id"
     t.integer  "updater_id"
     t.datetime "created_at"
@@ -845,6 +915,7 @@ ActiveRecord::Schema.define(:version => 20120620185408) do
     t.string   "label"
     t.boolean  "mandatory"
     t.integer  "globe_id"
+    t.integer  "version",                    :default => 1
     t.integer  "creator_id"
     t.integer  "updater_id"
     t.datetime "created_at"
@@ -866,6 +937,7 @@ ActiveRecord::Schema.define(:version => 20120620185408) do
     t.string   "label"
     t.boolean  "mandatory"
     t.integer  "globe_id"
+    t.integer  "version",                       :default => 1
     t.integer  "creator_id"
     t.integer  "updater_id"
     t.datetime "created_at"
@@ -874,6 +946,86 @@ ActiveRecord::Schema.define(:version => 20120620185408) do
     t.integer  "power_station_data_element_id"
     t.float    "adjustment"
     t.integer  "daytime_indicator"
+  end
+
+  create_table "view_vehicle_data_elements", :id => false, :force => true do |t|
+    t.integer  "id",                         :default => 0, :null => false
+    t.string   "type"
+    t.string   "name"
+    t.integer  "data_element_collection_id"
+    t.integer  "user_id"
+    t.integer  "ready_to_archive"
+    t.string   "label"
+    t.boolean  "mandatory"
+    t.integer  "globe_id"
+    t.integer  "version",                    :default => 1
+    t.integer  "creator_id"
+    t.integer  "updater_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "registration"
+    t.string   "make"
+    t.string   "model"
+    t.string   "colour"
+  end
+
+  create_table "view_vehicle_reminder_data_elements", :id => false, :force => true do |t|
+    t.integer  "id",                            :default => 0, :null => false
+    t.string   "type"
+    t.string   "name"
+    t.integer  "data_element_collection_id"
+    t.integer  "user_id"
+    t.integer  "ready_to_archive"
+    t.string   "label"
+    t.boolean  "mandatory"
+    t.integer  "globe_id"
+    t.integer  "version",                       :default => 1
+    t.integer  "creator_id"
+    t.integer  "updater_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.date     "reminder_date"
+    t.integer  "notification_data_element_id"
+    t.integer  "reminder_type_data_element_id"
+  end
+
+  create_table "view_vehicle_reminder_type_data_elements", :id => false, :force => true do |t|
+    t.integer  "id",                         :default => 0, :null => false
+    t.string   "type"
+    t.string   "name"
+    t.integer  "data_element_collection_id"
+    t.integer  "user_id"
+    t.integer  "ready_to_archive"
+    t.string   "label"
+    t.boolean  "mandatory"
+    t.integer  "globe_id"
+    t.integer  "version",                    :default => 1
+    t.integer  "creator_id"
+    t.integer  "updater_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "description"
+  end
+
+  create_table "view_vehicle_service_data_elements", :id => false, :force => true do |t|
+    t.integer  "id",                         :default => 0, :null => false
+    t.string   "type"
+    t.string   "name"
+    t.integer  "data_element_collection_id"
+    t.integer  "user_id"
+    t.integer  "ready_to_archive"
+    t.string   "label"
+    t.boolean  "mandatory"
+    t.integer  "globe_id"
+    t.integer  "version",                    :default => 1
+    t.integer  "creator_id"
+    t.integer  "updater_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.date     "service_date"
+    t.string   "details"
+    t.string   "signator"
+    t.integer  "vehicle_data_element_id"
   end
 
 end

@@ -184,8 +184,8 @@ class DataSheetsController < ApplicationController
       
       @outputs.each do |sheet_part|
         @part = DataElementCollection.find(sheet_part.data_element_collection_id)
-        puts @part.inspect
-        puts "-----"
+#        puts @part.inspect
+#        puts "-----"
         if hash_of_variables.has_key? @part.variable_name then
           hash_of_variables[@part.variable_name] = hash_of_variables[@part.variable_name] + 1
         else
@@ -194,11 +194,11 @@ class DataSheetsController < ApplicationController
         end
       end
       
-      puts hash_of_variables.to_s
+#      puts hash_of_variables.to_s
       hash_of_variables.each { |key,value|
-        puts "#{key} is #{value}"
+#        puts "#{key} is #{value}"
         if value > 1 then
-          puts "Creating array for #{key}"
+#          puts "Creating array for #{key}"
           instance_variable_set("#{key}_array", Array.new)
         end
       }
@@ -214,34 +214,17 @@ class DataSheetsController < ApplicationController
           # For historical data sets, such as bank transactions; twitter feeds; etc. we need to
           # carry out a 'find all' and carry out pagination.
           instance_variable_set("#{@part.variable_name}", eval(@part.data_element_type).find_all_by_data_element_collection_id_and_globe_id(@part.id, @globe_id, :order => @part.order_by_column).paginate(:page => params[:page], :per_page => @part.page_limit))
-  #        puts "#{@part.data_element_type}.find_all_by_data_element_collection_id_and_globe_id(#{@part.id}, #{@globe_id})"
         else
           # For non-historic data sets, e.g. personal data; statuses; overdraft limits; etc. we
           # only need to retrieve one record.
-          puts sheet_part.data_element_collection_id
-          puts @part.variable_name
-          puts @part.data_element_type
-          puts @part.id
-          puts @globe_id
           if (hash_of_variables[@part.variable_name] == 1)
-            instance_variable_set("#{@part.variable_name}", eval(@part.data_element_type).find_by_data_element_collection_id_and_globe_id(@part.id, @globe_id, :order => "created_at DESC"))
-  #          instance_variable_set("#{@part.variable_name}_array", Array.new)
+            instance_variable_set("#{@part.variable_name}", eval(@part.data_element_type).find(:first, :conditions => { :data_element_collection_id => @part.id, :globe_id => @globe_id }, :order => "version DESC"))
           else
-            puts "#{@part.variable_name}_offset"
-            puts eval("#{@part.variable_name}_offset")
             offset = hash_of_variables["#{@part.variable_name}_offset"]
-  #          instance_variable_set("#{@part.variable_name}_array[" + offset.to_s + "]", eval(@part.data_element_type).find_by_data_element_collection_id_and_globe_id(@part.id, @globe_id, :order => "created_at DESC"))
             instance_variable_set("@tmp", eval(@part.data_element_type).find_by_data_element_collection_id_and_globe_id(@part.id, @globe_id, :order => "created_at DESC"))
-            puts offset
-            puts @tmp
-            puts eval("#{@part.variable_name}_array")
             hash_of_variables["#{@part.variable_name}_offset"] = hash_of_variables["#{@part.variable_name}_offset"] + 1
             instance_variable_set("#{@part.variable_name}_array", eval("#{@part.variable_name}_array + [@tmp]"))
           end
-          
-          # Debug
-          puts @part.variable_name
-          puts "#{@part.data_element_type}.find_by_data_element_collection_id_and_globe_id(#{@part.id}, #{@globe_id})"
         end
         
         # Build up list of 'variable' names. Here we're removing the leading '@' sign.
@@ -264,52 +247,35 @@ class DataSheetsController < ApplicationController
       records = params[data_element_name]
       if (records)
         records.each do |id, values|
+          
+          # Locate the current data element that has faithfully represented our
+          # data up until now.
           @data_element = DataElement.find(id)
-          @new_data_element = eval("#{@data_element.type}.new(@data_element.attributes)")
-          @new_data_element.attributes = @data_element.attributes
+          puts @data_element.inspect
+          
+          # Construct a new blank data element. This will take a complete copy
+          # of @data_element in order to retain a historical representation.
+          @retain_data_element = eval("#{@data_element.type}.new(@data_element.attributes)")
+          puts @retain_data_element.inspect
 
+          # Loop through all the key, value pairs and update the data_element to ensure
+          # the correct new values are applied.
           values.each do |column, value|
             puts ">> #{data_element_name} == #{id}: '#{column}' assign to '#{value}'"
-            eval("@new_data_element.#{column} = '#{value}'")
+            eval("@data_element.#{column} = '#{value}'")
           end
-
-#            puts "--------------------------------- #{@data_element.type}.new(#{@data_element.attributes})"
-#            @new_data_element.update_attributes(values)
-#            @data_element.update(values)
-          @data_element.update_elements(@new_data_element, values)
           
+          # Ensure appropriate versioning is applied to distinguish the latest version.
+          @data_element.version = @retain_data_element.version + 1
+          @data_element.updated_at = Time.now
+
+#          @data_element.update_elements(@retain_data_element, values)
+          # Write back to the database.
+          @data_element.save
+          @retain_data_element.save
         end
       end
     end
-
-    #params.each do |large_key, large_value|
-    #  if (large_value.kind_of? String) then
-    #  extract_id = large_key[large_key.length - "_id".length - large_value.length, large_value.length]
-    #  puts "-Extracted ID: #{extract_id}"
-    #  puts "-Extracted Key: #{large_value}"
-    #    if (extract_id == large_value) then
-    #      @data_elements << {large_key => large_value}
-    #      params.each do |key, value|
-    #        if (key.length > "DataElement".length) then
-    #          if key[key.length - "DataElement".length, "DataElement".length] == "DataElement" then
-    #            puts "--------#{key} => #{value}" 
-    #            h = value.to_hash
-    #            #          obj = eval(key).find(@data_element)
-    #            h.keys.each do |subkey|
-    #              puts "#{subkey} .. --> .. #{h[subkey]}"
-    #              puts key.downcase + '_' + subkey + '_id'
-    #              #            @data_element = DataElement.find(params[key.downcase + '_' + subkey + '_id'])
-    #              puts "#{@data_element}.#{subkey} = #{h[subkey]}"
-    #              #            eval "@data_element.#{subkey} = '#{h[subkey]}'"
-    #            end
-    #          end
-    #        end
-    #      end
-    #    end
-    #  end
-    #end
-    
-#    @data_element.hidden = params["SubscriptionMessageDataElement"]
 
     respond_to do |format|
 #      if @data_element.update_attributes(params[:data_element])

@@ -25,6 +25,30 @@ module DataSheetsHelper
                   :database_column => database_column}
   end
 
+  def ForeignKey_PickList(collection_name, data_element, data_column, viewable_column_name, options = {})
+    
+    # Define the id and name of the HTML object. The 'name' is critical in order
+    # for the data to be correctly interpreted at the server end.
+    @tag_id = "#{data_element.type}_#{data_column}_#{data_element.id}".downcase
+    @tag_name = "#{collection_name}[#{data_element.id}][#{data_column}]"
+    
+    # What is our current value, ensure this is selected in the dropdown.
+    @default_id = eval("data_element.#{data_column}")
+    puts "[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]"
+    puts "#{data_element}"
+    puts "data_element.#{data_column}"
+    puts @default_id
+    
+    # This give us the class of our FK table.
+    @fk_class_name = data_column[0..data_column.length-4].camelcase
+
+    # Call the partial to write the select dropdown.
+    render :partial => 'picklist_foreign_key',
+            :locals => {
+                  :viewable_column_name => viewable_column_name
+            }
+  end
+
   def Subscription_Data_Element(data_element, database_column, options = {})
     subscriptions = Subscription.find_all_references(data_element, database_column)
     if (subscriptions.nil?)
@@ -119,5 +143,27 @@ end
     
     FileUtils.cp(Rails.root + '/app/views/data_sheets/pages/_place_holder.html.erb', page_file)
     FileUtils.cp(Rails.root + '/public/stylesheets/custom_styles/_default_style.css', css_file)
+  end
+  
+  def LinkDataSheet(data_element)
+    presentations = Presentation.find_other_data_sheets(data_element.data_element_collection_id, @active_data_sheet)
+    output = ''
+    
+#    puts "Presenting... #{unit.data_element_collection_id}, #{@active_data_sheet.id}"
+    if presentations.count == 0
+      output = data_element.name
+    elsif presentations.count == 1
+      output = link_to(data_element.name, preview_globe_profile_data_sheet_url(@globe, presentations[0].data_sheet.profile, presentations[0].data_sheet))
+    else
+      presentations.each do |presentation|
+        if !presentation.data_sheet.nil? && presentation.data_sheet.profile_id != 0 then
+          if (output != '')
+            output = output + '<br/>'
+          end
+          output = output + link_to("#{data_element.name} [#{presentation.data_sheet.display_name}]", preview_globe_profile_data_sheet_url(@globe, presentation.data_sheet.profile, presentation.data_sheet))
+        end
+      end
+    end
+    raw(output)
   end
 end

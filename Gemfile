@@ -42,3 +42,5 @@ gem 'highline'
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+gem 'rabl'
