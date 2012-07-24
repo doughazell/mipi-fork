@@ -1,0 +1,63 @@
+<h1>TLAFs</h1>
+<%
+@tlaf_array.sort! { |a,b| a.month <=> b.month }
+display_months = []
+display_stations = []
+matrix = Hash.new
+years = Hash.new
+@tlaf_array.each do |tlaf|
+  display_months.push tlaf.month
+  display_stations.push tlaf.power_station_data_element
+  matrix[[tlaf.month, tlaf.power_station_data_element.name, tlaf.daytime_indicator]] = tlaf.adjustment
+end
+
+display_months.uniq!
+display_stations.uniq!
+
+display_months.each do |mon|
+  years.include?(mon.year) ? years[mon.year] = years[mon.year] + 1 : years[mon.year] = 1
+end
+%>
+<div class="scrollablearea">
+<table>
+<tr>
+  <th>&nbsp;</th>
+<% years.each do |year, count| %>
+  <th style="text-align:center" colspan="<%= count %>"><%= year %></th>
+<% end %>
+</tr>
+
+<tr>
+  <th>Station</th>
+<% display_months.each do |month| %>
+  <th><%= month.strftime("%b") %></th>
+<% end %>
+</tr>
+<tr>
+  <td colspan="<%= display_months.count + 1 %>" align="center">Day <span style="font-size: xx-large; color:orange">&#9728;</span></td>
+</tr>
+<%
+display_stations.each do |station| %>
+<tr>
+  <td><%= station.name %></td>
+<%
+  display_months.each do |month| %>
+    <td><%= matrix[[month, station.name, 1]] %></td>
+  <% end %>
+</tr>
+<% end %>
+<tr>
+  <td colspan="<%= display_months.count + 1 %>" align="center">Night <span style="font-size: xx-large;">&#9790;</td>
+</tr>
+<%
+display_stations.each do |station| %>
+<tr>
+  <td><%= station.name %></td>
+<%
+  display_months.each do |month| %>
+    <td><%= matrix[[month, station.name, 0]] %></td>
+  <% end %>
+</tr>
+<% end %>
+</table>
+</div>

@@ -1,0 +1,12 @@
+<%
+@data_elements.each do |data_element|
+    full_data_element = eval(data_element.type).find_by_id(data_element.id)
+    array_associations = []
+    eval(data_element.type).default_display_columns.each do |column|
+        if (column[-3, 3] == "_id") then array_associations.push(column) end
+    end
+%>
+
+<%= puts full_data_element.to_xml(:skip_instruct => true) %>
+
+<% end %>

@@ -1,0 +1,23 @@
+--
+-- To Do
+--
+--
+
+Generators
+----------
+# Build a rake task to load in new/update generator data from a CSV file.
+# Expose nested XML through the web service.
+# Export data to a location on a drive.
+
+Data Set Hierarchy
+------------------
+
+Security
+--------
+# Read-only View (Security)
+
+# Fuel Type Hierarchy
+rails g model DataDomain code:string description:string definition:string
+rails g model DataSubDomain code:string description:string definition:string data_domain_id:integer
+rails g model DataSet code:string description:string definition:string data_sub_domain_id:integer
+rails g model DataLineItem code:string description:string definition:string data_set_id:integer

@@ -1,0 +1,87 @@
+Revenue Line Item,Data Set,Data Subdomain,Data Domain
+Energy,Energy,Generation,Finance Data
+Constrained Up,Constraints,Generation,Finance Data
+Constrained Down,Constraints,Generation,Finance Data
+Capacity,Capacity,Generation,Finance Data
+Tolling,Tolling,Generation,Finance Data
+DLAF Compensation,DLAF Compensation,Generation,Finance Data
+Balancing Mechanism,Balancing Mechanism,Generation,Finance Data
+Power Purchase Agreement,Power Purchase Agreement,Generation,Finance Data
+Make Whole,Make Whole,Balance & Imperfection,Finance Data
+Uninstructed Imbalance (UI),Uninstructed Imbalance (UI),Balance & Imperfection,Finance Data
+Gas Imbalance,Gas Imbalance,Balance & Imperfection,Finance Data
+Power Imbalance,Power Imbalance,Balance & Imperfection,Finance Data
+Imperfections,Imperfections,Balance & Imperfection,Finance Data
+TUoS,Use of System,Balance & Imperfection,Finance Data
+BSUoS,Use of System,Balance & Imperfection,Finance Data
+TNUoS,Use of System,Balance & Imperfection,Finance Data
+RCRC,Use of System,Balance & Imperfection,Finance Data
+Trips,Trips,Balance & Imperfection,Finance Data
+SNDP's,SNDP's,Balance & Imperfection,Finance Data
+Testing,Testing,Balance & Imperfection,Finance Data
+Public Service Obligation (PSO),Public Service Obligation (PSO),Levies,Finance Data
+R Factor,R Factor,Levies,Finance Data
+Electricity Levy (CER),Electricity Levy (CER),Levies,Finance Data
+Gas Levy (CER),Gas Levy (CER),Levies,Finance Data
+Carbon Levy,Carbon Levy,Levies,Finance Data
+AER ,AER ,Levies,Finance Data
+Agency Fee,Agency Fee,Other Charges,Finance Data
+Trading Site Supplier,Trading Site Supplier,Other Charges,Finance Data
+Carbon Admin,Carbon Admin,Other Charges,Finance Data
+Currency (Energy),Currency (Energy),Other Charges,Finance Data
+Currency (Capacity),Currency (Capacity),Other Charges,Finance Data
+Market Operator,Market Operator,Other Charges,Finance Data
+Ancillary Services,Ancillary Services,Other Charges,Finance Data
+Brokerage Fees,Brokerage Fees,Other Charges,Finance Data
+Coal,Coal,Fuels,Finance Data
+Heavy Fuel Oil,Heavy Fuel Oil,Fuels,Finance Data
+Gas,Gas,Fuels,Finance Data
+Gas Capacity,Gas Capacity,Fuels,Finance Data
+Peat,Peat,Fuels,Finance Data
+Gasoil,Gasoil,Fuels,Finance Data
+Carbon,Carbon,Fuels,Finance Data
+Demurrage,Demurrage,Fuels,Finance Data
+Lime,Lime,Consumables,Finance Data
+Urea,Urea,Consumables,Finance Data
+Coal Swap Settlement,Coal Swap Settlement,Financial Instruments,Finance Data
+DC Internal,CfD Settlement,Financial Instruments,Finance Data
+DC External,CfD Settlement,Financial Instruments,Finance Data
+NDC Internal,CfD Settlement,Financial Instruments,Finance Data
+NDC External,CfD Settlement,Financial Instruments,Finance Data
+PSO Internal,CfD Settlement,Financial Instruments,Finance Data
+PSO External,CfD Settlement,Financial Instruments,Finance Data
+Internal FX Deals,Internal FX Deals,Financial Instruments,Finance Data
+Revenue from ESBIe (Gas),Revenue from ESBIe (Gas),Financial Instruments,Finance Data
+Revenue from ESBIe (Power),Revenue from ESBIe (Power),Financial Instruments,Finance Data
+Natural Gas Trading,Natural Gas Trading,Financial Instruments,Finance Data
+Wages and Salaries,Personnel,Operating Costs,Finance Data
+Employee Benefits,Personnel,Operating Costs,Finance Data
+Contractors,Personnel,Operating Costs,Finance Data
+Establishment,Office,Operating Costs,Finance Data
+Materials,Office,Operating Costs,Finance Data
+Property,Office,Operating Costs,Finance Data
+Bank Charges,Administrative,Operating Costs,Finance Data
+Data Costs and Subscriptions,Administrative,Operating Costs,Finance Data
+Membership Fees,Administrative,Operating Costs,Finance Data
+Professional Fees,Administrative,Operating Costs,Finance Data
+Subscriptions,Administrative,Operating Costs,Finance Data
+Selling and Advertising,Administrative,Operating Costs,Finance Data
+Training,Administrative,Operating Costs,Finance Data
+Transport and Communication,Administrative,Operating Costs,Finance Data
+Travel and Subsistence,Administrative,Operating Costs,Finance Data
+Entertainment,Administrative,Operating Costs,Finance Data
+IT and Telecoms,IT,Operating Costs,Finance Data
+Licences,IT,Operating Costs,Finance Data
+Computers,IT,Operating Costs,Finance Data
+Software Depreciation,IT,Operating Costs,Finance Data
+Corby Tolling Fee,Miscellaneous,Operating Costs,Finance Data
+Mass Market Sales,Mass Market Sales,Financial Instruments,Finance Data
+Revenue from ESBIe CfD,CfD Settlement,Financial Instruments,Finance Data
+Wind,Contracts,Financial Instruments,Finance Data
+Power Forward Sales,Contracts,Financial Instruments,Finance Data
+Curtailment,Constraints,Generation,Finance Data
+ESBIe Fee,Fees,Other Charges,Finance Data
+ROC + LEC Income,Contracts,Financial Instruments,Finance Data
+Office costs,Office,Operating Costs,Finance Data
+Other,Miscellaneous,Operating Costs,Finance Data
+Letters of Credit,Other Costs,Operating Costs,Finance Data

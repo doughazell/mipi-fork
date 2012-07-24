@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  service_date: 2012-07-10
+  details: MyString
+  signator: MyString
+  vehicle_data_element_id: 1
+
+two:
+  service_date: 2012-07-10
+  details: MyString
+  signator: MyString
+  vehicle_data_element_id: 1

@@ -1,0 +1,76 @@
+-- Globes: BMW
+-- We've created the BMW globe: bmwstevenage
+-- Create a profile and a data_sheet.
+
+-- Need to create the underlying data model.
+rails g model VehicleDataElement registration:string make:string model:string colour:string
+rails g model VehicleServiceDataElement service_date:date details:string signator:string vehicle_data_element_id:integer
+rails g model NotificationDataElement email:string
+rails g model VehicleReminderTypeDataElement name:string
+rails g model VehicleReminderDataElement reminder_date:date notification_data_element_id:integer reminder_type_data_element_id:integer
+
+-- In models:
+--   Derive from DataElement
+--   acts_as_cities
+--   add appropriate: belongs_to :xxxx_data_element, has_many :yyyy_data_elements
+-- In migrations:
+--   Delete 'timestamps'
+--   Add CreateTheViewForCITIEs(XxxxDataElement)
+--   Add DropTheViewForCITIEs(XxxxDataElement)
+
+rake db:migrate
+
+-- We now need to create "Collections".
+
+-- 2 Scenarios: Migrate Customers, Create New Customer Account
+-- A customer is a shadow-globe. When a shadow-globe is created a
+-- real globe must get created as well with linkage between the
+-- data collections.
+
+
+
+
+-- TODO, TODO, TODO
+===================
+
+-- RAKE TASK: Create "BMW Stevenage" now!
+-- RAKE TASK: Create "BMW Stevenage, Customer: Toni" now!
+
+-- Construct a shadow-globe for a customer account. Create some
+-- default entries, such as a Vehicle data element and Vehicle
+-- data collection.
+
+-- Duplicate a shadow-globe and the details held within that shadow-globe
+-- in order to produce a globe for the "real" individual.
+
+-- Write a script to import a list of customer details and construct
+-- a set of shadow-globes for the "car dealership" globe.
+
+-- Expand globe for inheritence in order to construct a CarDealershipGlobe
+-- that will have common features for AudiCarDealershipGlobe and
+-- BMWCarDealershipGlobe.
+
+-- Research API implementation
+-- Construct an API application that will be used as an interface around
+-- the MDM application.
+-- - Customer
+-- -- Contact Details
+-- -- Vehicles
+-- --- Services
+-- --- Reminder
+-- --- - Notification
+-- OR JUST WRITE THE APPLICATION!
+
+-- New Customer Creation Process
+-- =============================
+
+
+-- Create VehicleClient globe, Will be a Rake task.
+-- Visually:
+--   Dealer creates the account. Presses "New Customer".
+--   Presented with a data_sheet that allows basic details of a new
+     globe to be created.
+--   Results in the construction of a globe, two profiles: "Personal" & "Vehicle".
+     The "Personal" profile will contain "Contact Details" data sheet.
+     The "Vehicle" profile will contain "Overview", "Service History" data sheets.
+     A 

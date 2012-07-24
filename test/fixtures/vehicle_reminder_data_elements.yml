@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  reminder_date: 2012-07-10
+  notification_data_element_id: 1
+  reminder_type_data_element_id: 1
+
+two:
+  reminder_date: 2012-07-10
+  notification_data_element_id: 1
+  reminder_type_data_element_id: 1

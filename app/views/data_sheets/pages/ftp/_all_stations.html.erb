@@ -1,0 +1,27 @@
+<h1>All Station List</h1>
+<table>
+  <thead>
+    <td>Station</td><td>Installed Capacity</td>
+  </thead>
+  <% @station_array.each do |station|
+  %>
+  <tr>
+    <td><%
+    presentations = Presentation.find_other_data_sheets(station.data_element_collection_id, @active_data_sheet)
+
+    puts "Presenting... #{station.data_element_collection_id}, #{@active_data_sheet.id}"
+    if presentations.count == 0 %>
+<%=   station.full_name %>
+<%  elsif presentations.count == 1 %>
+<%=   link_to(station.name, preview_globe_profile_data_sheet_url(@globe, presentations[0].data_sheet.profile, presentations[0].data_sheet))
+    else
+      presentations.each do |presentation|%>
+<%=   link_to(station.name + ": [" + presentation.data_sheet.name + "]", preview_globe_profile_data_sheet_url(@globe, presentation.data_sheet.profile, presentation.data_sheet)) %>
+      <%end
+    end
+    %>
+    </td>
+    <td><%= station.capacity %></td>
+  </tr>
+  <% end %>
+</table>

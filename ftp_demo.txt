@@ -1,0 +1,17 @@
+Demo
+----
+
+1. Adding links to related tables.
+
+  <tr>
+    <td>Station</td><td><%= LinkDataSheet(@unit.power_station_data_element) %></td>
+  </tr>
+
+2. Adding details of users that changed the latest record.
+
+
+
+3. Add Station description to the list of Generator Units
+
+    <th>Power Station</th>
+    <td><%= unit.power_station_data_element.code %></td>

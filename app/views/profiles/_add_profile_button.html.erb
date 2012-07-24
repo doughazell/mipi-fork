@@ -1,0 +1,5 @@
+<span id="new_profile">
+<%= p.text_field :name, :value=> "", :size => 4 %>
+<%= p.submit raw("&#10004;"), :remote => true  %>
+</span>
+<span class="add_profile"><%= link_to "[Add]", new_globe_profile_url(@globe), :remote => true %></span>
