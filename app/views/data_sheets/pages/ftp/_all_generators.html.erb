@@ -8,7 +8,7 @@
   <% @unit_array.each do |unit|
   %>
   <tr>
-    <td><%= LinkDataSheet(unit) %></td>
+    <td><%= LinkDataSheet(unit, 'code') %></td>
     <td><%= unit.installed_capacity %></td>
     <td><%= unit.fixed_heat_constant %></td>
   </tr>

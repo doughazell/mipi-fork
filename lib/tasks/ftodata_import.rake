@@ -45,7 +45,7 @@ namespace :ftodata do
 
     line_count = 0
     puts "Opening file..."
-    File.open("c:/development/mipi/test/data/generator_units.csv").each do |line|
+    File.open("c:/development/ftp_demo/test/data/generator_units.csv").each do |line|
       if (line_count == 0) then
         columns = line.split(',')
       else
@@ -141,7 +141,7 @@ namespace :ftodata do
     
     line_count = 0
     puts "Opening file..."
-    File.open("c:/development/mipi/test/data/power_stations.csv").each do |line|
+    File.open("c:/development/ftp_demo/test/data/power_stations.csv").each do |line|
       if (line_count == 0) then
         columns = line.split(',')
       else

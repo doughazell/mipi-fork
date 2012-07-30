@@ -17,7 +17,8 @@ class DataElementsController < ApplicationController
     @data_element_type = params["new_data_element"]
     puts @data_element_type
     puts "-"
-    if (@data_element_type) then   # Javascript will be activated.
+    if (!@data_element_type.blank?) then   # Javascript will be activated.
+      @data_element_type = @data_element_type.singularize
       @data_element = @data_element_type.constantize.new
     else
       # SHOULD BE A BETTER WAY THAN THIS TO FIND ALL DATA_ELEMENT MODELS!!

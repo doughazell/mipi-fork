@@ -145,7 +145,7 @@ end
     FileUtils.cp(Rails.root + '/public/stylesheets/custom_styles/_default_style.css', css_file)
   end
   
-  def LinkDataSheet(data_element)
+  def LinkDataSheet(data_element, display_name_column = 'name')
     presentations = Presentation.find_other_data_sheets(data_element.data_element_collection_id, @active_data_sheet)
     output = ''
     
@@ -153,14 +153,14 @@ end
     if presentations.count == 0
       output = data_element.name
     elsif presentations.count == 1
-      output = link_to(data_element.name, preview_globe_profile_data_sheet_url(@globe, presentations[0].data_sheet.profile, presentations[0].data_sheet))
+      output = link_to(data_element.read_attribute(display_name_column), preview_globe_profile_data_sheet_url(@globe, presentations[0].data_sheet.profile, presentations[0].data_sheet))
     else
       presentations.each do |presentation|
         if !presentation.data_sheet.nil? && presentation.data_sheet.profile_id != 0 then
           if (output != '')
             output = output + '<br/>'
           end
-          output = output + link_to("#{data_element.name} [#{presentation.data_sheet.display_name}]", preview_globe_profile_data_sheet_url(@globe, presentation.data_sheet.profile, presentation.data_sheet))
+          output = output + link_to("#{data_element.read_attribute(display_name_column)} [#{presentation.data_sheet.display_name}]", preview_globe_profile_data_sheet_url(@globe, presentation.data_sheet.profile, presentation.data_sheet))
         end
       end
     end
