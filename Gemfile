@@ -44,3 +44,4 @@ gem 'highline'
 # end
 
 gem 'rabl'
+# gem 'rack-mini-profiler'

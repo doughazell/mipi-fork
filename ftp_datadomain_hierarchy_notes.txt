@@ -1,0 +1,9 @@
+
+
+-- Create the models
+
+rails g model DataDomainElement code:string short_name:string description:string
+rails g model DataSubDomainElement code:string short_name:string description:string data_domain_data_element_id:integer
+rails g model DataSetDataElement code:string short_name:string description:string data_sub_domain_data_element_id:integer
+rails g model DataLineItemDataElement code:string short_name:string description:string data_set_data_element_id:integer
+

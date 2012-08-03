@@ -19,7 +19,26 @@
        %>
   <tr>
     <td><%= tailored_output f, entry_field, column, "label" %></td>
+    <% if column[column.length - :_data_element_id.length..column.length] == :_data_element_id.to_s then %>
+    <td>
+    <%=
+    @tag_id = "#{@data_element_type.underscore}_#{column}"
+    @tag_name = "#{@data_element_type.underscore}[#{column}]"
+    @fk_class_name = column[0..column.length-4].camelcase
+    @default_id = -1    # No default selected?
+    puts @tag_id
+    puts @tag_name
+    puts @fk_class_name
+    puts @default_id
+    render :partial => 'data_sheets/picklist_foreign_key',
+            :locals => {
+                  :viewable_column_name => "name"
+            }
+    %>
+    </td>
+    <% else %>
     <td><%= tailored_output f, entry_field, column, "entry" %></td>
+    <% end %>
   </tr>
   <% } %>
   <tr>

@@ -171,23 +171,26 @@ class DataElementsController < ApplicationController
     # since these will be foreign keys and need to be resolved/realised.
 
     respond_to do |format|
-#      format.xml
-      format.xml { render :xml => @data_element }
+      format.xml
+#      format.xml { render :xml => @data_element }
     end
   end
 
   def retrieve_all
     globe = Globe.find_by_globe_reference!(request.subdomain)
-    data_element_type = params[:data_element_type]
+    data_element_type = "#{params[:data_element_type].singularize}DataElement"
     des = Array.new
     
-    data_element_collections = globe.data_element_collections
-    data_element_collections.each do |dec|
-      des.push(dec.current_data_element)
-    end
+    des = globe.data_element_collections.find_top_level_data_elements(data_element_type)
+    
+#    data_element_collections = globe.data_element_collections
+#    data_element_collections.each do |dec|
+#      des.push(dec.current_data_element)
+#    end
     
     respond_to do |format|
-      format.xml { render :xml => data_element_collections }
+#      format.xml { render :xml => data_element_collections }
+      format.xml { render :xml => des }
     end
   end
   

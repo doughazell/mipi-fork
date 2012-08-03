@@ -12,8 +12,9 @@ class DataElementCollection < ActiveRecord::Base
   def self.find_top_level_data_elements(type)
     de_all = []
     DataElementCollection.find(:all, :conditions => {:data_element_type => type}).each do |dec|
-      de = dec.data_elements.find(:first, :order => 'updated_at DESC')
-      de_all.push(de)
+      de = dec.data_elements.find(:last, :order => 'version')
+      de_full = type.constantize.find(de.id)
+      de_all.push(de_full)
     end
     de_all
   end

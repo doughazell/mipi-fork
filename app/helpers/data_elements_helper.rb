@@ -1,5 +1,7 @@
 module DataElementsHelper
   def tailored_output(f, entry_field, column, section)
+#    if (column[column.length - :_data_element.length..column.length] == :_data_element.to_s)
+      # FK.
     if (section == "label")
       f.label column
     elsif (section == "entry")

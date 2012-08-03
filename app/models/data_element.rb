@@ -9,7 +9,9 @@ class DataElement < ActiveRecord::Base
   has_many :data_element_links
   
   acts_as_cities
-
+  
+  DEFAULT_VALUE = [:name, :version]
+  
   def compare_element(new_data_element)
       comp1 = Hash.new
       comp1 = attributes
