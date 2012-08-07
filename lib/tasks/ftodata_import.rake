@@ -35,6 +35,220 @@ namespace :ftodata do
       de.save
     end
   end
+
+  task :import_data => :environment do
+    require "highline/import"
+    
+    meta_data = Hash.new
+    name_column = 0
+    fk_tail = '_data_element'
+    fk_tail_length = fk_tail.length
+
+    u = User.find_by_username('paul123')
+    g = Globe.find_by_globe_reference('ftp')
+    profile_id = g.profiles.find_by_name('Units').id
+
+    # What is the file name?
+    data_to_import = ask("Which file would you like to import?")
+#    data_to_import = "data_sub_domains.csv"
+    
+    # Derive a class name
+    file_name_stem = data_to_import[0..data_to_import.index('.')-1].singularize
+    if (file_name_stem[file_name_stem.length - fk_tail_length..file_name_stem.length] != fk_tail) then
+      data_element_name = file_name_stem + fk_tail
+    end
+    
+    # Construct a class (this will check that the class is valid)
+    data_element_name_camel = data_element_name.camelcase
+    data_element_name_camel.constantize
+    
+    line_count = 0
+    puts "Opening file..."
+    File.open("test/data/#{data_to_import}").each do |line|
+      if (line_count == 0) then
+        columns = line.strip.split(',')
+        name_column = columns.index('name')
+        raise "'name' column not specified." if name_column.nil?
+        columns.each do |column|
+          meta_data[column] = Hash.new
+          if column[fk_tail_length*-1,fk_tail_length] == fk_tail then
+            meta_data[column]['primary_key'] = false
+            meta_data[column]['foreign_key'] = true
+          elsif column == 'name'
+            meta_data[column]['primary_key'] = true
+            meta_data[column]['foreign_key'] = false
+          else
+            meta_data[column]['primary_key'] = false
+            meta_data[column]['foreign_key'] = false
+          end
+          meta_data[column]['index'] = columns.index(column)
+        end
+        
+#        puts columns
+#        puts name_column
+#        puts meta_data
+      else
+
+        values = line.strip.split(',')
+
+        # Retrieve the collection that this line will be added to.
+        root_dec = DataElementCollection.find_or_initialize_by_name_and_data_element_type(values[name_column], data_element_name_camel)
+        
+#        if (root_dec.new_record?) then
+          # Initialise some values if this is new.
+          root_dec.update_attributes({
+            :name => values[name_column],
+            :page_limit => 1,
+            :historic => 0,
+            :variable_name => data_element_name_camel.constantize::DEFAULT_VARIABLE_NAME,
+            :globe_id => g.id
+          })
+#        end
+        
+        root_object = data_element_name_camel.constantize.find_or_initialize_master_by_name(values[name_column])
+
+        to_update = Hash.new
+        to_update['name'] = values[name_column]
+        to_update['data_element_collection_id'] = root_dec.id
+        to_update['user_id'] = u.id
+        to_update['globe_id'] = g.id
+        to_update['creator_id'] = u.id
+        to_update['updater_id'] = u.id
+        
+        meta_data.each {|key, details|
+          # Simple update. Just write the value to the root object.
+          if (details['primary_key'] == false && details['foreign_key'] == false) then
+#            puts key
+#            puts details['index']
+#            puts values[details['index']]
+            to_update[key.to_sym] = values[details['index']].to_s if !values[details['index']].to_s.blank?
+          elsif (details['primary_key'] == false && details['foreign_key'] == true) then
+            fk_name = values[details['index']]
+            puts fk_name
+            
+            # Find the FK. The latest version within the collection.
+            fk = key.camelcase.singularize.constantize.find_or_initialize_master_by_name(fk_name)
+
+            # Find the assocaiated collection.
+            fk_dec = DataElementCollection.find_or_initialize_by_name_and_data_element_type(fk_name, key.camelcase)
+            
+            if (fk_dec.new_record?) then
+              # Update the FK collection
+              fk_dec.update_attributes({
+                :name => fk_name,
+                :page_limit => 1,
+                :historic => 0,
+                :variable_name => key.camelcase.constantize::DEFAULT_VARIABLE_NAME,
+                :globe_id => g.id
+              })
+            end
+            
+            fk.update_attributes({
+              :name => fk_name,
+              :data_element_collection_id => fk_dec.id,
+              :globe_id => g.id,
+              :user_id => u.id,
+              :creator_id => u.id,
+              :updater_id => u.id
+            })
+
+            # Finally, simply update the root object with the FK ID.
+#            root_object.update_attributes({"#{key}_id" => fk.id})
+            to_update["#{key}_id"] = fk.id
+          end
+        }
+        puts "-TRY-TO-WRITE-"
+        puts to_update
+        root_object.update_attributes(to_update)
+
+        puts line
+      end
+      line_count = line_count + 1
+    end
+  end
+
+  # This will allow all generator units within the profile "units" to all have a data sheet
+  # created and point to the same HTML.ERB file.
+  task :create_data_sheet_for_all_data_element_type => :environment do
+    require "highline/import"
+    
+    u = User.find_by_username('paul123')
+
+#    globe_reference = ask('Globe Reference?')
+    globe_reference = 'ftp'
+    g = Globe.find_by_globe_reference(globe_reference)
+
+    puts "Profile List:"
+    g.profiles.each do |profile|
+      puts profile.name
+    end
+    profile_name = ask("Which profile?")
+    p = Profile.find_by_globe_id_and_name(g.id, profile_name)
+
+    data_element_stem = ask("Please enter the Model that you wish to create Data Sheets for each collection. OMit the '_data_element' section of the model.")
+#    data_element_type = "data_domain_data_element"
+    data_element_type = data_element_stem + "_data_element"
+    
+    html_file_name = "/data_sheets/pages/#{globe_reference}/#{data_element_stem}.html.erb"
+    css_file_name = "/stylesheets/custom_styles/#{globe_reference}/#{globe_reference}.css"
+    
+    decs = DataElementCollection.find(:all, :conditions => { :globe_id => g.id, :data_element_type => data_element_type.camelcase })
+    decs.each do |dec|
+      ds = DataSheet.find_or_initialize_by_name_and_profile_id(dec.name, p.id)
+      ds.style_sheets = css_file_name
+      ds.file_location = html_file_name
+      de = dec.data_elements.find(:last, :order => 'version')
+      if (de) then
+        de = de.type.constantize.find(de.id)
+      end
+      
+      if (de)
+        ds.display_name = de.friendly_name
+      else
+        ds.display_name = dec.name
+      end
+      ds.creator_id = u.id
+      ds.updater_id = u.id
+      ds.save
+
+      pres = Presentation.find_or_initialize_by_data_sheet_id_and_data_element_collection_id(ds.id, dec.id)
+      pres.save
+    end
+
+  end
+  
+  task :link_data_sheet_to_data_element_type => :environment do
+    require "highline/import"
+    
+    u = User.find_by_username('paul123')
+    g = Globe.find_by_globe_reference('ftp')
+    
+    puts "Profile List:"
+    g.profiles.each do |profile|
+      puts profile.name
+    end
+    profile_name = ask("Which profile?")
+    p = Profile.find_by_globe_id_and_name(g.id, profile_name)
+
+    puts "Data Sheets:"
+    p.data_sheets.each do |data_sheet|
+      puts data_sheet.name
+    end
+    data_sheet_name = ask("Please enter the 'Name' of the data sheet.")
+#    data_sheet_name = "[All Data Sets]"
+    data_element_type = ask("Please enter the Model that you wish to connect to this Data Sheet.")
+#    data_element_type = "data_set_data_element"
+    
+    ds = DataSheet.find_by_profile_id_and_name(p.id, data_sheet_name)
+    decs = DataElementCollection.find(:all, :conditions => { :globe_id => g.id, :data_element_type => data_element_type.camelcase })
+    
+    puts decs.count
+    decs.each do |dec|
+      pres = Presentation.find_or_initialize_by_data_sheet_id_and_data_element_collection_id(ds.id, dec.id)
+      pres.save
+    end
+  end
+
   
   task :import_units => :environment do
     require "highline/import"

@@ -1,0 +1,15 @@
+<h1>All Data Sets</h1>
+<table>
+  <th>Name</th>
+  <th>Short Name</th>
+  <th>Description</th>
+  <th>Sub Domain</th>
+  <% @data_set_array.each do |data_set| %>
+  <tr>
+    <td><%= LinkDataSheet(data_set, "name", {:data_sheet => data_set.name}) %></td>
+    <td><%= data_set.short_name %></td>
+    <td><%= data_set.description %></td>
+    <td><%= data_set.data_sub_domain_data_element.friendly_name %></td>
+  </tr>
+  <% end %>
+</table>

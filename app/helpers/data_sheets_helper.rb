@@ -22,7 +22,8 @@ module DataSheetsHelper
             :locals => {
                   :collection_name => collection_name,
                   :data_element => data_element,
-                  :database_column => database_column}
+                  :database_column => database_column,
+                  :options => options}
   end
 
   def ForeignKey_PickList(collection_name, data_element, data_column, viewable_column_name, options = {})
@@ -145,15 +146,27 @@ end
     FileUtils.cp(Rails.root + '/public/stylesheets/custom_styles/_default_style.css', css_file)
   end
   
-  def LinkDataSheet(data_element, display_name_column = 'name')
-    presentations = Presentation.find_other_data_sheets(data_element.data_element_collection_id, @active_data_sheet)
+  def LinkDataSheet(data_element, display_name_column = 'name', options = {})
+    if (options[:data_sheet])
+      puts "Specific Data Sheet: #{options[:data_sheet]}"
+      ds = DataSheet.find_by_name(options[:data_sheet])
+      presentations = Presentation.find(:all, :conditions => {:data_element_collection_id => data_element.data_element_collection_id, :data_sheet_id => ds.id})
+    else
+      presentations = Presentation.find_other_data_sheets(data_element.data_element_collection_id, @active_data_sheet)
+    end
+    
     output = ''
     
 #    puts "Presenting... #{unit.data_element_collection_id}, #{@active_data_sheet.id}"
     if presentations.count == 0
       output = data_element.name
     elsif presentations.count == 1
-      output = link_to(data_element.read_attribute(display_name_column), preview_globe_profile_data_sheet_url(@globe, presentations[0].data_sheet.profile, presentations[0].data_sheet))
+      if (options[:override_label])
+        label = options[:override_label]
+      else
+        label = data_element.read_attribute(display_name_column)
+      end
+      output = link_to(label, preview_globe_profile_data_sheet_url(@globe, presentations[0].data_sheet.profile, presentations[0].data_sheet))
     else
       presentations.each do |presentation|
         if !presentation.data_sheet.nil? && presentation.data_sheet.profile_id != 0 then

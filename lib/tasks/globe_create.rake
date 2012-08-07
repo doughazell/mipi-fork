@@ -161,4 +161,16 @@ namespace :globe do
 #      pres.save
     end
   end
+  
+  task :profile_create => :environment do
+    require "highline/import"
+    u = User.find_by_username(ask("Username?"))
+    g = Globe.find_by_reference(ask("Globe Reference"))
+    
+    profile_name = ask("New Profile Name")
+
+    p = Profile.new :name => profile_name, :globe => g
+    p.save
+
+  end
 end

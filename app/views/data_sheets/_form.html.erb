@@ -15,7 +15,7 @@
   <th>Data</th><th>Value</th>
   <tr>
     <td>Name</td>
-    <td><%= @data_sheet.name %></td>
+    <td><%= f.text_field :name %></td>
   </tr>
   <tr>
     <td>Dispaly Name</td>
@@ -32,14 +32,6 @@
   <tr>
     <td>Profile</td>
     <td><%= @profile.name %></td>
-  </tr>
-  <tr>
-    <td>Creator</td>
-    <td><%= @data_sheet.creator.username %></td>
-  </tr>
-  <tr>
-    <td>Updater</td>
-    <td><%= @data_sheet.updater.username %></td>
   </tr>
   <tr>
     <td colspan="2"><%= f.submit %></td>

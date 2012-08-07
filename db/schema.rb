@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120710192943) do
+ActiveRecord::Schema.define(:version => 20120803135140) do
 
   create_table "address_data_elements", :force => true do |t|
     t.string "address_line_1"
@@ -65,6 +65,12 @@ ActiveRecord::Schema.define(:version => 20120710192943) do
     t.date   "date_of_issue"
   end
 
+  create_table "data_domain_data_elements", :force => true do |t|
+    t.string "code"
+    t.string "short_name"
+    t.string "description"
+  end
+
   create_table "data_element_collections", :force => true do |t|
     t.string   "name"
     t.string   "security"
@@ -115,6 +121,20 @@ ActiveRecord::Schema.define(:version => 20120710192943) do
     t.datetime "updated_at"
   end
 
+  create_table "data_line_item_data_elements", :force => true do |t|
+    t.string  "code"
+    t.string  "short_name"
+    t.string  "description"
+    t.integer "data_set_data_element_id"
+  end
+
+  create_table "data_set_data_elements", :force => true do |t|
+    t.string  "code"
+    t.string  "short_name"
+    t.string  "description"
+    t.integer "data_sub_domain_data_element_id"
+  end
+
   create_table "data_sheets", :force => true do |t|
     t.string   "name"
     t.string   "display_name"
@@ -127,6 +147,13 @@ ActiveRecord::Schema.define(:version => 20120710192943) do
     t.integer  "updater_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "data_sub_domain_data_elements", :force => true do |t|
+    t.string  "code"
+    t.string  "short_name"
+    t.string  "description"
+    t.integer "data_domain_data_element_id"
   end
 
   create_table "ecb_cricket_club_data_elements", :force => true do |t|
@@ -156,8 +183,15 @@ ActiveRecord::Schema.define(:version => 20120710192943) do
     t.float   "overdraft_limit"
   end
 
+  create_table "fuel_type_data_elements", :force => true do |t|
+    t.string  "code"
+    t.string  "definition"
+    t.boolean "renewable"
+  end
+
   create_table "generator_unit_data_elements", :force => true do |t|
     t.string  "code"
+    t.string  "sem_code"
     t.float   "installed_capacity"
     t.float   "fixed_heat_constant"
     t.float   "start_hours_hot"
@@ -248,7 +282,10 @@ ActiveRecord::Schema.define(:version => 20120710192943) do
     t.string  "secondary_fuel_type"
     t.string  "location"
     t.integer "capacity"
-    t.date    "commissioned"
+    t.integer "commissioned"
+    t.integer "primary_fuel_type_data_element_id"
+    t.integer "secondary_fuel_type_data_element_id"
+    t.integer "fuel_type_data_element_id"
   end
 
   create_table "presentations", :force => true do |t|
@@ -528,6 +565,89 @@ ActiveRecord::Schema.define(:version => 20120710192943) do
     t.date     "date_of_issue"
   end
 
+  create_table "view_data_domain_data_elements", :id => false, :force => true do |t|
+    t.integer  "id",                         :default => 0, :null => false
+    t.string   "type"
+    t.string   "name"
+    t.integer  "data_element_collection_id"
+    t.integer  "user_id"
+    t.integer  "ready_to_archive"
+    t.string   "label"
+    t.boolean  "mandatory"
+    t.integer  "globe_id"
+    t.integer  "version",                    :default => 1
+    t.integer  "creator_id"
+    t.integer  "updater_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "code"
+    t.string   "short_name"
+    t.string   "description"
+  end
+
+  create_table "view_data_line_item_data_elements", :id => false, :force => true do |t|
+    t.integer  "id",                         :default => 0, :null => false
+    t.string   "type"
+    t.string   "name"
+    t.integer  "data_element_collection_id"
+    t.integer  "user_id"
+    t.integer  "ready_to_archive"
+    t.string   "label"
+    t.boolean  "mandatory"
+    t.integer  "globe_id"
+    t.integer  "version",                    :default => 1
+    t.integer  "creator_id"
+    t.integer  "updater_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "code"
+    t.string   "short_name"
+    t.string   "description"
+    t.integer  "data_set_data_element_id"
+  end
+
+  create_table "view_data_set_data_elements", :id => false, :force => true do |t|
+    t.integer  "id",                              :default => 0, :null => false
+    t.string   "type"
+    t.string   "name"
+    t.integer  "data_element_collection_id"
+    t.integer  "user_id"
+    t.integer  "ready_to_archive"
+    t.string   "label"
+    t.boolean  "mandatory"
+    t.integer  "globe_id"
+    t.integer  "version",                         :default => 1
+    t.integer  "creator_id"
+    t.integer  "updater_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "code"
+    t.string   "short_name"
+    t.string   "description"
+    t.integer  "data_sub_domain_data_element_id"
+  end
+
+  create_table "view_data_sub_domain_data_elements", :id => false, :force => true do |t|
+    t.integer  "id",                          :default => 0, :null => false
+    t.string   "type"
+    t.string   "name"
+    t.integer  "data_element_collection_id"
+    t.integer  "user_id"
+    t.integer  "ready_to_archive"
+    t.string   "label"
+    t.boolean  "mandatory"
+    t.integer  "globe_id"
+    t.integer  "version",                     :default => 1
+    t.integer  "creator_id"
+    t.integer  "updater_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "code"
+    t.string   "short_name"
+    t.string   "description"
+    t.integer  "data_domain_data_element_id"
+  end
+
   create_table "view_ecb_cricket_club_data_elements", :id => false, :force => true do |t|
     t.integer  "id",                         :default => 0, :null => false
     t.string   "type"
@@ -602,6 +722,26 @@ ActiveRecord::Schema.define(:version => 20120710192943) do
     t.float    "overdraft_limit"
   end
 
+  create_table "view_fuel_type_data_elements", :id => false, :force => true do |t|
+    t.integer  "id",                         :default => 0, :null => false
+    t.string   "type"
+    t.string   "name"
+    t.integer  "data_element_collection_id"
+    t.integer  "user_id"
+    t.integer  "ready_to_archive"
+    t.string   "label"
+    t.boolean  "mandatory"
+    t.integer  "globe_id"
+    t.integer  "version",                    :default => 1
+    t.integer  "creator_id"
+    t.integer  "updater_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "code"
+    t.string   "definition"
+    t.boolean  "renewable"
+  end
+
   create_table "view_generator_unit_data_elements", :id => false, :force => true do |t|
     t.integer  "id",                            :default => 0, :null => false
     t.string   "type"
@@ -618,6 +758,7 @@ ActiveRecord::Schema.define(:version => 20120710192943) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "code"
+    t.string   "sem_code"
     t.float    "installed_capacity"
     t.float    "fixed_heat_constant"
     t.float    "start_hours_hot"
@@ -777,7 +918,7 @@ ActiveRecord::Schema.define(:version => 20120710192943) do
   end
 
   create_table "view_power_station_data_elements", :id => false, :force => true do |t|
-    t.integer  "id",                         :default => 0, :null => false
+    t.integer  "id",                                  :default => 0, :null => false
     t.string   "type"
     t.string   "name"
     t.integer  "data_element_collection_id"
@@ -786,7 +927,7 @@ ActiveRecord::Schema.define(:version => 20120710192943) do
     t.string   "label"
     t.boolean  "mandatory"
     t.integer  "globe_id"
-    t.integer  "version",                    :default => 1
+    t.integer  "version",                             :default => 1
     t.integer  "creator_id"
     t.integer  "updater_id"
     t.datetime "created_at"
@@ -797,7 +938,10 @@ ActiveRecord::Schema.define(:version => 20120710192943) do
     t.string   "secondary_fuel_type"
     t.string   "location"
     t.integer  "capacity"
-    t.date     "commissioned"
+    t.integer  "commissioned"
+    t.integer  "primary_fuel_type_data_element_id"
+    t.integer  "secondary_fuel_type_data_element_id"
+    t.integer  "fuel_type_data_element_id"
   end
 
   create_table "view_property_data_elements", :id => false, :force => true do |t|

@@ -98,12 +98,17 @@ th.specalt {
 	padding: 5px;
 	border: solid;
 	background-color: #efeee9;
+	margin: auto;
+	overflow-y: hidden;
+	overflow-x: auto;
 }
 
 .preview_data_sheets {
 	padding: 15px;
 	border: solid;
 	background-color: #efeee9;
+	overflow-y: hidden;
+	overflow-x: auto;
 }
 
 .data_sheet {

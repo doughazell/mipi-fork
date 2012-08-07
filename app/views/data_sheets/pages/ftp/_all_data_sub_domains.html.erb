@@ -1,0 +1,21 @@
+<h1>All Sub Domains</h1>
+<table>
+  <th>Name</th>
+  <th>Short Name</th>
+  <th>Description</th>
+  <th>Data Set</th>
+  <% @data_sub_domain_array.each do |sub_domain| %>
+  <tr>
+    <td><%= LinkDataSheet(sub_domain, "name", {:data_sheet => sub_domain.name}) %></td>
+    <td><%= sub_domain.short_name %></td>
+    <td><%= sub_domain.description %></td>
+    <td>
+      <% if sub_domain.data_domain_data_element then %>
+      <%= sub_domain.data_domain_data_element.friendly_name %>
+      <% else %>
+        &lt;Blank&gt;
+      <% end %>
+    </td>
+  </tr>
+  <% end %>
+</table>

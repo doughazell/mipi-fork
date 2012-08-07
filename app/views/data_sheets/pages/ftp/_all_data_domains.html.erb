@@ -1,0 +1,13 @@
+<h1>All Data Domains</h1>
+<table>
+  <th>Name</th>
+  <th>Short Name</th>
+  <th>Description</th>
+  <% @data_domain_array.each do |data_domain| %>
+  <tr>
+    <td><%= LinkDataSheet(data_domain, "name", {:data_sheet => data_domain.name}) %></td>
+    <td><%= data_domain.short_name %></td>
+    <td><%= data_domain.description %></td>
+  </tr>
+  <% end %>
+</table>

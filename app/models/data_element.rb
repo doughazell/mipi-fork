@@ -1,5 +1,7 @@
 # @author Paul Long
 class DataElement < ActiveRecord::Base
+  acts_as_cities
+
   @@historical_retention = true
 
   belongs_to :user
@@ -8,9 +10,11 @@ class DataElement < ActiveRecord::Base
 
   has_many :data_element_links
   
-  acts_as_cities
-  
   DEFAULT_VALUE = [:name, :version]
+
+  def friendly_name
+    name
+  end
   
   def compare_element(new_data_element)
       comp1 = Hash.new

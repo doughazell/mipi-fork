@@ -152,7 +152,9 @@ class GlobesController < ApplicationController
     else
       @active_profile = @profiles.find(:first)
     end
-    @profiles.sort! { |a,b| a.position <=> b.position }
+    if @profiles.count > 1 then
+      @profiles.sort! { |a,b| a.position <=> b.position }
+    end
     
     if @active_profile then
       @data_sheets = @active_profile.data_sheets

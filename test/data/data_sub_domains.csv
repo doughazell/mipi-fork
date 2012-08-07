@@ -1,0 +1,9 @@
+name,code,short_name,description,data_domain_data_element
+DATA_SUBDOMAIN_001,GEN,Generation,Generation,DATA_DOMAIN_001
+DATA_SUBDOMAIN_002,BAL&IMP,Balance & Imperfection,Balance & Imperfection,DATA_DOMAIN_001
+DATA_SUBDOMAIN_003,LEV,Levies,Levies,DATA_DOMAIN_001
+DATA_SUBDOMAIN_004,OTH_CHGS,Other Charges,Other Charges,DATA_DOMAIN_001
+DATA_SUBDOMAIN_005,FUEL,Fuels,Fuels,DATA_DOMAIN_001
+DATA_SUBDOMAIN_006,CONS,Consumables,Consumables,DATA_DOMAIN_001
+DATA_SUBDOMAIN_007,FIN_INSTR,Financial Instruments,Financial Instruments,DATA_DOMAIN_001
+DATA_SUBDOMAIN_009,OP_COSTS,Operating Costs,Operating Costs,DATA_DOMAIN_001

@@ -12,6 +12,12 @@ hidden_data_element = "#{collection_name}_#{data_element_id}_id"
 tick = raw("&#10004;")
 #collection_name = "data_elements"
 
+if (options[:field_type] == "text_area")
+  text_area = true
+else
+  text_area = false
+end
+
 data_value = eval("data_element.#{database_column}").to_s
 puts data_value
 if data_value.empty? then
@@ -24,7 +30,11 @@ end
 
 if !defined? size then
 #  size = [eval("data_element.#{database_column}").length + 4, 10].max
-  size = [data_element[database_column].to_s.length + 4, 10].max
+  if text_area == true
+    size = "#{[35,[data_element[database_column].to_s.length + 4, 10].max].min}x4"
+  else
+    size = [data_element[database_column].to_s.length + 4, 10].max
+  end
 end
 
 puts collection_name
@@ -39,7 +49,11 @@ puts collection_name
   </span>
   <span style="display:none;" class="editing_region" id="<%= combined_id_edit_region %>" >
   <% if click_mechanism == 'lost_focus' %>
-    <%= f.text_field "#{database_column}", { :id => combined_id_edit, :value => data_value, :size => size, :onBlur => "javascript:write_edit('#{combined_id}', '#{combined_id_edit}', '#{data_element_id}');", :onKeyPress => "javascript:handle_enter('#{combined_id}', '#{combined_id_edit}', event, '#{data_element_id}');" } %>
+    <% if text_area == true %>
+      <%= f.text_area "#{database_column}", { :id => combined_id_edit, :value => data_value, :size => size, :onBlur => "javascript:write_edit('#{combined_id}', '#{combined_id_edit}', '#{data_element_id}');", :onKeyPress => "javascript:handle_enter('#{combined_id}', '#{combined_id_edit}', event, '#{data_element_id}');" } %>
+    <% else %>
+      <%= f.text_field "#{database_column}", { :id => combined_id_edit, :value => data_value, :size => size, :onBlur => "javascript:write_edit('#{combined_id}', '#{combined_id_edit}', '#{data_element_id}');", :onKeyPress => "javascript:handle_enter('#{combined_id}', '#{combined_id_edit}', event, '#{data_element_id}');" } %>
+    <% end %>
   <% else %>
     <%= button_to_function tick, "javascript:write_edit('#{combined_id}', '#{combined_id_edit}', '#{data_element_id}');" %>
   <% end %>

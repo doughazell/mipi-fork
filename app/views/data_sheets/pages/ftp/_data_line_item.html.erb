@@ -1,0 +1,83 @@
+<h1>Data Line Item Management</h1>
+<table>
+  <th>Column</th>
+  <th>Value</th>
+  <th>Description</th>
+  <tr>
+    <td>
+      Name
+    </td>
+    <td>
+      <%= @line_item.code %>
+    </td>
+    <td>
+      The &quot;Name&quot is used internally and cannot be changed.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Code
+    </td>
+    <td>
+      <%= Label_TextBox_Switch("line_item", @line_item, "code") %>
+    </td>
+    <td>
+      The &quot;Code&quot will be exported and distributed to other systems. Therefore, this value will be used by other systems to identify this value.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Short Name
+    </td>
+    <td>
+      <%= Label_TextBox_Switch("line_item", @line_item, "short_name") %>
+    </td>
+    <td>
+      The &quot;Short Name&quot will be used on reports and will be the shorthand method of refering to this data line item.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Description
+    </td>
+    <td>
+      <%= Label_TextBox_Switch("line_item", @line_item, "description", { :field_type => "text_area" }) %>
+    </td>
+    <td>
+      The &quot;Description&quot can be utilised to provide a greater understanding of the data set being constructed. This can be used for tooltips and other documentation in order to provide complete clarity.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Data Set
+    </td>
+    <td colspan="2">
+      <%= ForeignKey_PickList("line_item", @line_item, "data_set_data_element_id", "description") %>
+      <%= LinkDataSheet(@line_item.data_set_data_element, nil, { :data_sheet => @line_item.data_set_data_element.name, :override_label => ">>" }) %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Data Sub Domain
+    </td>
+    <td colspan="2">
+      <% if @line_item.data_set_data_element.data_sub_domain_data_element.data_domain_data_element %>
+        <%= LinkDataSheet(@line_item.data_set_data_element.data_sub_domain_data_element, nil, { :data_sheet => @line_item.data_set_data_element.data_sub_domain_data_element.name, :override_label => @line_item.data_set_data_element.data_sub_domain_data_element.friendly_name }) %>
+      <% else %>
+        &lt;Blank&gt;
+      <% end %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Data Domain
+    </td>
+    <td colspan="2">
+      <% if @line_item.data_set_data_element.data_sub_domain_data_element.data_domain_data_element %>
+        <%= LinkDataSheet(@line_item.data_set_data_element.data_sub_domain_data_element.data_domain_data_element, nil, { :data_sheet => @line_item.data_set_data_element.data_sub_domain_data_element.data_domain_data_element.name, :override_label => @line_item.data_set_data_element.data_sub_domain_data_element.data_domain_data_element.friendly_name }) %>
+      <% else %>
+        &lt;Blank&gt;
+      <% end %>
+    </td>
+  </tr>
+</table>

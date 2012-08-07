@@ -1,0 +1,51 @@
+<h1>Data Sub Domain Details</h1>
+<table>
+  <th>Column</th>
+  <th>Value</th>
+  <th>Description</th>
+  <tr>
+    <td>Name</td>
+    <td><%= @data_sub_domain.name %></td>
+    <td>
+      The &quot;Name&quot is used internally and cannot be changed.
+    </td>
+  </tr>
+  <tr>
+    <td>Code</td>
+    <td><%= Label_TextBox_Switch("data_sub_domain", @data_sub_domain, "code") %></td>
+    <td>
+      The &quot;Code&quot will be exported and distributed to other systems. Therefore, this value will be used by other systems to identify this value.
+    </td>
+  </tr>
+  <tr>
+    <td>Short Name</td>
+    <td><%= Label_TextBox_Switch("data_sub_domain", @data_sub_domain, "short_name") %></td>
+    <td>
+      The &quot;Short Name&quot will be used on reports and will be the shorthand method of refering to this data sub domain.
+    </td>
+  </tr>
+  <tr>
+    <td>Description</td>
+    <td><%= Label_TextBox_Switch("data_sub_domain", @data_sub_domain, "description", { :field_type => "text_area" } ) %></td>
+    <td>
+      The &quot;Description&quot can be utilised to provide a greater understanding of the data sub domain being constructed. This can be used for tooltips and other documentation in order to provide complete clarity.
+    </td>
+  </tr>
+  <tr>
+    <td>Data Domain</td>
+    <td colspan="2">
+      <% if @data_sub_domain.data_domain_data_element %>
+      <%= ForeignKey_PickList("data_sub_domain", @data_sub_domain, "data_domain_data_element_id", "description") %>
+      <%= LinkDataSheet(@data_sub_domain.data_domain_data_element, nil, { :data_sheet => @data_sub_domain.data_domain_data_element.name, :override_label => ">>" }) %>
+      <% end %>
+    </td>
+  </tr>
+  <tr>
+    <th colspan="3">Child Data Sets</td>
+  </tr>
+  <% @data_sub_domain.data_set_data_elements.each do |data_set| %>
+  <tr>
+    <td colspan="3"><%= LinkDataSheet(data_set, "friendly_name", { :data_sheet => data_set.name, :override_label => data_set.friendly_name }) %></td>
+  </tr>
+  <% end %>
+</table>
