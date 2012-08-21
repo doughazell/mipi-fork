@@ -3,6 +3,8 @@ class SubscriptionMessageDataElement < MessageDataElement
   acts_as_cities
   
   belongs_to :subscription
+
+  attr_accessible :hidden, :message_id, :message_text, :subscription_id
   
   # @return String
   def evaluate

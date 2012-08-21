@@ -4,6 +4,8 @@ class DataElementCollection < ActiveRecord::Base
   has_many :data_elements, :dependent => :destroy #, :through => :presentations
   belongs_to :data_sheet
   belongs_to :globe
+
+  attr_accessible :id, :name, :security, :archive_criteria, :data_element_type, :page_limit, :historic, :variable_name, :order_by_column, :globe_id, :created_at, :updated_at
   
   def current_data_element
     data_elements.find(:last, :order => "version")

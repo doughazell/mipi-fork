@@ -5,6 +5,8 @@ class DataElementLink < ActiveRecord::Base
   
   belongs_to :data_element
   
+  attr_accessible :id, :remote_globe_identifier, :data_element_id, :attribute_name
+  
 #  has_many :data_element_links, :foreign_key => "source_link_id", :through => :subscriptions
 #  has_many :data_element_links, :foreign_key => "destination_link_id", :through => :subscriptions
   def evaluate(delimiter = ' ')

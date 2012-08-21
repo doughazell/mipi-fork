@@ -4,4 +4,6 @@
 # @author Paul Long
 class AddressDataElement < DataElement
   acts_as_cities
+  
+  attr_accessible :address_line_1, :address_line_2, :address_line_3, :city, :post_code, :country
 end

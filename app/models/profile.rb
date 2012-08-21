@@ -4,6 +4,8 @@ class Profile < ActiveRecord::Base
   has_many :data_sheets, :dependent => :destroy
   acts_as_list
   
+  attr_accessible :id, :name, :globe_id, :position, :created_at, :updated_at
+  
   #validates_presence_of :name, :message => "Must specify a Profile Name!"
   validates :name, :presence => true
   

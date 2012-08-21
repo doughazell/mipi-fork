@@ -3,6 +3,8 @@ class DataLineItemDataElement < DataElement
   
   belongs_to :data_set_data_element
   
+  attr_accessible :code, :short_name, :description, :data_set_data_element_id
+
   DEFAULT_VARIABLE_NAME = "@line_item"
 
   def friendly_name

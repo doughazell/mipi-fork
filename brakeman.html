@@ -1,0 +1,1056 @@
+<!DOCTYPE HTML SYSTEM>
+<html>
+<head>
+<title>Brakeman Report</title>
+  <script>
+    function toggle(context) {
+      var elem = document.getElementById(context);
+
+      if (elem.style.display != "block")
+        elem.style.display = "block";
+      else
+        elem.style.display = "none";
+        
+      elem.parentNode.scrollIntoView();
+    }
+  </script>
+  <style>
+    /* CSS style used for HTML reports */
+
+body {
+  font-family: sans-serif;
+  color: #161616;
+}
+
+p {
+  font-weight: bold;
+  font-size: 11pt;
+  color: #2D0200;
+ }
+
+ th {
+   background-color: #980905;
+   border-bottom: 5px solid #530200;
+   color: white;
+   font-size: 11pt;
+   padding: 1px 8px 1px 8px;
+ }
+
+ td {
+   border-bottom: 2px solid white;
+   font-family: monospace;
+   padding: 5px 8px 1px 8px;
+ }
+
+ table {
+   background-color: #FCF4D4;
+   border-collapse: collapse;
+ }
+
+ h1 {
+   color: #2D0200;
+   font-size: 14pt;
+ }
+
+ h2 {
+   color: #2D0200;
+   font-size: 12pt;
+ }
+
+ span.high-confidence {
+   font-weight:bold;
+   color: red;
+ }
+
+ span.med-confidence {
+ }
+
+ span.weak-confidence {
+   color:gray;
+ }
+
+ div.warning_message {
+   cursor: pointer;
+ }
+
+ div.warning_message:hover {
+   background-color: white;
+ }
+
+ table caption {
+   background-color: #FFE;
+   padding: 2px;
+ }
+
+ table.context {
+   margin-top: 5px;
+   margin-bottom: 5px;
+   border-left: 1px solid #90e960;
+   color: #212121;
+ }
+
+ tr.context {
+   background-color: white;
+ }
+
+ tr.first {
+   border-top: 1px solid #7ecc54;
+   padding-top: 2px;
+ }
+
+ tr.error {
+  background-color: #f4c1c1 !important
+ }
+
+ tr.near_error {
+  background-color: #f4d4d4 !important
+ }
+
+ tr.alt {
+   background-color: #e8f4d4;
+ }
+
+ td.context {
+   padding: 2px 10px 0px 6px;
+   border-bottom: none;
+ }
+
+ td.context_line {
+   padding: 2px 8px 0px 7px;
+   border-right: 1px solid #b3bda4;
+   border-bottom: none;
+   color: #6e7465;
+ }
+
+ pre.context {
+   margin-bottom: 1px;
+ }
+
+ .user_input {
+   background-color: #fcecab;
+ }
+
+  </style>
+</head>
+<body>
+
+<h1>Brakeman Report</h1>
+<table>
+  <tr>
+    <th>Application Path</th>
+    <th>Rails Version</th>
+    <th>Report Generation Time</th>
+    <th>Checks Performed</th>
+  </tr>
+  <tr>
+    <td>C:/Development/ftp_demo</td>
+    <td>3.0.3</td>
+    <td>2012-08-21 08:48:22 +0100</td>
+    <td>BasicAuth, CrossSiteScripting, DefaultRoutes, EscapeFunction, Evaluation, Execute, FileAccess, FilterSkipping, ForgerySetting, LinkTo, LinkToHref, MailTo, MassAssignment, ModelAttributes, NestedAttributes, QuoteTableName, Redirect, Render, ResponseSplitting, SQL, SafeBufferManipulation, SelectVulnerability, Send, SendFile, SessionSettings, SkipBeforeFilter, StripTags, TranslateBug, ValidationRegex, WithoutProtection</td>
+  </tr>
+</table>
+<br>
+<h2 id='summary'>Summary</h2> 
+<table>
+  <tr>
+    <th>Scanned/Reported</th>
+    <th>Total</th>
+  </tr>
+  <tr>
+    <td>Controllers</td>
+    <td>11</td>
+  </tr>
+  <tr>
+    <td>Models</td>
+    <td>49</td>
+  </tr>
+  <tr>
+    <td>Templates</td>
+    <td>122</td>
+  </tr>
+  <tr>
+    <td>Errors</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>Security Warnings</td>
+    <td>17 <span class='high-confidence'>(6)</span></td>
+  </tr>
+</table>
+<br>
+<table>
+  <tr>
+    <th>Warning Type</th>
+    <th>Total</th>
+  </tr>
+  
+  <tr>
+    <td>Attribute Restriction</td>
+    <td>1</td>
+  </tr>
+  
+  <tr>
+    <td>Cross Site Scripting</td>
+    <td>7</td>
+  </tr>
+  
+  <tr>
+    <td>Cross-Site Request Forgery</td>
+    <td>1</td>
+  </tr>
+  
+  <tr>
+    <td>Dangerous Eval</td>
+    <td>1</td>
+  </tr>
+  
+  <tr>
+    <td>Mass Assignment</td>
+    <td>1</td>
+  </tr>
+  
+  <tr>
+    <td>Redirect</td>
+    <td>2</td>
+  </tr>
+  
+  <tr>
+    <td>SQL Injection</td>
+    <td>4</td>
+  </tr>
+  
+</table>
+<br>
+<h2>Security Warnings</h2>  
+<table>
+
+  <tr>
+    <th>Confidence</th>
+    <th>Class</th>
+    <th>Method</th>
+    <th>Warning Type</th>
+    <th>Message</th>
+  </tr>
+  
+  <tr>
+    <td><span class='high-confidence'>High</span></td>
+    <td>DataSheetsController</td>
+    <td>calculate_data_sheet_elements</td>
+    <td>Dangerous Eval</td>
+    <td><div class='warning_message' onClick="toggle('context1');toggle('message1');toggle('full_message1')" ><span id='message1' style='display:block' >User input in eval near line 230: eval(&quot;#{DataElementCollection.find((local sheet_part).data_element_...</span><span id='full_message1' style='display:none'>User input in eval near line 230: eval(&quot;#{<span class="user_input">DataElementCollection.find((local sheet_part).data_element_collection_id).variable_name</span>}_array + [@tmp]&quot;)</span><table id='context1' class='context' style='display:none'><caption>/app/controllers/data_sheets_controller.rb</caption>        <tr class='context first'>
+          <td class='context_line'>
+            <pre class='context'>225</pre>
+          </td>
+          <td class='context'>
+            <pre class='context'>          else</pre>
+          </td>
+        </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>226</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>            offset = hash_of_variables[&quot;#{@part.variable_name}_offset&quot;]</pre>
+            </td>
+          </tr>
+          <tr class='context'>
+            <td class='context_line'>
+              <pre class='context'>227</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>#            instance_variable_set(&quot;@tmp&quot;, eval(@part.data_element_type).find_by_data_element_collection_id_and_globe_id(@part.id, @globe_id, :order =&gt; &quot;created_at DESC&quot;))</pre>
+            </td>
+          </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>228</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>            instance_variable_set(&quot;@tmp&quot;, @part.data_element_type.constantize.find_by_data_element_collection_id_and_globe_id(@part.id, @globe_id, :order =&gt; &quot;created_at DESC&quot;))</pre>
+            </td>
+          </tr>
+          <tr class='context near_error'>
+            <td class='context_line'>
+              <pre class='context'>229</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>            hash_of_variables[&quot;#{@part.variable_name}_offset&quot;] = hash_of_variables[&quot;#{@part.variable_name}_offset&quot;] + 1</pre>
+            </td>
+          </tr>
+          <tr class='context alt error'>
+            <td class='context_line'>
+              <pre class='context'>230</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>            instance_variable_set(&quot;#{@part.variable_name}_array&quot;, eval(&quot;#{@part.variable_name}_array + [@tmp]&quot;))</pre>
+            </td>
+          </tr>
+          <tr class='context near_error'>
+            <td class='context_line'>
+              <pre class='context'>231</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>          end</pre>
+            </td>
+          </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>232</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>        end</pre>
+            </td>
+          </tr>
+          <tr class='context'>
+            <td class='context_line'>
+              <pre class='context'>234</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>        # Build up list of 'variable' names. Here we're removing the leading '@' sign.</pre>
+            </td>
+          </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>235</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>        @list_of_collections &lt;&lt; @part.variable_name[1, @part.variable_name.length - 1]</pre>
+            </td>
+          </tr>
+</table></div></td>
+  </tr>
+  
+  <tr>
+    <td><span class='high-confidence'>High</span></td>
+    <td></td>
+    <td></td>
+    <td>SQL Injection</td>
+    <td><div class='warning_message' onClick="toggle('context5');toggle('message5');toggle('full_message5')" ><span id='message5' style='display:block' >All versions of Rails before 3.0.13, 3.1.5, and 3.2.5 contain a SQL Query Generation Vulnerability: C...</span><span id='full_message5' style='display:none'>All versions of Rails before 3.0.13, 3.1.5, and 3.2.5 contain a SQL Query Generation Vulnerability: CVE-2012-2660; Upgrade to 3.2.5, 3.1.5, 3.0.13</span><table id='context5' class='context' style='display:none'><caption>/Gemfile</caption></table></div></td>
+  </tr>
+  
+  <tr>
+    <td><span class='high-confidence'>High</span></td>
+    <td></td>
+    <td></td>
+    <td>SQL Injection</td>
+    <td><div class='warning_message' onClick="toggle('context6');toggle('message6');toggle('full_message6')" ><span id='message6' style='display:block' >All versions of Rails before 3.0.13, 3.1.5, and 3.2.5 contain a SQL Injection Vulnerability: CVE-2012...</span><span id='full_message6' style='display:none'>All versions of Rails before 3.0.13, 3.1.5, and 3.2.5 contain a SQL Injection Vulnerability: CVE-2012-2661; Upgrade to 3.2.5, 3.1.5, 3.0.13</span><table id='context6' class='context' style='display:none'><caption>/Gemfile</caption></table></div></td>
+  </tr>
+  
+  <tr>
+    <td><span class='high-confidence'>High</span></td>
+    <td></td>
+    <td></td>
+    <td>SQL Injection</td>
+    <td><div class='warning_message' onClick="toggle('context7');toggle('message7');toggle('full_message7')" ><span id='message7' style='display:block' >All versions of Rails before 3.0.14, 3.1.6, and 3.2.6 contain SQL Injection Vulnerabilities: CVE-2012...</span><span id='full_message7' style='display:none'>All versions of Rails before 3.0.14, 3.1.6, and 3.2.6 contain SQL Injection Vulnerabilities: CVE-2012-2694 and CVE-2012-2695; Upgrade to 3.2.6, 3.1.6, 3.0.14</span><table id='context7' class='context' style='display:none'><caption>/Gemfile</caption></table></div></td>
+  </tr>
+  
+  <tr>
+    <td><span class='med-confidence'>Medium</span></td>
+    <td></td>
+    <td></td>
+    <td>Cross Site Scripting</td>
+    <td>Rails 3.0.3 has a vulnerabilty in SafeBuffer. Upgrade to 3.0.12 or apply patches.</td>
+  </tr>
+  
+  <tr>
+    <td><span class='med-confidence'>Medium</span></td>
+    <td></td>
+    <td></td>
+    <td>Cross Site Scripting</td>
+    <td>Versions before 3.0.11 have a vulnerability in translate helper.</td>
+  </tr>
+  
+  <tr>
+    <td><span class='med-confidence'>Medium</span></td>
+    <td></td>
+    <td></td>
+    <td>SQL Injection</td>
+    <td>Versions before 3.0.10 have a vulnerability in quote_table_name: CVE-2011-2930</td>
+  </tr>
+  
+  <tr>
+    <td><span class='weak-confidence'>Weak</span></td>
+    <td>GlobesController</td>
+    <td>create</td>
+    <td>Mass Assignment</td>
+    <td><div class='warning_message' onClick="toggle('context2');toggle('message2');toggle('full_message2')" ><span id='message2' style='display:block' >Unprotected mass assignment near line 95: Registration.new(:globe =&gt; (<span class="user_input">Globe.new(params[:globe])</span>), :us...</span><span id='full_message2' style='display:none'>Unprotected mass assignment near line 95: Registration.new(:globe =&gt; (<span class="user_input">Globe.new(params[:globe])</span>), :user =&gt; (current_user))</span><table id='context2' class='context' style='display:none'><caption>/app/controllers/globes_controller.rb</caption>        <tr class='context first'>
+          <td class='context_line'>
+            <pre class='context'>90</pre>
+          </td>
+          <td class='context'>
+            <pre class='context'>  # POST /globes.xml</pre>
+          </td>
+        </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>91</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>  def create</pre>
+            </td>
+          </tr>
+          <tr class='context'>
+            <td class='context_line'>
+              <pre class='context'>92</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    @globe = Globe.new(params[:globe])</pre>
+            </td>
+          </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>93</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>#    @users = User.find(:all)</pre>
+            </td>
+          </tr>
+          <tr class='context error'>
+            <td class='context_line'>
+              <pre class='context'>95</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    reg = Registration.new :globe =&gt; @globe, :user =&gt; current_user</pre>
+            </td>
+          </tr>
+          <tr class='context alt near_error'>
+            <td class='context_line'>
+              <pre class='context'>96</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    reg.save</pre>
+            </td>
+          </tr>
+          <tr class='context'>
+            <td class='context_line'>
+              <pre class='context'>98</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    @globe.profiles.each do |profile|</pre>
+            </td>
+          </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>99</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>      profile.setup_defaults(@globe)</pre>
+            </td>
+          </tr>
+          <tr class='context'>
+            <td class='context_line'>
+              <pre class='context'>100</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    end</pre>
+            </td>
+          </tr>
+</table></div></td>
+  </tr>
+  
+  <tr>
+    <td><span class='weak-confidence'>Weak</span></td>
+    <td>PresentationsController</td>
+    <td>create</td>
+    <td>Redirect</td>
+    <td><div class='warning_message' onClick="toggle('context3');toggle('message3');toggle('full_message3')" ><span id='message3' style='display:block' >Possible unprotected redirect near line 94: redirect_to([Globe.find(params[:globe_id]), Presentation....</span><span id='full_message3' style='display:none'>Possible unprotected redirect near line 94: redirect_to([Globe.find(params[:globe_id]), <span class="user_input">Presentation.new(params[:presentation])</span>], :notice =&gt; &quot;Globe was successfully created.&quot;)</span><table id='context3' class='context' style='display:none'><caption>/app/controllers/presentations_controller.rb</caption>        <tr class='context first'>
+          <td class='context_line'>
+            <pre class='context'>89</pre>
+          </td>
+          <td class='context'>
+            <pre class='context'>    @data_element_types.uniq!</pre>
+          </td>
+        </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>92</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    respond_to do |format|</pre>
+            </td>
+          </tr>
+          <tr class='context near_error'>
+            <td class='context_line'>
+              <pre class='context'>93</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>      if @presentation.save</pre>
+            </td>
+          </tr>
+          <tr class='context alt error'>
+            <td class='context_line'>
+              <pre class='context'>94</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>        format.html { redirect_to([@globe, @presentation], :notice =&gt; 'Globe was successfully created.') }</pre>
+            </td>
+          </tr>
+          <tr class='context near_error'>
+            <td class='context_line'>
+              <pre class='context'>95</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>        format.xml  { render :xml =&gt; @presentation, :status =&gt; :created, :location =&gt; @presentation }</pre>
+            </td>
+          </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>96</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>      else</pre>
+            </td>
+          </tr>
+          <tr class='context'>
+            <td class='context_line'>
+              <pre class='context'>97</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>        format.html { render :action =&gt; &quot;new&quot; }</pre>
+            </td>
+          </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>98</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>        format.xml  { render :xml =&gt; @presentation.errors, :status =&gt; :unprocessable_entity }</pre>
+            </td>
+          </tr>
+          <tr class='context'>
+            <td class='context_line'>
+              <pre class='context'>99</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>      end</pre>
+            </td>
+          </tr>
+</table></div></td>
+  </tr>
+  
+  <tr>
+    <td><span class='weak-confidence'>Weak</span></td>
+    <td>ProfilesController</td>
+    <td>create</td>
+    <td>Redirect</td>
+    <td><div class='warning_message' onClick="toggle('context4');toggle('message4');toggle('full_message4')" ><span id='message4' style='display:block' >Possible unprotected redirect near line 64: redirect_to([Globe.find(params[:globe_id]), Profile.new(p...</span><span id='full_message4' style='display:none'>Possible unprotected redirect near line 64: redirect_to([Globe.find(params[:globe_id]), <span class="user_input">Profile.new(params[:profile])</span>], :notice =&gt; &quot;Profile was successfully created.&quot;)</span><table id='context4' class='context' style='display:none'><caption>/app/controllers/profiles_controller.rb</caption>        <tr class='context first'>
+          <td class='context_line'>
+            <pre class='context'>60</pre>
+          </td>
+          <td class='context'>
+            <pre class='context'>    @profile.setup_defaults(@globe)</pre>
+          </td>
+        </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>62</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    respond_to do |format|</pre>
+            </td>
+          </tr>
+          <tr class='context near_error'>
+            <td class='context_line'>
+              <pre class='context'>63</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>      if @profile.save</pre>
+            </td>
+          </tr>
+          <tr class='context alt error'>
+            <td class='context_line'>
+              <pre class='context'>64</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>        format.html { redirect_to([@globe, @profile], :notice =&gt; 'Profile was successfully created.') }</pre>
+            </td>
+          </tr>
+          <tr class='context near_error'>
+            <td class='context_line'>
+              <pre class='context'>65</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>        format.xml  { render :xml =&gt; @profile, :status =&gt; :created, :location =&gt; @profile }</pre>
+            </td>
+          </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>66</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>        format.js</pre>
+            </td>
+          </tr>
+          <tr class='context'>
+            <td class='context_line'>
+              <pre class='context'>67</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>      else</pre>
+            </td>
+          </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>68</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>        format.html { render :action =&gt; &quot;new&quot; }</pre>
+            </td>
+          </tr>
+          <tr class='context'>
+            <td class='context_line'>
+              <pre class='context'>69</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>        format.xml  { render :xml =&gt; @profile.errors, :status =&gt; :unprocessable_entity }</pre>
+            </td>
+          </tr>
+</table></div></td>
+  </tr>
+  
+
+</table><p>Controller Warnings</p>
+<table>
+  <tr>
+    <th>Confidence</th>
+    <th>Controller</th>
+    <th>Warning Type</th>
+    <th>Message</th>
+  </tr>
+
+  <tr>
+    <td><span class='high-confidence'>High</span></td>
+    <td>ApplicationController</td>
+    <td>Cross-Site Request Forgery</td>
+    <td><div class='warning_message' onClick="toggle('context8');toggle('message8');toggle('full_message8')" ><span id='message8' style='display:block' >CSRF protection is flawed in unpatched versions of Rails 3.0.3 (CVE-2011-0447). Upgrade to 3.0.4 or a...</span><span id='full_message8' style='display:none'>CSRF protection is flawed in unpatched versions of Rails 3.0.3 (CVE-2011-0447). Upgrade to 3.0.4 or apply patches as needed</span><table id='context8' class='context' style='display:none'><caption>/Gemfile</caption></table></div></td>
+  </tr>
+
+</table><p>Model Warnings</p>
+<table>
+  <tr>
+    <th>Confidence</th>
+    <th>Model</th>
+    <th>Warning Type</th>
+    <th>Message</th>
+  </tr>
+
+  <tr>
+    <td><span class='high-confidence'>High</span></td>
+    <td>MessageSeverity, Registration, SubscriptionEvalutaionQueue, SubscriptionType, TransactionTypeReference</td>
+    <td>Attribute Restriction</td>
+    <td>Mass assignment is not restricted using attr_accessible</td>
+  </tr>
+
+</table><p>View Warnings</p>
+<table>
+  <tr>
+    <th>Confidence</th>
+    <th>Template</th>
+    <th>Warning Type</th>
+    <th>Message</th>
+  </tr>
+
+  <tr>
+    <td><span class='med-confidence'>Medium</span></td>
+    <td>data_sheets/_detailed_list (Template:data_sheets/index)</td>
+    <td>Cross Site Scripting</td>
+    <td><div class='warning_message' onClick="toggle('context9');toggle('message9');toggle('full_message9')" ><span id='message9' style='display:block' >Unsafe model attribute in link_to href near line 24: link_to(&quot;Destroy&quot;, [<span class="user_input">DataSheet.new</span>.profile.globe,...</span><span id='full_message9' style='display:none'>Unsafe model attribute in link_to href near line 24: link_to(&quot;Destroy&quot;, [<span class="user_input">DataSheet.new</span>.profile.globe, <span class="user_input">DataSheet.new</span>.profile, <span class="user_input">DataSheet.new</span>], :confirm =&gt; &quot;Are you sure?&quot;, :method =&gt; :delete)</span><table id='context9' class='context' style='display:none'><caption>/app/views/data_sheets/_detailed_list.html.erb</caption>        <tr class='context first'>
+          <td class='context_line'>
+            <pre class='context'>19</pre>
+          </td>
+          <td class='context'>
+            <pre class='context'>    &lt;td&gt;&lt;%= data_sheet.style_sheets %&gt;&lt;/td&gt;</pre>
+          </td>
+        </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>20</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    &lt;td&gt;&lt;%= link_to data_sheet.profile.name, globe_profile_path(data_sheet.profile.globe, data_sheet.profile) %&gt;&lt;/td&gt;</pre>
+            </td>
+          </tr>
+          <tr class='context'>
+            <td class='context_line'>
+              <pre class='context'>21</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    &lt;td&gt;&lt;%= data_sheet.creator.username %&gt;&lt;/td&gt;</pre>
+            </td>
+          </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>22</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    &lt;td&gt;&lt;%= data_sheet.updater.username %&gt;&lt;/td&gt;</pre>
+            </td>
+          </tr>
+          <tr class='context near_error'>
+            <td class='context_line'>
+              <pre class='context'>23</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    &lt;td&gt;&lt;%= data_sheet.file_location %&gt;&lt;/td&gt;</pre>
+            </td>
+          </tr>
+          <tr class='context alt error'>
+            <td class='context_line'>
+              <pre class='context'>24</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    &lt;td&gt;&lt;%= link_to 'Edit', edit_globe_profile_data_sheet_path(@profile.globe, @profile, data_sheet) %&gt;&lt;/td&gt;</pre>
+            </td>
+          </tr>
+          <tr class='context near_error'>
+            <td class='context_line'>
+              <pre class='context'>25</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    &lt;td&gt;&lt;%= link_to 'Destroy', [data_sheet.profile.globe, data_sheet.profile, data_sheet], :confirm =&gt; 'Are you sure?', :method =&gt; :delete %&gt;&lt;/td&gt;</pre>
+            </td>
+          </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>26</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    &lt;td&gt;&lt;%= link_to 'Render', draw_globe_profile_data_sheet_path(@profile.globe, @profile, data_sheet) %&gt;&lt;/td&gt;</pre>
+            </td>
+          </tr>
+          <tr class='context'>
+            <td class='context_line'>
+              <pre class='context'>27</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>  &lt;/tr&gt;</pre>
+            </td>
+          </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>28</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>&lt;% end %&gt;</pre>
+            </td>
+          </tr>
+          <tr class='context'>
+            <td class='context_line'>
+              <pre class='context'>29</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>&lt;/table&gt;</pre>
+            </td>
+          </tr>
+</table></div></td>
+  </tr>
+
+  <tr>
+    <td><span class='med-confidence'>Medium</span></td>
+    <td>data_sheets/edit (DataSheetsController#edit)</td>
+    <td>Cross Site Scripting</td>
+    <td><div class='warning_message' onClick="toggle('context10');toggle('message10');toggle('full_message10')" ><span id='message10' style='display:block' >Unsafe model attribute in link_to href near line 4: link_to(&quot;Show&quot;, [<span class="user_input">DataSheet.find(params[:id])</span>.prof...</span><span id='full_message10' style='display:none'>Unsafe model attribute in link_to href near line 4: link_to(&quot;Show&quot;, [<span class="user_input">DataSheet.find(params[:id])</span>.profile.globe, <span class="user_input">DataSheet.find(params[:id])</span>.profile, <span class="user_input">DataSheet.find(params[:id])</span>])</span><table id='context10' class='context' style='display:none'><caption>/app/views/data_sheets/edit.html.erb</caption>        <tr class='context first'>
+          <td class='context_line'>
+            <pre class='context'>1</pre>
+          </td>
+          <td class='context'>
+            <pre class='context'>&lt;h1&gt;Editing data_sheet&lt;/h1&gt;</pre>
+          </td>
+        </tr>
+          <tr class='context alt near_error'>
+            <td class='context_line'>
+              <pre class='context'>3</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>&lt;%= render 'form' %&gt;</pre>
+            </td>
+          </tr>
+          <tr class='context near_error'>
+            <td class='context_line'>
+              <pre class='context'>5</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>&lt;%= link_to 'Show', [@globe, @profile, @data_sheet] %&gt; |</pre>
+            </td>
+          </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>6</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>&lt;%= link_to 'Back', globe_profile_data_sheets_path %&gt;</pre>
+            </td>
+          </tr>
+</table></div></td>
+  </tr>
+
+  <tr>
+    <td><span class='med-confidence'>Medium</span></td>
+    <td>presentations/index (PresentationsController#index)</td>
+    <td>Cross Site Scripting</td>
+    <td><div class='warning_message' onClick="toggle('context11');toggle('message11');toggle('full_message11')" ><span id='message11' style='display:block' >Unsafe model attribute in link_to href near line 11: link_to(&quot;Destroy&quot;, [Globe.find(params[:globe_id]...</span><span id='full_message11' style='display:none'>Unsafe model attribute in link_to href near line 11: link_to(&quot;Destroy&quot;, [<span class="user_input">Globe.find(params[:globe_id])</span>, (local presentation)], :confirm =&gt; &quot;Are you sure?&quot;, :method =&gt; :delete)</span><table id='context11' class='context' style='display:none'><caption>/app/views/presentations/index.html.erb</caption>        <tr class='context first'>
+          <td class='context_line'>
+            <pre class='context'>6</pre>
+          </td>
+          <td class='context'>
+            <pre class='context'>&lt;% @presentations.each do |presentation| %&gt;</pre>
+          </td>
+        </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>7</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>  &lt;tr&gt;</pre>
+            </td>
+          </tr>
+          <tr class='context'>
+            <td class='context_line'>
+              <pre class='context'>8</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    &lt;td&gt;&lt;%= link_to &quot;#{presentation.data_sheet.name} to #{presentation.data_element_collection.name} as #{presentation.data_element_collection.variable_name}&quot;, globe_presentation_path(@globe, presentation)  %&gt;&lt;/td&gt;</pre>
+            </td>
+          </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>9</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    &lt;td&gt;&lt;%= link_to &quot;Show&quot;, globe_presentation_path(@globe, presentation) %&gt;&lt;/td&gt;</pre>
+            </td>
+          </tr>
+          <tr class='context near_error'>
+            <td class='context_line'>
+              <pre class='context'>10</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    &lt;td&gt;&lt;%= link_to &quot;Edit&quot;, edit_globe_presentation_path(@globe, presentation) %&gt;&lt;/td&gt;</pre>
+            </td>
+          </tr>
+          <tr class='context alt error'>
+            <td class='context_line'>
+              <pre class='context'>11</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    &lt;td&gt;&lt;%= link_to &quot;Destroy&quot;, [@globe, presentation], :confirm =&gt; 'Are you sure?', :method =&gt; :delete %&gt;&lt;/td&gt;</pre>
+            </td>
+          </tr>
+          <tr class='context near_error'>
+            <td class='context_line'>
+              <pre class='context'>12</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>  &lt;/tr&gt;</pre>
+            </td>
+          </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>13</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>&lt;% end %&gt;</pre>
+            </td>
+          </tr>
+          <tr class='context'>
+            <td class='context_line'>
+              <pre class='context'>14</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>&lt;/table&gt;</pre>
+            </td>
+          </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>15</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>&lt;%= link_to &quot;New&quot;, new_globe_presentation_path(@globe) %&gt;</pre>
+            </td>
+          </tr>
+          <tr class='context'>
+            <td class='context_line'>
+              <pre class='context'>16</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>&lt;%= render &quot;/presentations/the_bottom_line&quot; %&gt;</pre>
+            </td>
+          </tr>
+</table></div></td>
+  </tr>
+
+  <tr>
+    <td><span class='med-confidence'>Medium</span></td>
+    <td>profiles/_detailed_list (Template:profiles/index)</td>
+    <td>Cross Site Scripting</td>
+    <td><div class='warning_message' onClick="toggle('context12');toggle('message12');toggle('full_message12')" ><span id='message12' style='display:block' >Unsafe model attribute in link_to href near line 12: link_to(<span class="user_input">(Unresolved Model).new</span>.name, [(Unresolve...</span><span id='full_message12' style='display:none'>Unsafe model attribute in link_to href near line 12: link_to(<span class="user_input">(Unresolved Model).new</span>.name, [<span class="user_input">(Unresolved Model).new</span>.globe, <span class="user_input">(Unresolved Model).new</span>])</span><table id='context12' class='context' style='display:none'><caption>/app/views/profiles/_detailed_list.html.erb</caption>        <tr class='context first'>
+          <td class='context_line'>
+            <pre class='context'>7</pre>
+          </td>
+          <td class='context'>
+            <pre class='context'>    &lt;th&gt;&lt;/th&gt;</pre>
+          </td>
+        </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>8</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    &lt;th&gt;&lt;/th&gt;</pre>
+            </td>
+          </tr>
+          <tr class='context'>
+            <td class='context_line'>
+              <pre class='context'>9</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>  &lt;/tr&gt;</pre>
+            </td>
+          </tr>
+          <tr class='context alt near_error'>
+            <td class='context_line'>
+              <pre class='context'>11</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>&lt;% @profiles.each do |profile| %&gt;</pre>
+            </td>
+          </tr>
+          <tr class='context error'>
+            <td class='context_line'>
+              <pre class='context'>12</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>  &lt;tr&gt;</pre>
+            </td>
+          </tr>
+          <tr class='context alt near_error'>
+            <td class='context_line'>
+              <pre class='context'>13</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    &lt;td&gt;&lt;%= link_to profile.name, [profile.globe, profile] %&gt;&lt;/td&gt;</pre>
+            </td>
+          </tr>
+          <tr class='context'>
+            <td class='context_line'>
+              <pre class='context'>14</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    &lt;td&gt;&lt;%= link_to profile.globe.name, :controller =&gt; &quot;globes&quot;, :action =&gt; &quot;show&quot;, :id =&gt; profile.globe_id %&gt;&lt;/td&gt;</pre>
+            </td>
+          </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>15</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    &lt;td&gt;&lt;%= link_to 'Edit', edit_globe_profile_path(profile.globe, profile) %&gt;&lt;/td&gt;</pre>
+            </td>
+          </tr>
+          <tr class='context'>
+            <td class='context_line'>
+              <pre class='context'>16</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    &lt;td&gt;&lt;%= link_to 'Destroy', [profile.globe, profile], :confirm =&gt; 'Are you sure?', :method =&gt; :delete %&gt;&lt;/td&gt;</pre>
+            </td>
+          </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>17</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>  &lt;/tr&gt;</pre>
+            </td>
+          </tr>
+</table></div></td>
+  </tr>
+
+  <tr>
+    <td><span class='med-confidence'>Medium</span></td>
+    <td>profiles/_detailed_list (Template:profiles/index)</td>
+    <td>Cross Site Scripting</td>
+    <td><div class='warning_message' onClick="toggle('context13');toggle('message13');toggle('full_message13')" ><span id='message13' style='display:block' >Unsafe model attribute in link_to href near line 15: link_to(&quot;Destroy&quot;, [<span class="user_input">(Unresolved Model).new</span>.globe...</span><span id='full_message13' style='display:none'>Unsafe model attribute in link_to href near line 15: link_to(&quot;Destroy&quot;, [<span class="user_input">(Unresolved Model).new</span>.globe, <span class="user_input">(Unresolved Model).new</span>], :confirm =&gt; &quot;Are you sure?&quot;, :method =&gt; :delete)</span><table id='context13' class='context' style='display:none'><caption>/app/views/profiles/_detailed_list.html.erb</caption>        <tr class='context first'>
+          <td class='context_line'>
+            <pre class='context'>11</pre>
+          </td>
+          <td class='context'>
+            <pre class='context'>&lt;% @profiles.each do |profile| %&gt;</pre>
+          </td>
+        </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>12</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>  &lt;tr&gt;</pre>
+            </td>
+          </tr>
+          <tr class='context'>
+            <td class='context_line'>
+              <pre class='context'>13</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    &lt;td&gt;&lt;%= link_to profile.name, [profile.globe, profile] %&gt;&lt;/td&gt;</pre>
+            </td>
+          </tr>
+          <tr class='context alt near_error'>
+            <td class='context_line'>
+              <pre class='context'>14</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    &lt;td&gt;&lt;%= link_to profile.globe.name, :controller =&gt; &quot;globes&quot;, :action =&gt; &quot;show&quot;, :id =&gt; profile.globe_id %&gt;&lt;/td&gt;</pre>
+            </td>
+          </tr>
+          <tr class='context error'>
+            <td class='context_line'>
+              <pre class='context'>15</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    &lt;td&gt;&lt;%= link_to 'Edit', edit_globe_profile_path(profile.globe, profile) %&gt;&lt;/td&gt;</pre>
+            </td>
+          </tr>
+          <tr class='context alt near_error'>
+            <td class='context_line'>
+              <pre class='context'>16</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    &lt;td&gt;&lt;%= link_to 'Destroy', [profile.globe, profile], :confirm =&gt; 'Are you sure?', :method =&gt; :delete %&gt;&lt;/td&gt;</pre>
+            </td>
+          </tr>
+          <tr class='context'>
+            <td class='context_line'>
+              <pre class='context'>17</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>  &lt;/tr&gt;</pre>
+            </td>
+          </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>18</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>&lt;% end %&gt;</pre>
+            </td>
+          </tr>
+          <tr class='context'>
+            <td class='context_line'>
+              <pre class='context'>19</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>&lt;/table&gt;</pre>
+            </td>
+          </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>20</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>&lt;%= render :partial =&gt; 'profiles/list_nav', :locals =&gt; { :show_new =&gt; true }%&gt;</pre>
+            </td>
+          </tr>
+</table></div></td>
+  </tr>
+
+</table></body></html>

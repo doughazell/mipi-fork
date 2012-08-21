@@ -4,6 +4,7 @@
     <th>Unit</th>
     <th>Installed Capacity</th>
     <th>Fixed Heat Constant</th>
+    <th>Power Station</th>
   </thead>
   <% @unit_array.each do |unit|
   %>
@@ -11,6 +12,7 @@
     <td><%= LinkDataSheet(unit, 'code') %></td>
     <td><%= unit.installed_capacity %></td>
     <td><%= unit.fixed_heat_constant %></td>
+    <td><%= unit.power_station_data_element.code %></td>
   </tr>
   <% end %>
 </table>

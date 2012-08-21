@@ -6,7 +6,7 @@
   <th>Data Set</th>
   <% @line_item_array.each do |line_item| %>
   <tr>
-    <td><%= LinkDataSheet(line_item, "name", {:data_sheet => line_item.name}) %></td>
+    <td><%= LinkDataSheet(line_item, "code", {:data_sheet => line_item.name, :override_label => line_item.code }) %></td>
     <td><%= line_item.short_name %></td>
     <td><%= line_item.description %></td>
     <td><%= line_item.data_set_data_element.friendly_name %></td>

@@ -10,6 +10,8 @@ class DataElement < ActiveRecord::Base
 
   has_many :data_element_links
   
+  attr_accessible :id, :type, :name, :data_element_collection_id, :user_id, :ready_to_archive, :label, :mandatory, :globe_id, :version, :creator_id, :updater_id, :created_at, :updated_at
+  
   DEFAULT_VALUE = [:name, :version]
 
   def friendly_name

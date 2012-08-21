@@ -9,6 +9,8 @@ class Subscription < ActiveRecord::Base
   has_many :subscription_message_data_elements
   has_many :subscription_evaluation_queues
   
+  attr_accessible :source_link_id, :destination_link_id, :subscription_type_id
+  
   def self.find_all_references(data_element, database_column)
     data_element_links = DataElementLink.find_all_by_data_element_id_and_attribute_name(data_element.id, database_column)
     if (!data_element_links.empty?) then

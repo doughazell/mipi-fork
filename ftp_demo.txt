@@ -9,7 +9,9 @@ Demo
 
 2. Adding details of users that changed the latest record.
 
-
+  <tr>
+    <td>Changed By</td><td><%= @unit.updater.username %></td>
+  </tr>
 
 3. Add Station description to the list of Generator Units
 

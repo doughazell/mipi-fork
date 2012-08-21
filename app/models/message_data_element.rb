@@ -13,5 +13,6 @@ class MessageDataElement < DataElement
   
   belongs_to :message
 
+  attr_accessible :hidden, :message_id, :message_text
 end
 

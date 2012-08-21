@@ -5,6 +5,8 @@ class DataSheet < ActiveRecord::Base
   belongs_to :user, :foreign_key => 'updated_by'
   has_many :presentations
   has_many :data_element_collections, :through => :presentations
+
+  attr_accessible :id, :name, :display_name, :class_style, :style_sheets, :profile_id, :file_location, :position, :creator_id, :updater_id, :created_at, :updated_at
   
   def setup_defaults(globe, profile)
     puts "DataSheet.setup_defaults() START"

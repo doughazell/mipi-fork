@@ -147,10 +147,13 @@ end
   end
   
   def LinkDataSheet(data_element, display_name_column = 'name', options = {})
+    presentations = []
     if (options[:data_sheet])
       puts "Specific Data Sheet: #{options[:data_sheet]}"
       ds = DataSheet.find_by_name(options[:data_sheet])
-      presentations = Presentation.find(:all, :conditions => {:data_element_collection_id => data_element.data_element_collection_id, :data_sheet_id => ds.id})
+      if (!ds.nil?)
+        presentations = Presentation.find(:all, :conditions => {:data_element_collection_id => data_element.data_element_collection_id, :data_sheet_id => ds.id})
+      end
     else
       presentations = Presentation.find_other_data_sheets(data_element.data_element_collection_id, @active_data_sheet)
     end
