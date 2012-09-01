@@ -12,7 +12,7 @@
     <td><%= LinkDataSheet(unit, 'code') %></td>
     <td><%= unit.installed_capacity %></td>
     <td><%= unit.fixed_heat_constant %></td>
-    <td><%= unit.power_station_data_element.code %></td>
+    <td><%= unit.power_station_data_element.code unless unit.power_station_data_element.nil? %></td>
   </tr>
   <% end %>
 </table>

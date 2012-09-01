@@ -6,4 +6,5 @@ class GeneratorUnitDataElement < DataElement
 #  attr_accessible user_column_data.collect {|v| v.to_sym }
   
   DEFAULT_VALUE = mother_class::DEFAULT_VALUE + [:code, :installed_capacity]
+  DEFAULT_VARIABLE_NAME = "@unit"
 end

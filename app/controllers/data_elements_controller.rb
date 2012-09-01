@@ -14,6 +14,7 @@ class DataElementsController < ApplicationController
   
   def new
     @globe = Globe.find(params[:globe_id])
+#    @data_element_type = params["data_element_type"]
     @data_element_type = params["new_data_element"]
     puts @data_element_type
     puts "-"
@@ -69,10 +70,10 @@ class DataElementsController < ApplicationController
     @data_element_type = params[:data_element_type]
     name = params[@data_element_type.underscore]['name']
     
-    dec = DataElementCollection.new(:name => name, :data_element_type => @data_element_type, :globe => @globe)
+    dec = DataElementCollection.new(:name => name, :data_element_type => @data_element_type, :globe_id => @globe.id, :variable_name => @data_element_type.constantize::DEFAULT_VARIABLE_NAME)
     dec.save
     
-    @data_element = @data_element_type.constantize.new(:name => name, :user => current_user, :globe => @globe, :data_element_collection => dec)
+    @data_element = @data_element_type.constantize.new(:name => name, :user_id => current_user.id, :globe_id => @globe.id, :data_element_collection_id => dec.id)
     
     # We're only interested in updating the columns from the derived table.
     columns = @data_element_type.constantize.column_names - DataElement.column_names
@@ -149,7 +150,7 @@ class DataElementsController < ApplicationController
   #       stations'.
   # TODO: TACKLE THIS DIFFERENTLY. '/read/' for 'data_elememts'.
   #                                '/read_all/' for 'data_element_collections'
-  def retrieve
+  def extract
     data_element_type = params[:data_element_type]
     data_element_name = params[:data_element_name]
     date = params[:date]
@@ -171,12 +172,14 @@ class DataElementsController < ApplicationController
     # since these will be foreign keys and need to be resolved/realised.
 
     respond_to do |format|
-      format.xml
+      format.xml { render :xml => @data_element }
+      format.text { render :text => @data_element.to_csv }
+      format.json { render :text => @data_element.to_json }
 #      format.xml { render :xml => @data_element }
     end
   end
 
-  def retrieve_all
+  def extract_all
     globe = Globe.find_by_globe_reference!(request.subdomain)
     data_element_type = "#{params[:data_element_type].singularize}DataElement"
     des = Array.new
@@ -190,6 +193,18 @@ class DataElementsController < ApplicationController
     
     respond_to do |format|
 #      format.xml { render :xml => data_element_collections }
+      format.json { render :json => des }
+      format.text {
+        output = data_element_type.constantize.column_names.join(',')
+          output += '
+'
+        des.each { |o| 
+          output += o.to_csv
+          output += '
+'
+        }
+        render :text => output
+      } 
       format.xml { render :xml => des }
     end
   end

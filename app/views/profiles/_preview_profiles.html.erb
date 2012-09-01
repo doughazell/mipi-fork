@@ -7,7 +7,6 @@
               <%= link_to profile.name, preview_globe_profile_url(@globe, profile) %>
             <% end %>
           <% end %>
-          <%= render :partial => "profiles/add_profile_button", :locals => {:p => p } %>
         </div>
         <%= sortable_element("preview_profiles", :url => sort_globe_profiles_path(@globe), :tag => "span", :handle => "handle", :overlap => :vertical) %>
 <% end %>

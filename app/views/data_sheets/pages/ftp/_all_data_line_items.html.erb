@@ -13,3 +13,9 @@
   </tr>
   <% end %>
 </table>
+<table width="100%">
+  <tr>
+    <%= hidden_field_tag "new_data_element", "DataLineItemDataElement" %>
+    <td><%= link_to("New Data Line Item", new_globe_data_element_url(@globe), :data_element_type => "DataLineItemDataElement") %></td>
+  </tr>
+</table>
