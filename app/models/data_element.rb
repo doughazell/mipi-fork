@@ -1,3 +1,5 @@
+include ActionView::Helpers
+
 # @author Paul Long
 class DataElement < ActiveRecord::Base
   acts_as_cities
@@ -13,6 +15,7 @@ class DataElement < ActiveRecord::Base
   attr_accessible :id, :type, :name, :data_element_collection_id, :user_id, :ready_to_archive, :label, :mandatory, :globe_id, :version, :creator_id, :updater_id, :created_at, :updated_at
   
   DEFAULT_VALUE = [:name, :version]
+  META_DATA = {}
 
   def friendly_name
     name
@@ -103,6 +106,43 @@ class DataElement < ActiveRecord::Base
     column_names - (DataElement.column_names)
   end
   
+  def default_display_columns
+    type.constantize.column_names - (DataElement.column_names)
+  end
+  
+  def present_attribute(columnname)
+    id_part = '_id'
+    fk_tail = '_data_element' + id_part
+    fk_tail_length = fk_tail.length
+
+    if columnname[fk_tail_length*-1, fk_tail_length] == fk_tail then
+      fk = columnname[0..columnname.length - id_part.length - 1]
+      puts fk
+      puts columnname
+#      fk.camelcase.constantize.find(read_attribute(columnname)).name
+      read_attribute(columnname)
+      columnname
+    else
+      meta_data = self.type.constantize::META_DATA
+      value = read_attribute(columnname)
+      if (meta_data[columnname])
+        if (format = meta_data[columnname][:format])
+          value = format_value(value, format)
+        end
+      end
+      value
+    end
+  end
+
+  def format_value(value, format)
+    puts "format_value"
+    if (format[:type])
+      if format[:type] == :decimal && format[:precision] then
+        value = number_with_precision(value, :precision => format[:precision])
+      end
+    end
+    value
+  end
 #  def to_xml(options = {})
 ##    to_csv
 #    output = ""
@@ -150,5 +190,8 @@ class DataElement < ActiveRecord::Base
 #    end
   end
 
+  def history(options = {})
+    data_element_collection.data_elements
+  end
 end
 

@@ -168,6 +168,7 @@ end
         label = options[:override_label]
       else
         label = data_element.read_attribute(display_name_column)
+        if label.nil? then label = data_element.read_attribute('name') end
       end
       output = link_to(label, preview_globe_profile_data_sheet_url(@globe, presentations[0].data_sheet.profile, presentations[0].data_sheet))
     else

@@ -6,7 +6,12 @@ gem 'rails', '3.0.3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem "rake", "0.9.2.2"
 
+gem "nifty-generators", :group => :development
+
 gem 'mysql2'
+gem 'ruby-odbc'
+gem 'activerecord-sqlserver-adapter', '3.0.3'
+
 gem 'devise', '1.1.2'
 gem 'CITIEsForRAILS'
 gem 'will_paginate', '~>3.0.pre2'

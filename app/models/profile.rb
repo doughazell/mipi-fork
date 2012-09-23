@@ -7,6 +7,7 @@ class Profile < ActiveRecord::Base
   attr_accessible :id, :name, :globe_id, :position, :created_at, :updated_at
   
   #validates_presence_of :name, :message => "Must specify a Profile Name!"
+  validates :globe, :presence => true
   validates :name, :presence => true
   
   accepts_nested_attributes_for :data_sheets, :allow_destroy => true

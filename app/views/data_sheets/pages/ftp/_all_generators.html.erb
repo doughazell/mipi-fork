@@ -10,8 +10,8 @@
   %>
   <tr>
     <td><%= LinkDataSheet(unit, 'code') %></td>
-    <td><%= unit.installed_capacity %></td>
-    <td><%= unit.fixed_heat_constant %></td>
+    <td><%= number_with_precision(unit.installed_capacity, :precision => 0) %></td>
+    <td><%= number_with_precision(unit.fixed_heat_constant, :precision => 1) %></td>
     <td><%= unit.power_station_data_element.code unless unit.power_station_data_element.nil? %></td>
   </tr>
   <% end %>

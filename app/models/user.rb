@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   has_many :data_sheets, :foreign_key => 'updated_by'
   has_many :registrations
   has_many :globes, :through => :registrations
-  
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
   devise :database_authenticatable, :registerable,

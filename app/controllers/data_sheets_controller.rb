@@ -228,6 +228,7 @@ class DataSheetsController < ApplicationController
             instance_variable_set("@tmp", @part.data_element_type.constantize.find_by_data_element_collection_id_and_globe_id(@part.id, @globe_id, :order => "created_at DESC"))
             hash_of_variables["#{@part.variable_name}_offset"] = hash_of_variables["#{@part.variable_name}_offset"] + 1
             instance_variable_set("#{@part.variable_name}_array", eval("#{@part.variable_name}_array + [@tmp]"))
+#            instance_variable_set("#{@part.variable_name}_array", eval("#{@part.variable_name}_array + [@tmp]").paginate(:page => params[:page], :per_page => @part.data_element_type.constantize::DEFAULT_PAGE_LIMIT))
           end
         end
         

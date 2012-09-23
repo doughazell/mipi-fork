@@ -1,0 +1,24 @@
+<h1>Generator Unit History</h1>
+<h2><%= @unit.code %>, <%= @unit.power_station_data_element.full_name %></h2>
+<table>
+  <% @unit.default_display_columns.each do |column| %>
+  <th>
+    <%= column.titlecase %>
+  </th>
+<% end %>
+  <th>
+    Updated
+  </th>
+<% @unit.history.each do |unit| %>
+  <tr>
+    <% unit.default_display_columns.each do |column| %>
+    <td>
+      <%= unit.present_attribute(column) %>
+    </td>
+    <% end %>
+    <td>
+      <%= unit.updated_at.to_formatted_s(:short) %>
+    </td>
+  </tr>
+<% end %>
+</table>

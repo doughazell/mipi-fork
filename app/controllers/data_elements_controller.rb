@@ -175,6 +175,7 @@ class DataElementsController < ApplicationController
       format.xml { render :xml => @data_element }
       format.text { render :text => @data_element.to_csv }
       format.json { render :text => @data_element.to_json }
+      format.yaml { render :text => @data_element.to_yaml }
 #      format.xml { render :xml => @data_element }
     end
   end
@@ -194,6 +195,7 @@ class DataElementsController < ApplicationController
     respond_to do |format|
 #      format.xml { render :xml => data_element_collections }
       format.json { render :json => des }
+      format.yaml { render :text => des.to_yaml }
       format.text {
         output = data_element_type.constantize.column_names.join(',')
           output += '

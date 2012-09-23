@@ -5,4 +5,21 @@ class ProfileTest < ActiveSupport::TestCase
   test "the truth" do
     assert true
   end
+  
+  test "fail to create without name" do
+    p = Profile.create
+    assert !p.save
+  end
+
+  test "fail to create without globe FK" do
+    p = Profile.create(:name => "Test")
+    assert !p.save
+  end
+
+  test "create with globe FK and name" do
+    g = Globe.create(:name => "Test")
+    p = Profile.create(:name => "Test", :globe_id => g.id)
+    assert p.save
+  end
+
 end

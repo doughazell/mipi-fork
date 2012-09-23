@@ -2,6 +2,24 @@
 To-Do List
 ==========
 
+Modularise
+----------
+
+Break the application into:
+
+- Base Data Management Module,
+
+with add-ons:
+
+- Personal Data Sample
+- Utility Asset Management
+- Customer MDM
+
+These add-ons are gems but will derive from the DataElement table the new
+structures for particular scenarios. They will also have a set of views
+that will display the data and a set of data to populate these
+DataElement-derived views.
+
 Security
 --------
 
@@ -9,13 +27,23 @@ Security
   when viewing the XML code for an entity.
 -
 
+New Model
+---------
+- Add new type through interface.
+ - New Type Name;
+ - Mulitple Fields/Columns of various types.
+ - TABLE META DATA, e.g.
+  - Name,
+  - Derived From,
+  - Columns & Types
+  - Defaults
+  - Others...
+  - DEFAULT_PAGE_LIMIT
+  - DEFAULT_VARIABLE_NAME
+
 DataElement
 -----------
 
-- Need to provide a means by which someone can easily tell what the path to the
-  XML version of the DataElement is when displayed within a Data Sheet. [DONE - new routing]
-- The "[All Data]" view is horrid. Requires considerable styling.
-- Add new type through interface.
 - [BUG] Update Data Element doesn't work
 - Allow a "New [Data Element]" to be created through the 'Preview' interface, a chosen
   data sheet.
@@ -38,6 +66,9 @@ Components
   users to be able to view data in the past.
   (a) Global Time Slider
   (b) Local Time Slider
+- Graphically Represent Hierarchies in JavaScript.
+- DataTable
+- will_paginate with array instead of RecordSets.
   
 Subscription
 ------------
@@ -46,10 +77,29 @@ Subscription
 Sample Data
 -----------
 
-Rename "Damian Smith"
-Rename "Alison Smith"
- - Destroyed
-Rename "RFU"
- - Change Logo
-Rename "ECB"
- - Destroyed
+Upgrading
+---------
+
+- userstamp
+ - Raise issue on GIT site.
+ - 
+- CITIEs
+ -
+ 
+Databases
+---------
+
+- Test the different database engines.
+
+
+Documentation
+-------------
+
+- Begin using YARD
+
+
+Testing
+-------
+
+- Set up TEST environment
+- Begin writing tests!

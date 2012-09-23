@@ -18,7 +18,12 @@ else
   text_area = false
 end
 
-data_value = eval("data_element.#{database_column}").to_s
+if (options[:precision])
+#  data_value = number_with_precision(eval("data_element.#{database_column}"), options[:precision]).to_s
+  data_value = number_with_precision(eval("data_element.#{database_column}"), :precision => options[:precision]).to_s
+else
+  data_value = eval("data_element.#{database_column}").to_s
+end
 puts data_value
 if data_value.empty? then
   data_value = ''

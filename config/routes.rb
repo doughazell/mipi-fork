@@ -89,6 +89,10 @@ V01::Application.routes.draw do
   match 'extract_all/text/*data_element_type' => 'data_elements#extract_all', defaults: {format: 'txt'}
   match 'extract/txt/*data_element_type/*data_element_name' => 'data_elements#extract', defaults: {format: 'txt'}
   match 'extract_all/txt/*data_element_type' => 'data_elements#extract_all', defaults: {format: 'txt'}
+  match 'extract/xml/*data_element_type/*data_element_name' => 'data_elements#extract', defaults: {format: 'xml'}
+  match 'extract_all/xml/*data_element_type' => 'data_elements#extract_all', defaults: {format: 'xml'}
+  match 'extract/yaml/*data_element_type/*data_element_name' => 'data_elements#extract', defaults: {format: 'yaml'}
+  match 'extract_all/yaml/*data_element_type' => 'data_elements#extract_all', defaults: {format: 'yaml'}
 
   match 'extract/*data_element_type/*data_element_name' => 'data_elements#extract', defaults: {format: 'xml'}
   match 'extract_all/*data_element_type' => 'data_elements#extract_all', defaults: {format: 'xml'}

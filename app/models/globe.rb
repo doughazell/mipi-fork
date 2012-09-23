@@ -2,6 +2,11 @@
 class Globe < ActiveRecord::Base
   acts_as_tree
   
+  validates :name, :presence => true
+  validates :globe_reference, :presence => true
+  validates :globe_reference, :format => { :with => /\A[a-zA-Z]+\z/,
+                :message => "Only letters allowed" }
+  
   belongs_to :user
   has_many :profiles, :dependent => :destroy
   has_many :data_elements, :dependent => :destroy

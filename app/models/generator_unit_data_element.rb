@@ -7,4 +7,13 @@ class GeneratorUnitDataElement < DataElement
   
   DEFAULT_VALUE = mother_class::DEFAULT_VALUE + [:code, :installed_capacity]
   DEFAULT_VARIABLE_NAME = "@unit"
+  
+  META_DATA = DataElement::META_DATA.merge( {
+    'start_hours_hot' => {
+      :format => {
+        :type => :decimal,
+        :precision => 2
+      }
+    }
+  })
 end

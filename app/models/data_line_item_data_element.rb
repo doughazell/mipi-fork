@@ -6,6 +6,7 @@ class DataLineItemDataElement < DataElement
   attr_accessible :code, :short_name, :description, :data_set_data_element_id
 
   DEFAULT_VARIABLE_NAME = "@line_item"
+  DEFAULT_PAGE_LIMIT = 10
 
   def friendly_name
     short_name

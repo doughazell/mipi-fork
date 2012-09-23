@@ -53,7 +53,7 @@ This will be known as @trans
   <% @trans.each do |o| %>
   <tr>
     <td><%= o.transaction_type %></td>
-    <td><%= o.transfer_date.to_s(:long) %></td>
+    <td><%= o.transfer_date.to_s %></td>
     <td><%= o.description %></td>
     <td nowrap align="right"><%= number_with_precision(o.value, :precision => 2) %></td>
     <td nowrap align="right"><%= number_with_precision(o.balance, :precision => 2) %></td>

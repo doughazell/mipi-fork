@@ -1,0 +1,29 @@
+<table>
+  <tr>
+    <td>Generator Unit Code</td><td><%= @unit.code %></td>
+  </tr>
+  <tr>
+    <td>Station</td><td><%= ForeignKey_PickList("unit", @unit, "power_station_data_element_id", "name") %></td>
+  </tr>
+  <tr>
+    <td>Station</td><td><%= LinkDataSheet(@unit.power_station_data_element, 'full_name') %></td>
+  </tr>
+  <tr>
+    <td>Installed Capacity</td><td><%= Label_TextBox_Switch("unit", @unit, "installed_capacity") %></td>
+  </tr>
+  <tr>
+    <td>Fixed Heat Constant</td><td><%= @unit.fixed_heat_constant %></td>
+  </tr>
+  <tr>
+    <td>Hot Starts</td><td>0 to <%= number_with_precision(@unit.start_hours_hot, :precision => 2) %></td>
+  </tr>
+  <tr>
+    <td>Warm Starts</td><td><%= Label_TextBox_Switch("unit", @unit, "start_hours_hot", { :precision => 2 } ) %> to <%= Label_TextBox_Switch("unit", @unit, "start_hours_cold", { :precision => 2 }) %></td>
+  </tr>
+  <tr>
+    <td>Cold Starts</td><td><%= number_with_precision(@unit.start_hours_cold, :precision => 2) %> and above</td>
+  </tr>
+  <tr>
+    <td>Changed By</td><td><%= @unit.updater.username %></td>
+  </tr>
+  </table>
