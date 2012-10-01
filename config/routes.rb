@@ -68,8 +68,6 @@ V01::Application.routes.draw do
     
   end
 
-  match 'javascripts/dynamic_data_elements', :to => 'javascripts#dynamic_data_elements'
-
   devise_for :users
   
   require 'subdomain'

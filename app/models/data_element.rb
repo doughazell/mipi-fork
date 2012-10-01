@@ -2,7 +2,7 @@ include ActionView::Helpers
 
 # @author Paul Long
 class DataElement < ActiveRecord::Base
-  acts_as_cities
+  acts_as_citier
 
   @@historical_retention = true
 

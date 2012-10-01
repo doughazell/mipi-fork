@@ -6,11 +6,11 @@ class CreateDataLineItemDataElements < ActiveRecord::Migration
       t.string :description
       t.integer :data_set_data_element_id
     end
-    CreateTheViewForCITIEs(DataLineItemDataElement)
+    create_citier_view(DataLineItemDataElement)
   end
 
   def self.down
-    DropTheViewForCITIEs(DataLineItemDataElement)
+    drop_citier_view(DataLineItemDataElement)
     drop_table :data_line_item_data_elements
   end
 end

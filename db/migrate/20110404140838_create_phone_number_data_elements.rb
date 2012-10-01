@@ -4,11 +4,11 @@ class CreatePhoneNumberDataElements < ActiveRecord::Migration
       t.string :phone_type
       t.string :phone_number
     end
-    CreateTheViewForCITIEs(PhoneNumberDataElement)
+    create_citier_view(PhoneNumberDataElement)
   end
 
   def self.down
-    DropTheViewForCITIEs(PhoneNumberDataElement)
+    drop_citier_view(PhoneNumberDataElement)
     drop_table :phone_number_data_elements
   end
 end

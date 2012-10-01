@@ -8,11 +8,11 @@ class CreateGeneratorUnitDataElements < ActiveRecord::Migration
       t.float :start_hours_cold
       t.integer :power_station_data_element_id
     end
-    CreateTheViewForCITIEs(GeneratorUnitDataElement)
+    create_citier_view(GeneratorUnitDataElement)
   end
 
   def self.down
-    DropTheViewForCITIEs(GeneratorUnitDataElement)
+    drop_citier_view(GeneratorUnitDataElement)
     drop_table :generator_unit_data_elements
   end
 end

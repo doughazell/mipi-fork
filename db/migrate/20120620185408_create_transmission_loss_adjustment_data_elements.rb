@@ -6,11 +6,11 @@ class CreateTransmissionLossAdjustmentDataElements < ActiveRecord::Migration
       t.float :adjustment
       t.integer :daytime_indicator
     end
-    CreateTheViewForCITIEs(TransmissionLossAdjustmentDataElement)
+    create_citier_view(TransmissionLossAdjustmentDataElement)
   end
 
   def self.down
-    DropTheViewForCITIEs(TransmissionLossAdjustmentDataElement)
+    drop_citier_view(TransmissionLossAdjustmentDataElement)
     drop_table :transmission_loss_adjustment_data_elements
   end
 end

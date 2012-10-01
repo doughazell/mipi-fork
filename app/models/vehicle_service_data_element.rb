@@ -1,5 +1,5 @@
 class VehicleServiceDataElement < DataElement
-  acts_as_cities
+  acts_as_citier
   
   belongs_to :vehicle_data_element
 

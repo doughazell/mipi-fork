@@ -1,6 +1,6 @@
 # @author Paul Long
 class SubscriptionMessageDataElement < MessageDataElement
-  acts_as_cities
+  acts_as_citier
   
   belongs_to :subscription
 

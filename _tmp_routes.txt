@@ -1,4 +1,3 @@
-(in C:/Development/mipi)
                               subscriptions GET    /subscriptions(.:format)                                                                          {:action=>"index", :controller=>"subscriptions"}
                                             POST   /subscriptions(.:format)                                                                          {:action=>"create", :controller=>"subscriptions"}
                            new_subscription GET    /subscriptions/new(.:format)                                                                      {:action=>"new", :controller=>"subscriptions"}
@@ -20,7 +19,7 @@
                          globe_presentation GET    /globes/:globe_id/presentations/:id(.:format)                                                     {:action=>"show", :controller=>"presentations"}
                                             PUT    /globes/:globe_id/presentations/:id(.:format)                                                     {:action=>"update", :controller=>"presentations"}
                                             DELETE /globes/:globe_id/presentations/:id(.:format)                                                     {:action=>"destroy", :controller=>"presentations"}
-                               data_element POST   /globes/:globe_id/data_elements/:data_element_id/new(/:action)(.:format)                          {:controller=>"data_elements"}
+                                            POST   /globes/:globe_id/data_elements/:data_element_id/new(/:action)(.:format)                          {:controller=>"data_elements"}
               link_globe_data_element_field GET    /globes/:globe_id/data_elements/:data_element_id/fields/:id/link(.:format)                        {:action=>"link", :controller=>"fields"}
          subscribe_globe_data_element_field PUT    /globes/:globe_id/data_elements/:data_element_id/fields/:id/subscribe(.:format)                   {:action=>"subscribe", :controller=>"fields"}
  link_globe_data_element_field_target_globe GET    /globes/:globe_id/data_elements/:data_element_id/fields/:field_id/target_globe/:id/link(.:format) {:action=>"link", :controller=>"target_globe"}
@@ -72,24 +71,22 @@ globe_data_element_field_target_globe_index GET    /globes/:globe_id/data_elemen
                                       globe GET    /globes/:id(.:format)                                                                             {:action=>"show", :controller=>"globes"}
                                             PUT    /globes/:id(.:format)                                                                             {:action=>"update", :controller=>"globes"}
                                             DELETE /globes/:id(.:format)                                                                             {:action=>"destroy", :controller=>"globes"}
-          javascripts_dynamic_data_elements        /javascripts/dynamic_data_elements(.:format)                                                      {:controller=>"javascripts", :action=>"dynamic_data_elements"}
-                           new_user_session GET    /users/sign_in(.:format)                                                                          {:action=>"new", :controller=>"devise/sessions"}
-                               user_session POST   /users/sign_in(.:format)                                                                          {:action=>"create", :controller=>"devise/sessions"}
-                       destroy_user_session GET    /users/sign_out(.:format)                                                                         {:action=>"destroy", :controller=>"devise/sessions"}
-                              user_password POST   /users/password(.:format)                                                                         {:action=>"create", :controller=>"devise/passwords"}
-                          new_user_password GET    /users/password/new(.:format)                                                                     {:action=>"new", :controller=>"devise/passwords"}
-                         edit_user_password GET    /users/password/edit(.:format)                                                                    {:action=>"edit", :controller=>"devise/passwords"}
-                                            PUT    /users/password(.:format)                                                                         {:action=>"update", :controller=>"devise/passwords"}
-                          user_registration POST   /users(.:format)                                                                                  {:action=>"create", :controller=>"devise/registrations"}
-                      new_user_registration GET    /users/sign_up(.:format)                                                                          {:action=>"new", :controller=>"devise/registrations"}
-                     edit_user_registration GET    /users/edit(.:format)                                                                             {:action=>"edit", :controller=>"devise/registrations"}
-                                            PUT    /users(.:format)                                                                                  {:action=>"update", :controller=>"devise/registrations"}
-                                            DELETE /users(.:format)                                                                                  {:action=>"destroy", :controller=>"devise/registrations"}
-                                                   /(.:format)                                                                                       {:controller=>"globes", :action=>"show"}
+                                                   /                                                                                                 {:controller=>"globes", :action=>"show"}
                                home_problem        /home/problem(.:format)                                                                           {:controller=>"home", :action=>"problem"}
                               home_solution        /home/solution(.:format)                                                                          {:controller=>"home", :action=>"solution"}
                              home_indsignup        /home/indsignup(.:format)                                                                         {:controller=>"registers", :action=>"new"}
                              home_orgsignup        /home/orgsignup(.:format)                                                                         {:controller=>"registers", :action=>"new"}
                                home_aboutus        /home/aboutus(.:format)                                                                           {:controller=>"home", :action=>"aboutus"}
-                                                   /read/*data_element_type/*data_element_name(.:format)                                             {:format=>"xml", :controller=>"data_elements", :action=>"retrieve"}
-                                       root        /(.:format)                                                                                       {:controller=>"home", :action=>"index"}
+                                                   /extract/json/*data_element_type/*data_element_name(.:format)                                     {:data_element_name=>/.+?/, :format=>"json", :controller=>"data_elements", :action=>"extract"}
+                                                   /extract_all/json/*data_element_type(.:format)                                                    {:data_element_type=>/.+?/, :format=>"json", :controller=>"data_elements", :action=>"extract_all"}
+                                                   /extract/text/*data_element_type/*data_element_name(.:format)                                     {:data_element_name=>/.+?/, :format=>"txt", :controller=>"data_elements", :action=>"extract"}
+                                                   /extract_all/text/*data_element_type(.:format)                                                    {:data_element_type=>/.+?/, :format=>"txt", :controller=>"data_elements", :action=>"extract_all"}
+                                                   /extract/txt/*data_element_type/*data_element_name(.:format)                                      {:data_element_name=>/.+?/, :format=>"txt", :controller=>"data_elements", :action=>"extract"}
+                                                   /extract_all/txt/*data_element_type(.:format)                                                     {:data_element_type=>/.+?/, :format=>"txt", :controller=>"data_elements", :action=>"extract_all"}
+                                                   /extract/xml/*data_element_type/*data_element_name(.:format)                                      {:data_element_name=>/.+?/, :format=>"xml", :controller=>"data_elements", :action=>"extract"}
+                                                   /extract_all/xml/*data_element_type(.:format)                                                     {:data_element_type=>/.+?/, :format=>"xml", :controller=>"data_elements", :action=>"extract_all"}
+                                                   /extract/yaml/*data_element_type/*data_element_name(.:format)                                     {:data_element_name=>/.+?/, :format=>"yaml", :controller=>"data_elements", :action=>"extract"}
+                                                   /extract_all/yaml/*data_element_type(.:format)                                                    {:data_element_type=>/.+?/, :format=>"yaml", :controller=>"data_elements", :action=>"extract_all"}
+                                                   /extract/*data_element_type/*data_element_name(.:format)                                          {:data_element_name=>/.+?/, :format=>"xml", :controller=>"data_elements", :action=>"extract"}
+                                                   /extract_all/*data_element_type(.:format)                                                         {:data_element_type=>/.+?/, :format=>"xml", :controller=>"data_elements", :action=>"extract_all"}
+                                       root        /                                                                                                 {:controller=>"home", :action=>"index"}

@@ -11,11 +11,11 @@ class CreateMembershipDataElements < ActiveRecord::Migration
       t.boolean :direct_email_opt_in
       t.boolean :third_party_promotion_opt_in
     end
-    CreateTheViewForCITIEs(MembershipDataElement)
+    create_citier_view(MembershipDataElement)
   end
 
   def self.down
-    DropTheViewForCITIEs(MembershipDataElement)
+    drop_citier_view(MembershipDataElement)
     drop_table :membership_data_elements
   end
 end

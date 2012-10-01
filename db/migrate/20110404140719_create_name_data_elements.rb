@@ -5,11 +5,11 @@ class CreateNameDataElements < ActiveRecord::Migration
       t.string :other_names
       t.string :last_name
     end
-    CreateTheViewForCITIEs(NameDataElement)
+    create_citier_view(NameDataElement)
   end
 
   def self.down
-    DropTheViewForCITIEs(NameDataElement)
+    drop_citier_view(NameDataElement)
     drop_table :name_data_elements
   end
 end

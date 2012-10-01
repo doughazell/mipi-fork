@@ -4,7 +4,7 @@ class StringDataElements < ActiveRecord::Migration
       t.string :value
     end
     
-    self.CreateTheViewForCITIEs()
+    self.create_citier_view()
   end
 
   def self.down

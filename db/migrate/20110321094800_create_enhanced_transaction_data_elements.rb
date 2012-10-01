@@ -3,11 +3,11 @@ class CreateEnhancedTransactionDataElements < ActiveRecord::Migration
     create_table :enhanced_transaction_data_elements do |t|
       t.integer :party_id
     end
-    CreateTheViewForCITIEs(EnhancedTransactionDataElement)
+    create_citier_view(EnhancedTransactionDataElement)
   end
 
   def self.down
-    DropTheViewForCITIEs(EnhancedTransactionDataElement)
+    drop_citier_view(EnhancedTransactionDataElement)
     drop_table :enhanced_transaction_data_elements
   end
 end

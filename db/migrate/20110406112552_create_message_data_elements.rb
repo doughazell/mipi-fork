@@ -5,11 +5,11 @@ class CreateMessageDataElements < ActiveRecord::Migration
       t.integer :message_id
       t.string :message_text
     end
-    CreateTheViewForCITIEs(MessageDataElement)
+    create_citier_view(MessageDataElement)
   end
 
   def self.down
-    DropTheViewForCITIEs(MessageDataElement)
+    drop_citier_view(MessageDataElement)
     drop_table :message_data_elements
   end
 end

@@ -6,11 +6,11 @@ class CreateVehicleDataElements < ActiveRecord::Migration
       t.string :model
       t.string :colour
     end
-    CreateTheViewForCITIEs(VehicleDataElement)
+    create_citier_view(VehicleDataElement)
   end
 
   def self.down
-    DropTheViewForCITIEs(VehicleDataElement)
+    drop_citier_view(VehicleDataElement)
     drop_table :vehicle_data_elements
   end
 end

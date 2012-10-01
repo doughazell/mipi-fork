@@ -5,11 +5,11 @@ class CreateContentsInsuranceDataElements < ActiveRecord::Migration
       t.float :excess
       t.integer :house_data_element_id
     end
-    CreateTheViewForCITIEs(ContentsInsuranceDataElement)
+    create_citier_view(ContentsInsuranceDataElement)
   end
 
   def self.down
-    DropTheViewForCITIEs(ContentsInsuranceDataElement)
+    drop_citier_view(ContentsInsuranceDataElement)
     drop_table :contents_insurance_data_elements
   end
 end

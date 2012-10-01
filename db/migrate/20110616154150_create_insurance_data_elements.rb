@@ -5,11 +5,11 @@ class CreateInsuranceDataElements < ActiveRecord::Migration
       t.date :expires
       t.date :commences
     end
-    CreateTheViewForCITIEs(InsuranceDataElement)
+    create_citier_view(InsuranceDataElement)
   end
 
   def self.down
-    DropTheViewForCITIEs(InsuranceDataElement)
+    drop_citier_view(InsuranceDataElement)
     drop_table :insurance_data_elements
   end
 end
