@@ -37,11 +37,17 @@ class DataSheetsController < ApplicationController
   # GET /data_sheets/new
   # GET /data_sheets/new.xml
   def new
+    puts params.inspect
     @data_sheet = DataSheet.new
     if !params[:profile_id].blank? then
       @profile = Profile.find(params[:profile_id])
       @globe = @profile.globe
     end
+
+    puts "-000-"
+    puts @profile
+    puts @globe
+    puts @data_sheet
 
     respond_to do |format|
       format.html # new.html.erb
@@ -67,7 +73,8 @@ class DataSheetsController < ApplicationController
         format.html { redirect_to(globe_profile_data_sheets_url, :notice => 'Data sheet was successfully created.') }
         format.xml  { render :xml => @data_sheet, :status => :created, :location => @data_sheet }
       else
-        format.html { render :action => "new" }
+        puts "Redirecting to 'New' action"
+        format.html { redirect_to :action => "new", :notice => "Invalid parameters for Data Sheet" }
         format.xml  { render :xml => @data_sheet.errors, :status => :unprocessable_entity }
       end
     end

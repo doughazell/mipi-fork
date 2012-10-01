@@ -1,0 +1,105 @@
+                              subscriptions GET    /subscriptions(.:format)                                                                          {:action=>"index", :controller=>"subscriptions"}
+                                            POST   /subscriptions(.:format)                                                                          {:action=>"create", :controller=>"subscriptions"}
+                           new_subscription GET    /subscriptions/new(.:format)                                                                      {:action=>"new", :controller=>"subscriptions"}
+                          edit_subscription GET    /subscriptions/:id/edit(.:format)                                                                 {:action=>"edit", :controller=>"subscriptions"}
+                               subscription GET    /subscriptions/:id(.:format)                                                                      {:action=>"show", :controller=>"subscriptions"}
+                                            PUT    /subscriptions/:id(.:format)                                                                      {:action=>"update", :controller=>"subscriptions"}
+                                            DELETE /subscriptions/:id(.:format)                                                                      {:action=>"destroy", :controller=>"subscriptions"}
+                   data_element_collections GET    /data_element_collections(.:format)                                                               {:action=>"index", :controller=>"data_element_collections"}
+                                            POST   /data_element_collections(.:format)                                                               {:action=>"create", :controller=>"data_element_collections"}
+                new_data_element_collection GET    /data_element_collections/new(.:format)                                                           {:action=>"new", :controller=>"data_element_collections"}
+               edit_data_element_collection GET    /data_element_collections/:id/edit(.:format)                                                      {:action=>"edit", :controller=>"data_element_collections"}
+                    data_element_collection GET    /data_element_collections/:id(.:format)                                                           {:action=>"show", :controller=>"data_element_collections"}
+                                            PUT    /data_element_collections/:id(.:format)                                                           {:action=>"update", :controller=>"data_element_collections"}
+                                            DELETE /data_element_collections/:id(.:format)                                                           {:action=>"destroy", :controller=>"data_element_collections"}
+                        globe_presentations GET    /globes/:globe_id/presentations(.:format)                                                         {:action=>"index", :controller=>"presentations"}
+                                            POST   /globes/:globe_id/presentations(.:format)                                                         {:action=>"create", :controller=>"presentations"}
+                     new_globe_presentation GET    /globes/:globe_id/presentations/new(.:format)                                                     {:action=>"new", :controller=>"presentations"}
+                    edit_globe_presentation GET    /globes/:globe_id/presentations/:id/edit(.:format)                                                {:action=>"edit", :controller=>"presentations"}
+                         globe_presentation GET    /globes/:globe_id/presentations/:id(.:format)                                                     {:action=>"show", :controller=>"presentations"}
+                                            PUT    /globes/:globe_id/presentations/:id(.:format)                                                     {:action=>"update", :controller=>"presentations"}
+                                            DELETE /globes/:globe_id/presentations/:id(.:format)                                                     {:action=>"destroy", :controller=>"presentations"}
+                               data_element POST   /globes/:globe_id/data_elements/:data_element_id/new(/:action)(.:format)                          {:controller=>"data_elements"}
+              link_globe_data_element_field GET    /globes/:globe_id/data_elements/:data_element_id/fields/:id/link(.:format)                        {:action=>"link", :controller=>"fields"}
+         subscribe_globe_data_element_field PUT    /globes/:globe_id/data_elements/:data_element_id/fields/:id/subscribe(.:format)                   {:action=>"subscribe", :controller=>"fields"}
+ link_globe_data_element_field_target_globe GET    /globes/:globe_id/data_elements/:data_element_id/fields/:field_id/target_globe/:id/link(.:format) {:action=>"link", :controller=>"target_globe"}
+globe_data_element_field_target_globe_index GET    /globes/:globe_id/data_elements/:data_element_id/fields/:field_id/target_globe(.:format)          {:action=>"index", :controller=>"target_globe"}
+                                            POST   /globes/:globe_id/data_elements/:data_element_id/fields/:field_id/target_globe(.:format)          {:action=>"create", :controller=>"target_globe"}
+  new_globe_data_element_field_target_globe GET    /globes/:globe_id/data_elements/:data_element_id/fields/:field_id/target_globe/new(.:format)      {:action=>"new", :controller=>"target_globe"}
+ edit_globe_data_element_field_target_globe GET    /globes/:globe_id/data_elements/:data_element_id/fields/:field_id/target_globe/:id/edit(.:format) {:action=>"edit", :controller=>"target_globe"}
+      globe_data_element_field_target_globe GET    /globes/:globe_id/data_elements/:data_element_id/fields/:field_id/target_globe/:id(.:format)      {:action=>"show", :controller=>"target_globe"}
+                                            PUT    /globes/:globe_id/data_elements/:data_element_id/fields/:field_id/target_globe/:id(.:format)      {:action=>"update", :controller=>"target_globe"}
+                                            DELETE /globes/:globe_id/data_elements/:data_element_id/fields/:field_id/target_globe/:id(.:format)      {:action=>"destroy", :controller=>"target_globe"}
+                  globe_data_element_fields GET    /globes/:globe_id/data_elements/:data_element_id/fields(.:format)                                 {:action=>"index", :controller=>"fields"}
+                                            POST   /globes/:globe_id/data_elements/:data_element_id/fields(.:format)                                 {:action=>"create", :controller=>"fields"}
+               new_globe_data_element_field GET    /globes/:globe_id/data_elements/:data_element_id/fields/new(.:format)                             {:action=>"new", :controller=>"fields"}
+              edit_globe_data_element_field GET    /globes/:globe_id/data_elements/:data_element_id/fields/:id/edit(.:format)                        {:action=>"edit", :controller=>"fields"}
+                   globe_data_element_field GET    /globes/:globe_id/data_elements/:data_element_id/fields/:id(.:format)                             {:action=>"show", :controller=>"fields"}
+                                            PUT    /globes/:globe_id/data_elements/:data_element_id/fields/:id(.:format)                             {:action=>"update", :controller=>"fields"}
+                                            DELETE /globes/:globe_id/data_elements/:data_element_id/fields/:id(.:format)                             {:action=>"destroy", :controller=>"fields"}
+                        globe_data_elements GET    /globes/:globe_id/data_elements(.:format)                                                         {:action=>"index", :controller=>"data_elements"}
+                                            POST   /globes/:globe_id/data_elements(.:format)                                                         {:action=>"create", :controller=>"data_elements"}
+                     new_globe_data_element GET    /globes/:globe_id/data_elements/new(.:format)                                                     {:action=>"new", :controller=>"data_elements"}
+                    edit_globe_data_element GET    /globes/:globe_id/data_elements/:id/edit(.:format)                                                {:action=>"edit", :controller=>"data_elements"}
+                         globe_data_element GET    /globes/:globe_id/data_elements/:id(.:format)                                                     {:action=>"show", :controller=>"data_elements"}
+                                            PUT    /globes/:globe_id/data_elements/:id(.:format)                                                     {:action=>"update", :controller=>"data_elements"}
+                                            DELETE /globes/:globe_id/data_elements/:id(.:format)                                                     {:action=>"destroy", :controller=>"data_elements"}
+                              preview_globe GET    /globes/:id/preview(.:format)                                                                     {:action=>"preview", :controller=>"globes"}
+                        sort_globe_profiles POST   /globes/:globe_id/profiles/sort(.:format)                                                         {:action=>"sort", :controller=>"profiles"}
+                      preview_globe_profile GET    /globes/:globe_id/profiles/:id/preview(.:format)                                                  {:action=>"preview", :controller=>"profiles"}
+              draw_globe_profile_data_sheet GET    /globes/:globe_id/profiles/:profile_id/data_sheets/:id/draw(.:format)                             {:action=>"draw", :controller=>"data_sheets"}
+           preview_globe_profile_data_sheet GET    /globes/:globe_id/profiles/:profile_id/data_sheets/:id/preview(.:format)                          {:action=>"preview", :controller=>"data_sheets"}
+            change_globe_profile_data_sheet POST   /globes/:globe_id/profiles/:profile_id/data_sheets/:id/change(.:format)                           {:action=>"change", :controller=>"data_sheets"}
+                  globe_profile_data_sheets GET    /globes/:globe_id/profiles/:profile_id/data_sheets(.:format)                                      {:action=>"index", :controller=>"data_sheets"}
+                                            POST   /globes/:globe_id/profiles/:profile_id/data_sheets(.:format)                                      {:action=>"create", :controller=>"data_sheets"}
+               new_globe_profile_data_sheet GET    /globes/:globe_id/profiles/:profile_id/data_sheets/new(.:format)                                  {:action=>"new", :controller=>"data_sheets"}
+              edit_globe_profile_data_sheet GET    /globes/:globe_id/profiles/:profile_id/data_sheets/:id/edit(.:format)                             {:action=>"edit", :controller=>"data_sheets"}
+                   globe_profile_data_sheet GET    /globes/:globe_id/profiles/:profile_id/data_sheets/:id(.:format)                                  {:action=>"show", :controller=>"data_sheets"}
+                                            PUT    /globes/:globe_id/profiles/:profile_id/data_sheets/:id(.:format)                                  {:action=>"update", :controller=>"data_sheets"}
+                                            DELETE /globes/:globe_id/profiles/:profile_id/data_sheets/:id(.:format)                                  {:action=>"destroy", :controller=>"data_sheets"}
+                             globe_profiles GET    /globes/:globe_id/profiles(.:format)                                                              {:action=>"index", :controller=>"profiles"}
+                                            POST   /globes/:globe_id/profiles(.:format)                                                              {:action=>"create", :controller=>"profiles"}
+                          new_globe_profile GET    /globes/:globe_id/profiles/new(.:format)                                                          {:action=>"new", :controller=>"profiles"}
+                         edit_globe_profile GET    /globes/:globe_id/profiles/:id/edit(.:format)                                                     {:action=>"edit", :controller=>"profiles"}
+                              globe_profile GET    /globes/:globe_id/profiles/:id(.:format)                                                          {:action=>"show", :controller=>"profiles"}
+                                            PUT    /globes/:globe_id/profiles/:id(.:format)                                                          {:action=>"update", :controller=>"profiles"}
+                                            DELETE /globes/:globe_id/profiles/:id(.:format)                                                          {:action=>"destroy", :controller=>"profiles"}
+                                     globes GET    /globes(.:format)                                                                                 {:action=>"index", :controller=>"globes"}
+                                            POST   /globes(.:format)                                                                                 {:action=>"create", :controller=>"globes"}
+                                  new_globe GET    /globes/new(.:format)                                                                             {:action=>"new", :controller=>"globes"}
+                                 edit_globe GET    /globes/:id/edit(.:format)                                                                        {:action=>"edit", :controller=>"globes"}
+                                      globe GET    /globes/:id(.:format)                                                                             {:action=>"show", :controller=>"globes"}
+                                            PUT    /globes/:id(.:format)                                                                             {:action=>"update", :controller=>"globes"}
+                                            DELETE /globes/:id(.:format)                                                                             {:action=>"destroy", :controller=>"globes"}
+          javascripts_dynamic_data_elements        /javascripts/dynamic_data_elements(.:format)                                                      {:controller=>"javascripts", :action=>"dynamic_data_elements"}
+                           new_user_session GET    /users/sign_in(.:format)                                                                          {:action=>"new", :controller=>"devise/sessions"}
+                               user_session POST   /users/sign_in(.:format)                                                                          {:action=>"create", :controller=>"devise/sessions"}
+                       destroy_user_session GET    /users/sign_out(.:format)                                                                         {:action=>"destroy", :controller=>"devise/sessions"}
+                              user_password POST   /users/password(.:format)                                                                         {:action=>"create", :controller=>"devise/passwords"}
+                          new_user_password GET    /users/password/new(.:format)                                                                     {:action=>"new", :controller=>"devise/passwords"}
+                         edit_user_password GET    /users/password/edit(.:format)                                                                    {:action=>"edit", :controller=>"devise/passwords"}
+                                            PUT    /users/password(.:format)                                                                         {:action=>"update", :controller=>"devise/passwords"}
+                          user_registration POST   /users(.:format)                                                                                  {:action=>"create", :controller=>"devise/registrations"}
+                      new_user_registration GET    /users/sign_up(.:format)                                                                          {:action=>"new", :controller=>"devise/registrations"}
+                     edit_user_registration GET    /users/edit(.:format)                                                                             {:action=>"edit", :controller=>"devise/registrations"}
+                                            PUT    /users(.:format)                                                                                  {:action=>"update", :controller=>"devise/registrations"}
+                                            DELETE /users(.:format)                                                                                  {:action=>"destroy", :controller=>"devise/registrations"}
+                                                   /(.:format)                                                                                       {:controller=>"globes", :action=>"show"}
+                               home_problem        /home/problem(.:format)                                                                           {:controller=>"home", :action=>"problem"}
+                              home_solution        /home/solution(.:format)                                                                          {:controller=>"home", :action=>"solution"}
+                             home_indsignup        /home/indsignup(.:format)                                                                         {:controller=>"registers", :action=>"new"}
+                             home_orgsignup        /home/orgsignup(.:format)                                                                         {:controller=>"registers", :action=>"new"}
+                               home_aboutus        /home/aboutus(.:format)                                                                           {:controller=>"home", :action=>"aboutus"}
+                                                   /extract/json/*data_element_type/*data_element_name(.:format)                                     {:format=>"json", :controller=>"data_elements", :action=>"extract"}
+                                                   /extract_all/json/*data_element_type(.:format)                                                    {:format=>"json", :controller=>"data_elements", :action=>"extract_all"}
+                                                   /extract/text/*data_element_type/*data_element_name(.:format)                                     {:format=>"txt", :controller=>"data_elements", :action=>"extract"}
+                                                   /extract_all/text/*data_element_type(.:format)                                                    {:format=>"txt", :controller=>"data_elements", :action=>"extract_all"}
+                                                   /extract/txt/*data_element_type/*data_element_name(.:format)                                      {:format=>"txt", :controller=>"data_elements", :action=>"extract"}
+                                                   /extract_all/txt/*data_element_type(.:format)                                                     {:format=>"txt", :controller=>"data_elements", :action=>"extract_all"}
+                                                   /extract/xml/*data_element_type/*data_element_name(.:format)                                      {:format=>"xml", :controller=>"data_elements", :action=>"extract"}
+                                                   /extract_all/xml/*data_element_type(.:format)                                                     {:format=>"xml", :controller=>"data_elements", :action=>"extract_all"}
+                                                   /extract/yaml/*data_element_type/*data_element_name(.:format)                                     {:format=>"yaml", :controller=>"data_elements", :action=>"extract"}
+                                                   /extract_all/yaml/*data_element_type(.:format)                                                    {:format=>"yaml", :controller=>"data_elements", :action=>"extract_all"}
+                                                   /extract/*data_element_type/*data_element_name(.:format)                                          {:format=>"xml", :controller=>"data_elements", :action=>"extract"}
+                                                   /extract_all/*data_element_type(.:format)                                                         {:format=>"xml", :controller=>"data_elements", :action=>"extract_all"}
+                                       root        /(.:format)                                                                                       {:controller=>"home", :action=>"index"}

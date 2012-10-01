@@ -6,6 +6,11 @@ class DataSheet < ActiveRecord::Base
   has_many :presentations
   has_many :data_element_collections, :through => :presentations
 
+  validates :name, :presence => true
+  validates :profile, :presence => true
+  validates :file_location, :presence => true
+#  validates :style_sheets, :presence => true
+
   attr_accessible :id, :name, :display_name, :class_style, :style_sheets, :profile_id, :file_location, :position, :creator_id, :updater_id, :created_at, :updated_at
   
   def setup_defaults(globe, profile)

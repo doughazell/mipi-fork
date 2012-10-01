@@ -20,6 +20,7 @@ structures for particular scenarios. They will also have a set of views
 that will display the data and a set of data to populate these
 DataElement-derived views.
 
+
 Security
 --------
 
@@ -40,7 +41,7 @@ New Model
   - Others...
   - DEFAULT_PAGE_LIMIT
   - DEFAULT_VARIABLE_NAME
-
+ 
 DataElement
 -----------
 
@@ -67,8 +68,13 @@ Components
   (a) Global Time Slider
   (b) Local Time Slider
 - Graphically Represent Hierarchies in JavaScript.
+ - e.g.: http://www.highcharts.com/demo/scatter
 - DataTable
 - will_paginate with array instead of RecordSets.
+- Calendar Integration
+ - http://www.terminally-incoherent.com/blog/2008/04/14/generate-outlook-calendar-events-with-php-and-icalendar/
+ - iCalendar
+ - Exchange Development: http://msdn.microsoft.com/en-us/library/exchange/dd877032(v=exchg.150).aspx
   
 Subscription
 ------------

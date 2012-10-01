@@ -2,7 +2,7 @@ require 'test_helper'
 
 class SubscriptionsControllerTest < ActionController::TestCase
   setup do
-    @subscription = subscriptions(:one)
+    @subscription = subscriptions(:rfu_pablito_link)
   end
 
   test "should get index" do

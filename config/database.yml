@@ -6,23 +6,23 @@
 # And be sure to use new-style password hashing:
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
 
-#development:
-#  adapter: mysql2
-#  encoding: utf8
-#  reconnect: false
-#  database: mipi_development
-#  pool: 5
-#  username: root
-#  password: paul123
-#  host: localhost
-
 development:
-  adapter: sqlserver
-  database: budaman_development
-  dsn: budaman_development
-  host: localhost\dev
-#  username: root
-#  password: P1Gua4d
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: mipi_development
+  pool: 5
+  username: root
+  password: paul123
+  host: localhost
+
+#development:
+#  adapter: sqlserver
+#  database: budaman_development
+#  dsn: budaman_development
+#  host: localhost\dev
+##  username: root
+##  password: P1Gua4d
 
 test:
   adapter: sqlserver

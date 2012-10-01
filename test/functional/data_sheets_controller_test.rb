@@ -2,7 +2,7 @@ require 'test_helper'
 
 class DataSheetsControllerTest < ActionController::TestCase
   setup do
-    @data_sheet = data_sheets(:one)
+    @data_sheet = data_sheets(:ftp_main_data_sheet)
   end
 
   test "should get index" do

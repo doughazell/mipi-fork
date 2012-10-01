@@ -1,7 +1,7 @@
-namespace :ftodata do
+namespace :import do
   desc "Manage Globes through the command line"
   
-  task :import_tlaf => :environment do
+  task :tlaf => :environment do
     require "highline/import"
     
 #    str_filename = ask("Enter CSV file of TLAFs to load:")
@@ -165,6 +165,148 @@ namespace :ftodata do
       end
       line_count = line_count + 1
     end
+  end
+
+  task :data, [:username, :password] => :environment do |t, args|
+    require "highline/import"
+    
+    meta_data = Hash.new
+    name_column = 0
+    fk_tail = '_data_element'
+    fk_tail_length = fk_tail.length
+
+    u = User.find_by_username('paul123')
+    g = Globe.find_by_globe_reference('ftp')
+    profile_id = g.profiles.find_by_name('Units').id
+
+    # What is the file name?
+    data_to_import = ask("Which file would you like to import?")
+#    data_to_import = "data_sub_domains.csv"
+    
+    # Derive a class name
+    file_name_stem = data_to_import[0..data_to_import.index('.')-1].singularize
+    if (file_name_stem[file_name_stem.length - fk_tail_length..file_name_stem.length] != fk_tail) then
+      data_element_name = file_name_stem + fk_tail
+    end
+    
+    # Construct a class (this will check that the class is valid)
+    data_element_name_camel = data_element_name.camelcase
+    constant = Object
+    check_object = constant.const_defined?(data_element_name_camel)
+    if (!check_object) then
+      if (!generate_new_model_from_file(data_to_import)) then
+        raise "Unable to create a new model from #{data_to_import}"
+      end
+    end
+    data_element_name_camel.constantize
+    
+    line_count = 0
+    puts "Opening file..."
+    File.open("test/data/#{data_to_import}").each do |line|
+      if (line_count == 0) then
+        columns = line.strip.split(',')
+        name_column = columns.index('name')
+        raise "'name' column not specified." if name_column.nil?
+        columns.each do |column|
+          meta_data[column] = Hash.new
+          if column[fk_tail_length*-1,fk_tail_length] == fk_tail then
+            meta_data[column]['primary_key'] = false
+            meta_data[column]['foreign_key'] = true
+          elsif column == 'name'
+            meta_data[column]['primary_key'] = true
+            meta_data[column]['foreign_key'] = false
+          else
+            meta_data[column]['primary_key'] = false
+            meta_data[column]['foreign_key'] = false
+          end
+          meta_data[column]['index'] = columns.index(column)
+        end
+        
+#        puts columns
+#        puts name_column
+#        puts meta_data
+      else
+
+        values = line.strip.split(',')
+
+        # Retrieve the collection that this line will be added to.
+        root_dec = DataElementCollection.find_or_initialize_by_name_and_data_element_type(values[name_column], data_element_name_camel)
+        
+#        if (root_dec.new_record?) then
+          # Initialise some values if this is new.
+          root_dec.update_attributes({
+            :name => values[name_column],
+            :page_limit => 1,
+            :historic => 0,
+            :variable_name => data_element_name_camel.constantize::DEFAULT_VARIABLE_NAME,
+            :globe_id => g.id
+          })
+#        end
+        
+        root_object = data_element_name_camel.constantize.find_or_initialize_master_by_name(values[name_column])
+
+        to_update = Hash.new
+        to_update['name'] = values[name_column]
+        to_update['data_element_collection_id'] = root_dec.id
+        to_update['user_id'] = u.id
+        to_update['globe_id'] = g.id
+        to_update['creator_id'] = u.id
+        to_update['updater_id'] = u.id
+        
+        meta_data.each {|key, details|
+          # Simple update. Just write the value to the root object.
+          if (details['primary_key'] == false && details['foreign_key'] == false) then
+#            puts key
+#            puts details['index']
+#            puts values[details['index']]
+            to_update[key.to_sym] = values[details['index']].to_s if !values[details['index']].to_s.blank?
+          elsif (details['primary_key'] == false && details['foreign_key'] == true) then
+            fk_name = values[details['index']]
+            puts fk_name
+            
+            # Find the FK. The latest version within the collection.
+            fk = key.camelcase.singularize.constantize.find_or_initialize_master_by_name(fk_name)
+
+            # Find the assocaiated collection.
+            fk_dec = DataElementCollection.find_or_initialize_by_name_and_data_element_type(fk_name, key.camelcase)
+            
+            if (fk_dec.new_record?) then
+              # Update the FK collection
+              fk_dec.update_attributes({
+                :name => fk_name,
+                :page_limit => 1,
+                :historic => 0,
+                :variable_name => key.camelcase.constantize::DEFAULT_VARIABLE_NAME,
+                :globe_id => g.id
+              })
+            end
+            
+            fk.update_attributes({
+              :name => fk_name,
+              :data_element_collection_id => fk_dec.id,
+              :globe_id => g.id,
+              :user_id => u.id,
+              :creator_id => u.id,
+              :updater_id => u.id
+            })
+
+            # Finally, simply update the root object with the FK ID.
+#            root_object.update_attributes({"#{key}_id" => fk.id})
+            to_update["#{key}_id"] = fk.id
+          end
+        }
+        puts "-TRY-TO-WRITE-"
+        puts to_update
+        root_object.update_attributes(to_update)
+
+        puts line
+      end
+      line_count = line_count + 1
+    end
+  end
+  
+  def generate_new_model_from_file(data_to_import)
+    false
   end
 
   # This will allow all generator units within the profile "units" to all have a data sheet

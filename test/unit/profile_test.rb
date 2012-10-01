@@ -17,7 +17,7 @@ class ProfileTest < ActiveSupport::TestCase
   end
 
   test "create with globe FK and name" do
-    g = Globe.create(:name => "Test")
+    g = Globe.create(:name => "Test", :globe_reference => "test")
     p = Profile.create(:name => "Test", :globe_id => g.id)
     assert p.save
   end

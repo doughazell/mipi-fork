@@ -2,7 +2,7 @@ require 'test_helper'
 
 class GlobesControllerTest < ActionController::TestCase
   setup do
-    @globe = globes(:one)
+    @globe = globes(:ftp)
   end
 
   test "should get index" do

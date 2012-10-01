@@ -1,20 +1,12 @@
 <h1>Data Domain Hierarchy Management</h1>
 <table>
+  <th>Data Domain</th>
+  <th>Data Sub Domain</th>
+  <th>Data Set</th>
   <th>Code</th>
   <th>Description</th>
-  <th>Data Set</th>
-  <th>Data Sub Domain</th>
-  <th>Data Domain</th>
   <% @line_item_array.each do |line_item| %>
   <tr>
-    <td><%= LinkDataSheet(line_item, nil, { :data_sheet => line_item.name, :override_label => line_item.code } ) %></td>
-    <td><%= line_item.description %></td>
-    <td><%= line_item.data_set_data_element.short_name %></td>
-    <td><%= if (line_item.data_set_data_element.data_sub_domain_data_element) then
-              line_item.data_set_data_element.data_sub_domain_data_element.short_name
-            else
-              "<blank>"
-            end %></td>
     <td>
         <%= if (line_item.data_set_data_element.data_sub_domain_data_element.data_domain_data_element) then
               line_item.data_set_data_element.data_sub_domain_data_element.data_domain_data_element.short_name
@@ -22,6 +14,14 @@
               "<blank>"
             end %>
     </td>
+    <td><%= if (line_item.data_set_data_element.data_sub_domain_data_element) then
+              line_item.data_set_data_element.data_sub_domain_data_element.short_name
+            else
+              "<blank>"
+            end %></td>
+    <td><%= line_item.data_set_data_element.short_name %></td>
+    <td><%= LinkDataSheet(line_item, nil, { :data_sheet => line_item.name, :override_label => line_item.code } ) %></td>
+    <td><%= line_item.description %></td>
   </tr>
   <% end %>
 </table>
