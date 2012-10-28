@@ -19,4 +19,5 @@ class Globe < ActiveRecord::Base
   scope :top_level, where(:parent_id => nil)
 
   accepts_nested_attributes_for :profiles, :allow_destroy => true
+  
 end

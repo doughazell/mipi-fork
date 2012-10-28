@@ -104,8 +104,13 @@ class ProfilesController < ApplicationController
 
   def preview
     @masterglobe = Globe.find_by_globe_reference!(request.subdomain)
-    @globe = current_user.globes.find(params[:globe_id])
-    @shadowglobes = @globe.children
+    if current_user.globes.blank? == true then
+      @globe = @masterglobe
+    else
+      @globe = current_user.globes.find(params[:id])
+    end
+    
+    @shadowglobes = @globe.children # .sort! { |a,b| a.name.downcase <=> b.name.downcase }
 #    @globe = Globe.find(params[:globe_id])
     @profiles = @globe.profiles
 #    @profiles = @globe.profiles.sort! { |a,b| a.position <=> b.position }

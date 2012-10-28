@@ -15,6 +15,7 @@ gem 'mysql2'
 
 #gem 'devise', '1.1.2'
 gem 'devise'
+gem 'devise-encryptable'
 gem 'rails_sql_views', :git => 'git://github.com/centresource/rails_sql_views', require: 'rails_sql_views'
 gem 'citier'
 #gem 'CITIEsForRAILS'

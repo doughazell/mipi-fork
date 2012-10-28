@@ -5,6 +5,7 @@ class GlobesController < ApplicationController
 
 #  before_filter :authenticate_user!, :except => [:index]
   before_filter :authenticate_user!
+#  before_filter :authenticate_user!, except: [:index, :show]
 #  before_filter :require_user
   before_filter :set_current_user
   
@@ -62,7 +63,7 @@ class GlobesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @globe }
+#      format.xml  { render :xml => @globe }
     end
   end
 
@@ -142,7 +143,12 @@ class GlobesController < ApplicationController
   
   def preview
     @masterglobe = Globe.find_by_globe_reference!(request.subdomain)
-    @globe = current_user.globes.find(params[:id])
+    if current_user.globes.blank? == true then
+      @globe = @masterglobe
+    else
+      @globe = current_user.globes.find(params[:id])
+    end
+    
     @shadowglobes = @globe.children # .sort! { |a,b| a.name.downcase <=> b.name.downcase }
 #    @globe = Globe.find(params[:id])
     @profiles = @globe.profiles(:order => 'position')

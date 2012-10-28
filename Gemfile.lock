@@ -52,6 +52,8 @@ GEM
       orm_adapter (~> 0.1)
       railties (~> 3.1)
       warden (~> 1.2.1)
+    devise-encryptable (0.1.1)
+      devise (>= 2.1.0.rc)
     erubis (2.7.0)
     highline (1.6.15)
     hike (1.2.1)
@@ -124,6 +126,7 @@ DEPENDENCIES
   acts_as_tree
   citier
   devise
+  devise-encryptable
   highline
   jquery-rails
   liquid

@@ -116,8 +116,14 @@ class DataSheetsController < ApplicationController
   #   or whether these should be exchanged for instance methods.
   def preview
     @masterglobe = Globe.find_by_globe_reference!(request.subdomain)
-    @globe = current_user.globes.find(params[:globe_id])
-    @shadowglobes = @globe.children
+    if current_user.globes.blank? == true then
+      @globe = @masterglobe
+    else
+      @globe = current_user.globes.find(params[:id])
+    end
+    
+    @shadowglobes = @globe.children # .sort! { |a,b| a.name.downcase <=> b.name.downcase }
+    
 #    @globe = Globe.find(params[:globe_id])
     @profiles = @globe.profiles.sort! { |a,b| a.position <=> b.position }
     @active_profile = Profile.find(params[:profile_id])
@@ -183,7 +189,8 @@ class DataSheetsController < ApplicationController
     
     if @outputs.count == 0 then
       respond_to do |format|
-        format.html { render :partial => 'data_sheets/pages/missing_presentation' }
+#        format.html { render :partial => 'data_sheets/pages/missing_presentation', :notice => "Error: Missing Presentation Data" }
+        format.html { redirect_to preview_globe_url(@globe), :notice => "Error: Missing Presentation Data" }
       end
     else
     
