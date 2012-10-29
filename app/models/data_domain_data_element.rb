@@ -1,5 +1,5 @@
 class DataDomainDataElement < DataElement
-  acts_as_cities
+  acts_as_citier
   
   has_many :data_sub_domain_data_elements
 

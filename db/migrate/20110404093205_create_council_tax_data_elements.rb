@@ -19,11 +19,11 @@ class CreateCouncilTaxDataElements < ActiveRecord::Migration
       t.string :band
       t.date :date_of_issue
     end
-    CreateTheViewForCITIEs(CouncilTaxDataElement)
+    create_citier_view(CouncilTaxDataElement)
   end
 
   def self.down
-    DropTheViewForCITIEs(CouncilTaxDataElement)
+    drop_citier_view(CouncilTaxDataElement)
     drop_table :council_tax_data_elements
   end
 end

@@ -14,11 +14,11 @@ class CreateFinancialAccountDataElements < ActiveRecord::Migration
       t.date :closed_date
       t.float :overdraft_limit
     end
-    CreateTheViewForCITIEs(FinancialAccountDataElement)
+    create_citier_view(FinancialAccountDataElement)
   end
 
   def self.down
     drop_table :financial_account_data_elements
-    DropTheViewForCITIEs(FinancialAccountDataElement)
+    drop_citier_view(FinancialAccountDataElement)
   end
 end

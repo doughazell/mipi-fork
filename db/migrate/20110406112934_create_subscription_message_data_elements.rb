@@ -3,11 +3,11 @@ class CreateSubscriptionMessageDataElements < ActiveRecord::Migration
     create_table :subscription_message_data_elements do |t|
       t.integer :subscription_id
     end
-    CreateTheViewForCITIEs(SubscriptionMessageDataElement)
+    create_citier_view(SubscriptionMessageDataElement)
   end
 
   def self.down
-    DropTheViewForCITIEs(SubscriptionMessageDataElement)
+    drop_citier_view(SubscriptionMessageDataElement)
     drop_table :subscription_message_data_elements
   end
 end

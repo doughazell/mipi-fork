@@ -6,11 +6,11 @@ class CreateVehicleServiceDataElements < ActiveRecord::Migration
       t.string :signator
       t.integer :vehicle_data_element_id
     end
-    CreateTheViewForCITIEs(VehicleServiceDataElement)
+    create_citier_view(VehicleServiceDataElement)
   end
 
   def self.down
-    DropTheViewForCITIEs(VehicleServiceDataElement)
+    drop_citier_view(VehicleServiceDataElement)
     drop_table :vehicle_service_data_elements
   end
 end

@@ -7,11 +7,11 @@ class CreateTransactionDataElements < ActiveRecord::Migration
       t.float :value
       t.float :balance
     end
-    CreateTheViewForCITIEs(TransactionDataElement)
+    create_citier_view(TransactionDataElement)
   end
 
   def self.down
-    DropTheViewForCITIEs(TransactionDataElement)
+    drop_citier_view(TransactionDataElement)
     drop_table :transaction_data_elements
   end
 end

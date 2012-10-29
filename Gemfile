@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.3'
+#gem 'rails', '3.0.3'
+gem 'rails', '3.1.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -12,16 +13,21 @@ gem 'mysql2'
 #gem 'ruby-odbc'
 #gem 'activerecord-sqlserver-adapter', '3.0.3'
 
-gem 'devise', '1.1.2'
-gem 'CITIEsForRAILS'
+#gem 'devise', '1.1.2'
+gem 'devise'
+gem 'devise-encryptable'
+gem 'rails_sql_views', :git => 'git://github.com/centresource/rails_sql_views', require: 'rails_sql_views'
+gem 'citier'
+#gem 'CITIEsForRAILS'
 gem 'will_paginate', '~>3.0.pre2'
 gem 'acts_as_list'
 gem 'acts_as_tree'
 gem 'userstamp'
 gem 'liquid'
 # gem 'fiveruns_tuneup' - only for OSX adn Linux
-gem 'newrelic_rpm'
+#gem 'newrelic_rpm'
 gem 'highline'
+gem 'jquery-rails'
 
 # gem 'defunkt-facebox-859adc2'
 

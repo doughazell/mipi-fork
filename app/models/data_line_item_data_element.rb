@@ -1,5 +1,5 @@
 class DataLineItemDataElement < DataElement
-  acts_as_cities
+  acts_as_citier
   
   belongs_to :data_set_data_element
   

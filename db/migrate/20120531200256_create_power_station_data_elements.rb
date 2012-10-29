@@ -9,11 +9,11 @@ class CreatePowerStationDataElements < ActiveRecord::Migration
       t.integer :capacity
       t.date :commissioned
     end
-    CreateTheViewForCITIEs(PowerStationDataElement)
+    create_citier_view(PowerStationDataElement)
   end
 
   def self.down
-    DropTheViewForCITIEs(PowerStationDataElement)
+    drop_citier_view(PowerStationDataElement)
     drop_table :power_station_data_elements
   end
 end

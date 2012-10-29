@@ -6,11 +6,11 @@ class CreateContactDataElements < ActiveRecord::Migration
       t.string :last_name
       t.string :email
     end
-    CreateTheViewForCITIEs(ContactDataElement)
+    create_citier_view(ContactDataElement)
   end
 
   def self.down
-    DropTheViewForCITIEs(ContactDataElement)
+    drop_citier_view(ContactDataElement)
     drop_table :contact_data_elements
   end
 end

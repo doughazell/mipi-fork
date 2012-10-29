@@ -6,11 +6,11 @@ class CreateDataSubDomainDataElements < ActiveRecord::Migration
       t.string :description
       t.integer :data_domain_data_element_id
     end
-    CreateTheViewForCITIEs(DataSubDomainDataElement)
+    create_citier_view(DataSubDomainDataElement)
   end
 
   def self.down
-    DropTheViewForCITIEs(DataSubDomainDataElement)
+    drop_citier_view(DataSubDomainDataElement)
     drop_table :data_sub_domain_data_elements
   end
 end

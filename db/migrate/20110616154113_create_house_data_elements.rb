@@ -11,11 +11,11 @@ class CreateHouseDataElements < ActiveRecord::Migration
       t.string :external_construction
       t.integer :flood_plain
     end
-    CreateTheViewForCITIEs(HouseDataElement)
+    create_citier_view(HouseDataElement)
   end
 
   def self.down
-    DropTheViewForCITIEs(HouseDataElement)
+    drop_citier_view(HouseDataElement)
     drop_table :house_data_elements
   end
 end

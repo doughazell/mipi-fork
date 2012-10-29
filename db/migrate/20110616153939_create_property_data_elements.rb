@@ -4,11 +4,11 @@ class CreatePropertyDataElements < ActiveRecord::Migration
       t.integer :address_data_element_id
       t.integer :year_built
     end
-    CreateTheViewForCITIEs(PropertyDataElement)
+    create_citier_view(PropertyDataElement)
   end
 
   def self.down
-    DropTheViewForCITIEs(PropertyDataElement)
+    drop_citier_view(PropertyDataElement)
     drop_table :property_data_elements
   end
 end

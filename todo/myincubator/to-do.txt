@@ -1,0 +1,53 @@
+
+
+Objectives
+----------
+
+Resource Management System:
+- Rooms
+- Desks (with/without PC)
+ - Grades
+- Advisors Time
+
+
+Activities
+----------
+
+- Construct an Incubator
+ - Users:
+  - Alex (Advisor & Manager)
+  - Helen (Manager)
+  - Paul McGuire (Tenant)
+ - Roles:
+  - Manager
+  - Advisor
+  - Tenants
+ - Resources
+  - Site (Stevenage BTC)
+  - Rooms (R101, R102)
+  - Desks (DSK001, DSK002)
+  - PCs
+  - Availability (10AM-11AM Tues, 3PM-5PM Weds, etc.)
+ - Categories
+  - Assign tags to resources: e.g. with PC, Mac, Board Room, Conference Room
+
+Rooms
+-----
+- Name
+- Description
+- Resource Mail
+- Capacity
+- Image(s)
+- Send Email
+- Open Start Time
+- Open End Time
+- Allow Conflicts
+- Hide Resource
+
+
+
+
+
+
+- Register as Tenant
+- Register as an Advisor

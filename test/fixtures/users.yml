@@ -14,21 +14,18 @@ paul123:
     email: paul123@piguard.com
     encrypted_password: $2a$10$egY4h32xNN9r5MEyWVtrqeJqP0pS0jLykmJCPHFK.LPcebGchIfXu
     password_salt: $2a$10$egY4h32xNN9r5MEyWVtrqe
-    username: paul123
 
 
 terry123:
-    email: damo123@piguard.com
+    email: terry123@piguard.com
     encrypted_password: $2a$10$egY4h32xNN9r5MEyWVtrqeJqP0pS0jLykmJCPHFK.LPcebGchIfXu
     password_salt: $2a$10$egY4h32xNN9r5MEyWVtrqe
-    username: terry123
 
 
 jenny123:
-    email: ali123@piguard.com
+    email: jenny123@piguard.com
     encrypted_password: $2a$10$egY4h32xNN9r5MEyWVtrqeJqP0pS0jLykmJCPHFK.LPcebGchIfXu
     password_salt: $2a$10$egY4h32xNN9r5MEyWVtrqe
-    username: ali123
 
 
 

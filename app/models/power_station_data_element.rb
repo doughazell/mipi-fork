@@ -1,5 +1,5 @@
 class PowerStationDataElement < DataElement
-  acts_as_cities
+  acts_as_citier
   has_many :generator_unit_data_element
   has_many :transmission_loss_adjustment_data_elements
 

@@ -5,11 +5,11 @@ class CreateStatedItemOnInsuranceDataElements < ActiveRecord::Migration
       t.float :value
       t.integer :contents_insurance_data_element_id
     end
-    CreateTheViewForCITIEs(StatedItemOnInsuranceDataElement)
+    create_citier_view(StatedItemOnInsuranceDataElement)
   end
 
   def self.down
-    DropTheViewForCITIEs(StatedItemOnInsuranceDataElement)
+    drop_citier_view(StatedItemOnInsuranceDataElement)
     drop_table :stated_item_on_insurance_data_elements
   end
 end

@@ -9,7 +9,7 @@
 class MessageDataElement < DataElement
   @@historical_retention = false
 
-  acts_as_cities
+  acts_as_citier
   
   belongs_to :message
 

@@ -8,11 +8,11 @@ class CreateAddressDataElements < ActiveRecord::Migration
       t.string :post_code
       t.string :country
     end
-    CreateTheViewForCITIEs(AddressDataElement)
+    create_citier_view(AddressDataElement)
   end
 
   def self.down
-    DropTheViewForCITIEs(AddressDataElement)
+    drop_citier_view(AddressDataElement)
     drop_table :address_data_elements
   end
 end

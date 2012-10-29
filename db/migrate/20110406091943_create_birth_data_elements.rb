@@ -5,11 +5,11 @@ class CreateBirthDataElements < ActiveRecord::Migration
       t.string :town_of_birth
       t.string :country_of_birth
     end
-    CreateTheViewForCITIEs(BirthDataElement)
+    create_citier_view(BirthDataElement)
   end
 
   def self.down
-    DropTheViewForCITIEs(BirthDataElement)
+    drop_citier_view(BirthDataElement)
     drop_table :birth_data_elements
   end
 end

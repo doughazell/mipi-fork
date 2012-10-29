@@ -1,4 +1,6 @@
 V01::Application.routes.draw do
+  devise_for :users
+
   resources :subscriptions
 
 #  resources :data_sheets 
@@ -68,9 +70,7 @@ V01::Application.routes.draw do
     
   end
 
-  match 'javascripts/dynamic_data_elements', :to => 'javascripts#dynamic_data_elements'
-
-  devise_for :users
+#  devise_for :users
   
   require 'subdomain'
   constraints(Subdomain) do

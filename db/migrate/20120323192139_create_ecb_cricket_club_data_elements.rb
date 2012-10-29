@@ -7,11 +7,11 @@ class CreateEcbCricketClubDataElements < ActiveRecord::Migration
       t.string :contact_name
       t.string :contact_number
     end
-    CreateTheViewForCITIEs(EcbCricketClubDataElement)
+    create_citier_view(EcbCricketClubDataElement)
   end
 
   def self.down
-    DropTheViewForCITIEs(EcbCricketClubDataElement)
+    drop_citier_view(EcbCricketClubDataElement)
     drop_table :ecb_cricket_club_data_elements
   end
 end

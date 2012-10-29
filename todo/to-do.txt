@@ -67,6 +67,7 @@ Components
   users to be able to view data in the past.
   (a) Global Time Slider
   (b) Local Time Slider
+  http://codecanyon.net/item/jquery-timelinexml/full_screen_preview/1448100?ref=themespotters&ref=themespotters&clickthrough_id=89399272&redirect_back=true
 - Graphically Represent Hierarchies in JavaScript.
  - e.g.: http://www.highcharts.com/demo/scatter
 - DataTable
@@ -75,6 +76,9 @@ Components
  - http://www.terminally-incoherent.com/blog/2008/04/14/generate-outlook-calendar-events-with-php-and-icalendar/
  - iCalendar
  - Exchange Development: http://msdn.microsoft.com/en-us/library/exchange/dd877032(v=exchg.150).aspx
+- Calendar View
+ - http://www.web-delicious.com/jquery-plugins-demo/wdCalendar/sample.php
+ - http://www.tripwiremagazine.com/2012/04/jquery-calendar-date-pickers.html
   
 Subscription
 ------------
@@ -109,3 +113,13 @@ Testing
 
 - Set up TEST environment
 - Begin writing tests!
+
+
+Sortable Element
+----------------
+<%= sortable_element("preview_profiles", :url => sort_globe_profiles_path(@globe), :tag => "span", :handle => "handle", :overlap => :vertical) %>
+...no longer works.
+[Sortable lists with JQuery in Rails - Practice Over Theory]
+http://practiceovertheory.com/blog/2009/08/07/sortable-lists-with-jquery-in-rails/
+
+
