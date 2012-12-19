@@ -1,4 +1,4 @@
-include ActionView::Helpers
+#include ActionView::Helpers
 
 # @author Paul Long
 class DataElement < ActiveRecord::Base

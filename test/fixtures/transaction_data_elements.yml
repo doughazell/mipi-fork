@@ -1,7 +1,6 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-two:
-  id: <%= DataElement.find_by_name('string_test').id %>
+cc1_state_100:
   transfer_date: 2011-03-21
   transaction_type: Direct Debit
   description: WH Smiths
@@ -9,7 +8,6 @@ two:
   balance: 0
 
 cc1_state_101:
-  id: <%= DataElement.find_by_name('cc1_state_101').id %>
   transfer_date: 2010-12-23
   transaction_type: POS
   description: 6047 22DEC10 , TESCO STORES , LONDON GB
@@ -17,7 +15,6 @@ cc1_state_101:
   balance: 5786.67
 
 cc1_state_102:
-  id: <%= DataElement.find_by_name('cc1_state_102').id %>
   transfer_date: 2010-12-23
   transaction_type: CHQ
   description: 000185
@@ -25,7 +22,6 @@ cc1_state_102:
   balance: 5776.67
 
 cc1_state_103:
-  id: <%= DataElement.find_by_name('cc1_state_103').id %>
   transfer_date: 2010-12-24
   transaction_type: POS
   description: 6047 23DEC10 , BOOTS,HEATHROW , HEATHROW GB
@@ -33,7 +29,6 @@ cc1_state_103:
   balance: 5771
 
 cc1_state_104:
-  id: <%= DataElement.find_by_name('cc1_state_104').id %>
   transfer_date: 2010-12-24
   transaction_type: D/D
   description: VIRGIN MOBILE
@@ -41,7 +36,6 @@ cc1_state_104:
   balance: 5755.54
 
 cc1_state_105:
-  id: <%= DataElement.find_by_name('cc1_state_105').id %>
   transfer_date: 2010-12-29
   transaction_type: C/L
   description: 6047 27DEC10 , CAIXA GALICIA , BARCELONA ES , EUR 40.00, RATE 1.1713, CHARGE 2.00, ERTF 0.94
@@ -49,7 +43,6 @@ cc1_state_105:
   balance: 5718.45
 
 cc1_state_106:
-  id: <%= DataElement.find_by_name('cc1_state_106').id %>
   transfer_date: 2010-12-29
   transaction_type: POS
   description: 6047 23DEC10 , WDFE , HEATHROW GB
@@ -57,7 +50,6 @@ cc1_state_106:
   balance: 5685.96
 
 cc1_state_107:
-  id: <%= DataElement.find_by_name('cc1_state_107').id %>
   transfer_date: 2010-12-30
   transaction_type: D/D
   description: O2
@@ -65,7 +57,6 @@ cc1_state_107:
   balance: 5653.04
 
 cc1_state_108:
-  id: <%= DataElement.find_by_name('cc1_state_108').id %>
   transfer_date: 2010-12-31
   transaction_type: POS
   description: 6047 30DEC10 , TRUCCO , BARCELONA ES , EUR 29.95, RATE 1.1631, CHARGE 1.25, ERTF 0.71
@@ -73,7 +64,6 @@ cc1_state_108:
   balance: 5625.33
 
 cc1_state_109:
-  id: <%= DataElement.find_by_name('cc1_state_109').id %>
   transfer_date: 2011-01-04
   transaction_type: C/L
   description: 6047 03JAN11 , 100810200 , BARCELONA ES , CHARGE 2.00
@@ -81,7 +71,6 @@ cc1_state_109:
   balance: 5535.29
 
 cc1_state_110:
-  id: <%= DataElement.find_by_name('cc1_state_110').id %>
   transfer_date: 2011-01-04
   transaction_type: POS
   description: 6047 31DEC10 , BON PREU SAU , BARCELONA ES , EUR 41.06, RATE 1.1628, CHARGE 1.25, ERTF 0.97
@@ -89,7 +78,6 @@ cc1_state_110:
   balance: 5497.76
 
 cc1_state_111:
-  id: <%= DataElement.find_by_name('cc1_state_111').id %>
   transfer_date: 2011-01-04
   transaction_type: POS
   description: 6047 02JAN11 , ESPASA CALPE, S.A., BARCELONA ES , EUR 6.95, RATE 1.1622, CHARGE 1.25, ERTF 0.16
@@ -97,7 +85,6 @@ cc1_state_111:
   balance: 5490.37
 
 cc1_state_112:
-  id: <%= DataElement.find_by_name('cc1_state_112').id %>
   transfer_date: 2011-01-04
   transaction_type: S/O
   description: NSPCC , FP 04/01/11 30 , 25031145547535000N
@@ -105,7 +92,6 @@ cc1_state_112:
   balance: 5488.37
 
 cc1_state_113:
-  id: <%= DataElement.find_by_name('cc1_state_113').id %>
   transfer_date: 2011-01-04
   transaction_type: D/D
   description: RENEW INSURANCE
@@ -113,7 +99,6 @@ cc1_state_113:
   balance: 5476.07
 
 cc1_state_114:
-  id: <%= DataElement.find_by_name('cc1_state_114').id %>
   transfer_date: 2011-01-05
   transaction_type: C/L
   description: 6047 04JAN11 , 100810200 , BARCELONA ES , CHARGE 2.00
@@ -121,7 +106,6 @@ cc1_state_114:
   balance: 5386.03
 
 cc1_state_115:
-  id: <%= DataElement.find_by_name('cc1_state_115').id %>
   transfer_date: 2011-01-06
   transaction_type: BAC
   description: PIGGOTT N J , PAUL RENT , FP 06/01/11 0205 , RP4672263270590000
@@ -129,7 +113,6 @@ cc1_state_115:
   balance: 5819.03
 
 cc1_state_116:
-  id: <%= DataElement.find_by_name('cc1_state_116').id %>
   transfer_date: 2011-01-06
   transaction_type: POS
   description: 6047 05JAN11 , TESCO STORES , LONDON GB
@@ -137,7 +120,6 @@ cc1_state_116:
   balance: 5807.23
 
 cc1_state_117:
-  id: <%= DataElement.find_by_name('cc1_state_117').id %>
   transfer_date: 2011-01-06
   transaction_type: C/L
   description: BARCLAYS BNK 06JAN
@@ -145,7 +127,6 @@ cc1_state_117:
   balance: 5767.23
 
 cc1_state_118:
-  id: <%= DataElement.find_by_name('cc1_state_118').id %>
   transfer_date: 2011-01-07
   transaction_type: BAC
   description: LW
@@ -153,7 +134,6 @@ cc1_state_118:
   balance: 7936.23
 
 cc1_state_119:
-  id: <%= DataElement.find_by_name('cc1_state_119').id %>
   transfer_date: 2011-01-07
   transaction_type: POS
   description: 6047 06JAN11 , TESCO STORES , LONDON GB
@@ -161,7 +141,6 @@ cc1_state_119:
   balance: 7910.59
 
 cc1_state_120:
-  id: <%= DataElement.find_by_name('cc1_state_120').id %>
   transfer_date: 2011-01-10
   transaction_type: POS
   description: 6047 09JAN11 , TESCO STORE 2654 , HATFIELD GB
@@ -169,7 +148,6 @@ cc1_state_120:
   balance: 7787.74
 
 cc1_state_121:
-  id: <%= DataElement.find_by_name('cc1_state_121').id %>
   transfer_date: 2011-01-10
   transaction_type: S/O
   description: FLAT , FP 10/01/11 30 , 54023747594015000N
@@ -177,7 +155,6 @@ cc1_state_121:
   balance: 7087.74
 
 cc1_state_122:
-  id: <%= DataElement.find_by_name('cc1_state_122').id %>
   transfer_date: 2011-01-10
   transaction_type: C/L
   description: BARCLAYS BNK 10JAN
@@ -185,7 +162,6 @@ cc1_state_122:
   balance: 7047.74
 
 cc1_state_123:
-  id: <%= DataElement.find_by_name('cc1_state_123').id %>
   transfer_date: 2011-01-11
   transaction_type: BAC
   description: LW , FP 11/01/11 0246 , 300000000002238909
@@ -193,7 +169,6 @@ cc1_state_123:
   balance: 7055.74
 
 cc1_state_124:
-  id: <%= DataElement.find_by_name('cc1_state_124').id %>
   transfer_date: 2011-01-11
   transaction_type: D/D
   description: GML 13181301
@@ -201,7 +176,6 @@ cc1_state_124:
   balance: 6626.59
 
 cc1_state_125:
-  id: <%= DataElement.find_by_name('cc1_state_125').id %>
   transfer_date: 2011-01-13
   transaction_type: POS
   description: 6047 12JAN11 , SHELL BALDOCK , BALDOCK GB
@@ -209,7 +183,6 @@ cc1_state_125:
   balance: 6569.88
 
 cc1_state_126:
-  id: <%= DataElement.find_by_name('cc1_state_126').id %>
   transfer_date: 2011-01-13
   transaction_type: CHQ
   description: 000186
@@ -217,7 +190,6 @@ cc1_state_126:
   balance: 6559.88
 
 cc1_state_127:
-  id: <%= DataElement.find_by_name('cc1_state_127').id %>
   transfer_date: 2011-01-14
   transaction_type: C/L
   description: BARCLAYS BNK 13JAN
@@ -225,7 +197,6 @@ cc1_state_127:
   balance: 6519.88
 
 cc1_state_128:
-  id: <%= DataElement.find_by_name('cc1_state_128').id %>
   transfer_date: 2011-01-17
   transaction_type: BAC
   description: LW , FP 17/01/11 0056 , 600000000002568403
@@ -233,7 +204,6 @@ cc1_state_128:
   balance: 6529.88
 
 cc1_state_129:
-  id: <%= DataElement.find_by_name('cc1_state_129').id %>
   transfer_date: 2011-01-17
   transaction_type: DPC
   description: CALL REF.NO. 0688 , PAUL ELISABETH , FP 16/01/11 10 , 64153715151358000N
@@ -241,7 +211,6 @@ cc1_state_129:
   balance: 5979.88
 
 cc1_state_130:
-  id: <%= DataElement.find_by_name('cc1_state_130').id %>
   transfer_date: 2011-01-17
   transaction_type: POS
   description: 6047 16JAN11 , DYSON LIMITED(BBT , GBP) , INTERNET GB
@@ -249,7 +218,6 @@ cc1_state_130:
   balance: 5639.89
 
 cc1_state_131:
-  id: <%= DataElement.find_by_name('cc1_state_131').id %>
   transfer_date: 2011-01-17
   transaction_type: POS
   description: 6047 15JAN11 , W M MORRISONS , ST ALBANS GB
@@ -257,7 +225,6 @@ cc1_state_131:
   balance: 5544.96
 
 cc1_state_132:
-  id: <%= DataElement.find_by_name('cc1_state_132').id %>
   transfer_date: 2011-01-17
   transaction_type: D/D
   description: RSPCA HEADQUARTERS
@@ -265,7 +232,6 @@ cc1_state_132:
   balance: 5534.96
 
 cc1_state_133:
-  id: <%= DataElement.find_by_name('cc1_state_133').id %>
   transfer_date: 2011-01-17
   transaction_type: D/D
   description: ARVAL LTD
@@ -273,7 +239,6 @@ cc1_state_133:
   balance: 5336.38
 
 cc1_state_134:
-  id: <%= DataElement.find_by_name('cc1_state_134').id %>
   transfer_date: 2011-01-18
   transaction_type: D/D
   description: MBNA E B
@@ -281,7 +246,6 @@ cc1_state_134:
   balance: 5332.39
 
 cc1_state_135:
-  id: <%= DataElement.find_by_name('cc1_state_135').id %>
   transfer_date: 2011-01-19
   transaction_type: C/L
   description: BARCLAYS BNK 19JAN
@@ -289,7 +253,6 @@ cc1_state_135:
   balance: 5292.39
 
 cc1_state_136:
-  id: <%= DataElement.find_by_name('cc1_state_136').id %>
   transfer_date: 2011-01-20
   transaction_type: BAC
   description: LONGWORLD LTD , RENT , FP 20/01/11 0251 , 100000000002611773
@@ -297,7 +260,6 @@ cc1_state_136:
   balance: 6092.39
 
 cc1_state_137:
-  id: <%= DataElement.find_by_name('cc1_state_137').id %>
   transfer_date: 2011-01-20
   transaction_type: CHQ
   description: 000187
@@ -305,7 +267,6 @@ cc1_state_137:
   balance: 6082.39
 
 cc1_state_138:
-  id: <%= DataElement.find_by_name('cc1_state_138').id %>
   transfer_date: 2011-01-21
   transaction_type: POS
   description: 6047 20JAN11 , TESCO STORES-SACAT, SURREY GB
@@ -313,7 +274,6 @@ cc1_state_138:
   balance: 6079.9
 
 cc1_state_139:
-  id: <%= DataElement.find_by_name('cc1_state_139').id %>
   transfer_date: 2011-01-24
   transaction_type: POS
   description: 6047 23JAN11 , W M MORRISONS , ST ALBANS GB
@@ -321,7 +281,6 @@ cc1_state_139:
   balance: 6071.53
 
 cc1_state_140:
-  id: <%= DataElement.find_by_name('cc1_state_140').id %>
   transfer_date: 2011-01-24
   transaction_type: POS
   description: 6047 22JAN11 , MOSS - 188 , ST. ALBANS GB
@@ -329,7 +288,6 @@ cc1_state_140:
   balance: 5872.53
 
 cc1_state_141:
-  id: <%= DataElement.find_by_name('cc1_state_141').id %>
   transfer_date: 2011-01-24
   transaction_type: POS
   description: 6047 22JAN11 , W M MORRISONS , ST ALBANS GB
@@ -337,7 +295,6 @@ cc1_state_141:
   balance: 5766.82
 
 cc1_state_142:
-  id: <%= DataElement.find_by_name('cc1_state_142').id %>
   transfer_date: 2011-01-25
   transaction_type: POS
   description: 6047 24JAN11 , W M MORRISON , ST ALBANS GB
@@ -345,7 +302,6 @@ cc1_state_142:
   balance: 5729.4
 
 cc1_state_143:
-  id: <%= DataElement.find_by_name('cc1_state_143').id %>
   transfer_date: 2011-01-26
   transaction_type: D/D
   description: VIRGIN MOBILE
@@ -353,7 +309,6 @@ cc1_state_143:
   balance: 5714.08
 
 cc1_state_144:
-  id: <%= DataElement.find_by_name('cc1_state_144').id %>
   transfer_date: 2011-01-27
   transaction_type: C/L
   description: BARCLAYS BNK 27JAN
@@ -361,7 +316,6 @@ cc1_state_144:
   balance: 5674.08
 
 cc1_state_145:
-  id: <%= DataElement.find_by_name('cc1_state_145').id %>
   transfer_date: 2011-01-28
   transaction_type: DPC
   description: CALL REF.NO. 0692 , SELF ASSESS C.NAUL
@@ -369,7 +323,6 @@ cc1_state_145:
   balance: 2458.58
 
 cc1_state_146:
-  id: <%= DataElement.find_by_name('cc1_state_146').id %>
   transfer_date: 2011-01-28
   transaction_type: POS
   description: 6047 27JAN11 , TESCO STORES-SACAT, SURREY GB
@@ -377,7 +330,6 @@ cc1_state_146:
   balance: 2454.68
 
 cc1_state_147:
-  id: <%= DataElement.find_by_name('cc1_state_147').id %>
   transfer_date: 2011-01-28
   transaction_type: D/D
   description: O2
@@ -385,7 +337,6 @@ cc1_state_147:
   balance: 2421.04
 
 cc1_state_148:
-  id: <%= DataElement.find_by_name('cc1_state_148').id %>
   transfer_date: 2011-01-31
   transaction_type: POS
   description: 6047 29JAN11 , W M MORRISONS , ST ALBANS GB
@@ -393,7 +344,6 @@ cc1_state_148:
   balance: 2311.22
 
 cc1_state_149:
-  id: <%= DataElement.find_by_name('cc1_state_149').id %>
   transfer_date: 2011-01-31
   transaction_type: POS
   description: 6047 30JAN11 , HOMEBASE LTD , ST ALBANS GB
@@ -401,7 +351,6 @@ cc1_state_149:
   balance: 2287.24
 
 cc1_state_150:
-  id: <%= DataElement.find_by_name('cc1_state_150').id %>
   transfer_date: 2011-01-31
   transaction_type: POS
   description: 6047 29JAN11 , BUTLERS BY CARGO , ST ALBANS GB
@@ -409,7 +358,6 @@ cc1_state_150:
   balance: 2262.26
 
 cc1_state_151:
-  id: <%= DataElement.find_by_name('cc1_state_151').id %>
   transfer_date: 2011-02-01
   transaction_type: BAC
   description: LW
@@ -417,7 +365,6 @@ cc1_state_151:
   balance: 4431.06
 
 cc1_state_152:
-  id: <%= DataElement.find_by_name('cc1_state_152').id %>
   transfer_date: 2011-02-01
   transaction_type: POS
   description: 6047 31JAN11 , MORRISONS PETROL , ST ALBANS GB
@@ -425,7 +372,6 @@ cc1_state_152:
   balance: 4387.01
 
 cc1_state_153:
-  id: <%= DataElement.find_by_name('cc1_state_153').id %>
   transfer_date: 2011-02-03
   transaction_type: C/L
   description: BARCLAYS BNK 03FEB
@@ -433,7 +379,6 @@ cc1_state_153:
   balance: 4347.01
 
 cc1_state_154:
-  id: <%= DataElement.find_by_name('cc1_state_154').id %>
   transfer_date: 2011-02-03
   transaction_type: D/D
   description: RENEW INSURANCE
@@ -441,7 +386,6 @@ cc1_state_154:
   balance: 4334.71
 
 cc1_state_155:
-  id: <%= DataElement.find_by_name('cc1_state_155').id %>
   transfer_date: 2011-02-04
   transaction_type: S/O
   description: NSPCC , FP 04/02/11 30 , 36023540313004000N
@@ -449,7 +393,6 @@ cc1_state_155:
   balance: 4332.71
 
 cc1_state_156:
-  id: <%= DataElement.find_by_name('cc1_state_156').id %>
   transfer_date: 2011-02-07
   transaction_type: BAC
   description: PIGGOTT N J , PAUL RENT , FP 07/02/11 0208 , RP4672263285524000
@@ -457,7 +400,6 @@ cc1_state_156:
   balance: 4765.71
 
 cc1_state_157:
-  id: <%= DataElement.find_by_name('cc1_state_157').id %>
   transfer_date: 2011-02-07
   transaction_type: POS
   description: 6047 05FEB11 , W M MORRISONS , ST ALBANS GB
@@ -465,7 +407,6 @@ cc1_state_157:
   balance: 4657
 
 cc1_state_158:
-  id: <%= DataElement.find_by_name('cc1_state_158').id %>
   transfer_date: 2011-02-07
   transaction_type: POS
   description: 6047 05FEB11 , ORANGE TREE , HITCHIN 74 GB
@@ -473,7 +414,6 @@ cc1_state_158:
   balance: 4511.07
 
 cc1_state_159:
-  id: <%= DataElement.find_by_name('cc1_state_159').id %>
   transfer_date: 2011-02-08
   transaction_type: C/L
   description: NATWEST 08FEB
@@ -481,7 +421,6 @@ cc1_state_159:
   balance: 4471.07
 
 cc1_state_160:
-  id: <%= DataElement.find_by_name('cc1_state_160').id %>
   transfer_date: 2011-02-10
   transaction_type: POS
   description: 6047 09FEB11 , TESCO STORES-SACAT, SURREY GB
@@ -489,7 +428,6 @@ cc1_state_160:
   balance: 4467.33
 
 cc1_state_161:
-  id: <%= DataElement.find_by_name('cc1_state_161').id %>
   transfer_date: 2011-02-10
   transaction_type: S/O
   description: FLAT , FP 10/02/11 30 , 09023500625294000N
@@ -497,7 +435,6 @@ cc1_state_161:
   balance: 3767.33
 
 cc1_state_162:
-  id: <%= DataElement.find_by_name('cc1_state_162').id %>
   transfer_date: 2011-02-11
   transaction_type: C/L
   description: BARCLAYS BNK 11FEB
@@ -505,7 +442,6 @@ cc1_state_162:
   balance: 3727.33
 
 cc1_state_163:
-  id: <%= DataElement.find_by_name('cc1_state_163').id %>
   transfer_date: 2011-02-11
   transaction_type: D/D
   description: GML 13181301
@@ -513,7 +449,6 @@ cc1_state_163:
   balance: 3298.18
 
 cc1_state_164:
-  id: <%= DataElement.find_by_name('cc1_state_164').id %>
   transfer_date: 2011-02-14
   transaction_type: C/L
   description: 6047 13FEB11 , 100810200 , BARCELONA ES , CHARGE 2.00
@@ -521,7 +456,6 @@ cc1_state_164:
   balance: 3209.58
 
 cc1_state_165:
-  id: <%= DataElement.find_by_name('cc1_state_165').id %>
   transfer_date: 2011-02-14
   transaction_type: POS
   description: 6047 12FEB11 , BRIDGE BAR AND EATIN, T3 HEATHROW A GB
@@ -529,7 +463,6 @@ cc1_state_165:
   balance: 3192.23
 
 cc1_state_166:
-  id: <%= DataElement.find_by_name('cc1_state_166').id %>
   transfer_date: 2011-02-14
   transaction_type: POS
   description: 6047 12FEB11 , WDFE , HEATHROW GB
@@ -537,7 +470,6 @@ cc1_state_166:
   balance: 3157.23
 
 cc1_state_167:
-  id: <%= DataElement.find_by_name('cc1_state_167').id %>
   transfer_date: 2011-02-15
   transaction_type: BAC
   description: LW
@@ -545,7 +477,6 @@ cc1_state_167:
   balance: 8157.23
 
 cc1_state_168:
-  id: <%= DataElement.find_by_name('cc1_state_168').id %>
   transfer_date: 2011-02-15
   transaction_type: POS
   description: 6047 14FEB11 , BON PREU SAU , BARCELONA ES , EUR 49.76, RATE 1.1875, CHARGE 1.25, ERTF 1.15
@@ -553,7 +484,6 @@ cc1_state_168:
   balance: 8112.93
 
 cc1_state_169:
-  id: <%= DataElement.find_by_name('cc1_state_169').id %>
   transfer_date: 2011-02-15
   transaction_type: D/D
   description: ARVAL LTD
@@ -561,7 +491,6 @@ cc1_state_169:
   balance: 7910.13
 
 cc1_state_170:
-  id: <%= DataElement.find_by_name('cc1_state_170').id %>
   transfer_date: 2011-02-15
   transaction_type: D/D
   description: MBNA E B
@@ -569,7 +498,6 @@ cc1_state_170:
   balance: 7906.06
 
 cc1_state_171:
-  id: <%= DataElement.find_by_name('cc1_state_171').id %>
   transfer_date: 2011-02-16
   transaction_type: D/D
   description: RSPCA HEADQUARTERS
@@ -577,7 +505,6 @@ cc1_state_171:
   balance: 7896.06
 
 cc1_state_172:
-  id: <%= DataElement.find_by_name('cc1_state_172').id %>
   transfer_date: 2011-02-17
   transaction_type: POS
   description: 6047 15FEB11 , AVIS BARCELONA , E666053430 ES , CHARGE 1.25
@@ -585,7 +512,6 @@ cc1_state_172:
   balance: 7817.79
 
 cc1_state_173:
-  id: <%= DataElement.find_by_name('cc1_state_173').id %>
   transfer_date: 2011-02-21
   transaction_type: BAC
   description: LONGWORLD LTD , RENT , FP 21/02/11 0102 , 100000000004112481
@@ -593,7 +519,6 @@ cc1_state_173:
   balance: 8617.79
 
 cc1_state_174:
-  id: <%= DataElement.find_by_name('cc1_state_174').id %>
   transfer_date: 2011-02-21
   transaction_type: C/L
   description: HSBC 19FEB
@@ -601,7 +526,6 @@ cc1_state_174:
   balance: 8577.79
 
 cc1_state_175:
-  id: <%= DataElement.find_by_name('cc1_state_175').id %>
   transfer_date: 2011-02-21
   transaction_type: CHQ
   description: 000188
@@ -609,7 +533,6 @@ cc1_state_175:
   balance: 8557.79
 
 cc1_state_176:
-  id: <%= DataElement.find_by_name('cc1_state_176').id %>
   transfer_date: 2011-02-22
   transaction_type: BAC
   description: LW , FP 22/02/11 0046 , 500000000004111849
@@ -617,7 +540,6 @@ cc1_state_176:
   balance: 8564.79
 
 cc1_state_177:
-  id: <%= DataElement.find_by_name('cc1_state_177').id %>
   transfer_date: 2011-02-24
   transaction_type: POS
   description: 6047 23FEB11 , W M MORRISONS , ST ALBANS GB
@@ -625,7 +547,6 @@ cc1_state_177:
   balance: 8442.31
 
 cc1_state_178:
-  id: <%= DataElement.find_by_name('cc1_state_178').id %>
   transfer_date: 2011-02-24
   transaction_type: POS
   description: 6047 23FEB11 , MORRISONS PETROL , ST ALBANS GB
@@ -633,7 +554,6 @@ cc1_state_178:
   balance: 8395
 
 cc1_state_179:
-  id: <%= DataElement.find_by_name('cc1_state_179').id %>
   transfer_date: 2011-02-24
   transaction_type: S/O
   description: P AND E , FP 24/02/11 30 , 29023352821348000N
@@ -641,7 +561,6 @@ cc1_state_179:
   balance: 7895
 
 cc1_state_180:
-  id: <%= DataElement.find_by_name('cc1_state_180').id %>
   transfer_date: 2011-02-25
   transaction_type: D/D
   description: VIRGIN MOBILE
@@ -649,7 +568,6 @@ cc1_state_180:
   balance: 7863.37
 
 cc1_state_181:
-  id: <%= DataElement.find_by_name('cc1_state_181').id %>
   transfer_date: 2011-02-28
   transaction_type: DPC
   description: CALL REF.NO. 0698 , MBNA STANDARD , FP 26/02/11 10 , 07100924256897000N
@@ -657,7 +575,6 @@ cc1_state_181:
   balance: 6980.98
 
 cc1_state_182:
-  id: <%= DataElement.find_by_name('cc1_state_182').id %>
   transfer_date: 2011-02-28
   transaction_type: POS
   description: 6047 24FEB11 , APCOA-HAL-SS T3 , MIDDLESEX GB
@@ -665,7 +582,6 @@ cc1_state_182:
   balance: 6976.48
 
 cc1_state_183:
-  id: <%= DataElement.find_by_name('cc1_state_183').id %>
   transfer_date: 2011-02-28
   transaction_type: POS
   description: 6047 26FEB11 , W M MORRISONS , ST ALBANS GB
@@ -673,7 +589,6 @@ cc1_state_183:
   balance: 6866.26
 
 cc1_state_184:
-  id: <%= DataElement.find_by_name('cc1_state_184').id %>
   transfer_date: 2011-02-28
   transaction_type: D/D
   description: O2
@@ -681,7 +596,6 @@ cc1_state_184:
   balance: 6833.72
 
 cc1_state_185:
-  id: <%= DataElement.find_by_name('cc1_state_185').id %>
   transfer_date: 2011-03-01
   transaction_type: BAC
   description: LW
@@ -689,7 +603,6 @@ cc1_state_185:
   balance: 9002.52
 
 cc1_state_186:
-  id: <%= DataElement.find_by_name('cc1_state_186').id %>
   transfer_date: 2011-03-02
   transaction_type: POS
   description: 6047 01MAR11 , MORRISONS PETROL , ST ALBANS GB
@@ -697,7 +610,6 @@ cc1_state_186:
   balance: 8947.43
 
 cc1_state_187:
-  id: <%= DataElement.find_by_name('cc1_state_187').id %>
   transfer_date: 2011-03-03
   transaction_type: D/D
   description: RENEW INSURANCE
@@ -705,7 +617,6 @@ cc1_state_187:
   balance: 8935.13
 
 cc1_state_188:
-  id: <%= DataElement.find_by_name('cc1_state_188').id %>
   transfer_date: 2011-03-04
   transaction_type: POS
   description: 6047 03MAR11 , MORRISONS DRY CLNR, ST ALBANS GB
@@ -713,7 +624,6 @@ cc1_state_188:
   balance: 8927.13
 
 cc1_state_189:
-  id: <%= DataElement.find_by_name('cc1_state_189').id %>
   transfer_date: 2011-03-04
   transaction_type: S/O
   description: NSPCC , FP 04/03/11 30 , 10023556580563000N
@@ -721,7 +631,6 @@ cc1_state_189:
   balance: 8925.13
 
 cc1_state_190:
-  id: <%= DataElement.find_by_name('cc1_state_190').id %>
   transfer_date: 2011-03-07
   transaction_type: BAC
   description: PIGGOTT N J , PAUL RENT , FP 07/03/11 0512 , RP4672263300054600
@@ -729,7 +638,6 @@ cc1_state_190:
   balance: 9358.13
 
 cc1_state_191:
-  id: <%= DataElement.find_by_name('cc1_state_191').id %>
   transfer_date: 2011-03-07
   transaction_type: POS
   description: 6047 05MAR11 , W M MORRISONS , ST ALBANS GB
@@ -737,7 +645,6 @@ cc1_state_191:
   balance: 9249.1
 
 cc1_state_192:
-  id: <%= DataElement.find_by_name('cc1_state_192').id %>
   transfer_date: 2011-03-08
   transaction_type: BAC
   description: LW , FP 08/03/11 0039 , 600000000004745610
@@ -745,7 +652,6 @@ cc1_state_192:
   balance: 9853.1
 
 cc1_state_193:
-  id: <%= DataElement.find_by_name('cc1_state_193').id %>
   transfer_date: 2011-03-09
   transaction_type: DPC
   description: CALL REF.NO. 0700 , PAUL ELISABETH , FP 09/03/11 10 , 50173257542643000N
@@ -753,7 +659,6 @@ cc1_state_193:
   balance: 9353.1
 
 cc1_state_194:
-  id: <%= DataElement.find_by_name('cc1_state_194').id %>
   transfer_date: 2011-03-09
   transaction_type: POS
   description: 6047 07MAR11 , EASYJET , 0000016153 , LUTON, BEDS GB
@@ -761,7 +666,6 @@ cc1_state_194:
   balance: 9180.62
 
 cc1_state_195:
-  id: <%= DataElement.find_by_name('cc1_state_195').id %>
   transfer_date: 2011-03-10
   transaction_type: S/O
   description: FLAT , FP 10/03/11 30 , 03023527194166000N
@@ -769,7 +673,6 @@ cc1_state_195:
   balance: 8480.62
 
 cc1_state_196:
-  id: <%= DataElement.find_by_name('cc1_state_196').id %>
   transfer_date: 2011-03-11
   transaction_type: D/D
   description: GML 13181301
@@ -777,7 +680,6 @@ cc1_state_196:
   balance: 8051.47
 
 cc1_state_197:
-  id: <%= DataElement.find_by_name('cc1_state_197').id %>
   transfer_date: 2011-03-14
   transaction_type: DPC
   description: CALL REF.NO. 0701 , PAUL ELISABETH , FP 12/03/11 10 , 55110534670924000N
@@ -785,7 +687,6 @@ cc1_state_197:
   balance: 7301.47
 
 cc1_state_198:
-  id: <%= DataElement.find_by_name('cc1_state_198').id %>
   transfer_date: 2011-03-14
   transaction_type: DPC
   description: CALL REF.NO. 0702 , VEOLIA WATER CENTR, FP 13/03/11 10 , 50114847574835000N
@@ -793,7 +694,6 @@ cc1_state_198:
   balance: 7211.01
 
 cc1_state_199:
-  id: <%= DataElement.find_by_name('cc1_state_199').id %>
   transfer_date: 2011-03-14
   transaction_type: POS
   description: 6047 12MAR11 , W M MORRISONS , ST ALBANS GB
@@ -801,7 +701,6 @@ cc1_state_199:
   balance: 7104.99
 
 cc1_state_200:
-  id: <%= DataElement.find_by_name('cc1_state_200').id %>
   transfer_date: 2011-03-15
   transaction_type: D/D
   description: RSPCA HEADQUARTERS
@@ -809,7 +708,6 @@ cc1_state_200:
   balance: 7094.99
 
 cc1_state_201:
-  id: <%= DataElement.find_by_name('cc1_state_201').id %>
   transfer_date: 2011-03-15
   transaction_type: D/D
   description: ARVAL LTD
@@ -817,7 +715,6 @@ cc1_state_201:
   balance: 6892.19
 
 cc1_state_202:
-  id: <%= DataElement.find_by_name('cc1_state_202').id %>
   transfer_date: 2011-03-17
   transaction_type: POS
   description: 6047 16MAR11 , W M MORRISON , ST ALBANS GB
@@ -825,7 +722,6 @@ cc1_state_202:
   balance: 6832.97
 
 cc1_state_203:
-  id: <%= DataElement.find_by_name('cc1_state_203').id %>
   transfer_date: 2011-03-17
   transaction_type: POS
   description: 6047 16MAR11 , W M MORRISONS , ST ALBANS GB
@@ -833,7 +729,6 @@ cc1_state_203:
   balance: 6740.16
 
 cc1_state_204:
-  id: <%= DataElement.find_by_name('cc1_state_204').id %>
   transfer_date: 2011-03-17
   transaction_type: D/D
   description: MBNA E B
@@ -841,7 +736,6 @@ cc1_state_204:
   balance: 4822.52
 
 cc1_state_205:
-  id: <%= DataElement.find_by_name('cc1_state_205').id %>
   transfer_date: 2011-03-21
   transaction_type: BAC
   description: LONGWORLD LTD , RENT , FP 21/03/11 0047 , 200000000005228970
@@ -849,7 +743,6 @@ cc1_state_205:
   balance: 5622.52
 
 cc1_state_206:
-  id: <%= DataElement.find_by_name('cc1_state_206').id %>
   transfer_date: 2011-03-21
   transaction_type: DPC
   description: CALL REF.NO. 0704 , SELF ASSESS C.NAUL
@@ -857,7 +750,6 @@ cc1_state_206:
   balance: 4449.52
 
 cc1_state_207:
-  id: <%= DataElement.find_by_name('cc1_state_207').id %>
   transfer_date: 2011-03-21
   transaction_type: DPC
   description: CALL REF.NO. 0704 , HALIFAX ISA , FP 21/03/11 10 , 14094142839124000N
@@ -865,7 +757,6 @@ cc1_state_207:
   balance: 2449.52
 
 cc1_state_208:
-  id: <%= DataElement.find_by_name('cc1_state_208').id %>
   transfer_date: 2011-03-21
   transaction_type: DPC
   description: CALL REF.NO. 0704 , PAUL ELISABETH , FP 21/03/11 10 , 49094342263301000N
@@ -873,7 +764,6 @@ cc1_state_208:
   balance: 949.52
 
 cc1_state_209:
-  id: <%= DataElement.find_by_name('cc1_state_209').id %>
   transfer_date: 2011-03-21
   transaction_type: POS
   description: 6047 19MAR11 , POST OFFICE LTD , FLEETVILLE GB
@@ -881,7 +771,6 @@ cc1_state_209:
   balance: 944.47
 
 cc1_state_210:
-  id: <%= DataElement.find_by_name('cc1_state_210').id %>
   transfer_date: 2011-03-21
   transaction_type: POS
   description: 6047 19MAR11 , W M MORRISONS , ST ALBANS GB

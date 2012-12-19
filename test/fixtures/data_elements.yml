@@ -10,7 +10,7 @@ cc1_overview:
   mandatory: false
   globe: pablito
 
-string_test:
+cc1_state_100:
   type: StringDataElement
   name: string_test
   data_element_collection_id: 1

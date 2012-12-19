@@ -1,21 +1,21 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 
-NameDataElement_first_name:
-  data_element_type: NameDataElement
-  name: first_name
-  definition: First Name
-  field_type: String
-
-NameDataElement_middle_name:
-  data_element_type: NameDataElement
-  name: middle_name
-  definition: Middle Name
-  field_type: String
-
-NameDataElement_last_name:
-  data_element_type: NameDataElement
-  name: last_name
-  definition: Last Name
-  field_type: String
-
+#NameDataElement_first_name:
+#  data_element_type: NameDataElement
+#  name: first_name
+#  definition: First Name
+#  field_type: String
+#
+#NameDataElement_middle_name:
+#  data_element_type: NameDataElement
+#  name: middle_name
+#  definition: Middle Name
+#  field_type: String
+#
+#NameDataElement_last_name:
+#  data_element_type: NameDataElement
+#  name: last_name
+#  definition: Last Name
+#  field_type: String
+#
