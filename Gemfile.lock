@@ -44,9 +44,13 @@ GEM
       activerecord (>= 3.0.0)
     arel (2.2.3)
     bcrypt-ruby (3.0.1-x86-mingw32)
+    better_errors (0.7.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
     builder (3.0.3)
     citier (0.1.15)
       rails_sql_views
+    coderay (1.0.9)
     devise (2.1.2)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -124,6 +128,7 @@ PLATFORMS
 DEPENDENCIES
   acts_as_list
   acts_as_tree
+  better_errors
   citier
   devise
   devise-encryptable

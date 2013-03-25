@@ -7,7 +7,7 @@ namespace :import do
 #    str_filename = ask("Enter CSV file of TLAFs to load:")
 #    File.open(str_filename).each do |line|
 
-    u = User.find_by_username('paul123')
+    u = User.find_by_email('paul123@piguard.com')
     g = Globe.find_by_globe_reference('ftp')
 
     File.open("c:/development/mipi/test/data/tlafs_2012.csv").each do |line|
@@ -44,7 +44,7 @@ namespace :import do
     fk_tail = '_data_element'
     fk_tail_length = fk_tail.length
 
-    u = User.find_by_username('paul123')
+    u = User.find_by_email('paul123@piguard.com')
     g = Globe.find_by_globe_reference('ftp')
     profile_id = g.profiles.find_by_name('Units').id
 
@@ -175,7 +175,7 @@ namespace :import do
     fk_tail = '_data_element'
     fk_tail_length = fk_tail.length
 
-    u = User.find_by_username('paul123')
+    u = User.find_by_email('paul123@piguard.com')
     g = Globe.find_by_globe_reference('ftp')
     profile_id = g.profiles.find_by_name('Units').id
 
@@ -314,7 +314,7 @@ namespace :import do
   task :create_data_sheet_for_all_data_element_type => :environment do
     require "highline/import"
     
-    u = User.find_by_username('paul123')
+    u = User.find_by_email('paul123@piguard.com')
 
 #    globe_reference = ask('Globe Reference?')
     globe_reference = 'ftp'
@@ -362,7 +362,7 @@ namespace :import do
   task :link_data_sheet_to_data_element_type => :environment do
     require "highline/import"
     
-    u = User.find_by_username('paul123')
+    u = User.find_by_email('paul123@piguard.com')
     g = Globe.find_by_globe_reference('ftp')
     
     puts "Profile List:"
@@ -395,13 +395,13 @@ namespace :import do
   task :import_units => :environment do
     require "highline/import"
     
-    u = User.find_by_username('paul123')
+    u = User.find_by_email('paul123@piguard.com')
     g = Globe.find_by_globe_reference('ftp')
     profile_id = g.profiles.find_by_name('Units').id
 
     line_count = 0
     puts "Opening file..."
-    File.open("c:/development/ftp_demo/test/data/generator_units.csv").each do |line|
+    File.open("c:/development/70 - Data/ftp/generator_units.csv").each do |line|
       if (line_count == 0) then
         columns = line.split(',')
       else
@@ -491,13 +491,13 @@ namespace :import do
   task :import_stations => :environment do
     require "highline/import"
     
-    u = User.find_by_username('paul123')
+    u = User.find_by_email('paul123@piguard.com')
     g = Globe.find_by_globe_reference('ftp')
     profile_id = g.profiles.find_by_name('Stations').id
     
     line_count = 0
     puts "Opening file..."
-    File.open("c:/development/ftp_demo/test/data/power_stations.csv").each do |line|
+    File.open("c:/development/70 - Data/ftp/power_stations.csv").each do |line|
       if (line_count == 0) then
         columns = line.split(',')
       else

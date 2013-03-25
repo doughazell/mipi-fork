@@ -119,7 +119,10 @@ class DataSheetsController < ApplicationController
     if current_user.globes.blank? == true then
       @globe = @masterglobe
     else
-      @globe = current_user.globes.find(params[:id])
+      # 25-Mar-2013/PL - the globe_id is rarely passed as the param: 'id'
+      # it is usually explicitly 'globe_id'
+      @globe = current_user.globes.find(params[:globe_id] || params[:id])
+#      @globe = current_user.globes.find(params[:id])
     end
     
     @shadowglobes = @globe.children # .sort! { |a,b| a.name.downcase <=> b.name.downcase }
