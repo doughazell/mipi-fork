@@ -327,7 +327,7 @@ namespace :import do
     profile_name = ask("Which profile?")
     p = Profile.find_by_globe_id_and_name(g.id, profile_name)
 
-    data_element_stem = ask("Please enter the Model that you wish to create Data Sheets for each collection. OMit the '_data_element' section of the model.")
+    data_element_stem = ask("Please enter the Model that you wish to create Data Sheets for each collection. Omit the '_data_element' section of the model.")
 #    data_element_type = "data_domain_data_element"
     data_element_type = data_element_stem + "_data_element"
     
