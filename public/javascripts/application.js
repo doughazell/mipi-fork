@@ -1,6 +1,11 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
 
+function delay_for_development_environment() {
+    setTimeout(function () {
+        
+    }, 3000);
+}
 function mark_for_hide(element) {
     $(element).next('.should_hide').value = 1;
 }
@@ -60,20 +65,34 @@ function write_edit(element_id, element_2_id, data_element_id) {
     
     if(e1.innerHTML != e2.value) {
         busyElement = document.getElementById(e1.id + '_busy');
-        oldId = busyElement.id
-        busyElement.id = 'busy'
+        oldId = busyElement.id;
+        busyElement.id = 'busy';
 
-//        alert(e1.id + '_id');
-//        data_element_id = document.getElementById(data_element_id)
-//        data_element_id.value = document.getElementById(e1.id + '_id').value
-        $("data_sheet_form").request({
-            onSuccess: function(response) {eval(response)}
-        });
-    
-        busyElement.id = oldId
+        busyElement.style.display = '';
+
+        // This is really a fire and forget at the moment. There is no validation that
+        // is processed by the server. I think think may have to become a lot more complex
+        // (or at least sophisticated) or we should re-consider using Ajax. We are not
+        // dealing with massive amounts of data.
+        $("#data_sheet_form").submit();
+        
+//        delay_for_development_environment();
+//        busyElement.style.display = 'none';
+//        alert(busyElement.id);
+        // We have to fade out because simply setting the 'display' to 'none' was too quick
+        // and we never got to see our 'busy' icon.
+        $('#' + busyElement.id).fadeOut(1000);
+        
+        busyElement.id = oldId;
     }
-    switch_edits(element_id, element_2_id)
+    switch_edits(element_id, element_2_id);
 }
+
+//$(document).ajaxSuccess(function() {
+//    alert('Successful');
+//});
+$(document).ready(function() {
+})
 
 function handle_enter(element_id_1, element_id_2, event) {
     var charCode;
@@ -90,7 +109,8 @@ function handle_enter(element_id_1, element_id_2, event) {
     }
 }
 
-Ajax.Responders.register({
+/*
+ Ajax.Responders.register({
   onCreate: function() {
     if($('busy') && Ajax.activeRequestCount>0)
       Effect.Appear('busy',{duration:0.5,queue:'end'});
@@ -100,6 +120,7 @@ Ajax.Responders.register({
       Effect.Fade('busy',{duration:0.5,queue:'end'});
   }
 });
+*/
 
 function toggleExpansion(hidden_id, current_value, div_area) {
     e1 = document.getElementById(hidden_id);
