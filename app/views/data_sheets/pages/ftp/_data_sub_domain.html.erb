@@ -35,7 +35,7 @@
     <td>Data Domain</td>
     <td colspan="2">
       <% if @data_sub_domain.data_domain_data_element %>
-      <%= ForeignKey_PickList("data_sub_domain", @data_sub_domain, "data_domain_data_element_id", "description") %>
+      <%= ForeignKey_PickList("data_sub_domain", @data_sub_domain, "data_domain_data_element_id", "short_name") %>
       <%= LinkDataSheet(@data_sub_domain.data_domain_data_element, nil, { :data_sheet => @data_sub_domain.data_domain_data_element.name, :override_label => ">>" }) %>
       <% end %>
     </td>

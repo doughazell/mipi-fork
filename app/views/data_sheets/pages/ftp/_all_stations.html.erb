@@ -3,12 +3,14 @@
   <thead>
     <td>Station</td>
     <td>Installed Capacity</td>
+    <td>Commissioned</td>
   </thead>
   <% @station_array.each do |station|
   %>
   <tr>
     <td><%= LinkDataSheet(station, "full_name") %></td>
     <td><%= station.capacity %></td>
+    <td><%= station.commissioned %></td>
   </tr>
   <% end %>
 </table>
