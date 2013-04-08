@@ -6,5 +6,5 @@
 #two:
 #  value: MyString
 
-string_test:
+cc1_state_100:
   value: MyString
