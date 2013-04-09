@@ -5,3 +5,4 @@ tmp/**/*
 config/database.yml
 .sass-cache/
 _tmp_routes.txt
+db/development_structure.sql
