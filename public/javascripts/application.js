@@ -94,6 +94,7 @@ function write_edit(element_id, element_2_id, data_element_id) {
 $(document).ready(function() {
 })
 
+
 function handle_enter(element_id_1, element_id_2, event) {
     var charCode;
     
@@ -179,3 +180,4 @@ function fillPopupBody(popup, partial) {
     return false;
   }
 }
+

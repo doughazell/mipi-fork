@@ -1197,7 +1197,7 @@ council_tax_61217476:
   globe: pablito
 
 LittleThatch_pablito:
-  name: LittleThatch
+  name: LittleThatch_pablito
   type: AddressDataElement
   data_element_collection: data_element_collection_14
   user: paul123

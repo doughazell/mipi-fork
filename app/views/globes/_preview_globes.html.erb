@@ -1,6 +1,6 @@
 <div class="globe_name"><%= @globe.name %></div>
 <% if @shadowglobes.count > 0 %>
-<div>Relationships:&nbsp;
+<div class="relationship_box">Relationships:&nbsp;
 <%=  select_tag "globe[id]", raw("<option value='0'>[Navigate to...]</option>") + options_from_collection_for_select(@shadowglobes.find(:all, :order => 'name'), "id", "name"), :onChange => "javascript:navigate_to_shadow_globe(document.getElementById('globe_id').value)" %>
 </div>
 <% end %>

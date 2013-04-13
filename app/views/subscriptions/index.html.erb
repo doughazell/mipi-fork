@@ -1,4 +1,5 @@
-<h1>Listing subscriptions</h1>
+<div class="config_area">
+<h1>Listing Subscriptions</h1>
 
 <table>
   <tr>
@@ -12,12 +13,30 @@
 
 <% @subscriptions.each do |subscription| %>
   <tr>
-    <td>[<%= subscription.source_link.data_element.globe.name %>].<%= subscription.source_link.data_element.name %> &rarr; <%= subscription.source_link.attribute_name %></td>
-    <td>[<%= subscription.destination_link.data_element.globe.name %>].<%= subscription.destination_link.data_element.name %> &rarr; <%= subscription.destination_link.attribute_name %></td>
-    <td><%= subscription.subscription_type.name %></td>
-    <td><%= link_to 'Show', subscription %></td>
-    <td><%= link_to 'Edit', edit_subscription_path(subscription) %></td>
-    <td><%= link_to 'Destroy', subscription, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td>
+      <span class="footnote">Globe:</span> <span class="footnote">(<%= link_to subscription.source_link.data_element.globe.globe_reference, preview_globe_path(subscription.source_link.data_element.globe) %>)</span>
+      <br/>
+      <span class="footnote">Globe Name:</span> <span class="footnote">[<%= subscription.source_link.data_element.globe.name %>]</span>
+      <br/>
+      <span class="footnote">Data Element:</span> <span class="footnote"><%= subscription.source_link.data_element.name %></span>
+      <br/>
+      <span class="footnote">Attribute:</span> <span class="footnote"><%= subscription.source_link.attribute_name %></span>
+    </td>
+    <td>
+      <span class="footnote">Globe:</span> <span class="footnote">(<%= link_to subscription.destination_link.data_element.globe.globe_reference, preview_globe_path(subscription.source_link.data_element.globe) %>)</span>
+      <br/>
+      <span class="footnote">Globe Name:</span> <span class="footnote">[<%= subscription.destination_link.data_element.globe.name %>]</span>
+      <br/>
+      <span class="footnote">Data Element:</span> <span class="footnote"><%= subscription.destination_link.data_element.name %></span>
+      <br/>
+      <span class="footnote">Attribute:</span> <span class="footnote"><%= subscription.destination_link.attribute_name %></span>
+    </td>
+    <td>
+      <span class="footnote"><%= subscription.subscription_type.name %></span>
+    </td>
+    <td><%= link_to image_tag('view.png', :height => 30), subscription %></td>
+    <td><%= link_to image_tag('edit.png', :height => 30), edit_subscription_path(subscription) %></td>
+    <td><%= link_to image_tag('remove.png', :height => 30), subscription, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
@@ -25,3 +44,4 @@
 <br />
 
 <%= link_to 'New Subscription', new_subscription_path %>
+</div>

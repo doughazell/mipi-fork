@@ -10,8 +10,8 @@
   <tr>
     <td><%= link_to globe.name, root_url(:subdomain => globe.globe_reference) %></td>
     <td><%= globe.security %></td>
-    <td><%= link_to 'Edit', edit_globe_path(globe) %></td>
-    <td><%= link_to 'Destroy', globe, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to image_tag('edit.png', :height => 30), edit_globe_path(globe) %></td>
+    <td><%= link_to image_tag('remove.png', :height => 30), globe, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

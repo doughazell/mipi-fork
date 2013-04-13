@@ -36,7 +36,7 @@ th {
 	padding: 6px 6px 6px 12px;
 /*	background: #AD969D; *//*url(images/bg_header.jpg) no-repeat*/
 /*	background: #B7AC67;*/
-	background: blue;
+	background: #3030DD;
 	color: white;
 /*	background: #FFFFFF;*/
         /*#CAE8EA */
@@ -154,6 +154,14 @@ td.alt {
 	background: #dddddd;
 	border: solid 1pt;
 }
+
+.relationship_box {
+	border: solid;
+	padding-left: 3px;
+	background-color: #efeee9;
+/*	background-color: #dddddd;
+*/}
+
 .globe_overview {
 	width: 500px;
         padding-top: 12px;
@@ -242,11 +250,21 @@ td.alt {
 .masterglobe {
 	padding: 10px;
 /*	background-color: #F5DEB3;*/
-	background-color: #FFEEC3;
+/*	background-color: #FFEEC3;
+*/	/*background-color: #CD8F5C;*/
+/*	background-color: #E6B2B7;
+*/	background-color: #854D1E;
 }
 .masterglobe_heading {
 	font: bold x-large "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
-	text-align: right
+	text-align: right;
+	color: white;
+}
+
+.masterglobe_heading a {
+	font: bold x-large "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	text-align: right;
+	color: white;
 }
 
 .masterglobe_self {
@@ -304,3 +322,13 @@ span .handle {
 /*	background-color:#ffffff;*/
 	overflow:auto;
 }
+
+.footnote {
+	font-size: xx-small;
+}
+
+.footnote underline {
+	font-size: xx-small;
+	text-decoration: underline;
+}
+

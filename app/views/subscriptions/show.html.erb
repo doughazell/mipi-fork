@@ -1,31 +1,23 @@
-<p id="notice"><%= notice %></p>
-<% if @source_value != @destination_value %>
-  <h2>Difference</h2>
-<% end %>
-<p>
-  <b>Source link:</b>
-  <%= @subscription.source_link_id %>
-</p>
-
-<p>
-  <b>Destination link:</b>
-  <%= @subscription.destination_link_id %>
-</p>
-
-<p>
-  <b>Subscription type:</b>
-  <%= @subscription.subscription_type.definition %>
-</p>
-
-<p>
-  <b>Source Value:</b>
-  <%= @source_value %>
-</p>
-
-<p>
-  <b>Destination Value:</b>
-  <%= @destination_value %>
-</p>
-
-<%= link_to 'Edit', edit_subscription_path(@subscription) %> |
-<%= link_to 'Back', subscriptions_path %>
+<div class="config_area">
+  <p id="notice"><%= notice %></p>
+  <h1>Subscription Details</h1>  
+  <table border="1" cellspacing="0" width="100%">
+    <tr>
+      <td>Source Link:</td>
+      <td>
+        <%= render 'link_details', :link => @subscription.source_link %>
+      </td>
+    </tr>
+    <tr>
+      <td>Destination Link:</td>
+      <td>
+        <%= render 'link_details', :link => @subscription.destination_link %>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2"><b>Subscription Type:</b> <%= @subscription.subscription_type.definition %></td>
+    </tr>
+  </table>
+<%= link_to image_tag('edit.png', :height => 30), edit_subscription_path(@subscription) %> |
+<%= link_to image_tag('back.png', :height => 30), subscriptions_path %>
+</div>

@@ -4,17 +4,21 @@ class PresentationsController < ApplicationController
     @globe = Globe.find(params[:globe_id])
 
     @presentations = []
+    @presentations = Presentation.find_associated_presentations(@globe)
+#    @presentations = Presentation.find_associated_presentations(@globe).paginate(:page => params[:page], :per_page => 30)
+#    @presentations = Presentation.where(:data_sheet.profile.globe.id => @globe.id).paginate(:page => params[:page], :per_page => 30)
+#    @presentations = Presentation.paginate(:page => params[:page], :per_page => 20)
     
-    @profiles = @globe.profiles
-    @profiles.each do |profile|
-      profile.data_sheets.each do |data_sheet|
-        data_sheet.presentations.each do |presentation|
-          @presentations.push  presentation
-        end
-      end
-    end
-    
-    @presentations.sort! {|a,b| a.data_sheet.name <=> b.data_sheet.name }
+    #@profiles = @globe.profiles
+    #@profiles.each do |profile|
+    #  profile.data_sheets.each do |data_sheet|
+    #    data_sheet.presentations.each do |presentation|
+    #      @presentations.push  presentation
+    #    end
+    #  end
+    #end
+    #
+    #@presentations.sort! {|a,b| a.data_sheet.name <=> b.data_sheet.name }
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @presentations }

@@ -230,7 +230,8 @@ class DataSheetsController < ApplicationController
         if @part.historic? then
           # For historical data sets, such as bank transactions; twitter feeds; etc. we need to
           # carry out a 'find all' and carry out pagination.
-          instance_variable_set("#{@part.variable_name}", eval(@part.data_element_type).find_all_by_data_element_collection_id_and_globe_id(@part.id, @globe_id, :order => @part.order_by_column).paginate(:page => params[:page], :per_page => @part.page_limit))
+#          instance_variable_set("#{@part.variable_name}", eval(@part.data_element_type).find_all_by_data_element_collection_id_and_globe_id(@part.id, @globe_id, :order => @part.order_by_column).paginate(:page => params[:page], :per_page => @part.page_limit))
+          instance_variable_set("#{@part.variable_name}", eval(@part.data_element_type).find_all_by_data_element_collection_id_and_globe_id(@part.id, @globe_id, :order => @part.order_by_column))
         else
           # For non-historic data sets, e.g. personal data; statuses; overdraft limits; etc. we
           # only need to retrieve one record.
@@ -289,6 +290,10 @@ class DataSheetsController < ApplicationController
           end
           
           # Ensure appropriate versioning is applied to distinguish the latest version.
+          if @retain_data_element.version.nil? then
+            @retain_data_element.version = 0
+          end if
+          
           @data_element.version = @retain_data_element.version + 1
           @data_element.updated_at = Time.now
 

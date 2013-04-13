@@ -12,8 +12,8 @@
   <tr>
     <td><%= link_to profile.name, [profile.globe, profile] %></td>
     <td><%= link_to profile.globe.name, :controller => "globes", :action => "show", :id => profile.globe_id %></td>
-    <td><%= link_to 'Edit', edit_globe_profile_path(profile.globe, profile) %></td>
-    <td><%= link_to 'Destroy', [profile.globe, profile], :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to image_tag('edit.png', :height => 30), edit_globe_profile_path(profile.globe, profile) %></td>
+    <td><%= link_to image_tag('remove.png', :height => 30), [profile.globe, profile], :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

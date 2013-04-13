@@ -11,8 +11,8 @@
     <td><%= link_to data_sheet.name, draw_globe_profile_data_sheet_path(@profile.globe, @profile, data_sheet) %></td>
     <td><%= link_to data_sheet.profile.name, globe_profile_path(data_sheet.profile.globe, data_sheet.profile) %></td>
     <td><%= data_sheet.updater.email %></td>
-    <td><%= link_to 'Edit', edit_globe_profile_data_sheet_path(@profile.globe, @profile, data_sheet) %></td>
-    <td><%= link_to 'Destroy', [data_sheet.profile.globe, data_sheet.profile, data_sheet], :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to image_tag('edit.png', :height => 30), edit_globe_profile_data_sheet_path(@profile.globe, @profile, data_sheet) %></td>
+    <td><%= link_to image_tag('remove.png', :height => 30), [data_sheet.profile.globe, data_sheet.profile, data_sheet], :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

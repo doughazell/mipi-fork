@@ -1,0 +1,22 @@
+<table>
+  <tr>
+    <td>Remote:</td>
+    <td><% if link.nil? then %>True<% else %>False<% end %></td>
+  </tr>
+  <tr>
+    <td>Data Element Type:</td>
+    <td><%= link.data_element.type %></td>
+  </tr>
+  <tr>
+    <td>Data Element:</td>
+    <td><%= link.data_element.name %></td>
+  </tr>
+  <tr>
+    <td>Column Name:</td>
+    <td><%= link.attribute_name %></td>
+  </tr>
+  <tr>
+    <td>Data Element Value:</td>
+    <td><%= link.evaluate %></td>
+  </tr>
+</table>

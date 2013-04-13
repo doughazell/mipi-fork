@@ -20,7 +20,8 @@ gem 'devise-encryptable'
 gem 'rails_sql_views', :git => 'git://github.com/centresource/rails_sql_views', require: 'rails_sql_views'
 gem 'citier'
 #gem 'CITIEsForRAILS'
-gem 'will_paginate', '~>3.0.pre2'
+#gem 'will_paginate', '~>3.0.pre2'
+gem 'will_paginate', '~> 3.0.0'
 gem 'acts_as_list'
 gem 'acts_as_tree'
 gem 'userstamp'
@@ -50,6 +51,8 @@ gem 'jquery-rails'
 
  group :development do
    gem 'better_errors'
+   gem 'binding_of_caller'
+   gem 'meta_request'
  end
 
 # Bundle gems for the local environment. Make sure to

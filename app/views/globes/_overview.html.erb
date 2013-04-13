@@ -1,5 +1,5 @@
-<div class="globe_overview">
-<span class="globe_overview_title">Globe Overview</span>
+<div class="config_area">
+<h1>Globe Overview</h1>
 <table border="1" cellspacing="0" width="100%">
   <tr>
     <td>Name:</td>
@@ -10,7 +10,7 @@
     <td><%= @globe.security %></td>
   </tr>
   <tr>
-    <td colspan="2"><%= link_to "Preview!", preview_globe_path(@globe) %></td>
+    <td colspan="2"><%= link_to "Live Site", preview_globe_path(@globe) %></td>
   </tr>
 </table>
 </div>

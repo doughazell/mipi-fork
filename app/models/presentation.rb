@@ -13,4 +13,18 @@ class Presentation < ActiveRecord::Base
     end
     all
   end
+  
+  def self.find_associated_presentations(globe)
+    presentations = []
+    profiles = globe.profiles
+    profiles.each do |profile|
+      profile.data_sheets.each do |data_sheet|
+        data_sheet.presentations.each do |presentation|
+          presentations.push  presentation
+        end
+      end
+    end
+    
+    presentations.sort! {|a,b| a.data_sheet.name <=> b.data_sheet.name }
+  end
 end
