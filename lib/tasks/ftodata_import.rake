@@ -502,7 +502,7 @@ namespace :import do
     
     line_count = 0
     puts "Opening file..."
-    File.open("c:/development/70 - Data/ftp/power_stations.csv").each do |line|
+    File.open("test/data/power_stations.csv").each do |line|
       if (line_count == 0) then
         columns = line.split(',')
       else
