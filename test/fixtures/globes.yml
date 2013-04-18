@@ -29,9 +29,9 @@ ecb:
   globe_reference: ecb
 
 irfu:
-  name: Irish Rugby Football Union
+  name: Rugby Football Union
   security: MyString
-  globe_reference: irfu
+  globe_reference: rfu
 
 ftp:
   name: Future Trading Project
