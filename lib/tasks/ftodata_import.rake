@@ -82,7 +82,7 @@ namespace :import do
             meta_data[column]['foreign_key'] = false
           end
           meta_data[column]['index'] = columns.index(column)
-        end
+        end # 'columns.each'
         
 #        puts columns
 #        puts name_column
@@ -155,17 +155,19 @@ namespace :import do
             # Finally, simply update the root object with the FK ID.
 #            root_object.update_attributes({"#{key}_id" => fk.id})
             to_update["#{key}_id"] = fk.id
-          end
-        }
+          end # 'if (details['primary_key'] == false ...'
+        } # 'meta_data.each'
+		
         puts "-TRY-TO-WRITE-"
         puts to_update
         root_object.update_attributes(to_update)
 
         puts line
-      end
+      end # 'if (line_count == 0)'
       line_count = line_count + 1
-    end
-  end
+	  
+    end # 'File.open()'
+  end # 'task :import_data'
 
   task :data, [:username, :password] => :environment do |t, args|
     require "highline/import"
@@ -401,7 +403,9 @@ namespace :import do
 
     line_count = 0
     puts "Opening file..."
-    File.open("c:/development/70 - Data/ftp/generator_units.csv").each do |line|
+#    File.open("c:/development/70 - Data/ftp/generator_units.csv").each do |line|
+    # 31/3/13 DH: Generating relative rails paths.
+	File.open(Rails.root.join('test','data','generator_units.csv')).each do |line|
       if (line_count == 0) then
         columns = line.split(',')
       else
@@ -483,10 +487,11 @@ namespace :import do
         p = Presentation.find_or_initialize_by_data_sheet_id_and_data_element_collection_id(ds_new.id, gu_de.id)
         p.save
 
-      end
+      end # 'if (line_count == 0)'
       line_count = line_count + 1;
-    end
-  end
+	  
+    end # 'File.open()'
+  end # 'task :import_units'
 
   task :import_stations => :environment do
     require "highline/import"
@@ -497,7 +502,7 @@ namespace :import do
     
     line_count = 0
     puts "Opening file..."
-    File.open("c:/development/70 - Data/ftp/power_stations.csv").each do |line|
+    File.open("test/data/power_stations.csv").each do |line|
       if (line_count == 0) then
         columns = line.split(',')
       else
