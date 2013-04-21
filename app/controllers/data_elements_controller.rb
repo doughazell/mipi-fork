@@ -210,6 +210,37 @@ class DataElementsController < ApplicationController
       format.xml { render :xml => des }
     end
   end
-  
+
+  def pushchange
+    @globe = Globe.find(params[:globe_id])
+    @data_element = DataElement.find(params[:id])
+    column = params[:column]
+    new_value = params[:new_value]
+    @hide_element = params[:hide_element]
+
+    # Create a new Data Element instance. This will contain the new values
+    # that are first copied from the existing data_element in the database
+    # and then updated through the values passed as parameters.
+    
+    # Update the @retain_data_element
+    eval("@data_element.#{column} = '#{new_value}'")
+
+    # Increment the version of the data_element.    
+    @data_element.version = Time.now.to_i
+    @data_element.updated_at = Time.now
+
+    # Write back to the database.
+    @data_element.save
+
+    logger.debug {
+      @data_element.to_yaml
+    }
+    
+    respond_to do |format|
+      format.html
+      format.js
+      format.text
+    end
+  end
 end
 

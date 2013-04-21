@@ -9,13 +9,13 @@
 %>
 <% if !message_data_element.hidden? %>
 <%= fields_for "messages[]", message_data_element do |field| %>
-  <tr>
+  <tr id="<%= message_data_element.id %>">
     <td><%= message_data_element.message.name %></td>
     <td><%= message_data_element.message_text %></td>
     <td><%= message_data_element.created_at.to_s(:long) %></td>
     <%= hidden_field_tag "messages[#{message_data_element.id}][hidden]", nil, { :value => (message_data_element.hidden ? 1 : 0) } %>
     <td class="message_severity_<%= message_data_element.message.message_severity.name.downcase %>"><%= field.label message_data_element.message.message_severity.name %></td>
-    <td><%= link_to_function "Ignore", "document.getElementById('messages_#{message_data_element.id}_hidden').value = 1; document.forms[0].submit();", :method => "put" %></td>
+    <td><%= link_to "Ignore", pushchange_globe_data_element_path(@globe, message_data_element, :column => 'hidden', :new_value => true, :hide_element => message_data_element.id), id: message_data_element.id, :remote => true, :method => :post %></td>
   </tr>
 <% end %>
 <% end %>

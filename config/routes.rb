@@ -12,6 +12,10 @@ V01::Application.routes.draw do
     resources :presentations
     
     resources :data_elements do
+      member do
+        post 'pushchange'
+      end
+      
       post 'new(/:action)'
       resources :fields do
         member do 

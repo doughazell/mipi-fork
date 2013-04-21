@@ -5,7 +5,8 @@
   <tr>
     <th>Source Link</th>
     <th>Destination Link</th>
-    <th>Subscription type</th>
+    <th>Subscription Type</th>
+    <th>Queued</th>
     <th></th>
     <th></th>
     <th></th>
@@ -33,6 +34,9 @@
     </td>
     <td>
       <span class="footnote"><%= subscription.subscription_type.name %></span>
+    </td>
+    <td>
+      <span class="footnote"><%= check_box_tag "subscription_#{subscription.id}_queued", SubscriptionEvalutaionQueue.find_by_subscription_id, !SubscriptionEvalutaionQueue.find_by_subscription_id(subscription.id).nil? %></span>
     </td>
     <td><%= link_to image_tag('view.png', :height => 30), subscription %></td>
     <td><%= link_to image_tag('edit.png', :height => 30), edit_subscription_path(subscription) %></td>

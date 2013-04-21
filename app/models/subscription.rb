@@ -43,7 +43,7 @@ class Subscription < ActiveRecord::Base
       elsif subscription_type.name == "Write" then
         synchronise true
       else
-        puts "Creating 'Message Data Element'"
+        logger.debug { "Creating 'Message Data Element'" }
         message = SubscriptionMessageDataElement.new(:subscription_id => id,
                               :message_id => Message.find_by_name('Subscription Error').id,
                               :hidden => 0,
@@ -54,10 +54,10 @@ class Subscription < ActiveRecord::Base
   
         # If we are dealing with a discrepency between two globes then both globes will
         # be notified of the change.
-        puts "subscription.evaluate.1"
+        logger.debug "subscription.evaluate.1"
         if (source_link.data_element.globe_id != destination_link.data_element.globe_id) #&& subscription_type.name = 'Synchronise'
-          puts "subscription.evaluate.2"
-          puts destination_link.data_element.globe_id.to_s
+          logger.debug "subscription.evaluate.2"
+          logger.debug destination_link.data_element.globe_id.to_s
           other_message = SubscriptionMessageDataElement.new(:subscription_id => id,
                               :message_id => Message.find_by_name('Subscription Error').id,
                               :hidden => 0,
