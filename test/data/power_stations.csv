@@ -1,32 +1,32 @@
-name,full_name,code,primary_fuel_type
-ST_ARD,Ardnacrusha,ARD,Hydro
-ST_AGH,Aghada,AGH,Natural Gas
-ST_ERN,Erne,ERN,Hydro
-ST_CLA,Clady,CLA,Unknown
-ST_CUR,Curraghmore,CUR,Unknown
-ST_LEE,Lee,LEE,Hydro
-ST_LIF,Liffey,LIF,Hydro
-ST_LOU,Lough Ree,LOU,Peat
-ST_MON,Moneypoint,MON,Coal
-ST_MAR,Marina,MAR,Natural Gas
-ST_NOR,Northwall,NOR,Natural Gas
-ST_POO,Poolbeg,POO,Natural Gas
-ST_TUR,Turlough Hill,TUR,Hydro Pumped
-ST_WES,West Offaly,WES,Peat
-ST_COO,Coolkeeragh,COO,Natural Gas
-ST_SYN,Synergen,SYN,Natural Gas
-ST_GAG,Garvagh Glebe,GAG,Wind
-ST_MOL,Mountain Lodge,MOL,Wind
-ST_HIW,Hibernian Wind,HIW,Wind
-ST_TUL,Tullynahaw,TUL,Wind
-ST_HUH,Hunters Hill,HUH,Wind
-ST_CRH,Crockahenny,CRH,Wind
-ST_CRG,Crockagarron,CRG,Wind
-ST_MEL,Mount Eagle Lodge,MEL,Wind
-ST_ORL,Orliven,ORL,Wind
-ST_GOW,Gort Windfarms,GOW,Wind
-ST_WAT,Waterfern,WAT,Wind
-ST_CUW,Curryfree Wind,CUW,Wind
-ST_WED,West Durham,WED,Wind
-ST_DEW,Devon Wind,DEW,Wind
-ST_COR,Corby,COR,Natural Gas
+Station,Code,Primary Fuel
+Ardnacrusha,ARD,Hydro
+Aghada,AGH,Natural Gas
+Erne,ERN,Hydro
+Clady,CLA,Unknown
+CurraghmoreCUR,Unknown
+Lee,LEE,Hydro
+Liffey,LIF,Hydro
+Lough Ree,LOU,Peat
+Moneypoint,MON,Coal
+Marina,MAR,Natural Gas
+Northwall,NOR,Natural Gas
+Poolbeg,POO,Natural Gas
+Turlough Hill,TUR,Hydro Pumped
+West Offaly,WES,Peat
+Coolkeeragh,COO,Natural Gas
+Synergen,SYN,Natural Gas
+Garvagh Glebe,GAG,Wind
+Mountain Lodge,MOL,Wind
+Hibernian Wind,HIW,Wind
+Tullynahaw,TUL,Wind
+Hunters Hill,HUH,Wind
+Crockahenny,CRH,Wind
+Crockagarron,CRG,Wind
+Mount Eagle Lodge,MEL,Wind
+Orliven,ORL,Wind
+Gort Windfarms,GOW,Wind
+Waterfern,WAT,Wind
+Curryfree Wind,CUW,Wind
+West Durham,WED,Wind
+Devon Wind,DEW,Wind
+Corby,COR,Natural Gas

@@ -143,7 +143,12 @@ class GlobesController < ApplicationController
   
   def preview
     @masterglobe = Globe.find_by_globe_reference!(request.subdomain)
-    if current_user.globes.blank? == true then
+    
+    # Following the change to the route.rb file to match the blank
+    # subdomain to globes#preview, we now need to not necessarily
+    # expect a globe_id (passed as :id) to be specified.
+    #                                             22-Apr-2013/PL
+    if current_user.globes.blank? == true || params[:id].nil? then
       @globe = @masterglobe
     else
       @globe = current_user.globes.find(params[:id])

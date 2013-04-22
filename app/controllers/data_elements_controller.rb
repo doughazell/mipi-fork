@@ -158,15 +158,15 @@ class DataElementsController < ApplicationController
     if data_element_type["DataElement".length * -1, data_element_type.length] != "DataElement" then
       data_element_type += "DataElement"
     end 
-    puts "#{data_element_type}"
-    puts date
+    logger.debug { "#{data_element_type}" }
+    logger.debug { date }
     if (date) then #.where("created_at >= :date", :date => @date) .where(:name => @data_element_name)
       @data_element = eval("#{data_element_type}").where("name = ? AND updated_at >= ?", data_element_name, date).order(:version).first
     else
       @data_element = eval("#{data_element_type}").find_last_by_name(data_element_name, :order => 'version')
     end
     
-    puts @data_element.inspect
+    logger.debug { @data_element.to_yaml }
     # TODO
     # Loop through all the keys and change the value of anything ending in 'data-element-id'
     # since these will be foreign keys and need to be resolved/realised.

@@ -294,7 +294,12 @@ class DataSheetsController < ApplicationController
             @retain_data_element.version = 0
           end if
           
-          @data_element.version = @retain_data_element.version + 1
+#          @data_element.version = @retain_data_element.version + 1
+          # Working around version being nil and trying to add an
+          # integer to this. Time.now.to_i could be a better overall
+          # solution anyway. Individual integers going up from 0
+          # was more human readable though.
+          @data_element.version = Time.now.to_i
           @data_element.updated_at = Time.now
 
 #          @data_element.update_elements(@retain_data_element, values)

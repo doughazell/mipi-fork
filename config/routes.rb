@@ -78,7 +78,10 @@ V01::Application.routes.draw do
   
   require 'subdomain'
   constraints(Subdomain) do
-    match '/' => 'globes#show'
+    # Change the default controller action from the configuration page
+    # of 'show' to the "Live" page of 'preview'.      22-Apr-2013/PL
+#    match '/' => 'globes#show'
+    match '/' => 'globes#preview'
   end
 
   match 'home/problem' => 'home#problem'
