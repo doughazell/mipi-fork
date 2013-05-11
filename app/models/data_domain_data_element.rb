@@ -1,7 +1,7 @@
 class DataDomainDataElement < DataElement
   acts_as_citier
   
-  has_many :data_sub_domain_data_elements
+  has_many :data_sub_domain_data_elements, :conditions => ['current = ?', true]
 
   attr_accessible :code, :short_name, :description
   

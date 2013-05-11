@@ -302,6 +302,10 @@ class DataSheetsController < ApplicationController
           @data_element.version = Time.now.to_i
           @data_element.updated_at = Time.now
 
+          # Ensure the new data_element is current.
+          @retain_data_element.current = false
+          @data_element.current = true
+
 #          @data_element.update_elements(@retain_data_element, values)
           # Write back to the database.
           @data_element.save

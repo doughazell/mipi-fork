@@ -123,3 +123,34 @@ Sortable Element
 http://practiceovertheory.com/blog/2009/08/07/sortable-lists-with-jquery-in-rails/
 
 
+Sample Data Loading
+-------------------
+Paraterise the Rake commands for batch processing.
+
+Read a database schema and generate DataElement structure to match. This should be
+an import wizard we a set of clear steps. This needs to be graphical.
+
+Data Element Import Wizard
+--------------------------
+- Graphical
+- Import from MSSSQL/Oracle schema
+- Choose tables/view to import
+- Read structure.
+- Propose column names
+- Build migrations, action migrations.
+
+In reality that provides us with classes like:
+* CounterpartyDataElement
+* LegalEntityDataElement
+* CountryDataElement
+
+WHY NOT JUST PUT A BI TOOL ONTO IT?
+Because we want to write as well as read.
+Therefore, don't pull off of the Data Warehouse
+There is a repository of rules and mappings that need to be managed.
+
+e.g. For PRA:
+  ...convert REPO to Repo.
+  ...format as dd/mm/yyyy
+  ...truncate to 50 characters
+  ...

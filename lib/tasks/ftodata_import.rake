@@ -36,23 +36,49 @@ namespace :import do
     end
   end
 
-  task :import_data => :environment do
+  # This routine attempts to make importing of DataElement-derived data into 
+  # the data tool easier. It enforces a few conventions that need to be followed.
+  #  - The file is comma-delimited.
+  #  - There is a single header row.
+  #  - There is no tail row.
+  #  - The filename must the the 'lower_case_class_name' followed by '.csv'.
+  #     e.g. my_data.csv will look for a class called MyDataDataElement
+  #  - The must be a column called 'name' and this is the PK.
+  # USAGE:
+  #    C:\> rake import:import_data[paul@piguard.com,ftp,data_domains.csv]
+  #
+  # NOTE:
+  #    Ensure that there is no space between 'import_data' and the first square
+  #    bracket.
+  #
+  task :import_data, [:username, :globe, :datafile] => :environment do |t, args|
     require "highline/import"
+    
+    puts args
     
     meta_data = Hash.new
     name_column = 0
     fk_tail = '_data_element'
     fk_tail_length = fk_tail.length
 
-    u = User.find_by_email('paul123@piguard.com')
-    g = Globe.find_by_globe_reference('ftp')
-    profile_id = g.profiles.find_by_name('Units').id
+    # Switching to parameter based task
+#    u = User.find_by_email('paul123@piguard.com')
+#    g = Globe.find_by_globe_reference('ftp')
+
+    u = User.find_by_email(args[:username])
+    g = Globe.find_by_globe_reference(args[:globe])
+
+    # Doesn't appear required within this routine.       23-Apr-2013/PL
+#    profile_id = g.profiles.find_by_name('Units').id
 
     # What is the file name?
-    data_to_import = ask("Which file would you like to import?")
+#    data_to_import = ask("Which file would you like to import from the ROOT/test/data/ directory?")
 #    data_to_import = "data_sub_domains.csv"
+    data_to_import = args[:datafile]
     
-    # Derive a class name
+    # Derive a class name. Clearly this means that using convention over
+    # configuration we assume 'data_sub_domains.csv' relates to a claa
+    # DataSubDomainDataElement
     file_name_stem = data_to_import[0..data_to_import.index('.')-1].singularize
     if (file_name_stem[file_name_stem.length - fk_tail_length..file_name_stem.length] != fk_tail) then
       data_element_name = file_name_stem + fk_tail
@@ -63,32 +89,52 @@ namespace :import do
     data_element_name_camel.constantize
     
     line_count = 0
-    puts "Opening file..."
-    File.open("test/data/#{data_to_import}").each do |line|
+    puts "Opening file...#{data_to_import}"
+    # Replaced with join method. Should allow code to be more portable.
+    #                                                          23-Apr-2013/PL
+    File.open(Rails.root.join('test','data',data_to_import)).each do |line|
+#    File.open("test/data/#{data_to_import}").each do |line|
+
+      # Header Row
       if (line_count == 0) then
+        # Place the columns into an Array
         columns = line.strip.split(',')
+        
+        # Seek out the 'name' column - it's compulsory.
         name_column = columns.index('name')
         raise "'name' column not specified." if name_column.nil?
+        
+        # Loop through each column
         columns.each do |column|
+        
+          # Our meta data (data about data) hash collects information
+          # about our column.
           meta_data[column] = Hash.new
+          
+          # If the column name ends in '_data_element' we can be confident
+          # that with convention over configuration that it is a Foreign Key.
           if column[fk_tail_length*-1,fk_tail_length] == fk_tail then
             meta_data[column]['primary_key'] = false
             meta_data[column]['foreign_key'] = true
+          # 'Name' will always be our PK.
           elsif column == 'name'
             meta_data[column]['primary_key'] = true
             meta_data[column]['foreign_key'] = false
+          # Otherwise, it's just a standard column.
           else
             meta_data[column]['primary_key'] = false
             meta_data[column]['foreign_key'] = false
           end
+          # The position of the column is retained as well.
           meta_data[column]['index'] = columns.index(column)
         end # 'columns.each'
-        
+
+        puts meta_data.to_yaml
 #        puts columns
 #        puts name_column
 #        puts meta_data
       else
-
+        
         values = line.strip.split(',')
 
         # Retrieve the collection that this line will be added to.
@@ -105,8 +151,10 @@ namespace :import do
           })
 #        end
         
+        # Find or create a new DataElement-derived object.
         root_object = data_element_name_camel.constantize.find_or_initialize_master_by_name(values[name_column])
 
+        # A hash of values we want to update in the DataElement-derived object.
         to_update = Hash.new
         to_update['name'] = values[name_column]
         to_update['data_element_collection_id'] = root_dec.id

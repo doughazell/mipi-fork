@@ -28,7 +28,7 @@ ecb:
   security: MyString
   globe_reference: ecb
 
-irfu:
+rfu:
   name: Rugby Football Union
   security: MyString
   globe_reference: rfu
@@ -42,21 +42,21 @@ ftp:
 ### SHADOW GLOBES
 ###=========================================================
 
-# Owned by IRFU...
-irfu_pablito:
+# Owned by RFU...
+rfu_pablito:
   name: Paul Long
-  globe_reference: irfu_pablito
+  globe_reference: rfu_pablito
   parent: irfu
 
-irfu_terryreed:
-  name: Damien Smith
-  globe_reference: irfu_terryreed
+rfu_terryreed:
+  name: Terry Reed
+  globe_reference: rfu_terryreed
   parent: irfu
 
  <% for i in 1..10 %>
-irfu_member_<%= i %>:
+rfu_member_<%= i %>:
     name: person_<%= i %>
-    globe_reference: irfu_member_<%= i %>
+    globe_reference: rfu_member_<%= i %>
     parent: irfu
 <% end %>
 

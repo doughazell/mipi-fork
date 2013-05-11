@@ -11,6 +11,7 @@ class CreateDataElements < ActiveRecord::Migration
       t.integer :globe_id
       t.integer :version, :default => 1
       t.string :inheritance_column_name
+      t.boolean :current, :default => true
       
       t.userstamps
       t.timestamps

@@ -12,7 +12,7 @@ class DataElement < ActiveRecord::Base
 
   has_many :data_element_links
   
-  attr_accessible :id, :type, :name, :data_element_collection_id, :user_id, :ready_to_archive, :label, :mandatory, :globe_id, :version, :creator_id, :updater_id, :created_at, :updated_at
+  attr_accessible :id, :type, :name, :data_element_collection_id, :user_id, :ready_to_archive, :label, :mandatory, :globe_id, :version, :creator_id, :updater_id, :created_at, :updated_at, :current
   
   DEFAULT_VALUE = [:name, :version]
   META_DATA = {}
@@ -193,5 +193,6 @@ class DataElement < ActiveRecord::Base
   def history(options = {})
     data_element_collection.data_elements
   end
+  
 end
 
