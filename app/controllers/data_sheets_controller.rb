@@ -128,7 +128,9 @@ class DataSheetsController < ApplicationController
     @shadowglobes = @globe.children # .sort! { |a,b| a.name.downcase <=> b.name.downcase }
     
 #    @globe = Globe.find(params[:globe_id])
-    @profiles = @globe.profiles.sort! { |a,b| a.position <=> b.position }
+    # Updated logic to prevent the returning of nil as a comparison result.
+    #                                                       13-May-2013/PL
+    @profiles = @globe.profiles.sort! { |a,b| (a.position <=> b.position).nil? ? 1 : a.position <=> b.position }
     @active_profile = Profile.find(params[:profile_id])
     @data_sheets = @active_profile.data_sheets
     @data_sheets.sort! {|a,b| a.name <=> b.name}

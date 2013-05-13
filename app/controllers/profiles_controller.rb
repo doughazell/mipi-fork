@@ -118,7 +118,10 @@ class ProfilesController < ApplicationController
     @profiles = @globe.profiles
 #    @profiles = @globe.profiles.sort! { |a,b| a.position <=> b.position }
     @active_profile = @profiles.find(params[:id])
-    @profiles.sort! { |a,b| a.position <=> b.position }
+    
+    # Updated logic to prevent the returning of nil as a comparison result.
+    #                                                       13-May-2013/PL
+    @profiles.sort! { |a,b| (a.position <=> b.position).nil? ? 1 : a.position <=> b.position }
     
     if @active_profile then
       @data_sheets = @active_profile.data_sheets

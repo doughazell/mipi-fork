@@ -164,7 +164,9 @@ class GlobesController < ApplicationController
       @active_profile = @profiles.find(:first)
     end
     if @profiles.count > 1 then
-      @profiles.sort! { |a,b| a.position <=> b.position }
+      # Updated logic to prevent the returning of nil as a comparison result.
+      #                                                       13-May-2013/PL
+      @profiles.sort! { |a,b| (a.position <=> b.position).nil? ? 1 : a.position <=> b.position }
     end
     
     if @active_profile then
