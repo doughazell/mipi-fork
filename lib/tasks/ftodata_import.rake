@@ -361,49 +361,102 @@ namespace :import do
 
   # This will allow all generator units within the profile "units" to all have a data sheet
   # created and point to the same HTML.ERB file.
-  task :create_data_sheet_for_all_data_element_type => :environment do
+  task :create_data_sheet_for_all_data_element_type, [:username, :globe, :profile, :data_element_stem] => :environment do |t, args|
     require "highline/import"
     
-    u = User.find_by_email('paul123@piguard.com')
+#    puts args
+#    puts args[:data_element_stem]
+#    puts args[:data_element_stem].blank?
+    
+#    u = User.find_by_email('paul123@piguard.com')
 
 #    globe_reference = ask('Globe Reference?')
-    globe_reference = 'ftp'
-    g = Globe.find_by_globe_reference(globe_reference)
+    globe_reference = args[:globe]
+#    g = Globe.find_by_globe_reference(globe_reference)
 
-    puts "Profile List:"
-    g.profiles.each do |profile|
-      puts profile.name
+    u = User.find_by_email(args[:username])
+    if (u.nil?) then
+      # ABORT
     end
-    profile_name = ask("Which profile?")
+    
+    g = Globe.find_by_globe_reference(globe_reference)
+    if (g.nil?) then
+      # ABORT
+    end
+
+    # Take the 'profile_name' from the argument list. If it does not exist
+    # display all profiles for this globe and prompt the user for one of
+    # them.
+    profile_name = args[:profile]
+    if profile_name.nil? then
+      puts "Profile List:"
+      g.profiles.each do |profile|
+        puts profile.name
+      end
+      profile_name = ask("Which profile?")
+    end
+    
+    # Retrieve the Profile object.
     p = Profile.find_by_globe_id_and_name(g.id, profile_name)
 
-    data_element_stem = ask("Please enter the Model that you wish to create Data Sheets for each collection. Omit the '_data_element' section of the model.")
+    # Take the 'data_element' name from the arguments. If it doesn't exist
+    # prompt for the model that we wish to use.
+    data_element_stem = args[:data_element_stem]
+    if (data_element_stem.blank?) then
+      data_element_stem = ask("Please enter the Model that you wish to create Data Sheets for each collection. Omit the '_data_element' section of the model.")
+    end
+
 #    data_element_type = "data_domain_data_element"
     data_element_type = data_element_stem + "_data_element"
     
+    # Convention over configuration in action. These are the standard conventions
+    # being used for the 'partial' and the CSS style sheet.
     html_file_name = "/data_sheets/pages/#{globe_reference}/#{data_element_stem}.html.erb"
     css_file_name = "/stylesheets/custom_styles/#{globe_reference}/#{globe_reference}.css"
-    
+
+    # Each collection of DataElements within this globe for this DataElement-derived type
+    # will need to have a DataSheet reference created. This section will loop through
+    # all of these collections and create (or find) 
     decs = DataElementCollection.find(:all, :conditions => { :globe_id => g.id, :data_element_type => data_element_type.camelcase })
     decs.each do |dec|
+    
+      # DataSheet manipulation
       ds = DataSheet.find_or_initialize_by_name_and_profile_id(dec.name, p.id)
       ds.style_sheets = css_file_name
       ds.file_location = html_file_name
+      
+      # Find the latest version of this DataElement-derived instance within
+      # this collection. This only finds a DataElement object. We need the
+      # inherited child.
       de = dec.data_elements.find(:last, :order => 'version')
+      
+      # If the DataElement exists...
       if (de) then
+        # Find the inherited child.
+        #    E.g. de.Class == AddressDataElement
+        #         de.Class != DataElement
         de = de.type.constantize.find(de.id)
       end
       
+      # The friendly_name method can be overriden in each inherited class.
       if (de)
         ds.display_name = de.friendly_name
       else
         ds.display_name = dec.name
       end
+      
+      # Basic user stuff.
       ds.creator_id = u.id
       ds.updater_id = u.id
+      
+      # Write the DataSheet to the database.
       ds.save
 
+      # Create a 'presentation'. A link between a collection of DataElement-derived classes and
+      # the DataSheet we just put together.
       pres = Presentation.find_or_initialize_by_data_sheet_id_and_data_element_collection_id(ds.id, dec.id)
+      
+      # Persist the 'presentation'.
       pres.save
     end
 
