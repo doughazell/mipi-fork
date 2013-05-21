@@ -34,7 +34,8 @@ module DataSheetsHelper
     @tag_name = "#{collection_name}[#{data_element.id}][#{data_column}]"
     
     # What is our current value, ensure this is selected in the dropdown.
-    @default_id = eval("data_element.#{data_column}")
+#    @default_id = eval("data_element.#{data_column}")
+    @default_id = data_element.read_attribute(data_column)
 
     logger.debug { "#{data_element}" }
     logger.debug { "data_element.#{data_column}" }
