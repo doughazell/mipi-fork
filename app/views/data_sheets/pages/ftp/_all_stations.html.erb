@@ -1,16 +1,21 @@
 <h1>All Station List</h1>
-<table>
+<table width="100%">
   <thead>
-    <td>Station</td>
-    <td>Installed Capacity</td>
-    <td>Commissioned</td>
+    <th>Station</th>
+    <th>Units</th>
+    <th>Installed Capacity</th>
+    <th>Commissioned</th>
   </thead>
   <% @station_array.each do |station|
   %>
   <tr>
     <td><%= LinkDataSheet(station, "full_name") %></td>
+    <td><%= station.generator_unit_data_elements.count %></td>
     <td><%= station.capacity %></td>
-    <td><%= station.commissioned %></td>
+    <td><%= station.commissioned.to_formatted_s(:long) unless station.commissioned.nil? %></td>
   </tr>
-  <% end %>
+<% end %>
+<tr>
+  <td colspan="4">Total Stations: <%= @station_array.count %></td>
+</tr>
 </table>

@@ -35,10 +35,10 @@ module DataSheetsHelper
     
     # What is our current value, ensure this is selected in the dropdown.
     @default_id = eval("data_element.#{data_column}")
-    puts "[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]"
-    puts "#{data_element}"
-    puts "data_element.#{data_column}"
-    puts @default_id
+
+    logger.debug { "#{data_element}" }
+    logger.debug { "data_element.#{data_column}" }
+    logger.debug { @default_id }
     
     # This give us the class of our FK table.
     @fk_class_name = data_column[0..data_column.length-4].camelcase

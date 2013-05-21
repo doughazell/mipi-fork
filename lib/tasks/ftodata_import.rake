@@ -462,27 +462,48 @@ namespace :import do
 
   end
   
-  task :link_data_sheet_to_data_element_type => :environment do
+  task :link_data_sheet_to_data_element_type, [:username, :globe, :profile, :data_sheet, :data_element_type] => :environment do |t, args|
     require "highline/import"
     
-    u = User.find_by_email('paul123@piguard.com')
-    g = Globe.find_by_globe_reference('ftp')
+#    u = User.find_by_email('paul123@piguard.com')
+#    g = Globe.find_by_globe_reference('ftp')
     
-    puts "Profile List:"
-    g.profiles.each do |profile|
-      puts profile.name
+    globe_reference = args[:globe]
+#    g = Globe.find_by_globe_reference(globe_reference)
+
+    u = User.find_by_email(args[:username])
+    if (u.nil?) then
+      # ABORT
     end
-    profile_name = ask("Which profile?")
+    
+    g = Globe.find_by_globe_reference(globe_reference)
+    if (g.nil?) then
+      # ABORT
+    end
+
+    profile_name = args[:profile]
+    if profile_name.nil? then
+      puts "Profile List:"
+      g.profiles.each do |profile|
+        puts profile.name
+      end
+      profile_name = ask("Which profile?")
+    end
     p = Profile.find_by_globe_id_and_name(g.id, profile_name)
 
-    puts "Data Sheets:"
-    p.data_sheets.each do |data_sheet|
-      puts data_sheet.name
+    data_sheet_name = args[:data_sheet]
+    if data_sheet_name.nil? then
+      puts "Data Sheets:"
+      p.data_sheets.each do |data_sheet|
+        puts data_sheet.name
+      end
+      data_sheet_name = ask("Please enter the 'Name' of the data sheet.")
     end
-    data_sheet_name = ask("Please enter the 'Name' of the data sheet.")
-#    data_sheet_name = "[All Data Sets]"
-    data_element_type = ask("Please enter the Model that you wish to connect to this Data Sheet.")
-#    data_element_type = "data_set_data_element"
+
+    data_element_type = args[:data_element_type]
+    if data_element_type.nil? then
+      data_element_type = ask("Please enter the Model that you wish to connect to this Data Sheet.")
+    end
     
     ds = DataSheet.find_by_profile_id_and_name(p.id, data_sheet_name)
     decs = DataElementCollection.find(:all, :conditions => { :globe_id => g.id, :data_element_type => data_element_type.camelcase })

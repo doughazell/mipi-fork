@@ -1,3 +1,4 @@
+<% total_installed_capacity = 0 %>
 <table>
   <tr>
     <td>Station Name</td><td><%= @station.full_name %></td>
@@ -18,6 +19,33 @@
     <td>Location</td><td><%= Label_TextBox_Switch("station", @station, "location") %></td>
   </tr>
   <tr>
-    <td>Commissioned</td><td><%= Label_TextBox_Switch("station", @station, "commissioned") %></td>
+    <td>Commissioned</td><td><%= Label_TextBox_Switch("station", @station, "commissioned", { :formatted_to_s => :long }) %></td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <table width="100%">
+        <tr>
+          <th colspan="3">Generator Units</th>
+        </tr>
+        <tr>
+          <th>Name</th>
+          <th>Capacity</th>
+          <th>Fixed Heat</th>
+        </tr>
+        <% @station.generator_unit_data_elements.each do |gu| %>
+        <% total_installed_capacity += gu.installed_capacity %>
+        <tr>
+          <td><%= LinkDataSheet(gu, "name", { :data_sheet => gu.name }) %></td>
+          <td><%= gu.installed_capacity %></td>
+          <td><%= gu.fixed_heat_constant %></td>
+        </tr>
+        <% end %>
+        <tr>
+          <td></td>
+          <th><%= total_installed_capacity %></th>
+          <td></td>
+        </tr>
+      </table>
+    </td>
   </tr>
 </table>

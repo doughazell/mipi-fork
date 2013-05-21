@@ -3,10 +3,10 @@
     <td>Generator Unit Code</td><td><%= @unit.code %></td>
   </tr>
   <tr>
-    <td>Station</td><td><%= ForeignKey_PickList("unit", @unit, "power_station_data_element_id", "name") %></td>
+    <td>Station: <%= @unit.power_station_data_element.name %></td><td><%= LinkDataSheet(@unit.power_station_data_element, 'full_name', :options => { :data_sheet => @unit.power_station_data_element.name }) %></td>
   </tr>
   <tr>
-    <td>Station</td><td><%= LinkDataSheet(@unit.power_station_data_element, 'full_name') %></td>
+    <td>Station</td><td><%= ForeignKey_PickList("unit", @unit, "power_station_data_element_id", "name") %></td>
   </tr>
   <tr>
     <td>Installed Capacity</td><td><%= Label_TextBox_Switch("unit", @unit, "installed_capacity") %></td>
