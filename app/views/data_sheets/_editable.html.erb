@@ -18,20 +18,26 @@ else
   text_area = false
 end
 
-# Altered the method of retrieving database values from the dangerous
-# 'eval' method to the 'read_attribute' method.       21-May-2013/PL
-if (options[:precision])
-#  data_value = number_with_precision(eval("data_element.#{database_column}"), options[:precision]).to_s
-#  data_value = number_with_precision(eval("data_element.#{database_column}"), :precision => options[:precision]).to_s
-  data_value = number_with_precision(data_element.read_attribute(database_column), :precision => options[:precision]).to_s    # 21-May-2013/PL
-elsif (options[:formatted_to_s])
-#  data_value = eval("data_element.#{database_column}").to_formatted_s(options[:formatted_to_s])
-  data_value = data_element.read_attribute(database_column).to_formatted_s(options[:formatted_to_s])    # 21-May-2013/PL
+# Formatting nil doesn't work too well, so we pull the raw value
+# back and then if is NOT nil we'll, potentially, apply some formatting.
+raw_data_value = data_element.read_attribute(database_column)
+if raw_data_value.nil? then
+  data_value = ""
 else
-#  data_value = eval("data_element.#{database_column}").to_s
-  data_value = data_element.read_attribute(database_column).to_s    # 21-May-2013/PL
+  # Altered the method of retrieving database values from the dangerous
+  # 'eval' method to the 'read_attribute' method.       21-May-2013/PL
+  if (options[:precision])
+  #  data_value = number_with_precision(eval("data_element.#{database_column}"), options[:precision]).to_s
+  #  data_value = number_with_precision(eval("data_element.#{database_column}"), :precision => options[:precision]).to_s
+    data_value = number_with_precision(raw_data_value, :precision => options[:precision]).to_s    # 21-May-2013/PL
+  elsif (options[:formatted_to_s])
+  #  data_value = eval("data_element.#{database_column}").to_formatted_s(options[:formatted_to_s])
+    data_value = raw_data_value.to_formatted_s(options[:formatted_to_s])    # 21-May-2013/PL
+  else
+  #  data_value = eval("data_element.#{database_column}").to_s
+    data_value = raw_data_value.to_s    # 21-May-2013/PL
+  end
 end
-
 
 puts data_value
 if data_value.empty? then
