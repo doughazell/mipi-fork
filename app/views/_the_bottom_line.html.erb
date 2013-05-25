@@ -1,15 +1,14 @@
 <% if current_user %>
-<div class="bottom_navigation">
-  <span class="bottom_navigation_left">
-    <%= link_to "[All Globes]", globes_url %>|<%= if !@globe.blank? then link_to "[All Presentations]", globe_presentations_url(@globe) end %>|
-    <%= if !@globe.blank? then link_to "[All Profiles]", globe_profiles_url(@globe) end %>|
-    <%= if !@globe.blank? then link_to "[All Data]", globe_data_elements_url(@globe) end %>
-  </span>
-  
-  <% if !@globe.blank? then %>
-  <span class="bottom_navigation_right">
-    <%= link_to image_tag('home.png', :height => 20), preview_globe_path(@globe) %>
-  </span>
-  <% end %>
-</div>
+  <div class="bottom_navigation_menu">
+    <%= link_to "Globes", globes_url, :class => "rustyred" %>
+    <% if !@globe.blank? then %>
+      <%= link_to "Presentations", globe_presentations_url(@globe), :class => "limegreen" %>
+      <%= link_to "Profiles", globe_profiles_url(@globe), :class => "brown" %>
+      <%= link_to "Data", globe_data_elements_url(@globe), :class => "metallicblue" %>
+      <%= link_to "Home", preview_globe_path(@globe), :class => "burntorange" %>
+      <%= link_to image_tag('home.png', :height => 30), preview_globe_path(@globe), :class => "home_icon", :style => "text-align:right" %>
+    <% end %>
+<!--      <a class="orange" href="#">Contact</a>
+    <a class="pink" href="#">Nicolas Long</a>-->
+  </div>
 <% end %>

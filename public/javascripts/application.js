@@ -92,8 +92,16 @@ function write_edit(element_id, element_2_id, data_element_id) {
 //    alert('Successful');
 //});
 $(document).ready(function() {
-})
-
+              $('.bottom_navigation_menu a').hover(function() {
+                $(this).stop().animate({
+                   opacity: 1
+                 }, 200);
+                    }, function() {
+               $(this).stop().animate({
+                opacity: 0.5
+                 }, 200);
+              });
+            });
 
 function handle_enter(element_id_1, element_id_2, event) {
     var charCode;

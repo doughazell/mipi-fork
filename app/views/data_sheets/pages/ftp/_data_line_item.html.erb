@@ -52,7 +52,7 @@
       Data Set
     </td>
     <td colspan="2">
-      <%= ForeignKey_PickList("line_item", @line_item, "data_set_data_element_id", "description") %>
+      <%= ForeignKey_PickList("line_item", @line_item, "data_set_data_element_id", "short_name") %>
       <%= LinkDataSheet(@line_item.data_set_data_element, nil, { :data_sheet => @line_item.data_set_data_element.name, :override_label => ">>" }) %>
     </td>
   </tr>

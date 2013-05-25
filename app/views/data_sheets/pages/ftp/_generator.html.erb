@@ -26,4 +26,41 @@
   <tr>
     <td>Changed By</td><td><%= @unit.updater.email %></td>
   </tr>
+  <% if @unit.history[0...-1].count > 0 %>
+  <tr>
+    <td colspan="2">
+      <div id="tbl-container" style="width:600px;height:250px;overflow:auto;background-color:#CD5C5C;border-style:solid;padding:10px;">
+        <span class="historic_header">Historical View</span>
+        <table width="100%">
+          <th>
+            Date/Time
+          </th>
+          <th>
+            Changed By
+          </th>
+          <th>
+            Summary
+          </th>
+          <% @unit.history[0...-1].reverse.each do |unit| %>
+          <tr>
+            <td>
+              <%= unit.updated_at.to_formatted_s(:long) %>
+            </td>
+            <td>
+              <%= unit.updater.email %>
+            </td>
+            <td>
+              Capacity: <%= unit.installed_capacity %>
+              <br/>
+              SHC: <%= unit.start_hours_cold %>
+              <br/>
+              SHH: <%= unit.start_hours_hot %>
+            </td>
+          </tr>
+          <% end %>
+        </table>
+      </div>
+    </td>
+  </tr>
+  <% end %>
   </table>
