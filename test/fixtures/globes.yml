@@ -46,18 +46,18 @@ ftp:
 rfu_pablito:
   name: Paul Long
   globe_reference: rfu_pablito
-  parent: irfu
+  parent: rfu
 
 rfu_terryreed:
   name: Terry Reed
   globe_reference: rfu_terryreed
-  parent: irfu
+  parent: rfu
 
  <% for i in 1..10 %>
 rfu_member_<%= i %>:
     name: person_<%= i %>
     globe_reference: rfu_member_<%= i %>
-    parent: irfu
+    parent: rfu
 <% end %>
 
 # Owned by pablito...
