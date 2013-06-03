@@ -197,7 +197,8 @@ namespace :import do
               :globe_id => g.id,
               :user_id => u.id,
               :creator_id => u.id,
-              :updater_id => u.id
+              :updater_id => u.id,
+              :current => true
             })
 
             # Finally, simply update the root object with the FK ID.
@@ -377,6 +378,7 @@ namespace :import do
     u = User.find_by_email(args[:username])
     if (u.nil?) then
       # ABORT
+      raise "No username specified"
     end
     
     g = Globe.find_by_globe_reference(globe_reference)
@@ -545,7 +547,8 @@ namespace :import do
           :page_limit => 1,
           :historic => 0,
           :variable_name => '@unit',
-          :globe_id => g.id
+          :globe_id => g.id,
+          :current => true
         })
         
         ps_de.update_attributes({
@@ -566,7 +569,8 @@ namespace :import do
           :globe_id => g.id,
           :user_id => u.id,
           :creator_id => u.id,
-          :updater_id => u.id
+          :updater_id => u.id,
+          :current => true
         })
   
         gu.update_attributes({
@@ -654,7 +658,8 @@ namespace :import do
           :globe_id => g.id,
           :user_id => u.id,
           :creator_id => u.id,
-          :updater_id => u.id
+          :updater_id => u.id,
+          :current => true
         })
   
         ds_pstations = DataSheet.find_by_name('All Stations')
