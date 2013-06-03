@@ -1139,7 +1139,7 @@ rfuinternal_member_paullong:
   ready_to_archive: 0
   label: No Label
   mandatory: false
-  globe: irfu_pablito
+  globe: rfu_pablito
 
 rfuinternal_member_terryreed:
   name: rfuinternal_member_terryreed
