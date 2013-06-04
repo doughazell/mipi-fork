@@ -162,6 +162,7 @@ namespace :import do
         to_update['globe_id'] = g.id
         to_update['creator_id'] = u.id
         to_update['updater_id'] = u.id
+        to_update['current'] = true
         
         meta_data.each {|key, details|
           # Simple update. Just write the value to the root object.
@@ -547,8 +548,7 @@ namespace :import do
           :page_limit => 1,
           :historic => 0,
           :variable_name => '@unit',
-          :globe_id => g.id,
-          :current => true
+          :globe_id => g.id
         })
         
         ps_de.update_attributes({
@@ -585,7 +585,8 @@ namespace :import do
           :user_id => u.id,
           :creator_id => u.id,
           :updater_id => u.id,
-          :globe_id => g.id
+          :globe_id => g.id,
+          :current => true
         })
         
         # Locate the Data Sheet: "All Units" and link the new generator
