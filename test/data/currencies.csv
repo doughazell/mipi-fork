@@ -1,0 +1,178 @@
+name	iso_code	numeric_code	decimal_places	currency_name
+AED	AED	784	2	United Arab Emirates dirham
+AFN	AFN	971	2	Afghan afghani
+ALL	ALL	008	2	Albanian lek
+AMD	AMD	051	2	Armenian dram
+ANG	ANG	532	2	Netherlands Antillean guilder
+AOA	AOA	973	2	Angolan kwanza
+ARS	ARS	032	2	Argentine peso
+AUD	AUD	036	2	Australian dollar
+AWG	AWG	533	2	Aruban florin
+AZN	AZN	944	2	Azerbaijani manat
+BAM	BAM	977	2	Bosnia and Herzegovina convertible mark
+BBD	BBD	052	2	Barbados dollar
+BDT	BDT	050	2	Bangladeshi taka
+BGN	BGN	975	2	Bulgarian lev
+BHD	BHD	048	3	Bahraini dinar
+BIF	BIF	108	0	Burundian franc
+BMD	BMD	060	2	Bermudian dollar(customarily known as Bermuda dollar)
+BND	BND	096	2	Brunei dollar
+BOB	BOB	068	2	Boliviano
+BOV	BOV	984	2	Bolivian Mvdol (funds code)
+BRL	BRL	986	2	Brazilian real
+BSD	BSD	044	2	Bahamian dollar
+BTN	BTN	064	2	Bhutanese ngultrum
+BWP	BWP	072	2	Botswana pula
+BYR	BYR	974	0	Belarusian ruble
+BZD	BZD	084	2	Belize dollar
+CAD	CAD	124	2	Canadian dollar
+CDF	CDF	976	2	Congolese franc
+CHE	CHE	947	2	WIR?Euro (complementary currency)
+CHF	CHF	756	2	Swiss franc
+CHW	CHW	948	2	WIR?Franc (complementary currency)
+CLF	CLF	990	0	Unidad de Fomento?(funds code)
+CLP	CLP	152	0	Chilean peso
+CNY	CNY	156	2	Chinese yuan
+COP	COP	170	2	Colombian peso
+COU	COU	970	2	Unidad de Valor Real
+CRC	CRC	188	2	Costa Rican colon
+CUC	CUC	931	2	Cuban convertible peso
+CUP	CUP	192	2	Cuban peso
+CVE	CVE	132	0	Cape Verde escudo
+CZK	CZK	203	2	Czech koruna
+DJF	DJF	262	0	Djiboutian franc
+DKK	DKK	208	2	Danish krone
+DOP	DOP	214	2	Dominican peso
+DZD	DZD	012	2	Algerian dinar
+EGP	EGP	818	2	Egyptian pound
+ERN	ERN	232	2	Eritrean nakfa
+ETB	ETB	230	2	Ethiopian birr
+EUR	EUR	978	2	Euro
+FJD	FJD	242	2	Fiji dollar
+FKP	FKP	238	2	Falkland Islands pound
+GBP	GBP	826	2	Pound sterling
+GEL	GEL	981	2	Georgian lari
+GHS	GHS	936	2	Ghanaian cedi
+GIP	GIP	292	2	Gibraltar pound
+GMD	GMD	270	2	Gambian dalasi
+GNF	GNF	324	0	Guinean franc
+GTQ	GTQ	320	2	Guatemalan quetzal
+GYD	GYD	328	2	Guyanese dollar
+HKD	HKD	344	2	Hong Kong dollar
+HNL	HNL	340	2	Honduran lempira
+HRK	HRK	191	2	Croatian kuna
+HTG	HTG	332	2	Haitian gourde
+HUF	HUF	348	2	Hungarian forint
+IDR	IDR	360	2	Indonesian rupiah
+ILS	ILS	376	2	Israeli new shekel
+INR	INR	356	2	Indian rupee
+IQD	IQD	368	3	Iraqi dinar
+IRR	IRR	364	0	Iranian rial
+ISK	ISK	352	0	Icelandic kr?na
+JMD	JMD	388	2	Jamaican dollar
+JOD	JOD	400	3	Jordanian dinar
+JPY	JPY	392	0	Japanese yen
+KES	KES	404	2	Kenyan shilling
+KGS	KGS	417	2	Kyrgyzstani som
+KHR	KHR	116	2	Cambodian riel
+KMF	KMF	174	0	Comoro franc
+KPW	KPW	408	0	North Korean won
+KRW	KRW	410	0	South Korean won
+KWD	KWD	414	3	Kuwaiti dinar
+KYD	KYD	136	2	Cayman Islands dollar
+KZT	KZT	398	2	Kazakhstani tenge
+LAK	LAK	418	0	Lao kip
+LBP	LBP	422	0	Lebanese pound
+LKR	LKR	144	2	Sri Lankan rupee
+LRD	LRD	430	2	Liberian dollar
+LSL	LSL	426	2	Lesotho loti
+LTL	LTL	440	2	Lithuanian litas
+LVL	LVL	428	2	Latvian lats
+LYD	LYD	434	3	Libyan dinar
+MAD	MAD	504	2	Moroccan dirham
+MDL	MDL	498	2	Moldovan leu
+MGA	MGA	969	0	Malagasy ariary
+MKD	MKD	807	0	Macedonian denar
+MMK	MMK	104	0	Myanma kyat
+MNT	MNT	496	2	Mongolian tugrik
+MOP	MOP	446	2	Macanese pataca
+MRO	MRO	478	0*[8]	Mauritanian ouguiya
+MUR	MUR	480	2	Mauritian rupee
+MVR	MVR	462	2	Maldivian rufiyaa
+MWK	MWK	454	2	Malawian kwacha
+MXN	MXN	484	2	Mexican peso
+MXV	MXV	979	2	Mexican Unidad de Inversion?(UDI) (funds code)
+MYR	MYR	458	2	Malaysian ringgit
+MZN	MZN	943	2	Mozambican metical
+NAD	NAD	516	2	Namibian dollar
+NGN	NGN	566	2	Nigerian naira
+NIO	NIO	558	2	Nicaraguan c?rdoba
+NOK	NOK	578	2	Norwegian krone
+NPR	NPR	524	2	Nepalese rupee
+NZD	NZD	554	2	New Zealand dollar
+OMR	OMR	512	3	Omani rial
+PAB	PAB	590	2	Panamanian balboa
+PEN	PEN	604	2	Peruvian nuevo sol
+PGK	PGK	598	2	Papua New Guinean kina
+PHP	PHP	608	2	Philippine peso
+PKR	PKR	586	2	Pakistani rupee
+PLN	PLN	985	2	Polish z?oty
+PYG	PYG	600	0	Paraguayan guaran?
+QAR	QAR	634	2	Qatari riyal
+RON	RON	946	2	Romanian new leu
+RSD	RSD	941	2	Serbian dinar
+RUB	RUB	643	2	Russian rouble
+RWF	RWF	646	0	Rwandan franc
+SAR	SAR	682	2	Saudi riyal
+SBD	SBD	090	2	Solomon Islands dollar
+SCR	SCR	690	2	Seychelles rupee
+SDG	SDG	938	2	Sudanese pound
+SEK	SEK	752	2	Swedish krona/kronor
+SGD	SGD	702	2	Singapore dollar
+SHP	SHP	654	2	Saint Helena pound
+SLL	SLL	694	0	Sierra Leonean leone
+SOS	SOS	706	2	Somali shilling
+SRD	SRD	968	2	Surinamese dollar
+SSP	SSP	728	2	South Sudanese pound
+STD	STD	678	0	S?o Tom? and Pr?ncipe dobra
+SYP	SYP	760	2	Syrian pound
+SZL	SZL	748	2	Swazi lilangeni
+THB	THB	764	2	Thai baht
+TJS	TJS	972	2	Tajikistani somoni
+TMT	TMT	934	2	Turkmenistani manat
+TND	TND	788	3	Tunisian dinar
+TOP	TOP	776	2	Tongan pa?anga
+TRY	TRY	949	2	Turkish lira
+TTD	TTD	780	2	Trinidad and Tobago dollar
+TWD	TWD	901	2	New Taiwan dollar
+TZS	TZS	834	2	Tanzanian shilling
+UAH	UAH	980	2	Ukrainian hryvnia
+UGX	UGX	800	2	Ugandan shilling
+USD	USD	840	2	United States dollar
+USN	USN	997	2	United States dollar (next day) (funds code)
+UYI	UYI	940	0	Uruguay Peso en Unidades Indexadas (URUIURUI) (funds code)
+UYU	UYU	858	2	Uruguayan peso
+UZS	UZS	860	2	Uzbekistan som
+VEF	VEF	937	2	Venezuelan bol?var fuerte
+VND	VND	704	0	Vietnamese dong
+VUV	VUV	548	0	Vanuatu vatu
+WST	WST	882	2	Samoan tala
+XAF	XAF	950	0	CFA franc BEAC
+XAG	XAG	961	0	Silver?(one?troy ounce)
+XAU	XAU	959	0	Gold?(one?troy ounce)
+XBA	XBA	955	0	European Composite Unit(EURCO) (bond market unit)
+XBB	XBB	956	0	European Monetary Unit(E.M.U.-6) (bond market unit)
+XBC	XBC	957	0	European Unit of Account 9?(E.U.A.-9) (bond market unit)
+XBD	XBD	958	0	European Unit of Account 17?(E.U.A.-17) (bond market unit)
+XCD	XCD	951	2	East Caribbean dollar
+XDR	XDR	960	0	Special drawing rights
+XFU	XFU	Nil	0	UIC franc?(special settlement currency)
+XOF	XOF	952	0	CFA franc BCEAO
+XPD	XPD	964	0	Palladium?(one?troy ounce)
+XPF	XPF	953	0	CFP franc
+XPT	XPT	962	0	Platinum?(one?troy ounce)
+XTS	XTS	963	0	Code reserved for testing purposes
+XXX	XXX	999	0	No currency
+YER	YER	886	2	Yemeni rial
+ZAR	ZAR	710	2	South African rand
+ZMW	ZMW	967	2	Zambian kwacha

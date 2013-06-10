@@ -303,4 +303,23 @@ ftp_tlaf_overview:
   updater: paul123
   file_location: '/data_sheets/pages/ftp/tlafs.html.erb'
   position: 1
-  
+
+staticdata_currencies:
+  name: '[All Currencies]'
+  display_name: '[All Currencies]'
+  style_sheets: '/stylesheets/custom_styles/staticdata/staticdata.css'
+  profile: staticdata_currencies
+  creator: paul123
+  updater: paul123
+  file_location: '/data_sheets/pages/staticdata/all_curr.html.erb'
+  position: 1
+
+staticdata_countries:
+  name: '[All Countries]'
+  display_name: '[All Countries]'
+  style_sheets: '/stylesheets/custom_styles/staticdata/staticdata.css'
+  profile: staticdata_countries
+  creator: paul123
+  updater: paul123
+  file_location: '/data_sheets/pages/staticdata/all_coun.html.erb'
+  position: 1

@@ -37,6 +37,16 @@ terry_rfu:
   globe: terryreed
 
 ############################################################
+# Profiles for Static Data
+staticdata_countries:
+  name: Countries
+  globe: staticdata
+  
+staticdata_currencies:
+  name: Currencies
+  globe: staticdata
+  
+############################################################
 # Profiles for RFU's Globe
 rfu_main_profile:
   name: Main

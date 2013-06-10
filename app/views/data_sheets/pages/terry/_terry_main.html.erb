@@ -5,48 +5,53 @@
   </tr>
 </table>
 <table width="250">
-  <th>Address:</th>
-  <% if @address.address_line_1.presence %>
+  <th colspan="2">Address:</th>
   <tr>
+    <td>
+      Address Line 1:
+    </td>
     <td>
       <%= Label_TextBox_Switch("address", @address, "address_line_1") %>
     </td>
   </tr>
-  <% end %>
-  <% if @address.address_line_2.presence %>
   <tr>
+    <td>
+      Address Line 2:
+    </td>
     <td>
       <%= Label_TextBox_Switch("address", @address, "address_line_2") %>
     </td>
   </tr>
-  <% end %>
-  <% if @address.address_line_3.presence %>
   <tr>
+    <td>
+      Address Line 3:
+    </td>
     <td>
       <%= Label_TextBox_Switch("address", @address, "address_line_3") %>
     </td>
   </tr>
-  <% end %>
-  <% if @address.city.presence %>
   <tr>
+    <td>
+      City:
+    </td>
     <td>
       <%= Label_TextBox_Switch("address", @address, "city") %>
     </td>
   </tr>
-  <% end %>
-  <% if @address.post_code.presence %>
   <tr>
+    <td>
+      Post Code:
+    </td>
     <td>
       <%= Label_TextBox_Switch("address", @address, "post_code") %>
     </td>
   </tr>
-  </div>
-  <% end %>
-  <% if @address.country.presence %>
-  <tr>
+ <tr>
+    <td>
+      Country:
+    </td>
     <td>
       <%= Label_TextBox_Switch("address", @address, "country") %>
     </td>
   </tr>
-  <% end %>
 </table>

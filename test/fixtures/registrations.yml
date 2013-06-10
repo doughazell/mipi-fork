@@ -66,3 +66,7 @@ fifteen:
   globe: ftp
   user: paul123
   
+sixteen:
+  globe: staticdata
+  user: paul123
+  

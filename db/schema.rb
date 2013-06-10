@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120803135140) do
+ActiveRecord::Schema.define(:version => 20130607071021) do
 
   create_table "address_data_elements", :force => true do |t|
     t.string "address_line_1"
@@ -64,6 +64,21 @@ ActiveRecord::Schema.define(:version => 20120803135140) do
     t.string "property_reference"
     t.string "band"
     t.date   "date_of_issue"
+  end
+
+  create_table "country_data_elements", :force => true do |t|
+    t.string "iso_short_name"
+    t.string "iso_2_code"
+    t.string "iso_3_code"
+    t.string "numeric_code"
+    t.string "iso_3166_2_code"
+  end
+
+  create_table "currency_data_elements", :force => true do |t|
+    t.string  "iso_code"
+    t.string  "numeric_code"
+    t.integer "decimal_places"
+    t.string  "currency_name"
   end
 
   create_table "data_domain_data_elements", :force => true do |t|
@@ -564,6 +579,53 @@ ActiveRecord::Schema.define(:version => 20120803135140) do
     v.column :property_reference
     v.column :band
     v.column :date_of_issue
+  end
+
+  create_view "view_country_data_elements", "SELECT data_elements.id, data_elements.type, data_elements.name, data_elements.data_element_collection_id, data_elements.user_id, data_elements.ready_to_archive, data_elements.label, data_elements.mandatory, data_elements.globe_id, data_elements.version, data_elements.inheritance_column_name, data_elements.current, data_elements.creator_id, data_elements.updater_id, data_elements.created_at, data_elements.updated_at, country_data_elements.iso_short_name, country_data_elements.iso_2_code, country_data_elements.iso_3_code, country_data_elements.numeric_code, country_data_elements.iso_3166_2_code FROM data_elements, country_data_elements WHERE (data_elements.id = country_data_elements.id);", :force => true do |v|
+    v.column :id
+    v.column :type
+    v.column :name
+    v.column :data_element_collection_id
+    v.column :user_id
+    v.column :ready_to_archive
+    v.column :label
+    v.column :mandatory
+    v.column :globe_id
+    v.column :version
+    v.column :inheritance_column_name
+    v.column :current
+    v.column :creator_id
+    v.column :updater_id
+    v.column :created_at
+    v.column :updated_at
+    v.column :iso_short_name
+    v.column :iso_2_code
+    v.column :iso_3_code
+    v.column :numeric_code
+    v.column :iso_3166_2_code
+  end
+
+  create_view "view_currency_data_elements", "SELECT data_elements.id, data_elements.type, data_elements.name, data_elements.data_element_collection_id, data_elements.user_id, data_elements.ready_to_archive, data_elements.label, data_elements.mandatory, data_elements.globe_id, data_elements.version, data_elements.inheritance_column_name, data_elements.current, data_elements.creator_id, data_elements.updater_id, data_elements.created_at, data_elements.updated_at, currency_data_elements.iso_code, currency_data_elements.numeric_code, currency_data_elements.decimal_places, currency_data_elements.currency_name FROM data_elements, currency_data_elements WHERE (data_elements.id = currency_data_elements.id);", :force => true do |v|
+    v.column :id
+    v.column :type
+    v.column :name
+    v.column :data_element_collection_id
+    v.column :user_id
+    v.column :ready_to_archive
+    v.column :label
+    v.column :mandatory
+    v.column :globe_id
+    v.column :version
+    v.column :inheritance_column_name
+    v.column :current
+    v.column :creator_id
+    v.column :updater_id
+    v.column :created_at
+    v.column :updated_at
+    v.column :iso_code
+    v.column :numeric_code
+    v.column :decimal_places
+    v.column :currency_name
   end
 
   create_view "view_data_domain_data_elements", "SELECT data_elements.id, data_elements.type, data_elements.name, data_elements.data_element_collection_id, data_elements.user_id, data_elements.ready_to_archive, data_elements.label, data_elements.mandatory, data_elements.globe_id, data_elements.version, data_elements.inheritance_column_name, data_elements.current, data_elements.creator_id, data_elements.updater_id, data_elements.created_at, data_elements.updated_at, data_domain_data_elements.code, data_domain_data_elements.short_name, data_domain_data_elements.description FROM data_elements, data_domain_data_elements WHERE (data_elements.id = data_domain_data_elements.id);", :force => true do |v|

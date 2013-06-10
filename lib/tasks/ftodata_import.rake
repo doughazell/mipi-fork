@@ -46,12 +46,15 @@ namespace :import do
   #  - The must be a column called 'name' and this is the PK.
   # USAGE:
   #    C:\> rake import:import_data[paul@piguard.com,ftp,data_domains.csv]
+  #    C:\> rake import:import_data[paul@piguard.com,ftp,data_domains.csv,"|"]
   #
   # NOTE:
   #    Ensure that there is no space between 'import_data' and the first square
   #    bracket.
   #
-  task :import_data, [:username, :globe, :datafile] => :environment do |t, args|
+  # 07-Jun-13/PL  Added flexible delimiter support.
+  #
+  task :import_data, [:username, :globe, :datafile, :delimiter] => :environment do |t, args|
     require "highline/import"
     
     puts args
@@ -67,6 +70,14 @@ namespace :import do
 
     u = User.find_by_email(args[:username])
     g = Globe.find_by_globe_reference(args[:globe])
+
+    delimiter_name = args[:delimiter]
+
+    delimiter = ','
+    delimiter = "|" if delimiter_name == 'pipe'
+    delimiter = "\t" if delimiter_name == 'tab'
+    
+    puts "Delimiter #{delimiter} from #{delimiter_name}" 
 
     # Doesn't appear required within this routine.       23-Apr-2013/PL
 #    profile_id = g.profiles.find_by_name('Units').id
@@ -98,7 +109,7 @@ namespace :import do
       # Header Row
       if (line_count == 0) then
         # Place the columns into an Array
-        columns = line.strip.split(',')
+        columns = line.strip.split(delimiter)
         
         # Seek out the 'name' column - it's compulsory.
         name_column = columns.index('name')
@@ -135,7 +146,7 @@ namespace :import do
 #        puts meta_data
       else
         
-        values = line.strip.split(',')
+        values = line.strip.split(delimiter)
 
         # Retrieve the collection that this line will be added to.
         root_dec = DataElementCollection.find_or_initialize_by_name_and_data_element_type(values[name_column], data_element_name_camel)

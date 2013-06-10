@@ -1,0 +1,32 @@
+<h1>All Countries</h1>
+<table>
+  <th>
+    Name
+  </th>
+  <th>
+    ISO 2 Code
+  </th>
+  <th>
+    ISO 3 Code
+  </th>
+  <th>
+    ISO Numeric Code
+  </th>
+<% @country_array.sort! { |a,b| a.iso_short_name <=> b.iso_short_name } %> 
+<% @country_array.each do |country| %>
+  <tr>
+    <td>
+<%= LinkDataSheet(country, "iso_short_name") %>
+    </td>
+    <td>
+<%= country.iso_2_code %>
+    </td>
+    <td>
+<%= country.iso_3_code %>
+    </td>
+    <td>
+<%= country.numeric_code %>
+    </td>
+  </tr>
+<% end %>
+</table>

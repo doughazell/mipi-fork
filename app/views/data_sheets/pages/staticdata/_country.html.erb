@@ -1,0 +1,29 @@
+<h1>Country Details</h1>
+<table>
+  <th>
+    Attribute
+  </th>
+  <th>
+    Value
+  </th>
+  <tr>
+    <td>ISO 3 Character Code:</td>
+    <td><%= @country.iso_3_code %></td>
+  </tr>
+  <tr>
+    <td>Country Name:</td>
+    <td><%= Label_TextBox_Switch("country", @country, "iso_short_name") %></td>
+  </tr>
+  <tr>
+    <td>ISO 2 Character Code:</td>
+    <td><%= @country.iso_2_code %></td>
+  </tr>
+  <tr>
+    <td>ISO Numeric Code:</td>
+    <td><%= @country.numeric_code %></td>
+  </tr>
+  <tr>
+    <td>ISO 3166-2 Code:</td>
+    <td><%= @country.iso_3166_2_code %></td>
+  </tr>
+</table>

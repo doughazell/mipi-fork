@@ -38,6 +38,10 @@ ftp:
   security: MyString
   globe_reference: ftp
 
+staticdata:
+  name: Static Data
+  globe_reference: staticdata
+
 ###=========================================================
 ### SHADOW GLOBES
 ###=========================================================
