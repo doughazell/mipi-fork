@@ -426,7 +426,7 @@ namespace :import do
     # Convention over configuration in action. These are the standard conventions
     # being used for the 'partial' and the CSS style sheet.
     html_file_name = "/data_sheets/pages/#{globe_reference}/#{data_element_stem}.html.erb"
-    css_file_name = "/stylesheets/custom_styles/#{globe_reference}/#{globe_reference}.css"
+    css_file_name = "custom_styles/#{globe_reference}/#{globe_reference}.css"
 
     # Each collection of DataElements within this globe for this DataElement-derived type
     # will need to have a DataSheet reference created. This section will loop through
@@ -615,7 +615,7 @@ namespace :import do
         ds_new = DataSheet.find_or_initialize_by_name(:name => "GU_#{gu.code}")
         ds_new.update_attributes({
           :display_name => "#{gu.name}",
-          :style_sheets => "/stylesheets/custom_styles/ftp/ftp.css",
+          :style_sheets => "custom_styles/ftp/ftp.css",
           :profile_id => profile_id,
           :file_location => "/data_sheets/pages/ftp/generator.html.erb",
           :creator_id => u.id,
@@ -684,7 +684,7 @@ namespace :import do
         ds_new.update_attributes({
           :name => "ST_#{ps.code}",
           :display_name => "#{ps.name}",
-          :style_sheets => "/stylesheets/custom_styles/ftp/ftp.css",
+          :style_sheets => "custom_styles/ftp/ftp.css",
           :profile_id => profile_id,
           :file_location => "/data_sheets/pages/ftp/station.html.erb",
           :creator_id => u.id,

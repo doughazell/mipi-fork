@@ -6,8 +6,13 @@
   <% @data_domain_array.each do |data_domain| %>
   <tr>
     <td><%= LinkDataSheet(data_domain, "name", {:data_sheet => data_domain.name}) %></td>
-    <td><%= data_domain.short_name %></td>
+    <td><%= Tooltip(data_domain, 'short_name') %></td>
     <td><%= data_domain.description %></td>
   </tr>
-  <% end %>
+<% end %>
+  <tr>
+    <td colspan="3">
+      <%= AddNewDataElement('DataDomainDataElement', { :default_data_sheets => [@active_data_sheet.name]}) %>
+    </td>
+  </tr>
 </table>

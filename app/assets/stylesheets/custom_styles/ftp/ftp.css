@@ -1,0 +1,5 @@
+/* Override or introduce new styles specifically for ftp
+  data sheets that were created to refer to this. */
+div.showdetails {
+    background-color: #FF00FF;
+}

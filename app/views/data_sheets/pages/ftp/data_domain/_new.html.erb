@@ -1,0 +1,22 @@
+<h2>New Data Domain</h2>
+<%= fields_for @data_domain, :url => {:controller => 'data_sheet', :action => 'create_new_data_element' }, :method => :post, :remote => true do |f| %>
+<table>
+  <tr>
+    <td>Name:</td>
+    <td><%= f.text_field :name %>
+  </tr>
+  <tr>
+    <td>Code:</td>
+    <td><%= f.text_field :code %>
+  </tr>
+  <tr>
+    <td>Short Name:</td>
+    <td><%= f.text_field :short_name %>
+  </tr>
+  <tr>
+    <td>Description:</td>
+    <td><%= f.text_field :description %>
+  </tr>
+</table>
+<%= f.submit "Create New Data Domain" %>
+<% end %>

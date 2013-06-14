@@ -1,0 +1,406 @@
+body {
+	width: 780px;
+}
+
+h1 {
+	font: bold x-large "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	padding: 3px;
+	background: /*#7F8BA5;*//*#CDB6BD;*/ #FFFFFF;
+	border: solid 2px;
+	text-align: center;
+	background: #F7ECB7;		/* #eee */
+}
+
+div:hover {
+/*	border: solid 1px black;*/
+}
+
+td:hover {
+/*	border: solid 1px red;*/
+}
+
+th {
+	font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	color: #6D929B;
+	/*color: #FFFFFF;*/
+	/*border-right: 1px solid #C1DAD7;*/
+	/*border-bottom: 1px solid #C1DAD7;*/
+	/*border-top: 1px solid #C1DAD7;*/
+	border-right: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	border-top: 1px solid #000000;
+        border-left: 1px solid #000000;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	text-align: left;
+	padding: 6px 6px 6px 12px;
+/*	background: #AD969D; *//*url(images/bg_header.jpg) no-repeat*/
+/*	background: #B7AC67;*/
+/*	background: #3030DD;
+*/	background: #377B7B;
+	color: white;
+/*	background: #FFFFFF;*/
+        /*#CAE8EA */
+}
+
+th.nobg {
+	border-top: 0;
+	border-left: 0;
+	border-right: 1px solid #C1DAD7;
+	background: none;
+}
+
+th.spec {	
+	border-left: 1px solid #C1DAD7;
+	border-top: 0;
+	background: #fff url(images/bullet1.gif) no-repeat;
+	font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica,
+	sans-serif;
+}
+
+th.specalt {
+	border-left: 1px solid #C1DAD7;
+	border-top: 0;
+	background: #f5fafa url(images/bullet2.gif) no-repeat;
+	font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica,
+	sans-serif;
+	color: #B4AA9D;
+}
+
+.raised_area {
+	border-right: 1px solid #000000; /*#C1DAD7;*/
+	border-bottom: 1px solid #000000; /*#C1DAD7;*/
+	background: #F7ECB7;		/* #eee */
+	background: #efeee9;
+	background-color: #CD5C5C;
+	/*background: #FFFFFF;*/
+	padding: 10px 10px 6px 12px;
+	/*color: #6D929B;*/
+        color: #000;
+}
+
+.raised_box {
+	border-right: 1px solid #000000; /*#C1DAD7;*/
+	border-bottom: 1px solid #000000; /*#C1DAD7;*/
+	background: #F7ECB7;		/* #eee */
+	background: #efeee9;
+	/*background: #FFFFFF;*/
+/*	padding: 10px 10px 6px 6px;
+*/	padding: 5px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	/*color: #6D929B;*/
+        color: #000;
+	width: 33%;
+}
+
+.preview_profiles {
+	padding: 5px;
+	border: solid;
+	background-color: #efeee9;
+	margin: auto;
+	overflow-y: hidden;
+	overflow-x: auto;
+}
+
+.preview_data_sheets {
+	padding: 15px;
+	border: solid;
+	background-color: #efeee9;
+	overflow-y: hidden;
+	overflow-x: auto;
+}
+
+.data_sheet {
+	padding: 5px;
+	border: solid;
+	background-color: #efeee9;
+}
+
+td {
+	border-right: 1px solid #000000; /*#C1DAD7;*/
+	border-bottom: 1px solid #000000; /*#C1DAD7;*/
+	background: #F7ECB7;		/* #eee */
+	background: #efeee9;
+	/*background: #FFFFFF;*/
+	padding: 6px 6px 6px 12px;
+	/*color: #6D929B;*/
+        color: #000;
+}
+
+td.alt {
+	/*background: #E7DCA7; *//*#F5FAFA;*/
+	background: #FFFFFF;
+	color: #B4AA9D;
+}
+
+.user_nav {
+        font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+        color: #6D929B;
+        border-right: 1px solid #C1DAD7;
+        border-bottom: 1px solid #C1DAD7;
+        border-top: 1px solid #C1DAD7;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        text-align: left;
+        padding: 6px 6px 6px 12px;
+/*        background: #CAE8EA url(images/bg_header.jpg) no-repeat;*/
+        background: #CAE8EA;
+   
+}
+
+.config_area {
+	width: 100%;
+	background: #dddddd;
+	border: solid 1pt;
+}
+
+.relationship_box {
+	border: solid;
+	padding-left: 3px;
+	background-color: #efeee9;
+/*	background-color: #dddddd;
+*/}
+
+.globe_overview {
+	width: 500px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+}
+
+.globe_overview_title {
+	font-weight: bold;
+	font-size: large;
+}
+.profile_details {
+	width: 500px;
+        padding: 6px 6px 6px 12px;
+        padding-left: 12px;
+	border: solid 1pt black;
+}
+
+.profiles_details_title {
+	font-weight: bold;
+	font-size: large;
+}
+
+.link_navigation
+{
+        color: #6D929B;
+        background: #CAE8EA;
+	font-weight: bold;
+	font-size: large;
+}
+
+.login_notice
+{
+	background: green;
+	color: white;
+        padding: 6px 6px 6px 12px;
+	border: solid 5pt black;
+}
+
+.login_alert
+{
+	background: red;
+	color: white;
+	font-weight: bold;
+        padding: 6px 6px 6px 12px;
+	border: solid 5pt black;
+}
+
+.active_profile {
+	background: #E7DCA7;/*#ddd;*/
+	background: #dfded9;
+	/*background: #FFFFFF;*/
+	color: black;
+}
+
+.active_data_sheet {
+	background: #E7DCA7; /*#ddd;*/
+	background: #dfded9;
+	/*background: #FFFFFF;*/
+	color: black;
+}
+
+.data_element_options:hover {
+	background: #AD969D;
+	margin: 0pt;
+	cursor: pointer;
+}
+
+.message_severity_high {
+	background: red;
+	color: white;
+	font-weight: bold;
+	border: solid 2pt black;
+}
+
+.editable_region:hover {
+	background: #00AA00;
+	color: #FFFFFF;
+}
+
+.subscription_violations:hover {
+	background: #AA0000;
+	color: #FFFFFF;
+	cursor: help;
+}
+
+.masterglobe {
+	padding: 10px;
+/*	background-color: #F5DEB3;*/
+/*	background-color: #FFEEC3;
+*/	/*background-color: #CD8F5C;*/
+/*	background-color: #E6B2B7;
+*/	background-color: #854D1E;
+}
+.masterglobe_heading {
+	font: bold x-large "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	text-align: right;
+	color: white;
+}
+
+.masterglobe_heading a {
+	font: bold x-large "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	text-align: right;
+	color: white;
+}
+
+.masterglobe_self {
+	padding: 10px;
+	background-color: #CD5C5C;
+}
+
+.globe_name {
+	font: bold x-large "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	color: white;
+	padding: 10px;
+}
+
+.preview_profile {
+/*	border: solid 1px;*/
+	padding: 15px;
+}
+
+.hover_profile {
+	border: solid 1px;
+	padding: 10px;
+	background-color: #CD5C5C;
+}
+
+span .handle {
+	cursor: move;
+	font-size: 12px;
+}
+
+.add_profile {
+	float: right;
+}
+
+.bottom_navigation {
+/*	background: #F7ECB7;		/* #eee */
+	background: #000000;
+	border: 1px;
+	color: white;
+	padding: 3px;
+	border: solid 2px black;
+}
+
+.bottom_navigation_left {
+}
+
+.bottom_navigation_right {
+	float: right;
+}
+
+.scrollablearea {
+	position:relative; 
+	left:auto;
+	top:auto; 
+	width:100%;
+	height:100%;
+/*	background-color:#ffffff;*/
+	overflow:auto;
+}
+
+.footnote {
+	font-size: xx-small;
+}
+
+.footnote underline {
+	font-size: xx-small;
+	text-decoration: underline;
+}
+
+.bottom_navigation_menu {
+	font-family: sans-serif;
+	font-weight: 300;
+	font-size: 12pt;
+/*	background: #F7ECB7;
+*/	background: #E6C0A0;
+/*	background: #000000;
+*/	width: 100%;
+	height: 50px;
+	margin: auto;
+	border-width: 0px;
+	border-style: solid;
+}
+
+.bottom_navigation_menu a {
+	width: 120px;
+	line-height: 40px;
+	display: block;
+	margin: 5px;
+	text-align: center;
+	float: left;
+	opacity: 0.5;
+	text-decoration: none;
+}
+
+/*.yellow { background: #fdd22a; color: rgb(0, 0, 0); }
+.blue { background: #009fe3; color: rgb(0, 0, 0); }
+.purple { background: #574696; color: rgb(255, 255, 255); }
+.orange { background: #ee7202; color: rgb(255, 255, 255); }
+.pink { background: #e61c67; color: rgb(255, 255, 255); }
+.green { background: #96c11f; color: rgb(255, 255, 255); }
+*/
+
+/*
+  These colours below have been designed to follow a colour
+  scheme as set our from the colorschemedesigner web site,
+  based on the #CD5C5C background colour of the main window.
+*/
+.rustyred { background: #CD5C5C; color: rgb(255, 255, 255); }
+.rustyred:hover { background: #CD5C5C; color: rgb(255, 255, 255); }
+.limegreen { background: #96c11f; color: rgb(255, 255, 255); }
+.limegreen:hover { background: #96c11f; color: rgb(255, 255, 255); }
+.brown { background: #854D1E; color: rgb(255, 255, 255); }
+.brown:hover { background: #854D1E; color: rgb(255, 255, 255); }
+.metallicblue { background: #377B7B; color: rgb(255, 255, 255); }
+.metallicblue:hover { background: #377B7B; color: rgb(255, 255, 255); }
+.burntorange { background: #CD8F5C; color: rgb(0, 0, 0); }
+.burntorange:hover { background: #CD8F5C; color: rgb(0, 0, 0); }
+.orange { background: #4AA44A; color: rgb(255, 255, 255); }
+.orange:hover { background: #4AA44A; color: rgb(255, 255, 255); }
+
+/*
+  This is an attempt to create specific formatting rules
+  for the Home Icon which is a silhoutted house.
+*/
+.home_icon {
+	right: 20px;
+}
+
+div.tbl-container 
+{
+    width: 600px;   
+    overflow: auto;
+}
+
+.historic_header {
+	font-weight: bold;
+	font-size: large;
+}

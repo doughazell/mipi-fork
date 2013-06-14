@@ -26,6 +26,33 @@ module DataSheetsHelper
                   :options => options}
   end
 
+
+  def Reference_PickList(collection_name, data_element, data_column, fkclass, fkclass_matchcolumn, viewable_column_name, options = {})
+    
+    # Define the id and name of the HTML object. The 'name' is critical in order
+    # for the data to be correctly interpreted at the server end.
+    @tag_id = "#{data_element.type}_#{data_column}_#{data_element.id}".downcase
+    @tag_name = "#{collection_name}[#{data_element.id}][#{data_column}]"
+    
+    # What is our current value, ensure this is selected in the dropdown.
+#    @default_id = eval("data_element.#{data_column}")
+    @default_value = data_element.read_attribute(data_column)
+
+    logger.debug { "#{data_element}" }
+    logger.debug { "data_element.#{data_column}" }
+    logger.debug { @default_id }
+    
+    # This give us the class of our FK table.
+    @fk_class_name = fkclass.camelcase
+
+    # Call the partial to write the select dropdown.
+    render :partial => 'picklist_reference',
+            :locals => {
+                  :viewable_column_name => viewable_column_name,
+                  :data_column => fkclass_matchcolumn
+            }
+  end
+
   def ForeignKey_PickList(collection_name, data_element, data_column, viewable_column_name, options = {})
     
     # Define the id and name of the HTML object. The 'name' is critical in order
@@ -184,4 +211,34 @@ end
     end
     raw(output)
   end
+  
+  # Wrapper for placing an 'Add New Data Element' button/image/link that will
+  # when clicked trigger some javascript to call back to the server and render
+  # a windows (popup or inline) that contains all the basic input fields for
+  # creating this new instance.
+  #
+  # What data do we need to send down to the server after the button has been
+  # clicked to ensure all options are covered:
+  #   - ClassName  (e.g. DomainDataElement)
+  #   - Globe (e.g. 'ftp')
+  #   - CompletionDataSheet (where to send the user once the addition has been made)
+  #   - FailureDataSheet (similarly)
+  #   - Default DataSheets (which sheets does this need to be added to automatically?)
+  def AddNewDataElement(class_name, options)
+    render :partial => 'new_data_element_link',
+            :locals => {
+                  :class_name => class_name,
+                  :options => options
+                  }
+  end
+  
+  def Tooltip(object, column)
+    render :partial => 'data_element_tooltip',
+              :locals => {
+                :object => object,
+                :column => column,
+                :value => object.read_attribute(column)
+              }
+  end
 end
+

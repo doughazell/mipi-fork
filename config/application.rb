@@ -49,7 +49,7 @@ module V01
     config.filter_parameters += [:password]
     
     # Asset pipeline
-    config.assets.enabled = false
+    config.assets.enabled = true
     
     # Change this if you want to expire all your assets.
     config.assets.version = '1.0'

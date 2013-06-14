@@ -242,5 +242,8 @@ class DataElementsController < ApplicationController
       format.text
     end
   end
+  
+  def tooltip
+  end
 end
 

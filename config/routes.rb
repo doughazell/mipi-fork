@@ -14,6 +14,7 @@ V01::Application.routes.draw do
     resources :data_elements do
       member do
         post 'pushchange'
+        get 'tooltip'
       end
       
       post 'new(/:action)'
@@ -53,6 +54,8 @@ V01::Application.routes.draw do
           get 'draw'
           get 'preview'
           post 'change'
+          get 'new_data_element'
+          post 'create_data_element'
        end
         
         collection do

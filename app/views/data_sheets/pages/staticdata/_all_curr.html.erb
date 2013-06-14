@@ -9,6 +9,7 @@
   <th>
     Decimal Places
   </th>
+<% @currency_array.sort! { |a,b| a.currency_name <=> b.currency_name } %> 
 <% @currency_array.each do |currency| %>
   <tr>
     <td>

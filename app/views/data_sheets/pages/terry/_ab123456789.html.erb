@@ -43,5 +43,10 @@
       <%= @address.country %>
     </td>
   </tr>
+  <tr>
+    <td>
+      <%= Reference_PickList('address', @address, 'country', 'CountryDataElement', 'iso_short_name', 'iso_short_name') %><br />
+    </td>
+  </tr>
   <% end %>
 </table>

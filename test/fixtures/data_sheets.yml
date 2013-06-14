@@ -9,7 +9,7 @@
 datasheet1:
   name: Banking Overview
   class_style: MyClass
-  style_sheets: '/stylesheets/custom_styles/sample_bank'
+  style_sheets: 'custom_styles/sample_bank'
   profile: pablito_hsbc
   creator: paul123
   updater: paul123
@@ -20,7 +20,7 @@ datasheet1:
 datasheet2:
   name: Loan Details
   class_style: MyClass
-  style_sheets: '/stylesheets/custom_styles/sample_bank.css'
+  style_sheets: 'custom_styles/sample_bank.css'
   profile: pablito_hsbc
   creator: paul123
   updater: paul123
@@ -31,7 +31,7 @@ datasheet2:
 rfu_membership:
   name: RFU Membership
   class_style: MyClass
-  style_sheets: '/stylesheets/custom_styles/rfu'
+  style_sheets: 'custom_styles/rfu'
   profile: pablito_rfu
   creator: paul123
   updater: paul123
@@ -42,7 +42,7 @@ rfu_membership:
 rfu_purchases:
   name: RFU Purchases
   class_style: MyClass
-  style_sheets: '/stylesheets/custom_styles/rfu'
+  style_sheets: 'custom_styles/rfu'
   profile: pablito_rfu
   creator: paul123
   updater: paul123
@@ -53,7 +53,7 @@ rfu_purchases:
 barclays_account:
   name: Current Account
   class_style: MyClass
-  style_sheets: '/stylesheets/custom_styles/barclays_account.css'
+  style_sheets: 'custom_styles/barclays_account.css'
   profile: pablito_barclays_account
   creator: paul123
   updater: paul123
@@ -63,7 +63,7 @@ barclays_account:
 # Profile: Council Tax
 council_tax:
   name: Council Tax
-  style_sheets: '/stylesheets/custom_styles/stalbanscity_council.css'
+  style_sheets: 'custom_styles/stalbanscity_council.css'
   profile: pablito_council
   creator: paul123
   updater: paul123
@@ -73,7 +73,7 @@ council_tax:
 # Profile: Main
 pablito_main_page:
   name: Basic Data
-  style_sheets: '/stylesheets/custom_styles/mainpage.css'
+  style_sheets: 'custom_styles/mainpage.css'
   profile: pablito_main
   creator: paul123
   updater: paul123
@@ -83,7 +83,7 @@ pablito_main_page:
 # Profile: Main:Messages
 pablito_messages:
   name: Message Page
-  style_sheets: '/stylesheets/custom_styles/messages.css'
+  style_sheets: 'custom_styles/messages.css'
   profile: pablito_main
   creator: paul123
   updater: paul123
@@ -95,7 +95,7 @@ pablito_messages:
 # Profile: Main
 terry_main_page:
   name: Basic Data
-  style_sheets: '/stylesheets/custom_styles/mainpage.css'
+  style_sheets: 'custom_styles/mainpage.css'
   profile: terry_main
   creator: paul123
   updater: paul123
@@ -106,7 +106,7 @@ terry_main_page:
 rfu_membership2:
   name: RFU Membership
   class_style: MyClass
-  style_sheets: '/stylesheets/custom_styles/rfu'
+  style_sheets: 'custom_styles/rfu'
   profile: terry_rfu
   creator: paul123
   updater: paul123
@@ -122,7 +122,7 @@ rfu_membership2:
 rfu_membership_v01:
   name: RFU Membership
   class_style: MyClass
-  style_sheets: '/stylesheets/custom_styles/rfu'
+  style_sheets: 'custom_styles/rfu'
   profile: rfu_pablito_profile
   creator: paul123
   updater: paul123
@@ -134,7 +134,7 @@ rfu_membership_v01:
 rfu_email_subscription_v01:
   name: RFU Email Subscription
   class_style: MyClass
-  style_sheets: '/stylesheets/custom_styles/rfu'
+  style_sheets: 'custom_styles/rfu'
   profile: rfu_pablito_profile
   creator: paul123
   updater: paul123
@@ -145,7 +145,7 @@ rfu_email_subscription_v01:
 # Profile: RFU Messages
 rfu_pablito_messages:
   name: Message Page
-  style_sheets: '/stylesheets/custom_styles/messages123.css'
+  style_sheets: 'custom_styles/messages123.css'
   profile: rfu_pablito_profile
   creator: paul123
   updater: paul123
@@ -158,7 +158,7 @@ rfu_pablito_messages:
 rfu_membership_terryreed_v01:
   name: RFU Membership
   class_style: MyClass
-  style_sheets: '/stylesheets/custom_styles/rfu'
+  style_sheets: 'custom_styles/rfu'
   profile: rfu_terryreed_profile
   creator: paul123
   updater: paul123
@@ -167,7 +167,7 @@ rfu_membership_terryreed_v01:
 rfu_main_profile_data_sheet:
   name: Rugby Football Union
   class_style: MyClass
-  style_sheets: '/stylesheets/custom_styles/rfu'
+  style_sheets: 'custom_styles/rfu'
   profile: rfu_main_profile
   creator: paul123
   updater: paul123
@@ -176,7 +176,7 @@ rfu_main_profile_data_sheet:
 rfu_supporters_club_profile_data_sheet:
   name: Rugby Football Union
   class_style: MyClass
-  style_sheets: '/stylesheets/custom_styles/rfu'
+  style_sheets: 'custom_styles/rfu'
   profile: rfu_supporters_club_profile
   creator: paul123
   updater: paul123
@@ -185,7 +185,7 @@ rfu_supporters_club_profile_data_sheet:
 rfu_shareholders_profile_data_sheet:
   name: Rugby Football Union
   class_style: MyClass
-  style_sheets: '/stylesheets/custom_styles/rfu'
+  style_sheets: 'custom_styles/rfu'
   profile: rfu_shareholders_profile
   creator: paul123
   updater: paul123
@@ -195,7 +195,7 @@ rfu_shareholders_profile_data_sheet:
 # Profile: Main:Messages
 rfu_messages:
   name: Message Page
-  style_sheets: '/stylesheets/custom_styles/messages.css'
+  style_sheets: 'custom_styles/messages.css'
   profile: rfu_main_profile
   creator: paul123
   updater: paul123
@@ -206,7 +206,7 @@ rfu_messages:
 # Profile: Home Details
 pablito_terryreed_datasheet:
   name: Details
-  style_sheets: '/stylesheets/custom_styles/ab123456789.css'
+  style_sheets: 'custom_styles/ab123456789.css'
   profile: pablito_terryreed_profile
   creator: paul123
   updater: paul123
@@ -217,7 +217,7 @@ pablito_terryreed_datasheet:
 # Profile: Messages
 pablito_terryreed_messages:
   name: Message Page
-  style_sheets: '/stylesheets/custom_styles/messages.css'
+  style_sheets: 'custom_styles/messages.css'
   profile: pablito_terryreed_profile
   creator: paul123
   updater: paul123
@@ -225,7 +225,7 @@ pablito_terryreed_messages:
 
 ecb_club_contact_details:
   name: Contact Details
-  style_sheets: '/stylesheets/custom_styles/ecb.css'
+  style_sheets: 'custom_styles/ecb.css'
   profile: ecb_barntgreen_profile
   creator: paul123
   updater: paul123
@@ -233,7 +233,7 @@ ecb_club_contact_details:
   
 ecb_club_contact_details_2:
   name: Contact Details
-  style_sheets: '/stylesheets/custom_styles/ecb.css'
+  style_sheets: 'custom_styles/ecb.css'
   profile: ecb_himley_profile
   creator: paul123
   updater: paul123
@@ -241,7 +241,7 @@ ecb_club_contact_details_2:
   
 ecb_club_contact_details_3:
   name: Contact Details
-  style_sheets: '/stylesheets/custom_styles/ecb.css'
+  style_sheets: 'custom_styles/ecb.css'
   profile: ecb_kenilworthwardens_profile
   creator: paul123
   updater: paul123
@@ -249,7 +249,7 @@ ecb_club_contact_details_3:
   
 ecb_club_contact_details_4:
   name: Contact Details
-  style_sheets: '/stylesheets/custom_styles/ecb.css'
+  style_sheets: 'custom_styles/ecb.css'
   profile: ecb_kidderminstervictoria_profile
   creator: paul123
   updater: paul123
@@ -258,7 +258,7 @@ ecb_club_contact_details_4:
 ftp_generator_GU_DEFAULT_data_sheet:
   name: GU_DEFAULT
   display_name: 'Generator Unit'
-  style_sheets: '/stylesheets/custom_styles/ftp/ftp.css'
+  style_sheets: 'custom_styles/ftp/ftp.css'
   profile_id: 0
   creator: paul123
   updater: paul123
@@ -268,7 +268,7 @@ ftp_generator_GU_DEFAULT_data_sheet:
 ftp_main_data_sheet:
   name: All Units
   display_name: 'All Generator Units'
-  style_sheets: '/stylesheets/custom_styles/ftp/ftp.css'
+  style_sheets: 'custom_styles/ftp/ftp.css'
   profile: ftp_main_profile
   creator: paul123
   updater: paul123
@@ -278,7 +278,7 @@ ftp_main_data_sheet:
 ftp_station_ST_DEFAULT_data_sheet:
   name: ST_DEFAULT
   display_name: 'Power Station'
-  style_sheets: '/stylesheets/custom_styles/ftp/ftp.css'
+  style_sheets: 'custom_styles/ftp/ftp.css'
   profile_id: 0
   creator: paul123
   updater: paul123
@@ -288,7 +288,7 @@ ftp_station_ST_DEFAULT_data_sheet:
 ftp_station_ALL_data_sheet:
   name: All Stations
   display_name: 'All Power Stations'
-  style_sheets: '/stylesheets/custom_styles/ftp/ftp.css'
+  style_sheets: 'custom_styles/ftp/ftp.css'
   profile: ftp_station_profile
   creator: paul123
   updater: paul123
@@ -297,7 +297,7 @@ ftp_station_ALL_data_sheet:
   
 ftp_tlaf_overview:
   name: TLAF Overview
-  style_sheets: '/stylesheets/custom_styles/ftp/ftp.css'
+  style_sheets: 'custom_styles/ftp/ftp.css'
   profile: ftp_tlaf_profile
   creator: paul123
   updater: paul123
@@ -307,7 +307,7 @@ ftp_tlaf_overview:
 staticdata_currencies:
   name: '[All Currencies]'
   display_name: '[All Currencies]'
-  style_sheets: '/stylesheets/custom_styles/staticdata/staticdata.css'
+  style_sheets: 'custom_styles/staticdata/staticdata.css'
   profile: staticdata_currencies
   creator: paul123
   updater: paul123
@@ -317,7 +317,7 @@ staticdata_currencies:
 staticdata_countries:
   name: '[All Countries]'
   display_name: '[All Countries]'
-  style_sheets: '/stylesheets/custom_styles/staticdata/staticdata.css'
+  style_sheets: 'custom_styles/staticdata/staticdata.css'
   profile: staticdata_countries
   creator: paul123
   updater: paul123

@@ -1,0 +1,24 @@
+.council_title {
+    font: bold x-large "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+}
+
+.shiftcontainer{
+position: relative;
+left: 3px; /*Number should match -left shadow depth below*/
+top: 3px; /*Number should match -top shadow depth below*/
+}
+
+.shadowcontainer{
+width: 300px; /* container width*/
+background-color: #d1cfd0;
+}
+
+.shadowcontainer .innerdiv{
+/* Add container height here if desired */
+background-color: white;
+border: 1px solid gray;
+padding: 6px;
+position: relative;
+left: -3px; /*shadow depth*/
+top: -3px; /*shadow depth*/
+}

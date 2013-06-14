@@ -1,0 +1,6 @@
+<%=
+coll = DataElementCollection.find_top_level_data_elements(@fk_class_name)
+objects = coll.select { |rec| rec.read_attribute(data_column) == @default_value }
+default_id = objects[0].read_attribute(data_column) unless objects.empty?
+select_tag @tag_id, options_from_collection_for_select(coll, data_column, viewable_column_name, default_id), :include_blank => false, :class => "picklist_foreign_key", :onchange => ("javascript:submit();"), :name => @tag_name
+%>

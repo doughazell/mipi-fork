@@ -21,6 +21,14 @@ class DataElement < ActiveRecord::Base
     name
   end
   
+  def self.short_undescore_name
+    name.underscore[0..-'data_element_'.length-1]
+  end
+  
+  def self.frendly_class_name
+    name[0..-'DataElement'.length-1].split(/(?=[A-Z])/).join(' ')
+  end
+  
   def compare_element(new_data_element)
       comp1 = Hash.new
       comp1 = attributes

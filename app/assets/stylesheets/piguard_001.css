@@ -1,0 +1,146 @@
+/* Paul Long 
+File: piguard_001.css
+Date: 24 Sep 2010
+*/				 
+
+.mainbody {
+	background-color: #FFE0D2; 
+}
+
+.maintable {
+	width: 600px;
+}
+
+.pig_title
+{
+    color: #000000;
+	background-color: #E7BEC9;
+/*	background-color: #DDF0E0; */
+/*	background-color: #BFAEA6; */
+	font-size: x-large;
+    text-align: center;
+	font-family: Verdana, sans-serif;
+}
+
+.pig_subtitle
+{
+    color: #000000;
+/*	background-color: #C1D6CB; */
+	background-color: #AD969D;
+    text-align: center;
+	font-size: 10px;
+	font-family: Verdana, sans-serif;
+	font-weight: bold;
+}
+
+.pig_text
+{
+	color: #000000;
+	margin-top: 10px;
+}
+.blocks_topleft
+{
+	background-color: #BF5AA6;
+}
+
+.blocks_topright
+{
+	background-color: #A67D44;
+}
+
+.blocks_bottomleft
+{
+	background-color: #AD969D;
+}
+
+.blocks_bottomright
+{
+	background-color: #963E56;
+}
+
+/*
+.button_progress A:link {
+	text-decoration: none;
+	background-color: #963E56;
+	color: #FFFFFF;
+}				  
+.button_progress A:visited {
+	text-decoration: none;
+	background-color: #963E56;
+	color: #FFFFFF;
+}				  
+.button_progress A:active {
+	text-decoration: none;
+	background-color: #963E56;
+	color: #FFFFFF;
+}				  
+.button_progress A:hover {
+	text-decoration: none;
+	background-color: #963E56;
+	color: #FFFFFF;
+}				  
+*/
+
+.button_progress {
+	background-color: #963E56;
+	color: #FFFFFF;
+    text-align: center;
+	font-size: 16px;
+	font-family: Verdana, sans-serif;
+	font-weight: bold;
+}
+
+.button_progress A {
+	text-decoration: none;
+	background-color: #963E56;
+	color: #FFFFFF;
+    text-align: center;
+	font-size: 16px;
+	font-family: Verdana, sans-serif;
+	font-weight: bold;
+}				  
+
+.button_progress_over {
+	border: 1;
+	background-color: #BF5AA6;
+/*	background-color: #B65E76; */
+	color: #FFFFFF;
+    text-align: center;
+	font-size: 16px;
+	font-family: Verdana, sans-serif;
+	font-weight: bold;
+}
+
+.button_progress_over A {
+	text-decoration: none;
+	background-color: #BF5AA6;
+/*	background-color: #B65E76; */
+	color: #FFFFFF;
+    text-align: center;
+	font-size: 16px;
+	font-family: Verdana, sans-serif;
+	font-weight: bold;
+}				  
+
+/*
+.button_progress_over A:link {
+	text-decoration: none;
+	background-color: #963E56;
+	color: #FFFFFF;
+}				  
+.button_progress_over A:visited {
+	text-decoration: none;
+	background-color: #963E56;
+	color: #FFFFFF;
+}				  
+.button_progress_over A:active {
+	text-decoration: none;
+	background-color: #963E56;
+	color: #FFFFFF;
+}				  
+.button_progress_over A:hover {
+	text-decoration: none;
+	background-color: #963E56;
+	color: #FFFFFF;
+}				  
+*/

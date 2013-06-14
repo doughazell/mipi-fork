@@ -1,0 +1,5 @@
+<div class="new_data_element_trigger">
+  <%= link_to "New #{class_name.constantize.frendly_class_name} >>", new_data_element_globe_profile_data_sheet_url(@globe, @active_profile, @active_data_sheet, :data_element_collection_name => class_name, :default_data_sheets => options[:default_data_sheets]), :remote => true %>
+</div>
+<div class="new_data_element_content">
+</div>

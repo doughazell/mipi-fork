@@ -1,0 +1,8 @@
+// alert('Success');
+htmlCode = $("div.new_data_element_trigger").html()
+$("div.new_data_element_content").html("<%= escape_javascript(render :partial => @partial_name) %>");
+$("div.new_data_element_trigger").html("<%= @button_text %>");
+$("div.new_data_element_trigger").click(function() {
+    $("div.new_data_element_content").html("");
+    $("div.new_data_element_trigger").html(htmlCode);
+})

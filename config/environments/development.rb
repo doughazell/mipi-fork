@@ -25,5 +25,9 @@ V01::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
   
 #  config.middleware.use "Rack::Bug", :secret_key => "1235eyrtyetryetrteytryetyetryeuweiuwieuwieujsk"
+
+  # Asset pipeline options: 14-Jun-2013/PL
+  config.assets.compress = false
+  config.assets.debug = true
 end
 
