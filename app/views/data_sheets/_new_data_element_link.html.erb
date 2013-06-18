@@ -1,5 +1,10 @@
 <div class="new_data_element_trigger">
-  <%= link_to "New #{class_name.constantize.frendly_class_name} >>", new_data_element_globe_profile_data_sheet_url(@globe, @active_profile, @active_data_sheet, :data_element_collection_name => class_name, :default_data_sheets => options[:default_data_sheets]), :remote => true %>
+  <span class="raised_box raised_action">
+    <a href="#ex1" rel="modal:open">New <%= class_name.constantize.frendly_class_name %></a>
+  </span>
 </div>
-<div class="new_data_element_content">
+<% @additional_page_sections << content_tag("div") do %>
+<div id="ex1" style="display:none;" class="new_data_element_content">
+<%= render(:partial => @partial_name) %>
 </div>
+<% end %>

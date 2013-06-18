@@ -1,15 +1,16 @@
 <div class="bottom_navigation">
+  <div class="bottom_navigation_menu">
   
 <%- if controller_name != 'sessions' %>
-  <span class="bottom_navigation_left"><%= link_to "Sign In", new_session_path(resource_name) %></span>
+  <span class="bottom_navigation_left"><%= link_to "Sign In", new_session_path(resource_name), :class => "rustyred" %></span>
 <% end -%>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <span class="bottom_navigation_left"><%= link_to "Sign Up", new_registration_path(resource_name) %></span>
+  <span class="bottom_navigation_left"><%= link_to "Sign Up", new_registration_path(resource_name), :class => "limegreen" %></span>
 <% end -%>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
-  <span class="bottom_navigation_left"><%= link_to "Forgot Your Password?", new_password_path(resource_name) %></span>
+  <span class="bottom_navigation_left"><%= link_to "Forgot?", new_password_path(resource_name), :class => "brown" %></span>
 <% end -%>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
@@ -19,4 +20,5 @@
 <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
   <span class="bottom_navigation_left"><%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %></span>
 <% end -%>
+  </div>
 </div>

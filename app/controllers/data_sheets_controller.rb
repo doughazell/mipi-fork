@@ -343,11 +343,11 @@ class DataSheetsController < ApplicationController
     @data_sheet = DataSheet.find(params[:id])
 
     # Determine the class name, create a new instance of it.    
-    class_name = params[:data_element_collection_name]
-    instance_variable_set(class_name.constantize::DEFAULT_VARIABLE_NAME, class_name.constantize.new)
+    @class_name = params[:data_element_collection_name]
+    instance_variable_set(@class_name.constantize::DEFAULT_VARIABLE_NAME, @class_name.constantize.new)
     
     # Use the short underscore name by convention: e.g. data_domain, rather than data_domain_data_element
-    class_name_short = class_name.constantize.short_undescore_name
+    class_name_short = @class_name.constantize.short_undescore_name
     
     # Optionally override the partial we are going to render.
     @partial_name = params[:partial]
@@ -359,14 +359,26 @@ class DataSheetsController < ApplicationController
     
     # Text to display for minimise button.
     @button_text = params[:close_button_text]
-    @button_text = "New #{class_name.constantize.frendly_class_name} <<" if @button_text.nil?
+    @button_text = "New #{@class_name.constantize.frendly_class_name} <<" if @button_text.nil?
     # new_data_element.js.erb called by default
   end
-end
 
   def change_data_element
     @globe = Globe.find(params[:globe_id])
     @profile = Profile.find(params[:profile_id])
     @data_sheet = DataSheet.find(params[:data_sheet_id])
+  end
+    
+  def create_data_element
+    @globe = Globe.find(params[:globe_id])
+    @profile = Profile.find(params[:profile_id])
+    @data_sheet = DataSheet.find(params[:id])
+    
+    debugger
+    respond_to do |format|
+      format.html { redirect_to(preview_globe_profile_data_sheet_path) }
+      format.xml  { head :ok }
+    end
+  end
     
 end

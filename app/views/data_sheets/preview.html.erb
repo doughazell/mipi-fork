@@ -1,3 +1,4 @@
+<% @additional_page_sections = Array.new %>
 <%= render :partial => '/globes/masterglobe_frame_top' %>
 <div class="raised_area">
   <%= render :partial => '/globes/preview_globes' %>
@@ -12,4 +13,10 @@
 <% end %>
   <% end %>
 </div>
+
+<% @additional_page_sections.each do |section| %>
+<%=
+raw section %>
+<% end %>
+
 <%= render :partial => '/globes/masterglobe_frame_bottom' %>

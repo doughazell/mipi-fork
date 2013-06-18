@@ -225,11 +225,29 @@ end
   #   - FailureDataSheet (similarly)
   #   - Default DataSheets (which sheets does this need to be added to automatically?)
   def AddNewDataElement(class_name, options)
-    render :partial => 'new_data_element_link',
+    @class_name = class_name
+    
+    # Determine the class name, create a new instance of it.    
+    instance_variable_set(class_name.constantize::DEFAULT_VARIABLE_NAME, class_name.constantize.new)
+    
+    # Use the short underscore name by convention: e.g. data_domain, rather than data_domain_data_element
+    class_name_short = class_name.constantize.short_undescore_name
+    
+    # Optionally override the partial we are going to render.
+    @partial_name = "/data_sheets/pages/#{@globe.globe_reference}/#{class_name_short}/new.html.erb" if @partial.nil?
+    
+    # By default the DIV will be: new_data_element_content but you can override this.
+    @div_content = "new_data_element_content" if @div_content.nil?
+    
+    # Text to display for minimise button.
+    @button_text = "New #{class_name.constantize.frendly_class_name} <<" if @button_text.nil?
+    # new_data_element.js.erb called by default
+
+    render(:partial => 'new_data_element_link',
             :locals => {
                   :class_name => class_name,
                   :options => options
-                  }
+                  })
   end
   
   def Tooltip(object, column)

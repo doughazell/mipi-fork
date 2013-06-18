@@ -2,8 +2,8 @@
 <%= form_for [@globe, @profile], :method => :post, :id => "profile_form", :remote => true  do |p| %>
         <div id="preview_profiles" class="preview_profiles">
           <% for profile in @profiles %>
-            <%= content_tag_for :span, profile, :class => "preview_profile" do %>
-              <span class="handle">&#9632;</span>
+            <%= content_tag_for :span, profile, :class => (profile.id == @active_profile.id) ? "raised_box active_profile" : "raised_box" do %>
+<!--              <span class="handle">&#9632;</span> -->
               <%= link_to profile.name, preview_globe_profile_url(@globe, profile) %>
             <% end %>
           <% end %>

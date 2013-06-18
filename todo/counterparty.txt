@@ -3,7 +3,9 @@
 -- Create the Models
 
 rails g model CurrencyDataElement iso_2_code:string iso_3_code:string iso_name:string
+        DONE
 rails g model CountryDataElement iso_2_code:string iso_3_code:string iso_name:string
+        DONE
 
 rails g model LegalEntityDataElement
         legal_entity_identifier:string
