@@ -1,22 +1,24 @@
 <h2>New Data Domain</h2>
-<%= form_tag create_data_element_globe_profile_data_sheet_path(@globe, @active_profile, @active_data_sheet, @data_domain), :method => :post do %>
+<%= form_tag create_data_element_globe_profile_data_sheet_path(@globe, @active_profile, @active_data_sheet), :method => :post do %>
 <table>
   <tr>
     <td>Name:</td>
-    <td><%= text_field_tag :name %>
+    <td><%= text_field_tag :name, @data_domain.name, { :name => 'data[name]' } %>
   </tr>
   <tr>
     <td>Code:</td>
-    <td><%= text_field_tag :code %>
+    <td><%= text_field_tag :code, @data_domain.code, { :name => 'data[code]' } %>
   </tr>
   <tr>
     <td>Short Name:</td>
-    <td><%= text_field_tag :short_name %>
+    <td><%= text_field_tag :short_name, @data_domain.short_name, { :name => 'data[short_name]' } %>
   </tr>
   <tr>
     <td>Description:</td>
-    <td><%= text_field_tag :description %>
+    <td><%= text_field_tag :description, @data_domain.description, { :name => 'data[description]' } %>
   </tr>
 </table>
-<%= submit_tag "Create New Data Domain" %>
+<%= hidden_field_tag "class_name", @data_domain.class.name %>
+<%= hidden_field_tag "default_data_sheets", options[:default_data_sheets] %>
+<%= submit_tag "Create New Data Domain", :class => "raised_box raised_action" %>
 <% end %>
