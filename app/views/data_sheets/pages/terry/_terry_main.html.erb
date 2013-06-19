@@ -54,4 +54,12 @@
       <%= Label_TextBox_Switch("address", @address, "country") %>
     </td>
   </tr>
+  <tr>
+    <td>
+      Country:
+    </td>
+    <td>
+      <%= Reference_PickList('address', @address, 'country', 'CountryDataElement', 'iso_short_name', 'iso_short_name') %><br />
+    </td>
+  </tr>
 </table>
