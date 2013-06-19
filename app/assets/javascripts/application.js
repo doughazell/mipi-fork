@@ -104,6 +104,36 @@ $(document).ready(function() {
                 opacity: 0.5
                  }, 200);
               });
+
+              $('.raised_box').hover(function() {
+                $(this).stop().animate({
+                   opacity: 1
+                 }, 200);
+                    }, function() {
+               $(this).stop().animate({
+                opacity: 0.66
+                 }, 200);
+              });
+              
+              $('.data_sheet_selector').hover(function() {
+                $(this).stop().animate({
+                   opacity: 1
+                 }, 200);
+                    }, function() {
+               $(this).stop().animate({
+                opacity: 0.66
+                 }, 200);
+              });
+              
+              $('h1').hover(function() {
+                $(this).stop().animate({
+                   opacity: 0.80
+                 }, 200);
+                    }, function() {
+               $(this).stop().animate({
+                opacity: 1
+                 }, 200);
+              });
               
               $('.tooltipcandidate').hover(function() {
                 // We need to gather the globe_id and the id of the
