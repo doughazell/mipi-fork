@@ -1,10 +1,10 @@
 <div class="new_data_element_trigger">
   <span class="raised_box raised_action">
-    <a href="#ex1" rel="modal:open">New <%= class_name.constantize.frendly_class_name %></a>
+    <a href="#ex1" rel="modal:open">New <%= class_name.constantize.friendly_class_name %></a>
   </span>
 </div>
 <% @additional_page_sections << content_tag("div") do %>
 <div id="ex1" style="display:none;" class="new_data_element_content">
-<%= render(:partial => @partial_name) %>
+<%= render(:partial => @partial_name, :locals => {:options => options}) %>
 </div>
 <% end %>
