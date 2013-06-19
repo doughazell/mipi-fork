@@ -19,7 +19,7 @@
     <table width="100%">
       <thead>
         <th colspan="<%= attributes.count + 5 %>">
-          <%= dec.type %>
+          <%= dec.type.constantize.friendly_class_name %>
         </th>
       </thead>
     <% end %>
