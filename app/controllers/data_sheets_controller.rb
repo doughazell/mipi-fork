@@ -373,8 +373,48 @@ class DataSheetsController < ApplicationController
     @globe = Globe.find(params[:globe_id])
     @profile = Profile.find(params[:profile_id])
     @data_sheet = DataSheet.find(params[:id])
+    class_name = params[:class_name]
+    
+    # Create the collection that will hold the history of this data type.
+    dec = DataElementCollection.new(:name => params[:data][:name],
+                              :data_element_type => class_name,
+                              :variable_name => class_name.constantize::DEFAULT_VARIABLE_NAME,
+                              :globe_id => @globe.id,
+                              :page_limit => 1,
+                              :historic => false)
+    
+    dec.save
+
+    # Create an instance of the DataElement-derived class we wish to maintain.
+    de = class_name.constantize.new(params[:data])
+    
+    # ...and populate it.
+    de.data_element_collection_id = dec.id
+    de.user_id = current_user.id
+    de.globe_id = @globe.id
+    de.version = 0
+    de.current = true
+    
+    de.save
     
     debugger
+
+    # Now, should we associate this new element with any DataSheets? This is
+    # achieved through Presentations. The relationship is between a DataSheet
+    # and a DataElementCollection. Let's locate the DataSheet
+    ds_names = params[:default_data_sheets]
+    
+    # Of course, only if we've been told that there are some default DataSheets
+    # that we need to accommodate for.
+    if !ds_names.nil? then
+      ds = DataSheet.find_by_name_and_profile_id(ds_names, @profile.id)
+      if !ds.nil?
+        pres = Presentation.find_or_initialize_by_data_sheet_id_and_data_element_collection_id(ds.id, dec.id)
+        pres.save
+      end
+    end
+    
+    
     respond_to do |format|
       format.html { redirect_to(preview_globe_profile_data_sheet_path) }
       format.xml  { head :ok }
