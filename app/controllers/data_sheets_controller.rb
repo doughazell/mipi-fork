@@ -397,12 +397,10 @@ class DataSheetsController < ApplicationController
     
     de.save
     
-    debugger
-
     # Now, should we associate this new element with any DataSheets? This is
     # achieved through Presentations. The relationship is between a DataSheet
     # and a DataElementCollection. Let's locate the DataSheet
-    ds_names = params[:default_data_sheets]
+    ds_names = params[:default_data_sheet_links]
     
     # Of course, only if we've been told that there are some default DataSheets
     # that we need to accommodate for.
@@ -414,6 +412,20 @@ class DataSheetsController < ApplicationController
       end
     end
     
+    # Should we create a default DataSheet and link to that? Each model may have
+    # specific values set within it as default. This should really be meta-data.
+    if class_name.constantize::DEFAULT_DATA_SHEET.present?
+      dds = class_name.constantize::DEFAULT_DATA_SHEET
+      ds = DataSheet.new(:name => "DS_#{params[:data][:name]}",
+                         :display_name => params[:data][:name],
+                         :style_sheet => dds[:style_sheet],
+                         :profile_id => @profile.id,
+                         :style_sheet => dds[:file_location]
+                         )
+      ds.save
+      pres = Presentation.find_or_initialize_by_data_sheet_id_and_data_element_collection_id(ds.id, dec.id)
+      pres.save
+    end
     
     respond_to do |format|
       format.html { redirect_to(preview_globe_profile_data_sheet_path) }

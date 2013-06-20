@@ -1,0 +1,24 @@
+<h2>New Country</h2>
+<%= form_tag create_data_element_globe_profile_data_sheet_path(@globe, @active_profile, @active_data_sheet), :method => :post do %>
+<table>
+  <tr>
+    <td>Name:</td>
+    <td><%= text_field_tag :name, @country.name, { :name => 'data[name]' } %>
+  </tr>
+  <tr>
+    <td>ISO 2 Code:</td>
+    <td><%= text_field_tag :code, @country.iso_2_code, { :name => 'data[iso_2_code]' } %>
+  </tr>
+  <tr>
+    <td>ISO 3 Code:</td>
+    <td><%= text_field_tag :code, @country.iso_3_code, { :name => 'data[iso_3_code]' } %>
+  </tr>
+  <tr>
+    <td>Short Name:</td>
+    <td><%= text_field_tag :short_name, @country.iso_short_name, { :name => 'data[iso_short_name]' } %>
+  </tr>
+</table>
+<%= hidden_field_tag "class_name", @country.class.name %>
+<%= hidden_field_tag "default_data_sheets", options[:default_data_sheet_links] %>
+<%= submit_tag "Create New Data Domain", :class => "raised_box raised_action" %>
+<% end %>

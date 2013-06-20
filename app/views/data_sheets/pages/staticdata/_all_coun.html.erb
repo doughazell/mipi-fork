@@ -29,4 +29,9 @@
     </td>
   </tr>
 <% end %>
+  <tr>
+    <td colspan="4">
+      <%= AddNewDataElement('CountryDataElement', { :default_data_sheet_links => [@active_data_sheet.name]}) %>
+    </td>
+  </tr>
 </table>
