@@ -7,7 +7,7 @@ defaults:
   copy_exclude: 
   - .git
   maintenance_on_restart: false
-  maintenance_on_migrate: true
+  maintenance_on_migrate: false
   precompile_assets: true
   precomplie_assets_task: assets:precompile
   precompile_unchanged_assets: true
