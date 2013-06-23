@@ -16,9 +16,30 @@ class DataElement < ActiveRecord::Base
   
   DEFAULT_VALUE = [:name, :version]
   META_DATA = {}
+  DEFAULT_DATA_SHEET = {
+  }
+  
+  def supports_disable_referential_integrity? #:nodoc:
+    false
+  end
 
   def friendly_name
     name
+  end
+
+  # DEFAULTS: either class or instance default.
+    
+  # INSTANCE defaults...
+  # General method to implement convention over configuration. Override this method
+  # in derived mode classes for specific exceptions.
+  def default(value, options = {})
+    default_page = self.class.short_underscore_name
+    case value
+    when 'style_sheet'
+      "custom_styles/#{globe.globe_reference}/#{globe.globe_reference}.css"
+    when 'file_location'
+      "data_sheets/pages/#{globe.globe_reference}/#{default_page}.css"
+    end
   end
   
   def self.short_underscore_name

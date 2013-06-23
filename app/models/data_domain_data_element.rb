@@ -6,7 +6,11 @@ class DataDomainDataElement < DataElement
   attr_accessible :code, :short_name, :description
   
   DEFAULT_VARIABLE_NAME = "@data_domain"
-
+  DEFAULT_DATA_SHEET = {
+    :style_sheet => "custom_styles/ftp/ftp.css",
+    :file_location => "/data_sheets/pages/ftp/data_domain.html.erb"
+  }
+  
   def friendly_name
     short_name
   end
