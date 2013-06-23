@@ -3,11 +3,11 @@
 --- 
 defaults: 
   bundle_without: test development mygroup
-  bundle_options: --local
+  bundle_options: --local --trace
   copy_exclude: 
   - .git
   maintenance_on_restart: false
-  maintenance_on_migrate: false
+  maintenance_on_migrate: true
   precompile_assets: true
   precomplie_assets_task: assets:precompile
   precompile_unchanged_assets: true
