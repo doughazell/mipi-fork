@@ -33,6 +33,7 @@ gem 'liquid'
 #gem 'newrelic_rpm'
 gem 'highline'
 gem 'jquery-rails'
+gem 'bcrypt-ruby'
 
 # gem 'defunkt-facebox-859adc2'
 
