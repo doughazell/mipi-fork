@@ -3,7 +3,7 @@
 --- 
 defaults: 
   bundle_without: test development mygroup
-  bundle_options: --local --trace
+  bundle_options: --local
   copy_exclude: 
   - .git
   maintenance_on_restart: false
