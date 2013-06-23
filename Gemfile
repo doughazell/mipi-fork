@@ -53,7 +53,7 @@ gem 'jquery-rails'
 # gem 'aws-s3', :require => 'aws/s3'
 
  group :development do
-   gem 'debugger'
+#   gem 'debugger'
    gem 'better_errors'
    gem 'binding_of_caller'
    gem 'meta_request'
