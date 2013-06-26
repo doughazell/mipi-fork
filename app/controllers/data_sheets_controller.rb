@@ -248,8 +248,10 @@ class DataSheetsController < ApplicationController
 #            instance_variable_set("@tmp", eval(@part.data_element_type).find_by_data_element_collection_id_and_globe_id(@part.id, @globe_id, :order => "created_at DESC"))
 #            instance_variable_set("@tmp", @part.data_element_type.constantize.find_by_data_element_collection_id_and_globe_id(@part.id, @globe_id, :order => "created_at DESC"))
             instance_variable_set("@tmp", @part.data_element_type.constantize.find(:first, :conditions => { :data_element_collection_id => @part.id, :globe_id => @globe_id, :current => true }))
-            hash_of_variables["#{@part.variable_name}_offset"] = hash_of_variables["#{@part.variable_name}_offset"] + 1
-            instance_variable_set("#{@part.variable_name}_array", eval("#{@part.variable_name}_array + [@tmp]"))
+            if (!@tmp.nil?)
+              hash_of_variables["#{@part.variable_name}_offset"] = hash_of_variables["#{@part.variable_name}_offset"] + 1
+              instance_variable_set("#{@part.variable_name}_array", eval("#{@part.variable_name}_array + [@tmp]"))
+            end
 #            instance_variable_set("#{@part.variable_name}_array", eval("#{@part.variable_name}_array + [@tmp]").paginate(:page => params[:page], :per_page => @part.data_element_type.constantize::DEFAULT_PAGE_LIMIT))
           end
         end
@@ -412,17 +414,15 @@ class DataSheetsController < ApplicationController
       end
     end
    
-#    debugger
-    
     # Should we create a default DataSheet and link to that? Each model may have
     # specific values set within it as default. This should really be meta-data.
     if class_name.constantize::DEFAULT_DATA_SHEET.present?
       dds = class_name.constantize::DEFAULT_DATA_SHEET
-      ds = DataSheet.new(:name => "DS_#{params[:data][:name]}",
+      ds = DataSheet.new(:name => params[:data][:name],
                          :display_name => params[:data][:name],
-                         :style_sheet => dds[:style_sheet],
+                         :style_sheets => dds[:style_sheet],
                          :profile_id => @profile.id,
-                         :style_sheet => dds[:file_location]
+                         :file_location => dds[:file_location]
                          )
       ds.save
       pres = Presentation.find_or_initialize_by_data_sheet_id_and_data_element_collection_id(ds.id, dec.id)
@@ -434,5 +434,5 @@ class DataSheetsController < ApplicationController
       format.xml  { head :ok }
     end
   end
-    
+  
 end
