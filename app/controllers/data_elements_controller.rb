@@ -99,15 +99,20 @@ class DataElementsController < ApplicationController
   
   def destroy
     @globe = Globe.find(params[:globe_id])
+    redirect = params[:redirect]
     @data_element = @globe.data_elements.find(params[:id])
     @dec = @data_element.data_element_collection
+    
     if @dec.data_elements.count == 1 then
       @dec.destroy
     end
     @data_element.destroy
 
     respond_to do |format|
-      format.html { redirect_to(globe_data_elements_url) }
+      format.html {
+        debugger
+        redirect_to(!redirect.nil? ? redirect : globe_data_elements_url)
+      }
       format.xml  { head :ok }
     end
 

@@ -3,15 +3,17 @@
   <th>Name</th>
   <th>Short Name</th>
   <th>Description</th>
+  <th>Remove</th>
   <% @data_domain_array.each do |data_domain| %>
   <tr>
     <td><%= LinkDataSheet(data_domain, "name", {:data_sheet => data_domain.name}) %></td>
     <td><%= Tooltip(data_domain, 'short_name') %></td>
     <td><%= data_domain.description %></td>
+    <td><%= link_to image_tag('remove.png', :height => 30), globe_data_element_path(@globe, data_domain, {:redirect => 'preview_globe_profile_data_sheet_path'}), :subdomain => false, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
   <tr>
-    <td colspan="3">
+    <td colspan="4">
       <%= AddNewDataElement('DataDomainDataElement', { :default_data_sheet_links => [@active_data_sheet.name]}) %>
     </td>
   </tr>
