@@ -426,6 +426,79 @@ ActiveRecord::Schema.define(:version => 20130607071021) do
     t.integer "vehicle_data_element_id"
   end
 
+# -----------------------------  MOVED RELATIONS --------------------------------------
+
+  create_view "view_insurance_data_elements", "SELECT data_elements.id, data_elements.type, data_elements.name, data_elements.data_element_collection_id, data_elements.user_id, data_elements.ready_to_archive, data_elements.label, data_elements.mandatory, data_elements.globe_id, data_elements.version, data_elements.inheritance_column_name, data_elements.current, data_elements.creator_id, data_elements.updater_id, data_elements.created_at, data_elements.updated_at, insurance_data_elements.policy_reference, insurance_data_elements.expires, insurance_data_elements.commences FROM data_elements, insurance_data_elements WHERE (data_elements.id = insurance_data_elements.id);", :force => true do |v|
+    v.column :id
+    v.column :type
+    v.column :name
+    v.column :data_element_collection_id
+    v.column :user_id
+    v.column :ready_to_archive
+    v.column :label
+    v.column :mandatory
+    v.column :globe_id
+    v.column :version
+    v.column :inheritance_column_name
+    v.column :current
+    v.column :creator_id
+    v.column :updater_id
+    v.column :created_at
+    v.column :updated_at
+    v.column :policy_reference
+    v.column :expires
+    v.column :commences
+  end
+
+  create_view "view_transaction_data_elements", "SELECT data_elements.id, data_elements.type, data_elements.name, data_elements.data_element_collection_id, data_elements.user_id, data_elements.ready_to_archive, data_elements.label, data_elements.mandatory, data_elements.globe_id, data_elements.version, data_elements.inheritance_column_name, data_elements.current, data_elements.creator_id, data_elements.updater_id, data_elements.created_at, data_elements.updated_at, transaction_data_elements.transfer_date, transaction_data_elements.transaction_type, transaction_data_elements.description, transaction_data_elements.value, transaction_data_elements.balance FROM data_elements, transaction_data_elements WHERE (data_elements.id = transaction_data_elements.id);", :force => true do |v|
+    v.column :id
+    v.column :type
+    v.column :name
+    v.column :data_element_collection_id
+    v.column :user_id
+    v.column :ready_to_archive
+    v.column :label
+    v.column :mandatory
+    v.column :globe_id
+    v.column :version
+    v.column :inheritance_column_name
+    v.column :current
+    v.column :creator_id
+    v.column :updater_id
+    v.column :created_at
+    v.column :updated_at
+    v.column :transfer_date
+    v.column :transaction_type
+    v.column :description
+    v.column :value
+    v.column :balance
+  end
+
+  create_view "view_property_data_elements", "SELECT data_elements.id, data_elements.type, data_elements.name, data_elements.data_element_collection_id, data_elements.user_id, data_elements.ready_to_archive, data_elements.label, data_elements.mandatory, data_elements.globe_id, data_elements.version, data_elements.inheritance_column_name, data_elements.current, data_elements.creator_id, data_elements.updater_id, data_elements.created_at, data_elements.updated_at, property_data_elements.address_data_element_id, property_data_elements.year_built FROM data_elements, property_data_elements WHERE (data_elements.id = property_data_elements.id);", :force => true do |v|
+    v.column :id
+    v.column :type
+    v.column :name
+    v.column :data_element_collection_id
+    v.column :user_id
+    v.column :ready_to_archive
+    v.column :label
+    v.column :mandatory
+    v.column :globe_id
+    v.column :version
+    v.column :inheritance_column_name
+    v.column :current
+    v.column :creator_id
+    v.column :updater_id
+    v.column :created_at
+    v.column :updated_at
+    v.column :address_data_element_id
+    v.column :year_built
+  end
+
+
+# ------------------------------------------------------------------------------------
+
+
   create_view "view_address_data_elements", "SELECT data_elements.id, data_elements.type, data_elements.name, data_elements.data_element_collection_id, data_elements.user_id, data_elements.ready_to_archive, data_elements.label, data_elements.mandatory, data_elements.globe_id, data_elements.version, data_elements.inheritance_column_name, data_elements.current, data_elements.creator_id, data_elements.updater_id, data_elements.created_at, data_elements.updated_at, address_data_elements.address_line_1, address_data_elements.address_line_2, address_data_elements.address_line_3, address_data_elements.city, address_data_elements.post_code, address_data_elements.country FROM data_elements, address_data_elements WHERE (data_elements.id = address_data_elements.id);", :force => true do |v|
     v.column :id
     v.column :type
@@ -472,6 +545,8 @@ ActiveRecord::Schema.define(:version => 20130607071021) do
     v.column :town_of_birth
     v.column :country_of_birth
   end
+
+
 
   create_view "view_buildings_insurance_data_elements", "SELECT view_insurance_data_elements.id, view_insurance_data_elements.type, view_insurance_data_elements.name, view_insurance_data_elements.data_element_collection_id, view_insurance_data_elements.user_id, view_insurance_data_elements.ready_to_archive, view_insurance_data_elements.label, view_insurance_data_elements.mandatory, view_insurance_data_elements.globe_id, view_insurance_data_elements.version, view_insurance_data_elements.inheritance_column_name, view_insurance_data_elements.current, view_insurance_data_elements.creator_id, view_insurance_data_elements.updater_id, view_insurance_data_elements.created_at, view_insurance_data_elements.updated_at, view_insurance_data_elements.policy_reference, view_insurance_data_elements.expires, view_insurance_data_elements.commences, buildings_insurance_data_elements.insured_value, buildings_insurance_data_elements.house_data_element_id FROM view_insurance_data_elements, buildings_insurance_data_elements WHERE (view_insurance_data_elements.id = buildings_insurance_data_elements.id);", :force => true do |v|
     v.column :id
@@ -743,6 +818,31 @@ ActiveRecord::Schema.define(:version => 20130607071021) do
     v.column :contact_number
   end
 
+  # 23/5/13 DH: Moved order for 'rake db:schema:load'
+  create_view "view_transaction_data_elements", "SELECT data_elements.id, data_elements.type, data_elements.name, data_elements.data_element_collection_id, data_elements.user_id, data_elements.ready_to_archive, data_elements.label, data_elements.mandatory, data_elements.globe_id, data_elements.version, data_elements.inheritance_column_name, data_elements.current, data_elements.creator_id, data_elements.updater_id, data_elements.created_at, data_elements.updated_at, transaction_data_elements.transfer_date, transaction_data_elements.transaction_type, transaction_data_elements.description, transaction_data_elements.value, transaction_data_elements.balance FROM data_elements, transaction_data_elements WHERE (data_elements.id = transaction_data_elements.id);", :force => true do |v|
+    v.column :id
+    v.column :type
+    v.column :name
+    v.column :data_element_collection_id
+    v.column :user_id
+    v.column :ready_to_archive
+    v.column :label
+    v.column :mandatory
+    v.column :globe_id
+    v.column :version
+    v.column :inheritance_column_name
+    v.column :current
+    v.column :creator_id
+    v.column :updater_id
+    v.column :created_at
+    v.column :updated_at
+    v.column :transfer_date
+    v.column :transaction_type
+    v.column :description
+    v.column :value
+    v.column :balance
+  end
+
   create_view "view_enhanced_transaction_data_elements", "SELECT view_transaction_data_elements.id, view_transaction_data_elements.type, view_transaction_data_elements.name, view_transaction_data_elements.data_element_collection_id, view_transaction_data_elements.user_id, view_transaction_data_elements.ready_to_archive, view_transaction_data_elements.label, view_transaction_data_elements.mandatory, view_transaction_data_elements.globe_id, view_transaction_data_elements.version, view_transaction_data_elements.inheritance_column_name, view_transaction_data_elements.current, view_transaction_data_elements.creator_id, view_transaction_data_elements.updater_id, view_transaction_data_elements.created_at, view_transaction_data_elements.updated_at, view_transaction_data_elements.transfer_date, view_transaction_data_elements.transaction_type, view_transaction_data_elements.description, view_transaction_data_elements.value, view_transaction_data_elements.balance, enhanced_transaction_data_elements.party_id FROM view_transaction_data_elements, enhanced_transaction_data_elements WHERE (view_transaction_data_elements.id = enhanced_transaction_data_elements.id);", :force => true do |v|
     v.column :id
     v.column :type
@@ -854,6 +954,7 @@ ActiveRecord::Schema.define(:version => 20130607071021) do
     v.column :flood_plain
   end
 
+=begin Orig location
   create_view "view_insurance_data_elements", "SELECT data_elements.id, data_elements.type, data_elements.name, data_elements.data_element_collection_id, data_elements.user_id, data_elements.ready_to_archive, data_elements.label, data_elements.mandatory, data_elements.globe_id, data_elements.version, data_elements.inheritance_column_name, data_elements.current, data_elements.creator_id, data_elements.updater_id, data_elements.created_at, data_elements.updated_at, insurance_data_elements.policy_reference, insurance_data_elements.expires, insurance_data_elements.commences FROM data_elements, insurance_data_elements WHERE (data_elements.id = insurance_data_elements.id);", :force => true do |v|
     v.column :id
     v.column :type
@@ -875,6 +976,7 @@ ActiveRecord::Schema.define(:version => 20130607071021) do
     v.column :expires
     v.column :commences
   end
+=end
 
   create_view "view_membership_data_elements", "SELECT data_elements.id, data_elements.type, data_elements.name, data_elements.data_element_collection_id, data_elements.user_id, data_elements.ready_to_archive, data_elements.label, data_elements.mandatory, data_elements.globe_id, data_elements.version, data_elements.inheritance_column_name, data_elements.current, data_elements.creator_id, data_elements.updater_id, data_elements.created_at, data_elements.updated_at, membership_data_elements.full_name, membership_data_elements.email_address, membership_data_elements.date_of_birth, membership_data_elements.gender, membership_data_elements.date_of_registration, membership_data_elements.membership_level, membership_data_elements.direct_mail_opt_in, membership_data_elements.direct_email_opt_in, membership_data_elements.third_party_promotion_opt_in FROM data_elements, membership_data_elements WHERE (data_elements.id = membership_data_elements.id);", :force => true do |v|
     v.column :id
@@ -1015,6 +1117,7 @@ ActiveRecord::Schema.define(:version => 20130607071021) do
     v.column :commissioned
   end
 
+=begin Orig Location
   create_view "view_property_data_elements", "SELECT data_elements.id, data_elements.type, data_elements.name, data_elements.data_element_collection_id, data_elements.user_id, data_elements.ready_to_archive, data_elements.label, data_elements.mandatory, data_elements.globe_id, data_elements.version, data_elements.inheritance_column_name, data_elements.current, data_elements.creator_id, data_elements.updater_id, data_elements.created_at, data_elements.updated_at, property_data_elements.address_data_element_id, property_data_elements.year_built FROM data_elements, property_data_elements WHERE (data_elements.id = property_data_elements.id);", :force => true do |v|
     v.column :id
     v.column :type
@@ -1035,6 +1138,7 @@ ActiveRecord::Schema.define(:version => 20130607071021) do
     v.column :address_data_element_id
     v.column :year_built
   end
+=end
 
   create_view "view_rfu_membership_data_elements", "SELECT view_membership_data_elements.id, view_membership_data_elements.type, view_membership_data_elements.name, view_membership_data_elements.data_element_collection_id, view_membership_data_elements.user_id, view_membership_data_elements.ready_to_archive, view_membership_data_elements.label, view_membership_data_elements.mandatory, view_membership_data_elements.globe_id, view_membership_data_elements.version, view_membership_data_elements.inheritance_column_name, view_membership_data_elements.current, view_membership_data_elements.creator_id, view_membership_data_elements.updater_id, view_membership_data_elements.created_at, view_membership_data_elements.updated_at, view_membership_data_elements.full_name, view_membership_data_elements.email_address, view_membership_data_elements.date_of_birth, view_membership_data_elements.gender, view_membership_data_elements.date_of_registration, view_membership_data_elements.membership_level, view_membership_data_elements.direct_mail_opt_in, view_membership_data_elements.direct_email_opt_in, view_membership_data_elements.third_party_promotion_opt_in, rfu_membership_data_elements.rfu_team_supported FROM view_membership_data_elements, rfu_membership_data_elements WHERE (view_membership_data_elements.id = rfu_membership_data_elements.id);", :force => true do |v|
     v.column :id
@@ -1130,6 +1234,7 @@ ActiveRecord::Schema.define(:version => 20130607071021) do
     v.column :subscription_id
   end
 
+=begin Orig location
   create_view "view_transaction_data_elements", "SELECT data_elements.id, data_elements.type, data_elements.name, data_elements.data_element_collection_id, data_elements.user_id, data_elements.ready_to_archive, data_elements.label, data_elements.mandatory, data_elements.globe_id, data_elements.version, data_elements.inheritance_column_name, data_elements.current, data_elements.creator_id, data_elements.updater_id, data_elements.created_at, data_elements.updated_at, transaction_data_elements.transfer_date, transaction_data_elements.transaction_type, transaction_data_elements.description, transaction_data_elements.value, transaction_data_elements.balance FROM data_elements, transaction_data_elements WHERE (data_elements.id = transaction_data_elements.id);", :force => true do |v|
     v.column :id
     v.column :type
@@ -1153,6 +1258,7 @@ ActiveRecord::Schema.define(:version => 20130607071021) do
     v.column :value
     v.column :balance
   end
+=end
 
   create_view "view_transmission_loss_adjustment_data_elements", "SELECT data_elements.id, data_elements.type, data_elements.name, data_elements.data_element_collection_id, data_elements.user_id, data_elements.ready_to_archive, data_elements.label, data_elements.mandatory, data_elements.globe_id, data_elements.version, data_elements.inheritance_column_name, data_elements.current, data_elements.creator_id, data_elements.updater_id, data_elements.created_at, data_elements.updated_at, transmission_loss_adjustment_data_elements.month, transmission_loss_adjustment_data_elements.power_station_data_element_id, transmission_loss_adjustment_data_elements.adjustment, transmission_loss_adjustment_data_elements.daytime_indicator FROM data_elements, transmission_loss_adjustment_data_elements WHERE (data_elements.id = transmission_loss_adjustment_data_elements.id);", :force => true do |v|
     v.column :id
