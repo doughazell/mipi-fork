@@ -156,6 +156,6 @@ DEPENDENCIES
   rabl
   rails (= 3.1.0)
   rails_sql_views!
-  rake (>= 0.9.2)
+  rake (~> 0.9)
   userstamp
   will_paginate (~> 3.0.0)

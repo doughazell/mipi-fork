@@ -10,7 +10,8 @@ gem 'rails', '3.1.0'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 #gem "rake", ">=0.9.2"
 #gem "rake", ">=10.0.3"
-gem "rake", "10.1.0"
+#gem "rake", "10.1.0"
+gem 'rake', '~> 0.9'
 gem 'bundler', '1.3.5'
 
 gem "nifty-generators", :group => :development
