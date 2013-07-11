@@ -4,12 +4,16 @@ source 'http://rubygems.org'
 #ruby "1.9.2"
 
 #gem 'rails', '3.0.3'
-gem 'rails', '3.1.0'
+
+# 11/7/13 DH: Trying to solve Engine Yard deploy problem
+#gem 'rails', '3.1.0'
+gem 'rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'rake', '>=0.9.2'
+# 11/7/13 DH: Trying to solve Engine Yard deploy problem
+#gem 'rake', '>=0.9.2'
 
 #gem "rake", ">=10.0.3"
 
