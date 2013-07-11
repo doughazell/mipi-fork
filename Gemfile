@@ -1,90 +1,39 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
-# ToDO: Include ruby version for Heroku support.
-#ruby "1.9.2"
-
-#gem 'rails', '3.0.3'
-
-# 11/7/13 DH: Trying to solve Engine Yard deploy problem
-#gem 'rails', '3.1.0'
-gem 'rails'
+gem 'rails', '3.2.8'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-# 11/7/13 DH: Trying to solve Engine Yard deploy problem
-#gem 'rake', '>=0.9.2'
-
-#gem "rake", ">=10.0.3"
-
-# 30/6/13 DH: RVM probs with specifying bundler-1.1.5 for ruby-1.9.3
-#gem 'bundler', '1.1.5'
-
-gem "nifty-generators", :group => :development
-
-gem 'mysql2'
+# 11/7/13 DH: Uploading to Engine Yard via GitHub to solve Mipi rake gem not found problem.
+#gem 'sqlite3'
 gem 'pg'
-#gem 'ruby-odbc'
-#gem 'activerecord-sqlserver-adapter', '3.0.3'
 
-#gem 'devise', '1.1.2'
-gem 'devise'
-gem 'devise-encryptable'
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
 
-# 11/7/13 DH: Trying to solve Engine Yard deploy problem
-#gem 'rails_sql_views', :git => 'git://github.com/centresource/rails_sql_views', require: 'rails_sql_views'
-gem 'rails_sql_views'
+  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+  # gem 'therubyracer', :platforms => :ruby
 
-gem 'citier'
-#gem 'CITIEsForRAILS'
-#gem 'will_paginate', '~>3.0.pre2'
-gem 'will_paginate', '~> 3.0.0'
-gem 'acts_as_list'
-gem 'acts_as_tree'
-gem 'userstamp'
-gem 'liquid'
-# gem 'fiveruns_tuneup' - only for OSX adn Linux
-#gem 'newrelic_rpm'
-gem 'highline'
+  gem 'uglifier', '>= 1.0.3'
+end
+
 gem 'jquery-rails'
-gem 'bcrypt-ruby'
 
-# gem 'defunkt-facebox-859adc2'
+# To use ActiveModel has_secure_password
+# gem 'bcrypt-ruby', '~> 3.0.0'
 
-# Use unicorn as the web server
+# To use Jbuilder templates for JSON
+# gem 'jbuilder'
+
+# Use unicorn as the app server
 # gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
-# gem 'ruby-debug'
-# gem 'ruby-debug19'
-
-# Bundle the extra gems:
-# gem 'bj'
-# gem 'nokogiri'
-# gem 'sqlite3-ruby', :require => 'sqlite3'
-# gem 'aws-s3', :require => 'aws/s3'
-
- group :development do
-#   gem 'debugger'
-   gem 'better_errors'
-   gem 'binding_of_caller'
-   gem 'meta_request'
- end
-
-# Bundle gems for the local environment. Make sure to
-# put test-only gems in this group so their generators
-# and rake tasks are available in development mode:
-# group :development, :test do
-#   gem 'webrat'
-# end
-
-gem 'rabl'
-# gem 'rack-mini-profiler'
-
-#group :assets do
-#    gem 'jquery-ui-rails'
-#    gem 'jquery-modal-rails'
-#end
+# To use debugger
+# gem 'debugger'
