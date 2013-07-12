@@ -1,6 +1,0 @@
-call bundle exec rake import:import_data[paul123@piguard.com,staticdata,countries.csv,tab]
-call bundle exec rake import:import_data[paul123@piguard.com,staticdata,currencies.csv,tab]
-call bundle exec rake import:link_data_sheet_to_data_element_type[paul123@piguard.com,staticdata,'Currencies','[All Currencies]',currency_data_element]
-call bundle exec rake import:link_data_sheet_to_data_element_type[paul123@piguard.com,staticdata,'Countries','[All Countries]',country_data_element]
-call bundle exec rake import:create_data_sheet_for_all_data_element_type['paul123@piguard.com',staticdata,'Currencies',currency]
-call bundle exec rake import:create_data_sheet_for_all_data_element_type['paul123@piguard.com',staticdata,'Countries',country]
