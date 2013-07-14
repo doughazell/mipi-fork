@@ -4,21 +4,13 @@ source 'http://rubygems.org'
 #ruby "1.9.2"
 
 #gem 'rails', '3.0.3'
-
-# 11/7/13 DH: Trying to solve Engine Yard deploy problem
-#gem 'rails', '3.1.0'
-gem 'rails'
+gem 'rails', '3.1.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-# 11/7/13 DH: Trying to solve Engine Yard deploy problem
-#gem 'rake', '>=0.9.2'
-
+gem "rake", ">=0.9.2"
 #gem "rake", ">=10.0.3"
-
-# 30/6/13 DH: RVM probs with specifying bundler-1.1.5 for ruby-1.9.3
-#gem 'bundler', '1.1.5'
+gem 'bundler', '1.1.5'
 
 gem "nifty-generators", :group => :development
 
@@ -30,11 +22,7 @@ gem 'pg'
 #gem 'devise', '1.1.2'
 gem 'devise'
 gem 'devise-encryptable'
-
-# 11/7/13 DH: Trying to solve Engine Yard deploy problem
-#gem 'rails_sql_views', :git => 'git://github.com/centresource/rails_sql_views', require: 'rails_sql_views'
-gem 'rails_sql_views'
-
+gem 'rails_sql_views', :git => 'git://github.com/centresource/rails_sql_views', require: 'rails_sql_views'
 gem 'citier'
 #gem 'CITIEsForRAILS'
 #gem 'will_paginate', '~>3.0.pre2'

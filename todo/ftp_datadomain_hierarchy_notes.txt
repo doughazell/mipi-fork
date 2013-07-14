@@ -1,0 +1,26 @@
+
+
+-- Create the models
+
+rails g model DataDomainDataElement code:string short_name:string description:string
+rails g model DataSubDomainDataElement code:string short_name:string description:string data_domain_data_element_id:integer
+rails g model DataSetDataElement code:string short_name:string description:string data_sub_domain_data_element_id:integer
+rails g model DataLineItemDataElement code:string short_name:string description:string data_set_data_element_id:integer
+
+
+-- In models:
+--   Derive from DataElement
+--   acts_as_cities
+--   add appropriate: belongs_to :xxxx_data_element, has_many :yyyy_data_elements
+-- In migrations:
+--   Delete 'timestamps'
+--   Add CreateTheViewForCITIEs(XxxxDataElement)
+--   Add DropTheViewForCITIEs(XxxxDataElement)
+
+rake db:migrate
+
+-- Prepare the XLS and the subsequent CSV files
+rake ftodata:import_data
+
+-- We now have the model loaded but no data sheets.
+

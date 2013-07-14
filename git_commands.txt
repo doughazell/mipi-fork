@@ -1,0 +1,9 @@
+git add .
+git commit -m "Comment"
+git push origin REPOSITORY_NAME
+
+git rm FILENAME
+
+http://scottr.org/presentations/git-in-5-minutes/
+Git in 5 Minutes
+

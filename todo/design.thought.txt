@@ -1,0 +1,79 @@
+-------------------------------
+Creating New Records On-the-Fly
+-------------------------------
+
+The user's experience determines that they simply click a 'New' button and
+are presented with the ability to input basic data to construct a new instance
+of the object they are interested in.
+
+Underneath this experience a lot of things need to be taken into account.
+
+Firstly, in what manner is the 'new form' presented to the user? It could
+be inline, a pop-up or a new window completely.
+
+How does the configurator design this form? Is it automatic or tailored? Is
+there a default implementation available that can be overridden?
+
+Can we scaffold up some views for this purpose?
+
+If a user creates a new object within a particular DataSheet should we
+automatically assign the new DataElement to that DataSheet via a Presentation?
+I think so.
+
+What information would we need to gather? I think this can be determined
+through a view template.
+
+First, convention over configuration. Folders should exist for the specific
+DataElement-derived objects.
+
+app\views\data_sheet\ftp\data_domain\
+
+with files:
+
+_new.html.erb
+_show.html.erb
+
+[Maybe 'new' needs to be 'form' in order to follow convention]
+The 'new' and 'show' caught both be generated using modal dialog boxes. There
+is a gem called: jquery-modal-rails. This seems to look like a very simple
+interface to the problem of nested forms of differing models.
+
+
+
+---------------------------------------------------------------
+Managing Relationships between DataElements...coded or implied?
+---------------------------------------------------------------
+We have two choices: implement the has_many/belongs_to relationship between
+the two DataElements or leave it purely by association with an appropriate
+DataSheet.
+
+For instance, the former example would manage a parent-child relationship
+but we'd need to code in this relationship within the data model. This is
+fairly easy when the configuration of these object can be done well ahead
+of time and are not going to change in their relationship. We use this within
+the Data Item Hierarchy. This is fixed. But if we wanted to change this within
+a different globe we wouldn't be able to: DataItem's parent would be DataSet
+because it will be set within the code.
+
+The alternative is to not stipulate the relationship within code. If we do
+this the application knows a lot less about how objects relate and we'll
+need to create additional core-functionality to allow relationships to exist
+on the fly.
+
+For instance, within an AddressDataElement, there are 4 or 5 string attributes.
+The last attribute is country. We haven't stipulated a FK relationship between
+address and country (though quite feasibly we could). Within this explicitly
+stated relationship how can we utilise the recently introduced CountryDataElement?
+
+Ideally using the same helper method that we used within the Data Item Hierarchy
+implementation: 'ForeignKey_PickList'.
+
+Introducing the: Reference_PickList...
+
+This new helper method will provide a list a Data Element Collection and write
+back the value (whichever stipulated) back to the original unrelated
+DataElement.
+
+Reference_PickList is more generic than ForeignKey_PickList which relies
+upon the parent-child relationship to be in place.
+

@@ -1,0 +1,290 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: DataSheet
+  
+    &mdash; Documentation by YARD 0.8.2.1
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (D)</a> &raquo;
+    
+    
+    <span class="title">DataSheet</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: DataSheet
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">ActiveRecord::Base</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">ActiveRecord::Base</li>
+          
+            <li class="next">DataSheet</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">app/models/data_sheet.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'><p>
+Paul Long
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#setup_defaults-instance_method" title="#setup_defaults (instance method)">- (Object) <strong>setup_defaults</strong>(globe, profile) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="setup_defaults-instance_method">
+  
+    - (<tt>Object</tt>) <strong>setup_defaults</strong>(globe, profile) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/data_sheet.rb', line 16</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_setup_defaults'>setup_defaults</span><span class='lparen'>(</span><span class='id identifier rubyid_globe'>globe</span><span class='comma'>,</span> <span class='id identifier rubyid_profile'>profile</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>DataSheet.setup_defaults() START</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>if</span> <span class='lparen'>(</span><span class='op'>!</span><span class='id identifier rubyid_globe'>globe</span><span class='period'>.</span><span class='id identifier rubyid_parent_id'>parent_id</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_path_extension'>path_extension</span> <span class='op'>=</span> <span class='id identifier rubyid_globe'>globe</span><span class='period'>.</span><span class='id identifier rubyid_parent'>parent</span><span class='period'>.</span><span class='id identifier rubyid_globe_reference'>globe_reference</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_globe'>globe</span><span class='period'>.</span><span class='id identifier rubyid_globe_reference'>globe_reference</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_path_extension'>path_extension</span> <span class='op'>=</span> <span class='id identifier rubyid_globe'>globe</span><span class='period'>.</span><span class='id identifier rubyid_globe_reference'>globe_reference</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+  
+  <span class='id identifier rubyid_root_path'>root_path</span> <span class='op'>=</span> <span class='const'>Rails</span><span class='period'>.</span><span class='id identifier rubyid_root'>root</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+  <span class='id identifier rubyid_profile_file_name'>profile_file_name</span> <span class='op'>=</span> <span class='id identifier rubyid_profile'>profile</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span><span class='period'>.</span><span class='id identifier rubyid_underscore'>underscore</span>
+  
+  <span class='id identifier rubyid_new_css_folder'>new_css_folder</span> <span class='op'>=</span> <span class='id identifier rubyid_root_path'>root_path</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/public/stylesheets/custom_styles/</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_path_extension'>path_extension</span>
+  <span class='id identifier rubyid_css_file_db'>css_file_db</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/stylesheets/custom_styles/</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_path_extension'>path_extension</span> <span class='op'>+</span> <span class='id identifier rubyid_profile_file_name'>profile_file_name</span>
+  <span class='id identifier rubyid_css_file'>css_file</span> <span class='op'>=</span> <span class='id identifier rubyid_root_path'>root_path</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/public/stylesheets/custom_styles/</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_path_extension'>path_extension</span> <span class='op'>+</span> <span class='id identifier rubyid_profile_file_name'>profile_file_name</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>.css</span><span class='tstring_end'>&quot;</span></span>
+  
+  <span class='id identifier rubyid_new_page_folder'>new_page_folder</span> <span class='op'>=</span> <span class='id identifier rubyid_root_path'>root_path</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/app/views/data_sheets/pages/</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_path_extension'>path_extension</span>
+  <span class='id identifier rubyid_page_file_db'>page_file_db</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/data_sheets/pages/</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_path_extension'>path_extension</span> <span class='op'>+</span> <span class='id identifier rubyid_profile_file_name'>profile_file_name</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>.html.erb</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_page_file'>page_file</span> <span class='op'>=</span> <span class='id identifier rubyid_root_path'>root_path</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/app/views/data_sheets/pages/</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_path_extension'>path_extension</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>_</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_profile_file_name'>profile_file_name</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>.html.erb</span><span class='tstring_end'>&quot;</span></span>
+  
+  <span class='const'>FileUtils</span><span class='period'>.</span><span class='id identifier rubyid_mkdir_p'>mkdir_p</span><span class='lparen'>(</span><span class='id identifier rubyid_new_page_folder'>new_page_folder</span><span class='rparen'>)</span>
+  <span class='const'>FileUtils</span><span class='period'>.</span><span class='id identifier rubyid_mkdir_p'>mkdir_p</span><span class='lparen'>(</span><span class='id identifier rubyid_new_css_folder'>new_css_folder</span><span class='rparen'>)</span>
+  
+  <span class='id identifier rubyid_source_file_page'>source_file_page</span> <span class='op'>=</span> <span class='id identifier rubyid_root_path'>root_path</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/app/views/data_sheets/pages/_place_holder.html.erb</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_source_file_css'>source_file_css</span> <span class='op'>=</span> <span class='id identifier rubyid_root_path'>root_path</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/public/stylesheets/custom_styles/_default_style.css</span><span class='tstring_end'>&quot;</span></span>
+  
+  <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_source_file_page'>source_file_page</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_page_file'>page_file</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_source_file_css'>source_file_css</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_css_file'>css_file</span>
+  
+  <span class='const'>FileUtils</span><span class='period'>.</span><span class='id identifier rubyid_cp'>cp</span><span class='lparen'>(</span><span class='id identifier rubyid_source_file_page'>source_file_page</span><span class='comma'>,</span> <span class='id identifier rubyid_page_file'>page_file</span><span class='rparen'>)</span>
+  <span class='const'>FileUtils</span><span class='period'>.</span><span class='id identifier rubyid_cp'>cp</span><span class='lparen'>(</span><span class='id identifier rubyid_source_file_css'>source_file_css</span><span class='comma'>,</span> <span class='id identifier rubyid_css_file'>css_file</span><span class='rparen'>)</span>
+  
+  <span class='id identifier rubyid_style_sheets'>style_sheets</span> <span class='op'>=</span> <span class='id identifier rubyid_css_file_db'>css_file_db</span>
+  <span class='id identifier rubyid_file_location'>file_location</span> <span class='op'>=</span> <span class='id identifier rubyid_page_file_db'>page_file_db</span>
+  
+  <span class='id identifier rubyid_save!'>save!</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>DataSheet.setup_defaults() END</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Sun May 19 20:26:43 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.2.1 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>

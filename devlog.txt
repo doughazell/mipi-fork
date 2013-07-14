@@ -1,0 +1,213 @@
+===================================================
+= v09
+=
+= Paul Long
+= 14 Mar 2011
+=
+= Objective: Extending Security and Configuration
+===================================================
+
+- NB: See v08 for the inital construction of a site with authentication.
+
+- Changed database.yml in order to switch to 'v06_development' database.
+- Manually created v09_development database in HeidiSQL
+- Changed the <title></title> within 'application.html.erb' to be 'PIGuard Alpha v09'
+
+C:\> bundle install       - Possibly not required.
+C:\> rake db:migrate
+C:\> rake db:fixtures:load
+
+C:\> rails server
+
+C:\> rails g model DataSheetDataElementCollection data_sheet:references data_element_collection:references
+C:\> rake db:migrate
+C:\> rails g model MembershipDataElement full_name:string date_of_birth:date gender:string date_of_registration:date membership_level:string direct_mail_opt_in:boolean direct_email_opt_in:boolean third_party_promotion_opt_in:boolean
+
+C:\> rails g model SubscriptionEvalutaionQueue subscription_id
+
+!!- 
+   globe_id is missing from the DataElements structure, since we could have data for
+   multiple accounts (globes) within the same table.
+!!-
+
+RFU Membership
+==============
+
+Globe Side
+----------
+
+Created a new Profile: RFU (part of "Pablito" globe)
+Created two new Data Sheets: 'rfu_membership' and 'rfu_purchases'
+
+
+Database Side
+-------------
+Generated new model for MembershipDataElements. This has a variety of attributes that ought to
+be common across memberships: name; DoB; registration_date; etc.
+
+C:\> rails g model MembershipDataElements full_name:string date_of_birth:date gender:string date_of_registration:date membership_level:string direct_mail_opt_in:boolean direct_email_opt_in:boolean third_party_promotion_opt_in:boolean
+
+Now, we need to ensure that it is derived from DataElements and "acts_as_cities".
+
+Changed the AR create table file in "db/migrate/...". Removed reference to the creation of timestamps, also create and drop views according to CITIEs documentaion.
+
+C:\> rails g model RFUMembershipDataElements rfu_team_supported:string
+
+
+
+
+# Need to ensure that the appropriate globe_id is being used to filter the records otherwise you may
+# begin to see other data from other users.
+C:\> rails g migration add_column_to_data_elements globe:references
+
+C:\> rails g model CouncilTaxDataElement full_name:string account_number:string contact_address_line_1:string contact_address_line_2:string contact_address_line_3:string contact_city:string contact_county:string contact_postcode:string property_address_line_1:string property_address_line_2:string property_address_line_3:string property_city:string property_county:string property_postcode:string property_reference:string band:string date_of_issue:date
+
+C:\> rails g model NameDataElement first_name:string other_names:string last_name:string
+C:\> rails g model AddressDataElement address_line_1:string address_line_2:string address_line_3:string city:string post_code:string country:string
+C:\> rails g model PhoneNumberDataElement phone_type:string phone_number:string
+C:\> rails g model BirthDataElement date_of_birth:date town_of_birth:string country_of_birth:string
+C:\> rails g model ContactDataElement first_name:string other_names:string last_name:string email:string
+
+C:\> rails g model Registration globe_id:integer user_id:integer userstamps
+
+C:\> rails g model DataElementLink remote_globe_identifier:string data_element_id:integer attribute_name:string
+C:\> rails g model SubscriptionType name:string definition:string
+C:\> rails g scaffold Subscription source_link_id:integer destination_link_id:integer subscription_type_id:integer
+
+- Default messages.
+C:\> rails g model MessageSeverity name:string level:integer definition:string
+C:\> rails g model Message name:string definition:string message_severity_id:integer
+
+C:\> rails g model MessageDataElement hidden:boolean message_id:integer message_text:string
+C:\> rails g model SubscriptionMessageDataElement subscription_id:integer
+
+C:\> rails g model CategoryGroup name:string definition:string
+C:\> rails g model Category name:string definition:string category_group_id:integer
+C:\> rails g model Categorisation data_element_link_id:integer category_id:integer
+
+C:\> rails g model TwitterMessageDataElement
+
+Twitter Development
+-------------------
+http://www.ragorder.com/twitter-test-account-testing-the-twitter-api-with-a-temporary-account/
+http://twitter4r.rubyforge.org/
+
+
+Meta Data Development
+---------------------
+C:\> rails generate scaffold DataElementMetaData data_element_type:string name:string definition:string type:string
+
+
+C:\> rails g model ECBCricketClubDataElement location:string county:string weburl:string contact_name:string contact_number:string
+
+Issues/Risk Registers
+---------------------
+C:\> rails g model LogStatus description:string
+C:\> rails g model Log reference_id:integer raised_by:string short_description:string long_description:text priority:integer log_status_id:integer
+C:\> rails g model Issue proposed_resolution:text
+
+C:\> rake globe:cricketclubdata
+
+
+C:\> rails g model GeneratorUnitDataElement code:string fuel_type:string installed_capacity:float fixed_heat_constant:float start_hours_hot:float start_hours_cold:float
+C:\> rake db:migrate
+
+g = Globe.find_by_globe_reference('ftp')
+u = User.find_by_username('paul123')
+p = g.profiles.find_by_name('Generators')
+ds = DataSheet.find_by_name('FTPGeneratorUnits')
+dec1 = DataElementCollection.new :name => "AD1 Generator Unit", :data_element_type => "GeneratorUnitDataElement", :page_limit => 1, :historic => 0, :variable_name => "@unit"
+dec1.save
+de1 = GeneratorUnitDataElement.new :name => "AD1", :code => "AD1", :fuel_type => "Gas", :installed_capacity => "200", :fixed_heat_constant => 182.83, :start_hours_hot => 5, :start_hours_cold => 72, :data_element_collection => dec1, :user => u, :globe => g
+de1.save
+dec2 = DataElementCollection.new :name => "AD2 Generator Unit", :data_element_type => "GeneratorUnitDataElement", :page_limit => 1, :historic => 0, :variable_name => "@unit"
+dec2.save
+de2 = GeneratorUnitDataElement.new :name => "AD2", :code => "AD2", :fuel_type => "Gas", :installed_capacity => "220", :fixed_heat_constant => 592.39, :start_hours_hot => 12, :start_hours_cold => 72, :data_element_collection => dec2, :user => u, :globe => g
+de2.save
+dec3 = DataElementCollection.new :name => "MP1 Generator Unit", :data_element_type => "GeneratorUnitDataElement", :page_limit => 1, :historic => 0, :variable_name => "@unit"
+dec3.save
+de3 = GeneratorUnitDataElement.new :name => "MP1", :code => "MP1", :fuel_type => "Coal", :installed_capacity => "300", :fixed_heat_constant => 173.77, :start_hours_hot => 8, :start_hours_cold => 72, :data_element_collection => dec3, :user => u, :globe => g
+de3.save
+dec4 = DataElementCollection.new :name => "MP2 Generator Unit", :data_element_type => "GeneratorUnitDataElement", :page_limit => 1, :historic => 0, :variable_name => "@unit"
+dec4.save
+de4 = GeneratorUnitDataElement.new :name => "MP2", :code => "MP2", :fuel_type => "Coal", :installed_capacity => "300", :fixed_heat_constant => 173.77, :start_hours_hot => 8, :start_hours_cold => 72, :data_element_collection => dec4, :user => u, :globe => g
+de4.save
+
+pre1 = Presentation.new :data_sheet => ds, :data_element_collection => dec
+pre1.save
+pre2 = Presentation.new :data_sheet => ds, :data_element_collection => dec2
+pre2.save
+pre3 = Presentation.new :data_sheet => ds, :data_element_collection => dec3
+pre3.save
+pre4 = Presentation.new :data_sheet => ds, :data_element_collection => dec4
+pre4.save
+
+ds1 = DataSheet.new :name => "AD1", :style_sheets => "/stylesheets/custom_styles/ftp/main", :profile => p, :file_location => "/data_sheets/pages/ftp/generator.html.erb"
+ds1.save
+ds2 = DataSheet.new :name => "AD2", :style_sheets => "/stylesheets/custom_styles/ftp/main", :profile => p, :file_location => "/data_sheets/pages/ftp/generator.html.erb"
+ds2.save
+ds3 = DataSheet.new :name => "AD3", :style_sheets => "/stylesheets/custom_styles/ftp/main", :profile => p, :file_location => "/data_sheets/pages/ftp/generator.html.erb"
+ds3.save
+ds4 = DataSheet.new :name => "AD4", :style_sheets => "/stylesheets/custom_styles/ftp/main", :profile => p, :file_location => "/data_sheets/pages/ftp/generator.html.erb"
+ds4.save
+
+pre1 = Presentation.new :data_sheet => ds1, :data_element_collection => dec
+pre1.save
+pre2 = Presentation.new :data_sheet => ds2, :data_element_collection => dec2
+pre2.save
+pre3 = Presentation.new :data_sheet => ds3, :data_element_collection => dec3
+pre3.save
+pre4 = Presentation.new :data_sheet => ds4, :data_element_collection => dec4
+pre4.save
+
+C:\> rails g model HeatCurveDataElement generator_unit_data_element_id:integer ordinal:integer fixed_heat_constant:float slope_1:float slope_2:float slope_3:float break_point_1:float break_point_2:float incremental_heat_1:float incremental_heat_2:float incremental_heat_3:float
+   
+ds = DataSheet.find_by_name('FTP Generator Units')
+dec = DataElementCollection.find_by_name('MP3')
+pre = Presentation.new :data_sheet => ds, :data_element_collection => dec
+pre.save
+
+hash_of_variables
+
+
+
+=========================================
+DANGER DANGER DANGER DANGER DANGER DANGER
+=========================================
+I'm thinking about re-structuring DataElementCollection and DataElement. A "DataElement" is an instance of a record in history.
+A "DataElementCollection" is the full historical perspective of this but has no referene to the globe, implying that other globes
+could re-use these data_element classes. They can but I think the relationship is:
+
+Globe -> DataElementCollection -> DataElement
+
+e.g.
+
+Paul -> Collection of Work Addresses -> Address Instance
+Paul -> Collection of Home Addresses -> Address Instance
+
+...not...
+
+Paul -> Address Instance
+Paul -> Address Instnace
+
+Is the problem "Shadow Globes"?
+No, I don't think so.
+
+
+=======
+ROUTING
+
+C:\> rake route
+
+
+-- TLAFs
+
+C:\> rails g model TransmissionLossAdjustmentDataElement month:datetime power_station_data_element_id:integer adjustment:float daytime_indicator:integer
+C:\> rake db:migrate
+
+-- Stations
+C:\> rails g model PowerStationDataElement code:string primary_fuel_type:string secondary_fuel_type:string location:string capacity:integer commissioned:date
+C:\> rake db:migrate
+
+C:\> rails g migration AddPowerStationDataElementToGeneratorUnitDataElement
+
