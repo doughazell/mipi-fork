@@ -43,8 +43,6 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.0.4)
     callsite (0.0.11)
-    citier (0.1.15)
-      rails_sql_views
     coderay (1.0.9)
     debug_inspector (0.0.2)
     devise (2.2.4)
@@ -99,8 +97,6 @@ GEM
       activesupport (= 3.1.0)
       bundler (~> 1.0)
       railties (= 3.1.0)
-    rails_sql_views (0.8.0)
-      activerecord
     railties (3.1.0)
       actionpack (= 3.1.0)
       activesupport (= 3.1.0)
@@ -135,7 +131,6 @@ DEPENDENCIES
   bcrypt-ruby
   better_errors
   binding_of_caller
-  citier
   devise
   devise-encryptable
   highline
