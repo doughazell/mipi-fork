@@ -4,6 +4,9 @@ source 'http://rubygems.org'
 #ruby "1.9.2"
 
 #gem 'rails', '3.0.3'
+
+# 16/7/13 DH: 'rails' is now '4.0.0'
+#gem 'rails', '3.2.13' - This gives 'class_inheritable_accessor' method error on 'rake -T'
 gem 'rails', '3.1.0'
 
 # Bundle edge Rails instead:
@@ -12,7 +15,7 @@ gem 'rails', '3.1.0'
 #gem "rake", ">=10.0.3"
 #gem 'bundler', '1.1.5'
 
-gem 'rake', '~> 0.9'
+#gem 'rake', '~> 0.9'
 
 gem "nifty-generators", :group => :development
 
