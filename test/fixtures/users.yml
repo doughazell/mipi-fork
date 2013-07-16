@@ -13,7 +13,7 @@
 paul123:
     email: paul123@piguard.com
     encrypted_password: <%= User.new.send(:password_digest, 'paul123') %>
-	
+
 #    encrypted_password: $2a$10$egY4h32xNN9r5MEyWVtrqeJqP0pS0jLykmJCPHFK.LPcebGchIfXu
 #    password_salt: $2a$10$egY4h32xNN9r5MEyWVtrqe
 
