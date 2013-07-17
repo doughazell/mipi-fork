@@ -6,7 +6,7 @@ source 'http://rubygems.org'
 #gem 'rails', '3.0.3'
 
 # 16/7/13 DH: 'rails' is now '4.0.0'
-#gem 'rails', '3.2.13' - This gives 'class_inheritable_accessor' method error on 'rake -T'
+#gem 'rails', '3.2.13' # This gives 'class_inheritable_accessor' method error on 'rake -T'
 gem 'rails', '3.1.0'
 
 # Bundle edge Rails instead:
@@ -16,6 +16,7 @@ gem 'rails', '3.1.0'
 #gem 'bundler', '1.1.5'
 
 #gem 'rake', '~> 0.9'
+#gem 'rake', '10.1.0'
 
 gem "nifty-generators", :group => :development
 
@@ -28,7 +29,7 @@ gem 'pg'
 gem 'devise'
 gem 'devise-encryptable'
 
-#gem 'rails_sql_views', :git => 'git://github.com/centresource/rails_sql_views', require: 'rails_sql_views'
+gem 'rails_sql_views', :git => 'git://github.com/centresource/rails_sql_views', require: 'rails_sql_views'
 gem 'citier'
 #gem 'CITIEsForRAILS'
 
