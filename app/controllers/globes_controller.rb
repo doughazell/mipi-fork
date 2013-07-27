@@ -211,7 +211,9 @@ class GlobesController < ApplicationController
       puts "Request host with port: " + request.host_with_port
       puts "Request url: " + request.url
       
-      newURL = "http://" + request.ip + ":" + request.port.to_s
+      ip = Socket.ip_address_list.last.ip_address
+      
+      newURL = "http://" + ip + ":" + request.port.to_s
       puts "New URL: " + newURL + "/globes"
       
       flash[:error] = "Requested subdomain is invalid!  Fucking get a life!!!"      
