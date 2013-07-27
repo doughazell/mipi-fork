@@ -11,3 +11,8 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 end
+
+class ActionController::TestCase
+  # 24/7/13 DH: Needed for accessing Devise methods (ie 'authenticate') from Functional tests
+  include Devise::TestHelpers
+end

@@ -1,6 +1,6 @@
 <% if !defined? show_new then show_new = false end %>
 <% if !defined? show_edit then show_edit = false end %>
-<% if !defined? show_back then show_back = false end %>
+<% if !defined? show_list then show_list = false end %>
 <table>
   <tr>
     <% if show_new %>
@@ -9,7 +9,7 @@
     <% if show_edit %>
     <td class="user_nav"><%= link_to 'Edit Globe', edit_globe_path(@globe) %></td>
     <% end %>
-    <% if show_back %>
+    <% if show_list %>
     <td class="user_nav"><%= link_to 'List Globes', globes_path %></td>
     <% end %>
   </tr>

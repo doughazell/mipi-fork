@@ -1,8 +1,42 @@
+
+<% if flash[:error] then %>
+  <p class="login_alert"><%= flash[:error] %></p>
+  
+<% elsif $invalidSubdomain %>
+  <p class="login_alert"> <%= $invalidSubdomain[:msg] %></p>
+
+<% else %>
+  <p class="login_alert"> Fucking shit happens eh? </p>
+
+<% end %>
+
+<% if GlobesController.invalidSubdomain? %>
+  <p class="login_alert"> <%= GlobesController.invalidSubdomain? %></p>
+<% end %>
+
+<%# debugger %>
+
 <div class="config_area">
-<h1>Listing Globes</h1>
+<h1>Listing Globes (nice work, good job!)</h1>
 
 <%= render :partial => 'globes/list' %>
-<%= render :partial => 'globes/list_nav' %>
+<%= render :partial => 'globes/list_nav', :locals => { :show_edit => false, :show_list => true, :show_new => true }%>
+
+<%
+=begin %>
+------- COMMENTS, BLA, BLA, BLA... ------------
+
+<% flash.each do |name, msg| %>
+  <p class="login_alert"> <%= alert %></p>
+  
+  <%# COMMENTS <%= content_tag :div, msg, :id => "flash_#{name}" %>
+<% end %>
 
 <%= link_to 'New Globe', new_globe_path %>
+
+------------------------------------------------
+<%
+=end %>
+
+
 </div>

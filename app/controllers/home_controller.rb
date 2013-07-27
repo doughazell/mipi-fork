@@ -8,7 +8,7 @@ class HomeController < ApplicationController
     end
     @globes = Globe.find_all_by_id(@ids)
 
-    #
+    #debugger
     
     if !@globes.blank? then
       respond_to do |format|

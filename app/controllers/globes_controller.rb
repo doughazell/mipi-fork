@@ -9,6 +9,22 @@ class GlobesController < ApplicationController
 #  before_filter :require_user
   before_filter :set_current_user
   
+  # ------------------------------------------------------------------------------------
+  # 26/7/13 DH: Passing values via class variables didn't work between rails sessions...
+  @@invalidSubdomain = "WTF???"
+  
+  def self.invalidSubdomain?
+    @@invalidSubdomain
+  end
+  
+  def self.invalidSubdomain=(string)
+    puts "Setting class variable 'invalidSubdomain' to: " + string
+    @@invalidSubdomain = string
+  end
+  # ------------------------------------------------------------------------------------
+
+
+  
   # GET /globes
   # GET /globes.xml
   def index
@@ -20,6 +36,7 @@ class GlobesController < ApplicationController
     end
     @globes = Globe.top_level.find_all_by_id(@ids)
 
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @globes }
@@ -33,11 +50,32 @@ class GlobesController < ApplicationController
 #    @globe = Globe.find_by_globe_reference!(request.subdomain)
 
     # We may be at rfu.piguard.com. Therefore, subdomain retains the globe of 'rfu'.
-    @masterglobe = Globe.find_by_globe_reference!(request.subdomain)
+    
+    # 24/7/13 DH: To accomodate an invalid subdomain we don't want the ActiveRecord 
+    #            dynamic attribute-based finder to return an 'ActiveRecord::RecordNotFound' error
+    #            so the "!" has been removed from the end and the return checked for 'nil'. 
+    @masterglobe = Globe.find_by_globe_reference(request.subdomain)
     
     # We may receive a specific request to see a globe (most likely a shadow globe)
     # that represents a different 'party'.
     if params[:id] 
+      
+      # ----------------------------------------------------------------------------------
+      puts "Find Globe ID: " + params[:id]
+      if $invalidSubdomain
+        puts "--------------------------------------------------------------------"
+        puts "Accessing Globe ID after an initial request for an invalid subdomain"
+        puts "--------------------------------------------------------------------"
+        $invalidSubdomain = nil
+        if $invalidSubdomain
+          puts "Still set eh?"
+        else
+          puts "Just checking it had been reset!!!"
+        end
+      end
+      # Now set the subdomain to the current globe reference...
+      # ----------------------------------------------------------------------------------
+      
       @globe = Globe.find(params[:id])
     else
       @globe = @masterglobe
@@ -45,7 +83,7 @@ class GlobesController < ApplicationController
     
     # Check to see if these are different. If they are we may need to gather some
     # more information about the particular shadow globe.
-    if @globe.id != @masterglobe.id
+    if @masterglobe && (@globe.id != @masterglobe.id)
       # Just check that this is a parent-child relationship.
       if @globe.parent_id == @masterglobe.id
         @parentglobe = @masterglobe
@@ -142,7 +180,15 @@ class GlobesController < ApplicationController
   end
   
   def preview
-    @masterglobe = Globe.find_by_globe_reference!(request.subdomain)
+    puts " Finding: " + request.subdomain
+    # 24/7/13 DH: To accomodate an invalid subdomain we don't want the ActiveRecord 
+    #            dynamic attribute-based finder to return an 'ActiveRecord::RecordNotFound' error
+    #            so the "!" has been removed from the end and the return checked for 'nil'. 
+    @masterglobe = Globe.find_by_globe_reference(request.subdomain)
+    
+    if @masterglobe.nil? then
+      puts "Yea baby! No '" + request.subdomain + "' globe found!"
+    end
     
     # Following the change to the route.rb file to match the blank
     # subdomain to globes#preview, we now need to not necessarily
@@ -150,8 +196,39 @@ class GlobesController < ApplicationController
     #                                             22-Apr-2013/PL
     if current_user.globes.blank? == true || params[:id].nil? then
       @globe = @masterglobe
+      puts "No valid params to the URL so taking the globe purely from the subdomain!"
     else
       @globe = current_user.globes.find(params[:id])
+    end
+    
+    # 25/7/13 DH: At this point if the requested subdomain is not a valid globe then @globe will be 'nil'!
+    if @globe.nil? then
+    
+      # Change the subdomain to the IP of the server...
+      puts "Requested subdomain: " + request.subdomain
+      puts "Requested domain: " + request.domain
+      puts "Request ip: " + request.ip
+      puts "Request host with port: " + request.host_with_port
+      puts "Request url: " + request.url
+      
+      newURL = "http://" + request.ip + ":" + request.port.to_s
+      puts "New URL: " + newURL + "/globes"
+      
+      flash[:error] = "Requested subdomain is invalid!  Fucking get a life!!!"      
+      #return redirect_to globes_path
+      
+      #return redirect_to(newURL(:invalidSubdomain => "Requested subdomain is invalid!  Fucking get a life!!!" ))
+      
+      GlobesController.invalidSubdomain = "Requested subdomain is invalid!  Fucking get a life!!!"
+      $invalidSubdomain = Hash[:msg => "Requested subdomain is invalid!  Fucking get a life!!!"]
+      $invalidSubdomain.merge!(:domain => request.domain)
+      
+      # Breaky, break, break Mr Hens...
+      #$invalidSubdomain = nil
+      
+      #debugger
+      
+      return redirect_to newURL
     end
     
     @shadowglobes = @globe.children # .sort! { |a,b| a.name.downcase <=> b.name.downcase }
@@ -180,4 +257,5 @@ class GlobesController < ApplicationController
     end
     
   end
+  
 end
