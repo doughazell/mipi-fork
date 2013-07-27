@@ -12,10 +12,10 @@ namespace :mipi do
       Rake::Task['import:import_units'].invoke
       Rake::Task['import:import_stations'].invoke
     
-      Rake::Task['import:import_data'].invoke('paul123@piguard.com','ftp.ip','data_domains.csv')
-      Rake::Task['import:import_data'].invoke('paul123@piguard.com','ftp.ip','data_sub_domains.csv')
-      Rake::Task['import:import_data'].invoke('paul123@piguard.com','ftp.ip','data_sets.csv')
-      Rake::Task['import:import_data'].invoke('paul123@piguard.com','ftp.ip','data_line_items.csv')
+      Rake::Task['import:import_data'].invoke('paul123@piguard.com','ftp','data_domains.csv')
+      Rake::Task['import:import_data'].invoke('paul123@piguard.com','ftp','data_sub_domains.csv')
+      Rake::Task['import:import_data'].invoke('paul123@piguard.com','ftp','data_sets.csv')
+      Rake::Task['import:import_data'].invoke('paul123@piguard.com','ftp','data_line_items.csv')
 
     end
 
