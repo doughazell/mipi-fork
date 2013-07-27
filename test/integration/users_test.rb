@@ -46,7 +46,7 @@ class UsersTest < ActionDispatch::IntegrationTest
     assert_redirected_to user_session_path
     
     post_via_redirect user_session_path, 'user[email]' => 'paul123@piguard.com', 'user[password]' => 'paul123' 
-    assert_equal "Requested subdomain is invalid!  Fucking get a life!!!", flash[:error]
+    assert_equal "Requested subdomain is invalid!  Fucking get a life!!!", $invalidSubdomain[:msg]
     
   end
 
