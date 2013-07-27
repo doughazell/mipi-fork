@@ -211,7 +211,8 @@ class GlobesController < ApplicationController
       puts "Request host with port: " + request.host_with_port
       puts "Request url: " + request.url
       
-      ip = Socket.ip_address_list.last.ip_address
+      #ip = Socket.ip_address_list.last.ip_address
+      ip = "54.225.127.211"
       
       newURL = "http://" + ip + ":" + request.port.to_s
       puts "New URL: " + newURL + "/globes"
