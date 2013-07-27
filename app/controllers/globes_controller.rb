@@ -214,8 +214,8 @@ class GlobesController < ApplicationController
       #ip = Socket.ip_address_list.last.ip_address
       ip = "54.225.127.211"
       
-      newURL = "http://" + ip + ":" + request.port.to_s
-      puts "New URL: " + newURL + "/globes"
+      newURL = "http://" + ip + ":" + request.port.to_s + "/globes"
+      puts "New URL: " + newURL 
       
       flash[:error] = "Requested subdomain is invalid!  Fucking get a life!!!"      
       #return redirect_to globes_path
