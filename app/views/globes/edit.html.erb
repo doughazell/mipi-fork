@@ -9,10 +9,10 @@
 <% if $invalidSubdomain %>
   <% globe = Globe.find(params[:id]) %>
   <% newURL = "http://" + globe.globe_reference + "." + $invalidSubdomain[:domain]  + ":" + request.port.to_s + globe_path %>
-  <%= link_to 'Show', newURL %> |
+  <%= link_to 'New Show', newURL %> |
 <% else %>
   <%# 26/7/13 DH: Original show link %>
-  <%= link_to 'Show', @globe %> |
+  <%= link_to 'Orig Show', @globe %> |
 <% end %>
 
 
