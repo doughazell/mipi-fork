@@ -9,22 +9,6 @@ class GlobesController < ApplicationController
 #  before_filter :require_user
   before_filter :set_current_user
   
-  # ------------------------------------------------------------------------------------
-  # 26/7/13 DH: Passing values via class variables didn't work between rails sessions...
-  @@invalidSubdomain = "WTF???"
-  
-  def self.invalidSubdomain?
-    @@invalidSubdomain
-  end
-  
-  def self.invalidSubdomain=(string)
-    puts "Setting class variable 'invalidSubdomain' to: " + string
-    @@invalidSubdomain = string
-  end
-  # ------------------------------------------------------------------------------------
-
-
-  
   # GET /globes
   # GET /globes.xml
   def index
@@ -61,19 +45,15 @@ class GlobesController < ApplicationController
     if params[:id] 
       
       # ----------------------------------------------------------------------------------
-      puts "Find Globe ID: " + params[:id]
       if $invalidSubdomain
         puts "--------------------------------------------------------------------"
         puts "Accessing Globe ID after an initial request for an invalid subdomain"
         puts "--------------------------------------------------------------------"
+        
+        # The subdomain to the current globe reference was set via the 'show' link of the 
+        # Editing Globes page, so we now need to reset the global hash flag...
         $invalidSubdomain = nil
-        if $invalidSubdomain
-          puts "Still set eh?"
-        else
-          puts "Just checking it had been reset!!!"
-        end
       end
-      # Now set the subdomain to the current globe reference...
       # ----------------------------------------------------------------------------------
       
       @globe = Globe.find(params[:id])
@@ -187,7 +167,7 @@ class GlobesController < ApplicationController
     @masterglobe = Globe.find_by_globe_reference(request.subdomain)
     
     if @masterglobe.nil? then
-      puts "Yea baby! No '" + request.subdomain + "' globe found!"
+      puts "No '" + request.subdomain + "' globe found!"
     end
     
     # Following the change to the route.rb file to match the blank
@@ -203,26 +183,13 @@ class GlobesController < ApplicationController
     
     # 25/7/13 DH: At this point if the requested subdomain is not a valid globe then @globe will be 'nil'!
     if @globe.nil? then
-    
-      # Change the subdomain to the IP of the server...
-      puts "Requested subdomain: " + request.subdomain
-      puts "Requested domain: " + request.domain
-      puts "Request ip: " + request.ip
-      puts "Request host with port: " + request.host_with_port
-      puts "Request url: " + request.url
       
       #ip = Socket.ip_address_list.last.ip_address
-      ip = "54.225.127.211"
+      #ip = "54.225.127.211"
+      ip = EY_CONFIG['ip']
       
       newURL = "http://" + ip + ":" + request.port.to_s + "/globes"
-      puts "New URL: " + newURL 
       
-      flash[:error] = "Requested subdomain is invalid!  Fucking get a life!!!"      
-      #return redirect_to globes_path
-      
-      #return redirect_to(newURL(:invalidSubdomain => "Requested subdomain is invalid!  Fucking get a life!!!" ))
-      
-      GlobesController.invalidSubdomain = "Requested subdomain is invalid!  Fucking get a life!!!"
       $invalidSubdomain = Hash[:msg => "Requested subdomain is invalid!  Fucking get a life!!!"]
       $invalidSubdomain.merge!(:domain => request.domain)
       

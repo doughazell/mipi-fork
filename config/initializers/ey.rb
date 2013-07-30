@@ -1,0 +1,1 @@
+EY_CONFIG = YAML.load_file("#{Rails.root}/config/ey.yml")[Rails.env]

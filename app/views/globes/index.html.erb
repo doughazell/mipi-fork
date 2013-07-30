@@ -10,21 +10,5 @@
 <%= render :partial => 'globes/list' %>
 <%= render :partial => 'globes/list_nav', :locals => { :show_edit => false, :show_list => true, :show_new => true }%>
 
-<%
-=begin %>
-------- COMMENTS, BLA, BLA, BLA... ------------
-
-<% flash.each do |name, msg| %>
-  <p class="login_alert"> <%= alert %></p>
-  
-  <%# COMMENTS <%= content_tag :div, msg, :id => "flash_#{name}" %>
-<% end %>
-
-<%= link_to 'New Globe', new_globe_path %>
-
-------------------------------------------------
-<%
-=end %>
-
 
 </div>

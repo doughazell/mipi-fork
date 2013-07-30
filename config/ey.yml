@@ -20,11 +20,26 @@ defaults:
   ignore_database_adapter_warning: true
   migrate: true
   migration_command: bundle exec rake db:migrate
+
+# EY Environments
 environments: 
+  env_development:
+
   env_production: 
     precompile_unchanged_assets: true
     assets_strategy: shifting
     asset_roles: :all
+    
   env_staging assets_strategy: private
   todo_test: {}
+
+# 30/7/13 DH: Mipi config to run in a virtual env (like EY) where the IP address is allocated by NAT.
+development:
+  ip: 192.168.1.73
+
+test:
+  ip: 192.168.1.73
+
+production:
+  ip: 54.225.127.211
 
