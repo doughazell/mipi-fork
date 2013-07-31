@@ -1,0 +1,17 @@
+31/7/13 - FTP Demo + Engine Yard deployment
+-------------------------------------------
+Altered 'schema.rb' table creation order
+'Gemfile' + 'Gemfile.lock'
+Testing:
+  '~/test/fixtures/users.yml'
+  '~/test/test_helper.rb'
+  '~/test/integration/users_test.rb'
+Rake tasks:
+  '~/lib/tasks/mipi.rake'
+Bundled gems
+  '~/vendor/cache/*'
+Invalid subdomain correction config
+  '~/config/ey.yml'
+  '~/config/initializers/ey.rb'
+
+===========================================
