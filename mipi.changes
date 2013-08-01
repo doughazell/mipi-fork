@@ -13,5 +13,7 @@ Bundled gems
 Invalid subdomain correction config
   '~/config/ey.yml'
   '~/config/initializers/ey.rb'
-
+  '~/controllers/globes_controller.rb'
+  '~/views/globes/edit.html.erb'
+  '~/views/globes/index.html.erb'
 ===========================================
