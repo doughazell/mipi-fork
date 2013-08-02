@@ -45,7 +45,6 @@ GEM
       activerecord (>= 3.0.0)
     arel (2.2.3)
     bcrypt-ruby (3.0.1)
-    bcrypt-ruby (3.0.1-x86-mingw32)
     better_errors (0.9.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -93,7 +92,6 @@ GEM
     nifty-generators (0.4.6)
     orm_adapter (0.4.0)
     pg (0.15.1)
-    pg (0.15.1-x86-mingw32)
     polyglot (0.3.3)
     rabl (0.8.6)
       activesupport (>= 2.3.14)
@@ -143,7 +141,6 @@ GEM
 
 PLATFORMS
   ruby
-  x86-mingw32
 
 DEPENDENCIES
   acts_as_list
