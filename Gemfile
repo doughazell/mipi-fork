@@ -38,6 +38,7 @@ gem 'liquid'
 gem 'highline'
 gem 'jquery-rails'
 #gem 'bcrypt-ruby'
+gem 'bcrypt-ruby', :require => 'bcrypt'
 
 # gem 'defunkt-facebox-859adc2'
 
