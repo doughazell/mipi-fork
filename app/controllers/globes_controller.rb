@@ -104,7 +104,7 @@ class GlobesController < ApplicationController
 
     respond_to do |format|
       if @globe.save
-        format.html { redirect_to(@globe, :notice => 'Globe was successfully created.') }
+        format.html { redirect_to(preview_globe_path(@globe), :notice => 'Welcome to the Globe') }
         format.xml  { render :xml => @globe, :status => :created, :location => @globe }
       else
         format.html { render :action => "new" }
@@ -142,7 +142,7 @@ class GlobesController < ApplicationController
   end
   
   def preview
-    @masterglobe = Globe.find_by_globe_reference!(request.subdomain)
+    @masterglobe = Globe.find_by_globe_reference(request.subdomain)
     
     # Following the change to the route.rb file to match the blank
     # subdomain to globes#preview, we now need to not necessarily

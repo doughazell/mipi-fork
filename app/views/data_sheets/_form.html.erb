@@ -27,7 +27,14 @@
   </tr>
   <tr>
     <td>Style Sheet</td>
-    <td><%= f.text_field :style_sheets %></td>
+    <%
+if @data_sheet.name.blank? then
+  css_value = "/stylesheets/custom_style/#{@globe.globe_reference}/#{@globe.globe_reference}.css"
+else
+  css_value = @data_sheet.style_sheets
+end
+    %>
+    <td><%= f.text_field :style_sheets, :value => css_value %></td>
   </tr>
   <tr>
     <td>Profile</td>
