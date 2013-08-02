@@ -17,7 +17,7 @@ gem 'bundler', '1.3.5'
 gem "nifty-generators", :group => :development
 
 #gem 'mysql2'
-gem 'pg'
+gem 'pg', :platform => 'ruby'
 #gem 'ruby-odbc'
 #gem 'activerecord-sqlserver-adapter', '3.0.3'
 
@@ -38,7 +38,7 @@ gem 'liquid'
 gem 'highline'
 gem 'jquery-rails'
 #gem 'bcrypt-ruby'
-gem 'bcrypt-ruby', :require => 'bcrypt'
+gem 'bcrypt-ruby', :require => 'bcrypt', :platform => 'ruby'
 
 # gem 'defunkt-facebox-859adc2'
 
