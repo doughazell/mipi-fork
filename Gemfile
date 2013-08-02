@@ -37,7 +37,7 @@ gem 'liquid'
 #gem 'newrelic_rpm'
 gem 'highline'
 gem 'jquery-rails'
-gem 'bcrypt-ruby'
+#gem 'bcrypt-ruby'
 
 # gem 'defunkt-facebox-859adc2'
 
@@ -58,7 +58,7 @@ gem 'bcrypt-ruby'
 # gem 'aws-s3', :require => 'aws/s3'
 
  group :development do
-#   gem 'debugger'
+   gem 'debugger'
    gem 'better_errors'
    gem 'binding_of_caller'
    gem 'meta_request'
