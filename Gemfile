@@ -20,7 +20,7 @@ gem 'rails', '3.1.0'
 
 gem "nifty-generators", :group => :development
 
-gem 'mysql2'
+#gem 'mysql2'
 gem 'pg'
 #gem 'ruby-odbc'
 #gem 'activerecord-sqlserver-adapter', '3.0.3'
