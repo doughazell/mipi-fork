@@ -1,3 +1,4 @@
+<% if !@globe.nil? && !@active_profil.nil? %>
 <%= form_for [@globe, @active_profile] do |f| %>
 <%= render :partial => '/globes/masterglobe_frame_top' %>
 <table width="100%">
@@ -6,4 +7,7 @@
   <%= render :partial => '/data_sheets/preview_data_sheets' %>
 </table>
 <%= render :partial => '/globes/masterglobe_frame_bottom' %>
+<% end %>
+<% else %>
+  <h1>No Profiles Created</h1>
 <% end %>

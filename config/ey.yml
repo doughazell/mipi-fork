@@ -19,7 +19,7 @@ defaults:
   - :util
   ignore_database_adapter_warning: true
   migrate: true
-  migration_command: bundle exec rake db:migrate
+  migration_command: rake db:migrate
 
 # EY Environments
 environments: 

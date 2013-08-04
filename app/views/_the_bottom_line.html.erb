@@ -1,7 +1,7 @@
 <% if current_user %>
   <div class="bottom_navigation_menu">
     <%= link_to "Globes", globes_path, :class => "rustyred" %>
-    <% if !@globe.blank? then %>
+    <% if !@globe.blank? && !@globe.id.nil? then %>
       <%= link_to "Presentations", globe_presentations_path(@globe), :class => "limegreen" %>
       <%= link_to "Profiles", globe_profiles_path(@globe), :class => "brown" %>
       <%= link_to "Data", globe_data_elements_path(@globe), :class => "metallicblue" %>

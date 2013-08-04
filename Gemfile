@@ -13,15 +13,16 @@ gem 'rails', '3.1.0'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 #gem "rake", ">=0.9.2"
 #gem "rake", ">=10.0.3"
-#gem 'bundler', '1.1.5'
+
+gem 'bundler', '1.3.5'
 
 #gem 'rake', '~> 0.9'
 #gem 'rake', '10.1.0'
 
 gem "nifty-generators", :group => :development
 
-gem 'mysql2'
-gem 'pg'
+#gem 'mysql2'
+gem 'pg', :platform => 'ruby'
 #gem 'ruby-odbc'
 #gem 'activerecord-sqlserver-adapter', '3.0.3'
 
@@ -43,7 +44,7 @@ gem 'liquid'
 #gem 'newrelic_rpm'
 gem 'highline'
 gem 'jquery-rails'
-gem 'bcrypt-ruby'
+gem 'bcrypt-ruby', :platform => 'ruby'
 
 # gem 'defunkt-facebox-859adc2'
 

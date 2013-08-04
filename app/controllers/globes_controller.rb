@@ -122,7 +122,7 @@ class GlobesController < ApplicationController
 
     respond_to do |format|
       if @globe.save
-        format.html { redirect_to(@globe, :notice => 'Globe was successfully created.') }
+        format.html { redirect_to(preview_globe_path(@globe), :notice => 'Welcome to the Globe') }
         format.xml  { render :xml => @globe, :status => :created, :location => @globe }
       else
         format.html { render :action => "new" }
@@ -160,15 +160,15 @@ class GlobesController < ApplicationController
   end
   
   def preview
-    puts " Finding: " + request.subdomain
+
     # 24/7/13 DH: To accomodate an invalid subdomain we don't want the ActiveRecord 
     #            dynamic attribute-based finder to return an 'ActiveRecord::RecordNotFound' error
     #            so the "!" has been removed from the end and the return checked for 'nil'. 
     @masterglobe = Globe.find_by_globe_reference(request.subdomain)
     
-    if @masterglobe.nil? then
-      puts "No '" + request.subdomain + "' globe found!"
-    end
+    #if @masterglobe.nil? then
+    #  puts "No '" + request.subdomain + "' globe found!"
+    #end
     
     # Following the change to the route.rb file to match the blank
     # subdomain to globes#preview, we now need to not necessarily
